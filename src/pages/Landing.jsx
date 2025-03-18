@@ -11,17 +11,22 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
+    BotOff,
     Shield,
     Swords,
     Map,
     Gem,
     Skull,
-    ArrowUpRight,
     ChevronDown,
     Star,
-    Github
+    VenetianMask,
+    CloudUpload,
+    Gamepad,
+    BellOff,
+    Wrench
 } from 'lucide-react';
 import Logo from "@/assets/logo.png"
+import {discordRedirect} from "@/lib/utils";
 
 export default function Landing() {
     const [activeTab, setActiveTab] = useState('all');
@@ -31,57 +36,27 @@ export default function Landing() {
     const plugins = [
         {
             id: 1,
-            name: "Combat Assistant",
-            description: "Optimize your PvM and PvP strategies with real-time combat metrics and suggestions.",
-            icon: <Swords className="h-8 w-8 text-green-400"/>,
+            name: "Theatre of Blood",
+            description: "Never misclick a Nylocas, miss a red ball tick eat, or confuse a Verzik nylo again. All in one plugin for ToB",
+            icon: <Swords className="h-8 w-8 text-purple-400"/>,
             category: "combat",
             popular: true,
-            price: "$4.99"
         },
         {
             id: 2,
-            name: "Loot Tracker Pro",
-            description: "Advanced tracking of all your drops with estimated GP values and statistics.",
-            icon: <Gem className="h-8 w-8 text-purple-400"/>,
-            category: "utility",
+            name: "Chambers Helper",
+            description: "Tracks helpful information for many Chambers rooms and shows Olm's cycle. Skipping specials has never be easier!",
+            icon: <Swords className="h-8 w-8 text-purple-400"/>,
+            category: "combat",
             popular: true,
-            price: "$3.99"
         },
         {
             id: 3,
-            name: "Quest Helper",
-            description: "Step-by-step guides for every quest with item requirements and path tracking.",
-            icon: <Map className="h-8 w-8 text-green-400"/>,
-            category: "utility",
-            popular: false,
-            price: "$2.99"
-        },
-        {
-            id: 4,
-            name: "Boss Timer",
-            description: "Track respawn timers for all bosses and receive notifications for your favorites.",
-            icon: <Skull className="h-8 w-8 text-red-400"/>,
+            name: "Zulrah",
+            description: "Displays the current rotation, where to stand, where to move, and what to pray for your favorite Snake boss!",
+            icon: <Swords className="h-8 w-8 text-purple-400"/>,
             category: "combat",
-            popular: true,
-            price: "$3.99"
-        },
-        {
-            id: 5,
-            name: "HD Ground Items",
-            description: "Enhanced visualization for ground items with custom highlighting based on value.",
-            icon: <Gem className="h-8 w-8 text-blue-400"/>,
-            category: "visual",
             popular: false,
-            price: "$2.99"
-        },
-        {
-            id: 6,
-            name: "Advanced Protection",
-            description: "Get real-time alerts for suspicious activity and protect your valuable items.",
-            icon: <Shield className="h-8 w-8 text-blue-400"/>,
-            category: "security",
-            popular: false,
-            price: "$5.99"
         }
     ];
 
@@ -165,8 +140,8 @@ export default function Landing() {
                             <a href="#pricing" className="hover:text-green-500 transition-colors">Pricing</a>
                         </motion.li>
                         <motion.li whileTap={{scale: 0.95}}>
-                            <Button className="bg-green-500 hover:bg-green-600 text-black">
-                                Get Started
+                            <Button onClick={() => discordRedirect()} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
+                                Sign In with Discord
                             </Button>
                         </motion.li>
                     </ul>
@@ -216,7 +191,7 @@ export default function Landing() {
                         variants={itemVariants}
                         className="text-xl md:text-2xl text-gray-300 text-center max-w-3xl mb-10"
                     >
-                        Premium RuneLite plugins designed to enhance your gameplay with advanced features and
+                        Premium RuneLite compatible plugins are designed to enhance your gameplay with advanced features and
                         optimizations.
                     </motion.p>
 
@@ -227,10 +202,6 @@ export default function Landing() {
                         <Button className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6">
                             Browse Plugins
                         </Button>
-                        <Button variant="outline"
-                                className="border-green-500 text-green-500 hover:bg-green-500/10 text-lg px-8 py-6">
-                            Learn More
-                        </Button>
                     </motion.div>
 
                     <motion.div
@@ -240,7 +211,9 @@ export default function Landing() {
                         <div
                             className="bg-gray-800 border-2 border-green-500/50 rounded-lg overflow-hidden shadow-2xl shadow-green-500/20">
                             <img
-                                src="/api/placeholder/1200/675"
+                                src={Logo}
+                                height={75}
+                                width={75}
                                 alt="RuneLite plugin interface"
                                 className="w-full object-cover"
                             />
@@ -283,42 +256,42 @@ export default function Landing() {
                             viewport={{once: true}}
                             className="text-gray-300 max-w-2xl mx-auto"
                         >
-                            Our plugins are meticulously crafted by experienced RuneScape players to provide the best
-                            possible advantage while complying with game rules.
+                            Our plugins are meticulously crafted by experienced engineers to provide unparalleled
+                            advantages in game.
                         </motion.p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             {
-                                icon: <Shield className="h-12 w-12 text-green-500"/>,
-                                title: "100% Safe & Compliant",
-                                description: "All our plugins follow RuneScape's rules and terms of service. No risk to your account."
+                                icon: <BotOff className="h-12 w-12 text-green-500"/>,
+                                title: "No plugin automation",
+                                description: "None of our plugins are \"bots\". They assist you with additional in game information using RuneLite\'s official unmodified API",
                             },
                             {
-                                icon: <ArrowUpRight className="h-12 w-12 text-green-500"/>,
-                                title: "Performance Optimized",
-                                description: "Lightweight plugins that won't impact your game performance or cause lag."
+                                icon: <VenetianMask className="h-12 w-12 text-green-500"/>,
+                                title: "Incognito Client",
+                                description: "The Kraken client doesn't modify RuneLite in any way, sideloading all the plugins during runtime. This makes it nearly impossible to detect."
                             },
                             {
-                                icon: <Github className="h-12 w-12 text-green-500"/>,
+                                icon: <CloudUpload className="h-12 w-12 text-green-500"/>,
                                 title: "Regular Updates",
-                                description: "Frequent updates to ensure compatibility with the latest RuneLite and OSRS versions."
+                                description: "Frequent updates to ensure compatibility with the latest RuneLite and OSRS versions and are applied instantly to your client."
                             },
                             {
-                                icon: <Swords className="h-12 w-12 text-green-500"/>,
-                                title: "Combat Advantages",
-                                description: "Get the edge in PvM and PvP with real-time combat information and suggestions."
+                                icon: <Gamepad className="h-12 w-12 text-green-500"/>,
+                                title: "RuneLite Mode",
+                                description: "Want to run RuneLite without any Kraken plugins? With RuneLite mode it's as easy as clicking a button!"
                             },
                             {
-                                icon: <Map className="h-12 w-12 text-green-500"/>,
-                                title: "Enhanced Navigation",
-                                description: "Improved maps, teleport directories, and navigation tools to save you time."
+                                icon: <BellOff className="h-12 w-12 text-green-500"/>,
+                                title: "Quiet Plugins",
+                                description: "All our plugins are \"quiet\". Meaning, they assist you with tasks in game without any actual automation or input. This allows them to run silently just like a RuneLite plugin you would get from the PluginHub."
                             },
                             {
-                                icon: <Gem className="h-12 w-12 text-green-500"/>,
-                                title: "Loot Analysis",
-                                description: "Track your drops and analyze your profits over time with detailed statistics."
+                                icon: <Wrench className="h-12 w-12 text-green-500"/>,
+                                title: "Expertly Engineered",
+                                description: "Our plugins are battle tested to make sure they work under any condition."
                             }
                         ].map((feature, index) => (
                             <motion.div
@@ -358,23 +331,6 @@ export default function Landing() {
                         </p>
                     </motion.div>
 
-                    <div className="flex justify-center flex-wrap gap-2 mb-12">
-                        {['all', 'popular', 'combat', 'utility', 'visual', 'security'].map((tab) => (
-                            <motion.button
-                                key={tab}
-                                whileTap={{scale: 0.95}}
-                                onClick={() => setActiveTab(tab)}
-                                className={`px-4 py-2 rounded-full ${
-                                    activeTab === tab
-                                        ? 'bg-green-500 text-black font-bold'
-                                        : 'bg-gray-700 hover:bg-gray-600'
-                                }`}
-                            >
-                                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                            </motion.button>
-                        ))}
-                    </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredPlugins.map((plugin) => (
                             <motion.div
@@ -397,7 +353,7 @@ export default function Landing() {
                         </span>
                                             )}
                                         </div>
-                                        <CardTitle className="text-xl mt-2">{plugin.name}</CardTitle>
+                                        <CardTitle className="text-xl mt-2 text-gray-300">{plugin.name}</CardTitle>
                                         <CardDescription className="text-gray-400">
                                             {plugin.category.charAt(0).toUpperCase() + plugin.category.slice(1)} Plugin
                                         </CardDescription>
@@ -455,19 +411,19 @@ export default function Landing() {
                             {
                                 name: "PkMaster99",
                                 role: "PvP Specialist",
-                                content: "The Combat Assistant plugin completely changed my PvP game. The real-time suggestions and visual cues have improved my KD ratio significantly.",
+                                content: "The Effect Timers plugin completely changed my PvP game. The real-time suggestions and visual cues have improved my KD ratio significantly.",
                                 rating: 5
                             },
                             {
                                 name: "IronBTW",
                                 role: "Ironman Player",
-                                content: "As an Ironman, efficiency is everything. The Quest Helper and Loot Tracker have saved me countless hours of grinding. Worth every gold piece!",
+                                content: "As an Ironman, efficiency is everything. The Chambers plugin saved me countless hours of grinding in solos. Worth every gold piece!",
                                 rating: 5
                             },
                             {
                                 name: "MaxedMain",
                                 role: "Completionist",
-                                content: "I've tried many plugin suites, but this collection offers the best balance of features without breaking game rules. The Boss Timer is my personal favorite.",
+                                content: "I've tried many plugin suites, but this collection offers the best balance of features without breaking the bank. The ToB plugin is my personal favorite.",
                                 rating: 4
                             }
                         ].map((testimonial, index) => (
@@ -483,11 +439,11 @@ export default function Landing() {
                                     <CardHeader>
                                         <div className="flex items-center gap-2">
                                             <div
-                                                className="bg-green-500 h-10 w-10 rounded-full flex items-center justify-center font-bold text-black">
+                                                className="bg-green-500 h-10 w-10 rounded-full flex items-center justify-center font-bold text-white">
                                                 {testimonial.name.charAt(0)}
                                             </div>
                                             <div>
-                                                <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                                                <CardTitle className="text-lg text-gray-300">{testimonial.name}</CardTitle>
                                                 <CardDescription
                                                     className="text-gray-400">{testimonial.role}</CardDescription>
                                             </div>
