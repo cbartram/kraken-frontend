@@ -9,28 +9,27 @@ import {
     CardTitle
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import {
     BotOff,
-    Shield,
     Swords,
-    Map,
-    Gem,
-    Skull,
     ChevronDown,
     Star,
     VenetianMask,
     CloudUpload,
     Gamepad,
     BellOff,
-    Wrench
+    Wrench,
+    ArrowRight,
 } from 'lucide-react';
 import Logo from "@/assets/logo.png"
+import DiscordLogo from "@/assets/discord-mark-white.svg"
 import {discordRedirect} from "@/lib/utils";
 
 export default function Landing() {
     const [activeTab, setActiveTab] = useState('all');
     const [isNavOpen, setIsNavOpen] = useState(false);
+    const [hoveredToken, setHoveredToken] = useState(null);
+    const [hoveredPlan, setHoveredPlan] = useState(null);
 
     // Plugin data
     const plugins = [
@@ -60,6 +59,92 @@ export default function Landing() {
         }
     ];
 
+    const tokenPackages = [
+        {
+            id: 'basic',
+            name: 'Basic Pack',
+            tokens: 100,
+            price: '$9.99',
+            savings: null,
+            highlighted: false
+        },
+        {
+            id: 'popular',
+            name: 'Value Pack',
+            tokens: 300,
+            price: '$24.99',
+            savings: 'Save 16%',
+            highlighted: true
+        },
+        {
+            id: 'premium',
+            name: 'Premium Pack',
+            tokens: 1000,
+            price: '$79.99',
+            savings: 'Save 20%',
+            highlighted: false
+        }
+    ];
+
+    const subscriptionPlans = [
+        {
+            id: 'monthly',
+            name: 'Monthly Access',
+            tokens: 80,
+            duration: '1 month',
+            features: [
+                'Access to all plugins',
+                'Basic support',
+                'Monthly updates',
+                'Plugin configurations'
+            ],
+            highlighted: false
+        },
+        {
+            id: 'quarterly',
+            name: 'Quarterly Access',
+            tokens: 210,
+            duration: '3 months',
+            features: [
+                'Access to all plugins',
+                'Priority support',
+                'Regular updates',
+                'Custom configurations',
+                'Save 12% vs monthly'
+            ],
+            highlighted: true
+        },
+        {
+            id: 'annual',
+            name: 'Annual Access',
+            tokens: 700,
+            duration: '12 months',
+            features: [
+                'Access to all plugins',
+                'Premium support',
+                'Early access to new plugins',
+                'Custom configurations',
+                'Exclusive Discord access',
+                'Save 27% vs monthly'
+            ],
+            highlighted: false
+        }
+    ];
+
+    const arrowVariants = {
+        hidden: { opacity: 0, pathLength: 0 },
+        visible: {
+            opacity: 1,
+            pathLength: 1,
+            transition: {
+                duration: 1.5,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "loop",
+                repeatDelay: 1
+            }
+        }
+    };
     const filteredPlugins = activeTab === 'all'
         ? plugins
         : activeTab === 'popular'
@@ -141,6 +226,7 @@ export default function Landing() {
                         </motion.li>
                         <motion.li whileTap={{scale: 0.95}}>
                             <Button onClick={() => discordRedirect()} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
+                                <img src={DiscordLogo} height={25} width={25} />
                                 Sign In with Discord
                             </Button>
                         </motion.li>
@@ -480,121 +566,104 @@ export default function Landing() {
                         viewport={{once: true}}
                     >
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Simple, <span className="text-green-500">Affordable Pricing</span>
+                            Simple plugin pricing with <span className="text-green-500">Kraken Tokens</span>
                         </h2>
-                        <p className="text-gray-300 max-w-2xl mx-auto">
-                            Choose the plan that works best for your gameplay style and needs.
+                        <p className="text-gray-300 max-w-3xl mx-auto">
+                            Purchase Kraken Tokens and use them to subscribe to our plugins. Choose the plugin and subscription length that fits your gameplay needs.
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                        {[
-                            {
-                                name: "Starter Pack",
-                                price: "$9.99",
-                                period: "monthly",
-                                description: "Perfect for casual players",
-                                features: [
-                                    "Access to 3 plugins of your choice",
-                                    "Basic support",
-                                    "Monthly updates",
-                                    "Cancel anytime"
-                                ],
-                                highlighted: false
-                            },
-                            {
-                                name: "Pro Bundle",
-                                price: "$19.99",
-                                period: "monthly",
-                                description: "Our most popular package",
-                                features: [
-                                    "Access to all plugins",
-                                    "Priority support",
-                                    "Weekly updates",
-                                    "Custom configurations",
-                                    "Exclusive Discord access"
-                                ],
-                                highlighted: true
-                            },
-                            {
-                                name: "Annual Pass",
-                                price: "$149.99",
-                                period: "yearly",
-                                description: "Best value for dedicated players",
-                                features: [
-                                    "Access to all plugins",
-                                    "Premium support",
-                                    "Early access to new plugins",
-                                    "Custom configurations",
-                                    "Exclusive Discord access",
-                                    "2 months free vs monthly"
-                                ],
-                                highlighted: false
-                            }
-                        ].map((plan, index) => (
+                    {/* Flow Diagram */}
+                    <div className="flex flex-col items-center mb-16">
+                        <motion.div
+                            className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 w-full"
+                            initial={{opacity: 0}}
+                            whileInView={{opacity: 1}}
+                            transition={{duration: 0.7}}
+                            viewport={{once: true}}
+                        >
+                            {/* Step 1 */}
                             <motion.div
-                                key={index}
-                                initial={{opacity: 0, y: 20}}
-                                whileInView={{opacity: 1, y: 0}}
-                                transition={{duration: 0.5, delay: index * 0.1}}
-                                viewport={{once: true}}
-                                className={plan.highlighted ? "md:-mt-4 md:mb-4" : ""}
+                                className="bg-gray-800 p-6 rounded-lg text-center w-full md:w-64"
+                                whileHover={{ scale: 1.05 }}
                             >
-                                <Card className={`h-full flex flex-col ${
-                                    plan.highlighted
-                                        ? "bg-green-500 text-black border-green-400"
-                                        : "bg-gray-800 border-gray-700"
-                                }`}>
-                                    <CardHeader className={`text-center ${plan.highlighted ? "pb-2" : ""}`}>
-                                        {plan.highlighted && (
-                                            <div
-                                                className="bg-black text-green-500 font-bold py-1 px-3 rounded-full text-sm mx-auto mb-2">
-                                                MOST POPULAR
-                                            </div>
-                                        )}
-                                        <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
-                                        <div className="mt-2">
-                                            <span className="text-3xl font-bold">{plan.price}</span>
-                                            <span
-                                                className={plan.highlighted ? "text-black/70" : "text-gray-400"}>/{plan.period}</span>
-                                        </div>
-                                        <CardDescription
-                                            className={plan.highlighted ? "text-black/80" : "text-gray-400"}>
-                                            {plan.description}
-                                        </CardDescription>
-                                    </CardHeader>
-                                    <CardContent className="flex-grow">
-                                        <ul className="space-y-3">
-                                            {plan.features.map((feature, i) => (
-                                                <li key={i} className="flex items-center gap-2">
-                                                    <Shield
-                                                        className={`h-5 w-5 ${plan.highlighted ? "text-black" : "text-green-500"}`}/>
-                                                    <span
-                                                        className={plan.highlighted ? "text-black/90" : "text-gray-300"}>{feature}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </CardContent>
-                                    <CardFooter className="pt-4">
-                                        <Button
-                                            className={`w-full py-6 ${
-                                                plan.highlighted
-                                                    ? "bg-black text-green-500 hover:bg-gray-900"
-                                                    : "bg-green-500 text-black hover:bg-green-600"
-                                            }`}
-                                        >
-                                            Get Started
-                                        </Button>
-                                    </CardFooter>
-                                </Card>
+                                <div className="bg-gray-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span className="text-green-500 text-2xl font-bold">1</span>
+                                </div>
+                                <h3 className="text-xl font-bold mb-2">Purchase Tokens</h3>
+                                <p className="text-gray-400">Buy Kraken Tokens with your preferred payment method</p>
                             </motion.div>
-                        ))}
+
+                            {/* Arrow */}
+                            <div className="hidden md:block">
+                                <motion.div
+                                    animate={{ x: [0, 10, 0] }}
+                                    transition={{ repeat: Infinity, duration: 2 }}
+                                >
+                                    <ArrowRight size={36} className="text-green-500" />
+                                </motion.div>
+                            </div>
+                            <div className="block md:hidden my-4">
+                                <motion.div
+                                    animate={{ y: [0, 10, 0] }}
+                                    transition={{ repeat: Infinity, duration: 2 }}
+                                >
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" className="text-green-500">
+                                        <path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </motion.div>
+                            </div>
+
+                            {/* Step 2 */}
+                            <motion.div
+                                className="bg-gray-800 p-6 rounded-lg text-center w-full md:w-64"
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                <div className="bg-gray-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span className="text-green-500 text-2xl font-bold">2</span>
+                                </div>
+                                <h3 className="text-xl font-bold mb-2">Choose Plan</h3>
+                                <p className="text-gray-400">Select your preferred subscription length for plugins</p>
+                            </motion.div>
+
+                            {/* Arrow */}
+                            <div className="hidden md:block">
+                                <motion.div
+                                    animate={{ x: [0, 10, 0] }}
+                                    transition={{ repeat: Infinity, duration: 2 }}
+                                >
+                                    <ArrowRight size={36} className="text-green-500" />
+                                </motion.div>
+                            </div>
+                            <div className="block md:hidden my-4">
+                                <motion.div
+                                    animate={{ y: [0, 10, 0] }}
+                                    transition={{ repeat: Infinity, duration: 2 }}
+                                >
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" className="text-green-500">
+                                        <path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </motion.div>
+                            </div>
+
+                            {/* Step 3 */}
+                            <motion.div
+                                className="bg-gray-800 p-6 rounded-lg text-center w-full md:w-64"
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                <div className="bg-gray-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span className="text-green-500 text-2xl font-bold">3</span>
+                                </div>
+                                <h3 className="text-xl font-bold mb-2">Enjoy Plugins</h3>
+                                <p className="text-gray-400">Access all premium plugins instantly after subscription</p>
+                            </motion.div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
 
             {/* Call to Action */}
-            <section className="py-20 bg-gradient-to-br from-green-500 to-green-600 text-black">
+            <section className="py-20 bg-gradient-to-br from-green-300 to-green-600 text-black">
                 <div className="container mx-auto px-4 text-center">
                     <motion.h2
                         initial={{opacity: 0, y: 20}}
@@ -620,47 +689,11 @@ export default function Landing() {
                         transition={{duration: 0.5, delay: 0.2}}
                         viewport={{once: true}}
                     >
-                        <Button className="bg-black hover:bg-gray-900 text-green-500 text-lg px-8 py-6 shadow-lg">
-                            Get Started Today
+                        <Button onClick={() => discordRedirect()} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white p-6 text-sm font-medium">
+                            <img src={DiscordLogo} height={25} width={25} />
+                            Sign In with Discord
                         </Button>
                     </motion.div>
-                </div>
-            </section>
-
-            {/* Newsletter */}
-            <section className="py-16 bg-gray-800">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-3xl mx-auto">
-                        <motion.div
-                            initial={{opacity: 0}}
-                            whileInView={{opacity: 1}}
-                            transition={{duration: 0.5}}
-                            viewport={{once: true}}
-                            className="text-center mb-6"
-                        >
-                            <h3 className="text-2xl font-bold mb-2">Stay Updated</h3>
-                            <p className="text-gray-300">Subscribe to our newsletter for the latest plugin updates,
-                                RuneScape tips, and exclusive offers.</p>
-                        </motion.div>
-                        <motion.div
-                            initial={{opacity: 0, y: 20}}
-                            whileInView={{opacity: 1, y: 0}}
-                            transition={{duration: 0.5, delay: 0.1}}
-                            viewport={{once: true}}
-                            className="flex flex-col sm:flex-row gap-3"
-                        >
-                            <Input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="bg-gray-700 border-gray-600 flex-grow py-6"
-                            />
-                            <Button
-                                className="bg-green-500 hover:bg-green-600 text-black whitespace-nowrap py-6"
-                            >
-                                Subscribe
-                            </Button>
-                        </motion.div>
-                    </div>
                 </div>
             </section>
 
@@ -670,8 +703,8 @@ export default function Landing() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                         <div>
                             <div className="flex items-center gap-2 mb-4">
-                                <Shield className="h-6 w-6 text-green-500"/>
-                                <span className="text-xl font-bold text-green-500">RuneLite Pro Plugins</span>
+                                <img src={Logo} height={75} width={75} className="h-6 w-6 text-green-500" alt="logo"/>
+                                <span className="text-xl font-bold text-green-500">Kraken Plugins</span>
                             </div>
                             <p className="text-gray-400 mb-4">
                                 Elevating your Old School RuneScape experience with premium plugins.
