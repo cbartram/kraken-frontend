@@ -44,7 +44,7 @@ export const discordRedirect = () => {
   if(isProd()) {
     window.location.href = "https://discord.com/oauth2/authorize?client_id=1303515055777648640&response_type=code&redirect_uri=https%3A%2F%2Fkraken-plugins.duckdns.org%2Fdiscord%2Foauth&scope=identify+email"
   } else {
-    window.location.href = "https://discord.com/oauth2/authorize?client_id=1303515055777648640&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8081%2Fdiscord%2Foauth&scope=identify+email"
+    window.location.href = "https://discord.com/oauth2/authorize?client_id=1303515055777648640&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2Fdiscord%2Foauth&scope=identify+email"
   }
 }
 
@@ -64,7 +64,7 @@ export const formatTimestamp = (timestamp: string): string => {
  */
 export async function createCognitoUser(req: CreateUserRequest) {
   try {
-    const response = await fetch(`${K8S_BASE_URL}/api/v1/cognito/create-user`, {
+    const response = await fetch(`${isProd() ? K8S_BASE_URL : 'http://localhost:8081'}/api/v1/user/create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

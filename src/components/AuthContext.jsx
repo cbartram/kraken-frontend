@@ -78,10 +78,10 @@ export const AuthProvider = ({ children }) => {
             }
 
             const user = await createCognitoUser({
-                discord_id: data.id,
-                discord_username: data.username,
-                discord_email: data.email,
-                avatar_id: data.avatar,
+                discordId: data.id,
+                discordUsername: data.username,
+                discordEmail: data.email,
+                avatarId: data.avatar,
             })
 
             if(user !== null) {

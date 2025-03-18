@@ -15,7 +15,7 @@ import Profile from "@/pages/Profile.jsx"
 // @ts-ignore
 import Support from "@/pages/Support.jsx"
 // @ts-ignore
-import Pricing from "@/pages/Pricing.jsx"
+import Plugins from "@/pages/Plugins.jsx"
 // @ts-ignore
 import { RedirectIfAuthenticated } from '@/components/RedirectIfAuthenticated.jsx'
 import './index.css'
@@ -53,13 +53,10 @@ createRoot(document.getElementById('root')!).render(
                     </ProtectedRoute>
                 }
                 />
+                {/* Any users can visit the /plugins page but only authenticated users will see the "buy now" buttons */}
                 <Route
-                    path="/pricing"
-                    element={
-                        <ProtectedRoute resource="pricing">
-                            <Pricing />
-                        </ProtectedRoute>
-                    }
+                    path="/plugins"
+                    element={<Plugins />}
                 />
             </Routes>
         </AuthProvider>

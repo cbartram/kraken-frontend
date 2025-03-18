@@ -53,6 +53,7 @@
 
 body {
   margin: 0;
+  background-color: oklch(0.21 0.034 264.665);
   min-width: 320px;
   min-height: 100vh;
 }

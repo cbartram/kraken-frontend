@@ -10,7 +10,7 @@ import {Button} from "@/components/ui/button";
 
 const SpinnerRing = () => {
     return (
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 w-full h-full p-6">
             <svg className="absolute inset-0" viewBox="0 0 100 100">
                 <circle
                     cx="50"
@@ -25,7 +25,7 @@ const SpinnerRing = () => {
                     cx="50"
                     cy="50"
                     fill="none"
-                    stroke="#F18121"
+                    stroke="#13d14c"
                     strokeWidth="4"
                     r="38"
                     strokeDasharray="180 180"
@@ -71,7 +71,7 @@ const AuthCallback = () => {
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify({ code, redirectUri: isProd() ?  'https://kraken-plugins.duckdns.org/discord/oauth' : 'http://localhost:8081/discord/oauth' }),
+                        body: JSON.stringify({ code, redirectUri: isProd() ?  'https://kraken-plugins.duckdns.org/discord/oauth' : 'http://localhost:5173/discord/oauth' }),
                     });
 
                     if(response.status === 200) {
@@ -80,7 +80,7 @@ const AuthCallback = () => {
                         // but we still need to get user details from Discord via login(). Login() will also
                         // create the user in Cognito if they do not already exist.
                         if(await login(data.access_token)) {
-                            navigate('/dashboard');
+                            navigate('/plugins');
                         }
                     } else {
                         console.log(`Unexpected response code received: ${response.status}`)

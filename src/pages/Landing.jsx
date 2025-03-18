@@ -24,12 +24,12 @@ import {
 import Logo from "@/assets/logo.png"
 import DiscordLogo from "@/assets/discord-mark-white.svg"
 import {discordRedirect} from "@/lib/utils";
+import {useNavigate} from "react-router-dom";
 
 export default function Landing() {
+    const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('all');
     const [isNavOpen, setIsNavOpen] = useState(false);
-    const [hoveredToken, setHoveredToken] = useState(null);
-    const [hoveredPlan, setHoveredPlan] = useState(null);
 
     // Plugin data
     const plugins = [
@@ -59,92 +59,6 @@ export default function Landing() {
         }
     ];
 
-    const tokenPackages = [
-        {
-            id: 'basic',
-            name: 'Basic Pack',
-            tokens: 100,
-            price: '$9.99',
-            savings: null,
-            highlighted: false
-        },
-        {
-            id: 'popular',
-            name: 'Value Pack',
-            tokens: 300,
-            price: '$24.99',
-            savings: 'Save 16%',
-            highlighted: true
-        },
-        {
-            id: 'premium',
-            name: 'Premium Pack',
-            tokens: 1000,
-            price: '$79.99',
-            savings: 'Save 20%',
-            highlighted: false
-        }
-    ];
-
-    const subscriptionPlans = [
-        {
-            id: 'monthly',
-            name: 'Monthly Access',
-            tokens: 80,
-            duration: '1 month',
-            features: [
-                'Access to all plugins',
-                'Basic support',
-                'Monthly updates',
-                'Plugin configurations'
-            ],
-            highlighted: false
-        },
-        {
-            id: 'quarterly',
-            name: 'Quarterly Access',
-            tokens: 210,
-            duration: '3 months',
-            features: [
-                'Access to all plugins',
-                'Priority support',
-                'Regular updates',
-                'Custom configurations',
-                'Save 12% vs monthly'
-            ],
-            highlighted: true
-        },
-        {
-            id: 'annual',
-            name: 'Annual Access',
-            tokens: 700,
-            duration: '12 months',
-            features: [
-                'Access to all plugins',
-                'Premium support',
-                'Early access to new plugins',
-                'Custom configurations',
-                'Exclusive Discord access',
-                'Save 27% vs monthly'
-            ],
-            highlighted: false
-        }
-    ];
-
-    const arrowVariants = {
-        hidden: { opacity: 0, pathLength: 0 },
-        visible: {
-            opacity: 1,
-            pathLength: 1,
-            transition: {
-                duration: 1.5,
-                ease: "easeInOut",
-                repeat: Infinity,
-                repeatType: "loop",
-                repeatDelay: 1
-            }
-        }
-    };
     const filteredPlugins = activeTab === 'all'
         ? plugins
         : activeTab === 'popular'
@@ -249,8 +163,8 @@ export default function Landing() {
                                    className="hover:text-green-500 transition-colors">Testimonials</a></li>
                             <li><a href="#pricing" className="hover:text-green-500 transition-colors">Pricing</a></li>
                             <li>
-                                <Button className="bg-green-500 hover:bg-green-600 text-black w-full">
-                                    Get Started
+                                <Button className="bg-green-500 hover:bg-green-600 text-black w-full" onClick={() => navigate('/plugins')}>
+                                    Browse Plugins
                                 </Button>
                             </li>
                         </ul>
@@ -285,7 +199,7 @@ export default function Landing() {
                         variants={itemVariants}
                         className="flex flex-col sm:flex-row gap-4 mb-16"
                     >
-                        <Button className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6">
+                        <Button className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6" onClick={() => navigate('/plugins')}>
                             Browse Plugins
                         </Button>
                     </motion.div>
@@ -466,7 +380,7 @@ export default function Landing() {
                         transition={{duration: 0.5, delay: 0.2}}
                         viewport={{once: true}}
                     >
-                        <Button className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6">
+                        <Button className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6" onClick={() => navigate('/plugins')}>
                             View All Plugins
                         </Button>
                     </motion.div>
