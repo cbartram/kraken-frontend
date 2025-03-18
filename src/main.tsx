@@ -9,7 +9,8 @@ import AuthCallback from "@/components/AuthCallback.jsx"
 import Login from '@/pages/Login'
 // @ts-ignore
 import PurchaseTokens from "@/pages/PurchaseTokens.jsx"
-
+// @ts-ignore
+import DownloadClient from "@/pages/DownloadClient.jsx"
 // @ts-ignore
 import Landing from "@/pages/Landing.jsx"
 // @ts-ignore
@@ -44,20 +45,26 @@ createRoot(document.getElementById('root')!).render(
                 />
                 <Route path="/discord/oauth" element={<AuthCallback />} />
                 <Route path="/profile" element={
-                    <ProtectedRoute resource="profile">
+                    <ProtectedRoute>
                         <Profile />
                     </ProtectedRoute>
                 }
                 />
                 <Route path="/support" element={
-                    <ProtectedRoute resource="support">
+                    <ProtectedRoute>
                         <Support />
                     </ProtectedRoute>
                 }
                 />
                 <Route path="/purchase" element={
-                    <ProtectedRoute resource="support">
+                    <ProtectedRoute>
                         <PurchaseTokens />
+                    </ProtectedRoute>
+                }
+                />
+                <Route path="/download" element={
+                    <ProtectedRoute>
+                        <DownloadClient />
                     </ProtectedRoute>
                 }
                 />

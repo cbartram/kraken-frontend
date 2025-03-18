@@ -17,7 +17,7 @@ import {discordRedirect} from "@/lib/utils";
 import DiscordLogo from "@/assets/discord-mark-white.svg";
 
 
-const Navbar = ({ onLogout, user, skeleton, onBillingSession, loading }) => {
+const Navbar = ({ onLogout, user, skeleton, loading }) => {
     if(skeleton) {
         return (
             <div className="bg-slate-700 text-white p-4 bg-gradient-to-r from-slate-700 to-slate-800 opacity-95 drop-shadow-lg">
@@ -62,17 +62,17 @@ const Navbar = ({ onLogout, user, skeleton, onBillingSession, loading }) => {
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
-                            <DropdownMenuItem onClick={() => window.location.href = "/dashboard"}>
-                                Dashboard
+                            <DropdownMenuItem onClick={() => window.location.href = "/plugins"}>
+                                Plugins
+                                <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => window.location.href = "/download"}>
+                                Download Client
                                 <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
                             </DropdownMenuItem>
                             <DropdownMenuItem onClick={() => window.location.href = "/profile"}>
                                 Profile
                                 <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem onClick={onBillingSession}>
-                                Billing
-                                <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
                             </DropdownMenuItem>
                             <DropdownMenuItem onClick={() => window.location.href = "/support"}>
                                 Support
@@ -100,15 +100,16 @@ const Navbar = ({ onLogout, user, skeleton, onBillingSession, loading }) => {
         <div className="bg-slate-700 text-white p-2 bg-gradient-to-r from-slate-700 to-slate-800 opacity-95 drop-shadow-lg">
             <div className="max-w-4xl mx-auto flex items-center justify-between">
                 <div className="flex items-center space-x-6">
-                    <nav className="flex space-x-4">
+                    <nav className="flex items-center space-x-4">
                         <img src={Logo} alt="logo" height={40} width={40} />
-                        <h3>Kraken Plugins</h3>
+                        <h3 className="text-xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent m-0">Kraken Plugins</h3>
                     </nav>
                 </div>
                 <div className="flex items-center space-x-4">
                     <a href="/" className="hover:text-green-500 text-white-400 transition-colors">Home</a>
                     <a href="/plugins" className="hover:text-green-500 text-white-400 transition-colors">Plugins</a>
                     <a href="/purchase" className="hover:text-green-500 text-white-400 transition-colors">Purchase Tokens</a>
+                    <a href="/download" className="hover:text-green-500 text-white-400 transition-colors">Download Client</a>
                     { renderNav(loading, user)}
                 </div>
             </div>
