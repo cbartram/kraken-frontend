@@ -54,7 +54,7 @@ const Navbar = ({ onLogout, user, skeleton, onBillingSession, loading }) => {
                     <DropdownMenuTrigger asChild>
                         <div className="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center cursor-pointer">
                             <img alt="user profile avatar"
-                                 src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatarId}?size=56`}
+                                 src={`https://cdn.discordapp.com/avatars/${user.discordId}/${user.avatarId}?size=56`}
                                  className="w-10 h-10 rounded-full border-2 border-gray-800"/>
                         </div>
                     </DropdownMenuTrigger>

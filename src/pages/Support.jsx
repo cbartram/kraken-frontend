@@ -50,10 +50,9 @@ const SupportEmailForm = () => {
             <Navbar
                 onLogout={logout}
                 onBillingSession={() => createBillingSession(user.customerId)}
-                userId={user.discordId}
-                avatarId={user.avatarId}
+                user={user}
             />
-            <div className="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+            <div className="flex justify-center p-4">
             <Card className="w-full max-w-lg shadow-lg">
                 <CardHeader className="bg-white border-b border-gray-100">
                     <CardTitle className="text-xl font-semibold text-gray-900">Contact Support</CardTitle>
@@ -88,7 +87,7 @@ const SupportEmailForm = () => {
                                 rows={6}
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
-                                className="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 resize-none"
+                                className="border-gray-300 focus:border-green-400 focus:ring-green-500 resize-none mb-6"
                                 disabled={status === 'loading' || status === 'success'}
                             />
                         </div>
@@ -113,8 +112,8 @@ const SupportEmailForm = () => {
                             type="submit"
                             className={`h-10 px-4 rounded-md font-medium mt-4 ${
                                 status === 'loading' || status === 'success'
-                                    ? 'bg-indigo-400 text-white'
-                                    : 'bg-indigo-600 hover:bg-indigo-700 text-white'
+                                    ? 'bg-green-200 text-white'
+                                    : 'bg-green-400 hover:bg-green-500 text-white'
                             }`}
                             disabled={status === 'loading' || status === 'success'}
                         >

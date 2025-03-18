@@ -55,7 +55,6 @@ createRoot(document.getElementById('root')!).render(
                     </ProtectedRoute>
                 }
                 />
-
                 <Route path="/purchase" element={
                     <ProtectedRoute resource="support">
                         <PurchaseTokens />

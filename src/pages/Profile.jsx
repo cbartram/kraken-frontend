@@ -99,19 +99,18 @@ const Profile = () => {
             <Navbar
                 onLogout={logout}
                 onBillingSession={() => createBillingSession(user.customerId)}
-                userId={user.discordId}
-                avatarId={user.avatarId}
+                user={user}
             />
-            <div className="bg-gray-50 min-h-screen p-8">
+            <div className=" min-h-screen p-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-8">
-                        <h1 className="text-3xl font-bold text-gray-900">Account</h1>
+                        <h1 className="text-3xl font-bold text-white">Account</h1>
                         <p className="text-gray-600">Manage your account details and subscription</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* User Profile Card */}
-                        <Card className="md:col-span-1">
+                        <Card className="md:col-span-1 bg-gray-100">
                             <CardHeader>
                                 <CardTitle className="text-xl">Profile</CardTitle>
                             </CardHeader>
@@ -131,7 +130,7 @@ const Profile = () => {
                         </Card>
                         {
                             user.subscriptionId ?
-                        <Card className="md:col-span-2">
+                        <Card className="md:col-span-2 bg-gray-100">
                             <CardHeader className="flex flex-row items-start justify-between space-y-0">
                                 <div>
                                     <CardTitle className="text-xl">Subscription</CardTitle>
@@ -204,7 +203,7 @@ const Profile = () => {
                                 </div>
                             </CardContent>
                             <CardFooter className="flex justify-end bg-gray-50 px-6 py-4 border-t border-gray-100 rounded-b-lg">
-                                <Button className="bg-indigo-600 hover:bg-indigo-700" onClick={() => createBillingSession(user.customerId)}>
+                                <Button className="bg-green-400 hover:bg-green-500" onClick={() => createBillingSession(user.customerId)}>
                                     <span>Manage Subscription</span>
                                     <ExternalLink className="ml-2 h-4 w-4" />
                                 </Button>
@@ -221,7 +220,7 @@ const Profile = () => {
                             <CardContent className="pt-4">
                                 <div className="space-y-6">
                                     <p className="text-lg">You are not currently subscribed to a plan.</p>
-                                    <Button className="bg-indigo-600 hover:bg-indigo-700 focus:border-0 active:border-0 focus:outline-none active:outline-none" onClick={() => window.location.href = "/pricing"}>Purchase Plan</Button>
+                                    <Button className="bg-green-400 hover:bg-green-500 focus:border-0 active:border-0 focus:outline-none active:outline-none" onClick={() => window.location.href = "/pricing"}>Purchase Plan</Button>
                                 </div>
                             </CardContent>
                         </Card>

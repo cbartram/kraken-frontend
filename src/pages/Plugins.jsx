@@ -26,6 +26,8 @@ import Timers from "@/assets/timers.png"
 import Tob from "@/assets/tob.png"
 import Zulrah from "@/assets/zulrah.png"
 import {useAuth} from "@/components/AuthContext.jsx";
+import {discordRedirect} from "@/lib/utils.js";
+import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
 
 const Plugins = () => {
     const { logout, user, getUser, loading } = useAuth()
@@ -144,6 +146,11 @@ const Plugins = () => {
     const [plugins, setPlugins] = useState(initialPlugins);
     const [search, setSearch] = useState("");
     const [sortBy, setSortBy] = useState("topPicks");
+    const [open, setOpen] = useState(false);
+    const [plugin, setPlugin] = useState({
+        name: 'temp',
+        price: 100
+    });
 
     // Have to get user manually since this route isn't wrapped in a <ProtectedRoute />
     useEffect(() => {
@@ -188,9 +195,20 @@ const Plugins = () => {
         setPlugins(filteredPlugins);
     }, [search, sortBy]);
 
+    const handlePluginPurchase = (plugin) => {
+        if(user == null) {
+            discordRedirect()
+            return
+        }
+
+        setPlugin(plugin)
+        setOpen(true)
+    }
+
     return (
         <div className="bg-gray-900 text-gray-100">
             <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
+            <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(plugin, subscriptionPeriod) => {}} plugin={plugin} />
             <div className="container mx-auto py-8">
                 <h1 className="text-4xl font-bold mb-6 text-center">KrakenPlugins</h1>
                 <p className="text-secondary text-center mb-4">View the collection of Kraken Plugins</p>
@@ -277,9 +295,9 @@ const Plugins = () => {
                                 </CardContent>
 
                                 <CardFooter>
-                                    <Button
-                                        className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white"
-                                    >Purchase</Button>
+                                    <Button onClick={() => handlePluginPurchase(plugin)} className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white">
+                                        Purchase
+                                    </Button>
                                 </CardFooter>
                             </Card>
                         </div>
