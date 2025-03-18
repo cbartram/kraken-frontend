@@ -45,8 +45,6 @@ const AuthCallback = () => {
     const navigate = useNavigate();
     const { login } = useAuth();
     const [error, setError] = useState(null);
-    const location = useLocation();
-
 
     useEffect(() => {
         const handleCallback = async () => {

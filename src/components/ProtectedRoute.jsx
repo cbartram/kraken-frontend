@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/components/AuthContext';
 import Navbar from "@/components/Navbar.jsx";
+import SkeletonLoading from "@/components/SkeletonLoading.jsx";
 
 const ROUTE_RULES = {
     // exemptWithSubscription will redirect users with active subs away

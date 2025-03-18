@@ -25,9 +25,11 @@ import Nightmare from "@/assets/nightmare.png"
 import Timers from "@/assets/timers.png"
 import Tob from "@/assets/tob.png"
 import Zulrah from "@/assets/zulrah.png"
+import {useAuth} from "@/components/AuthContext.jsx";
 
 const Plugins = () => {
-    // Sample plugin data
+    const { logout, user, getUser, loading } = useAuth()
+
     const initialPlugins = [
         {
             id: 1,
@@ -143,11 +145,15 @@ const Plugins = () => {
     const [search, setSearch] = useState("");
     const [sortBy, setSortBy] = useState("topPicks");
 
-    // Filter and sort plugins based on search and sort criteria
+    // Have to get user manually since this route isn't wrapped in a <ProtectedRoute />
+    useEffect(() => {
+        getUser()
+    }, [])
+
     useEffect(() => {
         let filteredPlugins = [...initialPlugins];
 
-        // Apply search filter
+        console.log(user)
         if (search) {
             const searchLower = search.toLowerCase();
             filteredPlugins = filteredPlugins.filter(plugin =>
@@ -184,7 +190,7 @@ const Plugins = () => {
 
     return (
         <div className="bg-gray-900 text-gray-100">
-            <Navbar />
+            <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
             <div className="container mx-auto py-8">
                 <h1 className="text-4xl font-bold mb-6 text-center">KrakenPlugins</h1>
                 <p className="text-secondary text-center mb-4">View the collection of Kraken Plugins</p>
@@ -203,7 +209,7 @@ const Plugins = () => {
 
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="outline" className="w-full md:w-auto bg-gray-600">
+                            <Button variant="outline" className="w-full md:w-auto  px-4 rounded-md font-medium bg-indigo-600 hover:bg-indigo-700 text-white">
                                 <ArrowUpDown className="mr-2 h-4 w-4" />
                                 Sort by: {getSortLabel(sortBy)}
                             </Button>
@@ -271,7 +277,9 @@ const Plugins = () => {
                                 </CardContent>
 
                                 <CardFooter>
-                                    <Button className="w-full">Purchase Plugin</Button>
+                                    <Button
+                                        className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white"
+                                    >Purchase</Button>
                                 </CardFooter>
                             </Card>
                         </div>

@@ -17,7 +17,7 @@ import {discordRedirect} from "@/lib/utils";
 import DiscordLogo from "@/assets/discord-mark-white.svg";
 
 
-const Navbar = ({ onLogout, userId, avatarId, skeleton, onBillingSession }) => {
+const Navbar = ({ onLogout, user, skeleton, onBillingSession, loading }) => {
     if(skeleton) {
         return (
             <div className="bg-slate-700 text-white p-4 bg-gradient-to-r from-slate-700 to-slate-800 opacity-95 drop-shadow-lg">
@@ -38,6 +38,64 @@ const Navbar = ({ onLogout, userId, avatarId, skeleton, onBillingSession }) => {
         )
     }
 
+    const renderNav = (loading, user) => {
+        if (loading) {
+            return (
+                <>
+                    <Skeleton className="h-8 w-8 rounded-md" />
+                    <Skeleton className="h-6 w-32" />
+                </>
+            )
+        }
+
+         if (user != null && !loading) {
+             return <DropdownMenu>
+                    <ChevronDown />
+                    <DropdownMenuTrigger asChild>
+                        <div className="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center cursor-pointer">
+                            <img alt="user profile avatar"
+                                 src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatarId}?size=56`}
+                                 className="w-10 h-10 rounded-full border-2 border-gray-800"/>
+                        </div>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-56">
+                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuGroup>
+                            <DropdownMenuItem onClick={() => window.location.href = "/dashboard"}>
+                                Dashboard
+                                <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => window.location.href = "/profile"}>
+                                Profile
+                                <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem onClick={onBillingSession}>
+                                Billing
+                                <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => window.location.href = "/support"}>
+                                Support
+                                <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                            </DropdownMenuItem>
+                        </DropdownMenuGroup>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem onClick={onLogout}>
+                            Log out
+                            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+         }
+
+        return (
+            <Button onClick={() => discordRedirect()} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
+                <img src={DiscordLogo} height={25} width={25} />
+                Sign In with Discord
+            </Button>
+        )
+    }
+
     return (
         <div className="bg-slate-700 text-white p-2 bg-gradient-to-r from-slate-700 to-slate-800 opacity-95 drop-shadow-lg">
             <div className="max-w-4xl mx-auto flex items-center justify-between">
@@ -50,50 +108,8 @@ const Navbar = ({ onLogout, userId, avatarId, skeleton, onBillingSession }) => {
                 <div className="flex items-center space-x-4">
                     <a href="/" className="hover:text-green-500 text-white-400 transition-colors">Home</a>
                     <a href="/plugins" className="hover:text-green-500 text-white-400 transition-colors">Plugins</a>
-                    <a href="/tokens" className="hover:text-green-500 text-white-400 transition-colors">Purchase Tokens</a>
-                    {
-                        userId ?  <DropdownMenu>
-                                <ChevronDown />
-                                <DropdownMenuTrigger asChild>
-                                    <div className="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center cursor-pointer">
-                                        <img alt="user profile avatar"
-                                             src={`https://cdn.discordapp.com/avatars/${userId}/${avatarId}?size=56`}
-                                             className="w-10 h-10 rounded-full border-2 border-gray-800"/>
-                                    </div>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent className="w-56">
-                                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                                    <DropdownMenuSeparator />
-                                    <DropdownMenuGroup>
-                                        <DropdownMenuItem onClick={() => window.location.href = "/dashboard"}>
-                                            Dashboard
-                                            <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
-                                        </DropdownMenuItem>
-                                        <DropdownMenuItem onClick={() => window.location.href = "/profile"}>
-                                            Profile
-                                            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                                        </DropdownMenuItem>
-                                        <DropdownMenuItem onClick={onBillingSession}>
-                                            Billing
-                                            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-                                        </DropdownMenuItem>
-                                        <DropdownMenuItem onClick={() => window.location.href = "/support"}>
-                                            Support
-                                            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                                        </DropdownMenuItem>
-                                    </DropdownMenuGroup>
-                                    <DropdownMenuSeparator />
-                                    <DropdownMenuItem onClick={onLogout}>
-                                        Log out
-                                        <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-                                    </DropdownMenuItem>
-                                </DropdownMenuContent>
-                            </DropdownMenu>:
-                            <Button onClick={() => discordRedirect()} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
-                                <img src={DiscordLogo} height={25} width={25} />
-                                Sign In with Discord
-                            </Button>
-                    }
+                    <a href="/purchase" className="hover:text-green-500 text-white-400 transition-colors">Purchase Tokens</a>
+                    { renderNav(loading, user)}
                 </div>
             </div>
         </div>

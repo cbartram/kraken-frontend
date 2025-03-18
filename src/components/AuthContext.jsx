@@ -8,6 +8,7 @@ const AuthContext = createContext(null);
 // the currently authenticated user.
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     /**
      * getUser
@@ -27,6 +28,7 @@ export const AuthProvider = ({ children }) => {
         }
 
         try {
+            setLoading(true);
             const response = await fetch(`${isProd() ? K8S_BASE_URL : 'http://localhost:8081'}/api/v1/user/`, {
                 method: 'GET',
                 headers: {
@@ -46,6 +48,8 @@ export const AuthProvider = ({ children }) => {
         } catch (error) {
             console.error('Login error:', error);
             return Promise.reject("Failed to auth user: error thrown while making http request: " + error)
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -86,9 +90,9 @@ export const AuthProvider = ({ children }) => {
 
             if(user !== null) {
                 setUser(user);
-                localStorage.setItem("refreshToken", user.credentials.refresh_token)
-                localStorage.setItem("accessToken", user.credentials.access_token)
-                localStorage.setItem("idToken", user.credentials.id_token)
+                localStorage.setItem("refreshToken", user.credentials.refreshToken)
+                localStorage.setItem("accessToken", user.credentials.accessToken)
+                localStorage.setItem("idToken", user.credentials.idToken)
                 localStorage.setItem("discordId", user.discordId)
                 return true;
             }
@@ -110,7 +114,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout, getUser }}>
+        <AuthContext.Provider value={{ user, login, logout, getUser, loading }}>
             {children}
         </AuthContext.Provider>
     );
