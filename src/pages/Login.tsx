@@ -31,7 +31,7 @@ const Login = () => {
         <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
             <div className="mb-8">
                 <div className="w-48 h-48 rounded-2xl flex items-center justify-center">
-                   <img src={Logo}  alt="Hearthhub Logo" />
+                   <img src={Logo}  alt="Kraken Logo" />
                 </div>
             </div>
             {
@@ -48,8 +48,8 @@ const Login = () => {
             }
             <Card className="w-96">
                 <CardHeader>
-                    <CardTitle>Login to HearthHub</CardTitle>
-                    <CardDescription>Manage your server, mods, configuration and Valheim worlds</CardDescription>
+                    <CardTitle>Login to Kraken</CardTitle>
+                    <CardDescription>Manage your plugins, subscriptions, and more</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <Button className="w-full bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc]" onClick={discordRedirect}>

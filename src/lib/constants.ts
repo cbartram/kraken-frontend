@@ -1,4 +1,4 @@
-// The prod base url for the API gateway/lambda backed hearthhub API.
+// The prod base url for the API gateway/lambda backed kraken API.
 const K8S_BASE_URL: string = "https://kraken-plugins.duckdns.org"
 
 const isProd = () => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/components/AuthContext';
-import Navbar from "@/components/Navbar.jsx";
+import SkeletonLoading from "@/components/SkeletonLoading.jsx";
 
 export const RedirectIfAuthenticated = ({ children, resource }) => {
     const { user, getUser } = useAuth();
@@ -29,7 +29,7 @@ export const RedirectIfAuthenticated = ({ children, resource }) => {
     if (isLoading) {
         return (
             <div className="flex h-screen">
-                {/* TODO Skeleton */}
+                <SkeletonLoading />
             </div>
         );
     }

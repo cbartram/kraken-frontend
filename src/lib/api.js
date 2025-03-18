@@ -73,7 +73,7 @@ class KubeApiClient extends ApiClient {
         if(isProd()) {
             return this.baseURL
         } else {
-            return "http://localhost:8080"
+            return "http://localhost:8081"
         }
     }
 

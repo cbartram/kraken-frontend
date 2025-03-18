@@ -7,6 +7,8 @@ import { ProtectedRoute } from '@/components/ProtectedRoute.jsx'
 // @ts-ignore
 import AuthCallback from "@/components/AuthCallback.jsx"
 import Login from '@/pages/Login'
+
+// @ts-ignore
 import Landing from "@/pages/Landing.jsx"
 // @ts-ignore
 import Profile from "@/pages/Profile.jsx"

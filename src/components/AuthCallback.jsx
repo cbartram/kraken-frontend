@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 import Logo from "@/assets/logo.png";
-import {K8S_BASE_URL} from "@/lib/constants";
+import {isProd, K8S_BASE_URL} from "@/lib/constants";
 import {useAuth} from "@/components/AuthContext"
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle } from 'lucide-react';
@@ -66,12 +66,12 @@ const AuthCallback = () => {
 
             if (code) {
                 try {
-                    const response = await fetch(`${K8S_BASE_URL}/api/v1/discord/oauth`, {
+                    const response = await fetch(`${isProd() ? K8S_BASE_URL : 'http://localhost:8081'}/api/v1/discord/oauth`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify({ code }),
+                        body: JSON.stringify({ code, redirectUri: isProd() ?  'https://kraken-plugins.duckdns.org/discord/oauth' : 'http://localhost:8081/discord/oauth' }),
                     });
 
                     if(response.status === 200) {
@@ -121,7 +121,7 @@ const AuthCallback = () => {
             }
             <div className="mb-12 md:mb-16 relative">
                 <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-2xl flex items-center justify-center bg-white shadow-lg">
-                    <img src={Logo} alt="Hearthhub Logo" className="w-24 h-24 md:w-36 md:h-36 object-contain" />
+                    <img src={Logo} alt="Kraken Logo" className="w-24 h-24 md:w-36 md:h-36 object-contain" />
                     <SpinnerRing />
                 </div>
             </div>

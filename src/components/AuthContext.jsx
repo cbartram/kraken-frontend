@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
     /**
      * getUser
-     * This function is called when a previously authenticated browser loads back into Hearthhub. It checks previously
+     * This function is called when a previously authenticated browser loads back into Kraken. It checks previously
      * stored tokens in local storage to see if it can use them to authenticate the user without going through discord
      * OAuth again.
      *
@@ -27,16 +27,12 @@ export const AuthProvider = ({ children }) => {
         }
 
         try {
-            const response = await fetch(`${isProd() ? K8S_BASE_URL : 'http://localhost:8080'}/api/v1/user?`, {
-                method: 'POST',
+            const response = await fetch(`${isProd() ? K8S_BASE_URL : 'http://localhost:8081'}/api/v1/user/`, {
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': "Basic " + btoa(`${discordId}:${refreshToken}`)
-                },
-                body: JSON.stringify({
-                    refreshToken: refreshToken,
-                    discordId: discordId
-                })
+                }
             });
 
             const data = await response.json();

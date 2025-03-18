@@ -45,4 +45,4 @@ echo -e "${GREEN}✅ Docker image pushed successfully${NC}"
 # Optional: Show the full image name for confirmation
 echo -e "${GREEN}Image pushed: ${IMAGE_NAME}${NC}"
 
-helm upgrade hearthhub-frontend ./manifests/hearthhub-frontend -f ./manifests/hearthhub-frontend/values.yaml
+helm upgrade kraken-frontend ./manifests/kraken-frontend -f ./manifests/kraken-frontend/values.yaml
