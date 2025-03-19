@@ -87,6 +87,16 @@ class KubeApiClient extends ApiClient {
         })
     }
 
+    async purchasePlugin(name, duration) {
+        return this.request('/api/v1/plugin/purchase', {
+            method: 'POST',
+            body: JSON.stringify({
+                pluginName: name,
+                purchaseDuration: duration,
+            })
+        })
+    }
+
     async createCheckoutSession(key) {
         return this.request(`/api/v1/stripe/checkout-session?key=${key}`, {
             method: 'GET'

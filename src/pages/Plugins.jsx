@@ -28,21 +28,21 @@ import Zulrah from "@/assets/zulrah.png"
 import {useAuth} from "@/components/AuthContext.jsx";
 import {discordRedirect} from "@/lib/utils.js";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
-import SkeletonLoading from "@/components/SkeletonLoading.jsx";
 import PurchaseSuccessDialog from "@/components/PurchaseSuccessDialogue.jsx";
 
 const Plugins = () => {
-    const { logout, user, getUser, loading } = useAuth()
+    const { logout, user, getUser, api, loading } = useAuth()
 
     const initialPlugins = [
         {
             id: 1,
             title: "Chambers Helper",
+            name: 'Cox-Helper',
             description: "Tracks olm's cycle for easy skipping and simple solo's.",
             price: {
                 month: 500,
-                threeMonths: 1350,
-                year: 4800
+                threeMonths: 1000,
+                year: 5000
             },
             backgroundImage: Olm,
             isTopPick: true
@@ -50,11 +50,12 @@ const Plugins = () => {
         {
             id: 2,
             title: "Theatre of Blood",
+            name: 'Theatre-of-Blood',
             description: "Utilities for tick eating, hiding entities and tracking ticks for all bosses in the Theatre of Blood.",
             price: {
-                month: 650,
-                threeMonths: 1750,
-                year: 6240
+                month: 500,
+                threeMonths: 1000,
+                year: 5000
             },
             backgroundImage: Tob,
             isTopPick: true
@@ -62,11 +63,12 @@ const Plugins = () => {
         {
             id: 3,
             title: "Vorkath",
+            name: 'Vorkath',
             description: "Highlights woox walk paths, optimal acid walk, and counts attacks.",
             price: {
-                month: 450,
-                threeMonths: 1215,
-                year: 4320
+                month: 100,
+                threeMonths: 250,
+                year: 1000
             },
             backgroundImage: "/api/placeholder/800/200",
             isTopPick: false
@@ -74,11 +76,12 @@ const Plugins = () => {
         {
             id: 4,
             title: "Zulrah",
+            name: 'Zulrah',
             description: "Tracks Zulrah's rotation, where to stand, where to move, and what to pray.",
             price: {
-                month: 550,
-                threeMonths: 1485,
-                year: 5280
+                month: 200,
+                threeMonths: 500,
+                year: 1000
             },
             backgroundImage: Zulrah,
             isTopPick: false
@@ -86,11 +89,12 @@ const Plugins = () => {
         {
             id: 5,
             title: "Nightmare",
+            name: 'Nightmare',
             description: "Tracks nightmare special attacks and includes a prayer helper and overlay.",
             price: {
-                month: 400,
-                threeMonths: 1080,
-                year: 3840
+                month: 200,
+                threeMonths: 500,
+                year: 1000
             },
             backgroundImage: Nightmare,
             isTopPick: false
@@ -98,11 +102,12 @@ const Plugins = () => {
         {
             id: 6,
             title: "Cerberus",
+            name: 'Cerberus',
             description: "Tracks ghosts, cerberus attack cycle, highlights lava pools and includes prayer overlays.",
             price: {
-                month: 400,
-                threeMonths: 1080,
-                year: 3840
+                month: 100,
+                threeMonths: 250,
+                year: 1000
             },
             backgroundImage: Cerberus,
             isTopPick: false
@@ -110,11 +115,12 @@ const Plugins = () => {
         {
             id: 7,
             title: "Gauntlet Extended",
+            name: 'Gauntlet-Extended',
             description: "Tracks prayer switches, player attacks, 5:1 method, audio cue's, resource highlights and more.",
             price: {
-                month: 400,
-                threeMonths: 1080,
-                year: 3840
+                month: 500,
+                threeMonths: 1000,
+                year: 5000
             },
             backgroundImage: Gauntlet,
             isTopPick: true
@@ -122,11 +128,12 @@ const Plugins = () => {
         {
             id: 8,
             title: "Effect Timers",
+            name: 'Effect-Timers',
             description: "Tracks effect timers like: teleblocks, freezes, venges, imbued heart and more.",
             price: {
-                month: 400,
-                threeMonths: 1080,
-                year: 3840
+                month: 100,
+                threeMonths: 250,
+                year: 1000
             },
             backgroundImage: Timers,
             isTopPick: false
@@ -134,11 +141,12 @@ const Plugins = () => {
         {
             id: 9,
             title: "Alchemical Hydra",
+            name: "Alchemical-Hydra",
             description: "Tracks hydra's attack cycle, prayer overlays, enrage phase prayer flicks, special attacks and more.",
             price: {
-                month: 400,
-                threeMonths: 1080,
-                year: 3840
+                month: 200,
+                threeMonths: 500,
+                year: 1000
             },
             backgroundImage: Hydra,
             isTopPick: true
@@ -170,7 +178,6 @@ const Plugins = () => {
     useEffect(() => {
         let filteredPlugins = [...initialPlugins];
 
-        console.log(user)
         if (search) {
             const searchLower = search.toLowerCase();
             filteredPlugins = filteredPlugins.filter(plugin =>
@@ -179,7 +186,6 @@ const Plugins = () => {
             );
         }
 
-        // Apply sorting
         switch (sortBy) {
             case "priceAsc":
                 filteredPlugins.sort((a, b) => a.price.month - b.price.month);
@@ -205,7 +211,7 @@ const Plugins = () => {
         setPlugins(filteredPlugins);
     }, [search, sortBy]);
 
-    const handlePluginPurchase = (plugin) => {
+    const showPurchaseDialogue = (plugin) => {
         if(user == null) {
             discordRedirect()
             return
@@ -215,11 +221,20 @@ const Plugins = () => {
         setOpen(true)
     }
 
+    const handlePluginPurchase = async (plugin, subscriptionPeriod) => {
+        try {
+            console.log(`purchasing plugin: ${plugin.name} for ${subscriptionPeriod} days`)
+            // const res = await api.purchasePlugin(plugin.name, subscriptionPeriod)
+        } catch (error) {
+            console.error(`failed to purchase plugin: ${error.message}`);
+        }
+    }
+
     return (
         <div className="bg-gray-900 text-gray-100">
             <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
             <PurchaseSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
-            <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(plugin, subscriptionPeriod) => {}} plugin={plugin} />
+            <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(plugin, subscriptionPeriod) => handlePluginPurchase(plugin, subscriptionPeriod)} plugin={plugin} />
             <div className="container mx-auto py-8">
                 <h1 className="text-4xl font-bold mb-6 text-center">Kraken Plugins</h1>
                 <p className="text-secondary text-center mb-4">View the full collection of available Kraken Plugins</p>
@@ -306,8 +321,12 @@ const Plugins = () => {
                                 </CardContent>
 
                                 <CardFooter>
-                                    <Button onClick={() => handlePluginPurchase(plugin)} className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white">
-                                        Purchase
+                                    <Button
+                                        disabled={user.plugins.map(p => p.name).includes(plugin.name)}
+                                        onClick={() => showPurchaseDialogue(plugin)} className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white">
+                                        {
+                                            user.plugins.map(p => p.name).includes(plugin.name) ? 'Owned' : 'Purchase'
+                                        }
                                     </Button>
                                 </CardFooter>
                             </Card>
