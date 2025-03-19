@@ -48,14 +48,17 @@ export const discordRedirect = () => {
   }
 }
 
-export const formatTimestamp = (timestamp: string): string => {
-  const year = timestamp.slice(0, 4);
-  const month = timestamp.slice(4, 6);
-  const day = timestamp.slice(6, 8);
-  const hours = timestamp.slice(8, 10);
-  const minutes = timestamp.slice(10, 12);
+export const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+};
 
-  return `${year}-${month}-${day} ${hours}:${minutes}`;
+export const isPluginExpired = (expirationTimestamp: string): boolean => {
+  return new Date(expirationTimestamp) <= new Date();
 };
 
 /**

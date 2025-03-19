@@ -26,14 +26,16 @@ import Timers from "@/assets/timers.png"
 import Tob from "@/assets/tob.png"
 import Zulrah from "@/assets/zulrah.png"
 import {useAuth} from "@/components/AuthContext.jsx";
-import {discordRedirect} from "@/lib/utils.js";
+import {discordRedirect, isPluginExpired} from "@/lib/utils.js";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
 import PurchaseSuccessDialog from "@/components/PurchaseSuccessDialogue.jsx";
 import ErrorDialog from "@/components/ErrorDialogue.jsx";
 import PurchasePluginSuccessDialog from "@/components/PurchasePluginSuccessDialogue.jsx";
+import {useNavigate} from "react-router-dom";
 
 const Plugins = () => {
     const { logout, user, getUser, api, loading } = useAuth()
+    const navigate = useNavigate();
 
     const initialPlugins = [
         {
@@ -240,6 +242,39 @@ const Plugins = () => {
         }
     }
 
+    const renderPurchaseButton = plugin => {
+        if (user == null) {
+            return <Button
+                onClick={() => navigate('/login')}
+                className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white"
+            >
+                Login to Purchase
+            </Button>
+        }
+
+        const hasPurchased =  user.plugins.map(p => p.name).includes(plugin.name)
+        const ts = user.plugins.find(p => p.name === plugin.name)
+        let isExpired = false;
+        if(typeof ts !== "undefined") {
+            isExpired = isPluginExpired(ts.expirationTimestamp)
+        }
+        if (hasPurchased && !isExpired) {
+            return <Button
+                disabled
+                className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
+            >
+                Already Owned
+            </Button>
+        }
+
+        return <Button
+            onClick={() => showPurchaseDialogue(plugin)}
+            className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white"
+        >
+            Purchase
+        </Button>
+    }
+
     return (
         <div className="bg-gray-900 text-gray-100">
             <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
@@ -309,7 +344,7 @@ const Plugins = () => {
 
                                 <CardHeader className="mb-24">
                                     <CardTitle className="text-2xl text-white">{plugin.title}</CardTitle>
-                                    <CardDescription className="text-gray-200">{plugin.description}</CardDescription>
+                                    <CardDescription className="text-gray-200 min-h-24">{plugin.description}</CardDescription>
                                 </CardHeader>
 
                                 <CardContent>
@@ -333,13 +368,7 @@ const Plugins = () => {
                                 </CardContent>
 
                                 <CardFooter>
-                                    <Button
-                                        disabled={user && user.plugins.map(p => p.name).includes(plugin.name)}
-                                        onClick={() => showPurchaseDialogue(plugin)} className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white">
-                                        {
-                                            user && user.plugins.map(p => p.name).includes(plugin.name) ? 'Owned' : 'Purchase'
-                                        }
-                                    </Button>
+                                    { renderPurchaseButton(plugin) }
                                 </CardFooter>
                             </Card>
                         </div>
