@@ -27,7 +27,7 @@ const DownloadPage = () => {
 
     return (
         <div>
-            <Navbar user={user} logout={logout} />
+            <Navbar user={user} onlogout={logout} />
             <div className="min-h-screen">
                 <div className="max-w-6xl mx-auto p-6">
                     <div className="text-center mb-12">

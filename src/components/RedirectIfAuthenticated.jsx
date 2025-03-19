@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/components/AuthContext';
 import SkeletonLoading from "@/components/SkeletonLoading.jsx";
 
-export const RedirectIfAuthenticated = ({ children, resource }) => {
+export const RedirectIfAuthenticated = ({ children }) => {
     const { user, getUser } = useAuth();
     const [isLoading, setIsLoading] = useState(true);
 
@@ -11,7 +11,7 @@ export const RedirectIfAuthenticated = ({ children, resource }) => {
         const checkAuth = async () => {
             if (!user) {
                 try {
-                    await getUser(resource);
+                    await getUser();
                 } catch (error) {
                     console.error("Authentication check failed:", error);
                 } finally {
@@ -24,7 +24,7 @@ export const RedirectIfAuthenticated = ({ children, resource }) => {
         };
 
         checkAuth();
-    }, [getUser]);
+    }, []);
 
     if (isLoading) {
         return (
@@ -34,13 +34,9 @@ export const RedirectIfAuthenticated = ({ children, resource }) => {
         );
     }
 
-    // if (user && user.subscriptionStatus === "active") {
-    //     return <Navigate to="/dashboard" replace />;
-    // }
-    //
-    // if (user && user.subscriptionStatus !== "active") {
-    //     return <Navigate to="/pricing" replace />;
-    // }
+    if (user) {
+        return <Navigate to="/plugins" replace />;
+    }
 
     return children;
 };

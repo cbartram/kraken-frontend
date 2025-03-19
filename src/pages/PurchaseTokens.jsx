@@ -6,12 +6,12 @@ import { Label } from '@/components/ui/label';
 import { Coins } from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
-import {KubeApiClient} from "@/lib/api.js";
+import {useNavigate} from "react-router-dom";
 
 const PurchaseTokens = () => {
-    const {user, logout, loading} = useAuth()
-    const api = new KubeApiClient(user)
+    const {user, logout, api, loading} = useAuth()
     const [selectedPackage, setSelectedPackage] = useState(null);
+    const [purchaseLoading, setPurchaseLoading] = useState(false);
 
     const tokenPackages = [
         { id: 1, amount: 100, price: 1.99, key: 'kraken_token_100' },
@@ -28,14 +28,22 @@ const PurchaseTokens = () => {
 
     const handlePurchase = async () => {
         if (!selectedPackage) return;
+        setPurchaseLoading(true);
         const pkg = tokenPackages.find(pkg => pkg.id === selectedPackage)
-        const res = await api.createCheckoutSession(pkg.key)
-        console.log(res.url)
+
+        try {
+            const res = await api.createCheckoutSession(pkg.key)
+            window.location.href = res.url
+        } catch (error) {
+            console.error(`failed to created checkout session: ${error.message}`);
+        } finally {
+            setPurchaseLoading(false);
+        }
     };
 
     return (
         <div>
-            <Navbar user={user} logout={logout} loading={loading} />
+            <Navbar user={user} onLogout={logout} loading={loading} />
             <div className="flex flex-col items-center min-h-screen p-6">
                 <div className="w-full max-w-4xl">
                     <div className="text-center mb-8">
@@ -81,7 +89,7 @@ const PurchaseTokens = () => {
                         <CardFooter className="flex justify-end border-t pt-6">
                             <Button
                                 onClick={handlePurchase}
-                                disabled={!selectedPackage}
+                                disabled={!selectedPackage || purchaseLoading}
                                 className="w-full md:w-auto bg-green-200 text-green-800 hover:bg-green-300 py-6 hover:border-1 hover:border-green-200 sm:w-auto"
                                 size="lg"
                             >

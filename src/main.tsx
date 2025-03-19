@@ -20,6 +20,8 @@ import Support from "@/pages/Support.jsx"
 // @ts-ignore
 import Plugins from "@/pages/Plugins.jsx"
 // @ts-ignore
+import PaymentProcessing from "@/pages/PaymentProcessing"
+// @ts-ignore
 import { RedirectIfAuthenticated } from '@/components/RedirectIfAuthenticated.jsx'
 import './index.css'
 
@@ -68,7 +70,14 @@ createRoot(document.getElementById('root')!).render(
                     </ProtectedRoute>
                 }
                 />
-                {/* Any users can visit the /plugins page but only authenticated users will see the "buy now" buttons */}
+                <Route path="/processing" element={
+                    <ProtectedRoute>
+                        <PaymentProcessing />
+                    </ProtectedRoute>
+                }
+                />
+                {/* Any users can visit the /plugins page,
+                but only authenticated users will see the "buy now" buttons */}
                 <Route
                     path="/plugins"
                     element={<Plugins />}

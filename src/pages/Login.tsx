@@ -24,6 +24,8 @@ const Login = () => {
             setAuthFailedAlert("Something went wrong authenticating with Discord. Please try again.")
         } else if(value == "no_user") {
             setAuthFailedAlert("Something went wrong logging you in. Please try again.")
+        } else if(value == "require_auth") {
+            setAuthFailedAlert("You must be logged in to access that page.")
         }
     }, []);
 

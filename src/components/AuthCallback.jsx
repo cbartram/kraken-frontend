@@ -119,7 +119,7 @@ const AuthCallback = () => {
             }
             <div className="mb-12 md:mb-16 relative">
                 <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-2xl flex items-center justify-center bg-white shadow-lg">
-                    <img src={Logo} alt="Kraken Logo" className="w-24 h-24 md:w-36 md:h-36 object-contain" />
+                    <img src={Logo} alt="Kraken Logo" className="w-24 h-24" />
                     <SpinnerRing />
                 </div>
             </div>

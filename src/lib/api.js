@@ -64,7 +64,7 @@ class KubeApiClient extends ApiClient {
 
     getHeaders() {
         const headers = new Headers();
-        headers.append("Authorization", `Basic ${btoa(this.user.discordId + ":" + this.user.credentials.refresh_token)}`);
+        headers.append("Authorization", `Basic ${btoa(this.user.discordId + ":" + this.user.credentials.refreshToken)}`);
         headers.append("Content-Type", "application/json");
         return headers;
     }

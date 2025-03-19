@@ -5,7 +5,7 @@ const SkeletonLoading = () => {
     return (
         <div className="flex h-screen">
             {/* Sidebar Skeleton */}
-            <div className="w-64 h-full border-r bg-background p-4 flex flex-col">
+            <div className="w-64 h-full border-r p-4 flex flex-col bg-slate-800">
                 <div className="flex items-center gap-2 mb-8">
                     <Skeleton className="h-8 w-8 rounded-md" />
                     <Skeleton className="h-6 w-32" />

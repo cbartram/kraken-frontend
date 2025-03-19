@@ -28,6 +28,7 @@ import Zulrah from "@/assets/zulrah.png"
 import {useAuth} from "@/components/AuthContext.jsx";
 import {discordRedirect} from "@/lib/utils.js";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
+import SkeletonLoading from "@/components/SkeletonLoading.jsx";
 
 const Plugins = () => {
     const { logout, user, getUser, loading } = useAuth()
@@ -154,6 +155,13 @@ const Plugins = () => {
 
     // Have to get user manually since this route isn't wrapped in a <ProtectedRoute />
     useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const value = urlParams.get('payment');
+
+        if(value === "success") {
+
+        }
+
         getUser()
     }, [])
 
@@ -210,8 +218,8 @@ const Plugins = () => {
             <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
             <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(plugin, subscriptionPeriod) => {}} plugin={plugin} />
             <div className="container mx-auto py-8">
-                <h1 className="text-4xl font-bold mb-6 text-center">KrakenPlugins</h1>
-                <p className="text-secondary text-center mb-4">View the collection of Kraken Plugins</p>
+                <h1 className="text-4xl font-bold mb-6 text-center">Kraken Plugins</h1>
+                <p className="text-secondary text-center mb-4">View the full collection of available Kraken Plugins</p>
 
                 {/* Search and Filter Controls */}
                 <div className="flex flex-col md:flex-row gap-4 mb-8">

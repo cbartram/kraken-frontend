@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import {createCognitoUser} from '@/lib/utils.ts'
 import {K8S_BASE_URL, isProd} from "@/lib/constants.ts";
+import {KubeApiClient} from "@/lib/api.js";
 const AuthContext = createContext(null);
 
 // AuthProvider is used in main.jsx and provides the login, logout, and user props to any component
@@ -9,6 +10,7 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [api, setApi] = useState(null);
 
     /**
      * getUser
@@ -39,14 +41,16 @@ export const AuthProvider = ({ children }) => {
 
             const data = await response.json();
             if (response.status !== 200) {
-                console.error(`Unexpected response code from /api/v1/cognito/auth: ${response.status}`)
-                console.error(data)
+                console.error(`Unexpected response code from /api/v1/user: ${response.status}, body: ${data}`)
+                logout()
                 return Promise.reject("Failed to auth user: unexpected response code: " + response.status)
             }
 
             setUser(data)
+            setApi(new KubeApiClient(data))
         } catch (error) {
             console.error('Login error:', error);
+            logout()
             return Promise.reject("Failed to auth user: error thrown while making http request: " + error)
         } finally {
             setLoading(false);
@@ -90,6 +94,7 @@ export const AuthProvider = ({ children }) => {
 
             if(user !== null) {
                 setUser(user);
+                setApi(new KubeApiClient(user))
                 localStorage.setItem("refreshToken", user.credentials.refreshToken)
                 localStorage.setItem("accessToken", user.credentials.accessToken)
                 localStorage.setItem("idToken", user.credentials.idToken)
@@ -107,6 +112,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         setUser(null);
+        setApi(null)
         localStorage.removeItem('refreshToken');
         localStorage.removeItem('accessToken');
         localStorage.removeItem('idToken')
@@ -114,7 +120,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout, getUser, loading }}>
+        <AuthContext.Provider value={{ user, login, logout, getUser, api, loading }}>
             {children}
         </AuthContext.Provider>
     );
