@@ -35,7 +35,7 @@ const PaymentProcessing = () => {
     return (
         <div>
             <Navbar user={user} onLogout={logout} />
-            <div className="flex min-h-screen items-center justify-center bg-gray-50">
+            <div className="flex min-h-screen items-center justify-center bg-gray-900">
                 <Card className="w-full max-w-md border-green-200 shadow-lg">
                     <CardContent className="pt-6">
                         <div className="flex flex-col items-center space-y-6 text-center">

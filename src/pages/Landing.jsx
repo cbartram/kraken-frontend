@@ -266,12 +266,12 @@ export default function Landing() {
                             {
                                 icon: <BotOff className="h-12 w-12 text-green-500"/>,
                                 title: "No plugin automation",
-                                description: "None of our plugins are \"bots\". They assist you with additional in game information using RuneLite\'s official unmodified API",
+                                description: "None of our plugins are \"bots\". They assist you with additional in game information using RuneLite\'s official un-modified API.",
                             },
                             {
                                 icon: <VenetianMask className="h-12 w-12 text-green-500"/>,
                                 title: "Incognito Client",
-                                description: "The Kraken client doesn't modify RuneLite in any way, sideloading all the plugins during runtime. This makes it nearly impossible to detect."
+                                description: "The Kraken client doesn't modify RuneLite in any way, sideloading all the plugins during runtime. Plugins run the exact same way as any normal plugin installed through the Plugin Hub. This makes Kraken & its plugins nearly impossible to detect."
                             },
                             {
                                 icon: <CloudUpload className="h-12 w-12 text-green-500"/>,
