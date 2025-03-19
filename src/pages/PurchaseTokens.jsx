@@ -6,28 +6,31 @@ import { Label } from '@/components/ui/label';
 import { Coins } from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
+import {KubeApiClient} from "@/lib/api.js";
 
 const PurchaseTokens = () => {
     const {user, logout, loading} = useAuth()
+    const api = new KubeApiClient(user)
     const [selectedPackage, setSelectedPackage] = useState(null);
 
     const tokenPackages = [
-        { id: 1, amount: 100, price: 1.99 },
-        { id: 2, amount: 500, price: 5.99 },
-        { id: 3, amount: 1000, price: 9.99 },
-        { id: 4, amount: 5000, price: 39.99 },
-        { id: 5, amount: 10000, price: 79.99 },
-        { id: 6, amount: 25000, price: 119.99 }
+        { id: 1, amount: 100, price: 1.99, key: 'kraken_token_100' },
+        { id: 2, amount: 500, price: 5.99, key: 'kraken_token_500' },
+        { id: 3, amount: 1000, price: 9.99, key: 'kraken_token_1000' },
+        { id: 4, amount: 5000, price: 39.99, key: 'kraken_token_5000' },
+        { id: 5, amount: 10000, price: 79.99, key: 'kraken_token_10000' },
+        { id: 6, amount: 25000, price: 119.99, key: 'kraken_token_25000' }
     ];
 
     const handleSelectPackage = (packageId) => {
         setSelectedPackage(packageId);
     };
 
-    const handlePurchase = () => {
+    const handlePurchase = async () => {
         if (!selectedPackage) return;
-        // Handle purchase logic here
-        alert(`Processing purchase for ${tokenPackages.find(pkg => pkg.id === selectedPackage).amount} tokens`);
+        const pkg = tokenPackages.find(pkg => pkg.id === selectedPackage)
+        const res = await api.createCheckoutSession(pkg.key)
+        console.log(res.url)
     };
 
     return (
@@ -60,12 +63,12 @@ const PurchaseTokens = () => {
                                             htmlFor={`package-${pkg.id}`}
                                             className={`flex flex-col items-center p-4 rounded-lg border-2 cursor-pointer transition-all ${
                                                 selectedPackage === pkg.id
-                                                    ? 'bg-blue-50 border-blue-500 shadow-md'
+                                                    ? 'bg-green-50 border-green-500 shadow-md'
                                                     : 'border-gray-200 hover:border-gray-300'
                                             }`}
                                         >
-                                            <div className="bg-blue-100 p-3 rounded-full mb-3">
-                                                <Coins className="w-6 h-6 text-blue-600" />
+                                            <div className="bg-green-100 p-3 rounded-full mb-3">
+                                                <Coins className="w-6 h-6 text-green-600" />
                                             </div>
                                             <span className="text-2xl font-bold text-slate-900">{pkg.amount.toLocaleString()}</span>
                                             <span className="text-sm text-slate-500 mb-2">tokens</span>
