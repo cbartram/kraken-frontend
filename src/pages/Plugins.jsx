@@ -29,6 +29,7 @@ import {useAuth} from "@/components/AuthContext.jsx";
 import {discordRedirect} from "@/lib/utils.js";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
 import SkeletonLoading from "@/components/SkeletonLoading.jsx";
+import PurchaseSuccessDialog from "@/components/PurchaseSuccessDialogue.jsx";
 
 const Plugins = () => {
     const { logout, user, getUser, loading } = useAuth()
@@ -148,6 +149,7 @@ const Plugins = () => {
     const [search, setSearch] = useState("");
     const [sortBy, setSortBy] = useState("topPicks");
     const [open, setOpen] = useState(false);
+    const [successAlertOpen, setSuccessAlertOpen] = useState(false);
     const [plugin, setPlugin] = useState({
         name: 'temp',
         price: 100
@@ -159,7 +161,7 @@ const Plugins = () => {
         const value = urlParams.get('payment');
 
         if(value === "success") {
-
+            setSuccessAlertOpen(true);
         }
 
         getUser()
@@ -216,6 +218,7 @@ const Plugins = () => {
     return (
         <div className="bg-gray-900 text-gray-100">
             <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
+            <PurchaseSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
             <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(plugin, subscriptionPeriod) => {}} plugin={plugin} />
             <div className="container mx-auto py-8">
                 <h1 className="text-4xl font-bold mb-6 text-center">Kraken Plugins</h1>
