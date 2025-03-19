@@ -29,6 +29,8 @@ import {useAuth} from "@/components/AuthContext.jsx";
 import {discordRedirect} from "@/lib/utils.js";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
 import PurchaseSuccessDialog from "@/components/PurchaseSuccessDialogue.jsx";
+import ErrorDialog from "@/components/ErrorDialogue.jsx";
+import PurchasePluginSuccessDialog from "@/components/PurchasePluginSuccessDialogue.jsx";
 
 const Plugins = () => {
     const { logout, user, getUser, api, loading } = useAuth()
@@ -158,6 +160,10 @@ const Plugins = () => {
     const [sortBy, setSortBy] = useState("topPicks");
     const [open, setOpen] = useState(false);
     const [successAlertOpen, setSuccessAlertOpen] = useState(false);
+    const [errorDialogueOpen, setErrorDialogueOpen] = useState(false);
+    const [pluginSuccessDialogueOpen, setPluginSuccessDialogueOpen] = useState(false);
+    const [pluginResponse, setPluginResponse] = useState({});
+    const [errorMessage, setErrorMessage] = useState("");
     const [plugin, setPlugin] = useState({
         name: 'temp',
         price: 100
@@ -224,15 +230,21 @@ const Plugins = () => {
     const handlePluginPurchase = async (plugin, subscriptionPeriod) => {
         try {
             console.log(`purchasing plugin: ${plugin.name} for ${subscriptionPeriod} days`)
-            // const res = await api.purchasePlugin(plugin.name, subscriptionPeriod)
+            const res = await api.purchasePlugin(plugin.name, subscriptionPeriod)
+            setPluginSuccessDialogueOpen(true)
+            setPluginResponse(res)
         } catch (error) {
             console.error(`failed to purchase plugin: ${error.message}`);
+            setErrorMessage(error.message)
+            setErrorDialogueOpen(true);
         }
     }
 
     return (
         <div className="bg-gray-900 text-gray-100">
             <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
+            <PurchasePluginSuccessDialog isOpen={pluginSuccessDialogueOpen} onClose={() => setPluginSuccessDialogueOpen(false)} successResponse={pluginResponse} />
+            <ErrorDialog isOpen={errorDialogueOpen} onClose={() => setErrorDialogueOpen(false)} message={errorMessage} />
             <PurchaseSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
             <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(plugin, subscriptionPeriod) => handlePluginPurchase(plugin, subscriptionPeriod)} plugin={plugin} />
             <div className="container mx-auto py-8">
@@ -306,15 +318,15 @@ const Plugins = () => {
                                             <h3 className="font-medium text-white mb-2">Subscription Options</h3>
                                             <div className="flex justify-between items-center mb-2">
                                                 <span className="text-gray-300">1 Month</span>
-                                                <span className="text-white font-bold">{plugin.price.month} Kraken-Tokens</span>
+                                                <span className="text-white font-bold">{plugin.price.month} Tokens</span>
                                             </div>
                                             <div className="flex justify-between items-center mb-2">
                                                 <span className="text-gray-300">3 Months</span>
-                                                <span className="text-white font-bold">{plugin.price.threeMonths} Kraken-Tokens</span>
+                                                <span className="text-white font-bold">{plugin.price.threeMonths} Tokens</span>
                                             </div>
                                             <div className="flex justify-between items-center">
                                                 <span className="text-gray-300">1 Year</span>
-                                                <span className="text-white font-bold">{plugin.price.year} Kraken-Tokens</span>
+                                                <span className="text-white font-bold">{plugin.price.year} Tokens</span>
                                             </div>
                                         </div>
                                     </div>
@@ -322,10 +334,10 @@ const Plugins = () => {
 
                                 <CardFooter>
                                     <Button
-                                        disabled={user.plugins.map(p => p.name).includes(plugin.name)}
+                                        disabled={user && user.plugins.map(p => p.name).includes(plugin.name)}
                                         onClick={() => showPurchaseDialogue(plugin)} className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white">
                                         {
-                                            user.plugins.map(p => p.name).includes(plugin.name) ? 'Owned' : 'Purchase'
+                                            user && user.plugins.map(p => p.name).includes(plugin.name) ? 'Owned' : 'Purchase'
                                         }
                                     </Button>
                                 </CardFooter>
