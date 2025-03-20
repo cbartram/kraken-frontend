@@ -22,6 +22,8 @@ import Plugins from "@/pages/Plugins.jsx"
 // @ts-ignore
 import PaymentProcessing from "@/pages/PaymentProcessing"
 // @ts-ignore
+import FAQPage from '@/pages/Faq'
+// @ts-ignore
 import { RedirectIfAuthenticated } from '@/components/RedirectIfAuthenticated.jsx'
 import './index.css'
 
@@ -46,6 +48,7 @@ createRoot(document.getElementById('root')!).render(
                     }
                 />
                 <Route path="/discord/oauth" element={<AuthCallback />} />
+                <Route path="/faq" element={<FAQPage />} />
                 <Route path="/profile" element={
                     <ProtectedRoute>
                         <Profile />
