@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, ArrowUpDown, Check } from 'lucide-react';
+import {Search, ArrowUpDown, Check, KeyRound, Coins, ReceiptText} from 'lucide-react';
 import {
     Card,
     CardContent,
@@ -17,14 +17,14 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Navbar from "@/components/Navbar.jsx";
-import Olm from "@/assets/olm.png"
-import Cerberus from "@/assets/cerberus.png"
-import Gauntlet from "@/assets/gauntlet.png"
-import Hydra from "@/assets/hydra.png"
-import Nightmare from "@/assets/nightmare.png"
-import Timers from "@/assets/timers.png"
-import Tob from "@/assets/tob.png"
-import Zulrah from "@/assets/zulrah.png"
+import Olm from "/olm.png"
+import Cerberus from "/cerberus.png"
+import Gauntlet from "/gauntlet.png"
+import Hydra from "/hydra.png"
+import Nightmare from "/nightmare.png"
+import Timers from "/timers.png"
+import Tob from "/tob.png"
+import Zulrah from "/zulrah.png"
 import {useAuth} from "@/components/AuthContext.jsx";
 import {discordRedirect, isPluginExpired} from "@/lib/utils.js";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
@@ -248,6 +248,7 @@ const Plugins = () => {
                 onClick={() => navigate('/login')}
                 className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white"
             >
+                <KeyRound />
                 Login to Purchase
             </Button>
         }
@@ -263,6 +264,7 @@ const Plugins = () => {
                 disabled
                 className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
             >
+                <Coins />
                 Already Owned
             </Button>
         }
@@ -271,6 +273,7 @@ const Plugins = () => {
             onClick={() => showPurchaseDialogue(plugin)}
             className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white"
         >
+            <Coins />
             Purchase
         </Button>
     }
@@ -367,8 +370,12 @@ const Plugins = () => {
                                     </div>
                                 </CardContent>
 
-                                <CardFooter>
+                                <CardFooter className="flex flex-col">
                                     { renderPurchaseButton(plugin) }
+                                    <Button onClick={() => navigate("/plugins/" + plugin.name)} className="bg-slate-500 hover:bg-slate-600 mt-4 w-full">
+                                        <ReceiptText />
+                                        More Details
+                                    </Button>
                                 </CardFooter>
                             </Card>
                         </div>

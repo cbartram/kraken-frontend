@@ -24,9 +24,9 @@ import Logo from "@/assets/logo.png"
 import DiscordLogo from "@/assets/discord-mark-white.svg"
 import {discordRedirect} from "@/lib/utils";
 import {useNavigate} from "react-router-dom";
-import Olm from "@/assets/olm.png";
-import Tob from "@/assets/tob.png";
-import Zulrah from "@/assets/zulrah.png";
+import Olm from "/olm.png";
+import Tob from "/tob.png";
+import Zulrah from "/zulrah.png";
 
 export default function Landing() {
     const navigate = useNavigate();

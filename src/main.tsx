@@ -24,6 +24,8 @@ import PaymentProcessing from "@/pages/PaymentProcessing"
 // @ts-ignore
 import FAQPage from '@/pages/Faq'
 // @ts-ignore
+import PluginDetailPage from '@/pages/PluginDetail'
+// @ts-ignore
 import { RedirectIfAuthenticated } from '@/components/RedirectIfAuthenticated.jsx'
 import './index.css'
 
@@ -85,6 +87,7 @@ createRoot(document.getElementById('root')!).render(
                     path="/plugins"
                     element={<Plugins />}
                 />
+                <Route path="/plugins/:name" element={<PluginDetailPage />} />
             </Routes>
         </AuthProvider>
     </BrowserRouter>
