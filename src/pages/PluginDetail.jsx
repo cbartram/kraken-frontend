@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
 import {Badge} from '@/components/ui/badge';
@@ -10,50 +10,45 @@ import {useParams} from "react-router-dom";
 
 const PluginDetailPage = () => {
     const [selectedPricing, setSelectedPricing] = useState('monthly');
-    const { name } = useParams();
-    const {user, logout } = useAuth()
-
-    const plugin = {
-        title: "Enhanced Farming Timer",
+    const [plugin, setPlugin] = useState({
+        title: "Loading",
         thumbnail: "/api/placeholder/400/225",
         videoUrl: "https://example.com/plugin-demo",
-        description: "The Enhanced Farming Timer plugin takes RuneScape's farming to the next level with real-time growth tracking, notifications, and detailed yield predictions. Never miss a farming cycle again with customizable alerts that notify you when crops are ready for harvest. The advanced disease protection feature helps you minimize crop loss by warning you when your plants are at risk and suggesting preventative measures. Boost your farming efficiency with route optimization that calculates the quickest path between patches based on your teleport methods and inventory setup.",
-        pricing: {
-            monthly: 250,
-            quarterly: 675,
-            yearly: 2400
+        description: "Plugin is loading...",
+        priceDetails: {
+            month: 0,
+            threeMonth: 0,
+            year: 0
         },
-        configuration: [
+        configurationOptions: [
             {
                 name: "Growth Notifications",
                 description: "Configure when and how you receive notifications about your crop growth stages. Options include desktop notifications, in-game chat messages, or both.",
                 default: "In-game only"
             },
-            {
-                name: "Disease Warning Threshold",
-                description: "Set the risk threshold at which you'll receive warnings about potential disease. Lower values will warn you earlier but may result in more frequent notifications.",
-                default: "Medium (25%)"
-            },
-            {
-                name: "Yield Prediction Method",
-                description: "Choose between conservative, balanced, or optimistic yield predictions based on your farming level, compost type, and equipment bonuses.",
-                default: "Balanced"
-            },
-            {
-                name: "Route Optimization Priority",
-                description: "Prioritize routes based on speed, profit, or experience gain. This affects the suggested order of farm runs.",
-                default: "Balanced (Speed/Profit)"
-            }
         ]
-    };
+    });
+    const { name } = useParams();
+    const {user, logout, api } = useAuth()
+
+    useEffect(() => {
+        if (api) {
+            api.getPlugin(name).then(response => {
+                setPlugin(response);
+            }).catch(error => {
+                console.log(error)
+                console.error(`failed to load plugins from API: ${error.message}`);
+            })
+        }
+    }, [api]);
 
     const calculateSavings = (option) => {
-        if (option === 'quarterly') {
-            const regularPrice = plugin.pricing.monthly * 3;
-            return ((regularPrice - plugin.pricing.quarterly) / regularPrice * 100).toFixed(0);
-        } else if (option === 'yearly') {
-            const regularPrice = plugin.pricing.monthly * 12;
-            return ((regularPrice - plugin.pricing.yearly) / regularPrice * 100).toFixed(0);
+        if (option === 'threeMonth') {
+            const regularPrice = plugin.priceDetails.month * 3;
+            return ((regularPrice - plugin.priceDetails.threeMonth) / regularPrice * 100).toFixed(0);
+        } else if (option === 'year') {
+            const regularPrice = plugin.priceDetails.month * 12;
+            return ((regularPrice - plugin.priceDetails.year) / regularPrice * 100).toFixed(0);
         }
         return 0;
     };
@@ -66,11 +61,6 @@ const PluginDetailPage = () => {
                     {/* Left Column - Image and Video */}
                     <div className="lg:col-span-2 space-y-6">
                         <Card className="overflow-hidden">
-                            <img
-                                src={plugin.thumbnail}
-                                alt={plugin.title}
-                                className="w-full h-64 object-cover"
-                            />
                             <CardContent className="p-6">
                                 <div className="aspect-video bg-zinc-100 rounded-lg flex items-center justify-center">
                                     <div className="text-center">
@@ -90,13 +80,20 @@ const PluginDetailPage = () => {
                             <CardHeader>
                                 <div className="flex justify-between items-start">
                                     <div>
-                                        <CardTitle className="text-2xl font-bold text-green-400">{plugin.title}</CardTitle>
-                                        <CardDescription className="mt-2">
-                                            <Badge className="rounded-full px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-600 mb-4">
-                                                <Sparkles />
-                                                Kraken Plugin
-                                            </Badge>
-                                        </CardDescription>
+                                        <CardTitle className="text-2xl font-bold text-green-400 flex items-center gap-3">
+                                            <img
+                                                src={plugin.imageUrl}
+                                                alt={plugin.title}
+                                                className="w-20 h-20 object-cover rounded-lg shadow-md"
+                                            />
+                                            <div className="flex flex-col">
+                                                {plugin.title}
+                                                <Badge className="rounded-full px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-600 mt-1 w-fit flex items-center gap-1">
+                                                    <Sparkles />
+                                                    Top Plugin
+                                                </Badge>
+                                            </div>
+                                        </CardTitle>
                                     </div>
                                 </div>
                             </CardHeader>
@@ -105,23 +102,23 @@ const PluginDetailPage = () => {
                                     <h3 className="text-lg font-medium mb-4">Choose your subscription</h3>
                                     <div className="grid grid-cols-3 gap-2">
                                         <Button
-                                            variant={selectedPricing === 'monthly' ? "default" : "outline"}
-                                            className={selectedPricing === 'monthly' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:bg-indigo-100"}
-                                            onClick={() => setSelectedPricing('monthly')}
+                                            variant={selectedPricing === 'month' ? "default" : "outline"}
+                                            className={selectedPricing === 'month' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:bg-indigo-100"}
+                                            onClick={() => setSelectedPricing('month')}
                                         >
                                             1 Month
                                         </Button>
                                         <Button
-                                            variant={selectedPricing === 'quarterly' ? "default" : "outline"}
-                                            className={selectedPricing === 'quarterly' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:bg-indigo-100"}
-                                            onClick={() => setSelectedPricing('quarterly')}
+                                            variant={selectedPricing === 'threeMonth' ? "default" : "outline"}
+                                            className={selectedPricing === 'threeMonth' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:bg-indigo-100"}
+                                            onClick={() => setSelectedPricing('threeMonth')}
                                         >
                                             3 Months
                                         </Button>
                                         <Button
-                                            variant={selectedPricing === 'yearly' ? "default" : "outline"}
-                                            className={selectedPricing === 'yearly' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:bg-indigo-100"}
-                                            onClick={() => setSelectedPricing('yearly')}
+                                            variant={selectedPricing === 'year' ? "default" : "outline"}
+                                            className={selectedPricing === 'year' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:bg-indigo-100"}
+                                            onClick={() => setSelectedPricing('year')}
                                         >
                                             1 Year
                                         </Button>
@@ -131,7 +128,7 @@ const PluginDetailPage = () => {
                                         <div className="flex justify-between items-center">
                                             <span className="text-gray-700">Price:</span>
                                             <span className="text-2xl font-bold text-green-700">
-                      {plugin.pricing[selectedPricing]} <span className="text-sm font-normal">Kraken Tokens</span>
+                      {plugin.priceDetails[selectedPricing]} <span className="text-sm font-normal">Kraken Tokens</span>
                     </span>
                                         </div>
 
@@ -179,7 +176,7 @@ const PluginDetailPage = () => {
 
                         <TabsContent value="configuration" className="bg-white border border-gray-200 rounded-b-lg">
                             <div className="divide-y">
-                                {plugin.configuration.map((config, index) => (
+                                {plugin.configurationOptions.map((config, index) => (
                                     <div key={index} className="p-6">
                                         <div className="flex items-start">
                                             <div className="mr-4 mt-1">
@@ -189,8 +186,8 @@ const PluginDetailPage = () => {
                                                 <h3 className="font-medium text-lg text-green-700">{config.name}</h3>
                                                 <p className="mt-2 text-gray-600">{config.description}</p>
                                                 <div className="mt-2">
-                                                    <span className="text-sm font-medium text-gray-500">Default setting:</span>
-                                                    <span className="ml-2 text-sm text-indigo-600">{config.default}</span>
+                                                    <span className="text-sm font-medium text-gray-500">Type:</span>
+                                                    <span className="ml-2 text-sm text-indigo-600">{config.type}</span>
                                                 </div>
                                             </div>
                                         </div>

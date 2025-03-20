@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Search, ArrowUpDown, Check, KeyRound, Coins, ReceiptText} from 'lucide-react';
+import {Search, ArrowUpDown, Check, KeyRound, Coins, ReceiptText, Sparkles} from 'lucide-react';
 import {
     Card,
     CardContent,
@@ -17,14 +17,6 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Navbar from "@/components/Navbar.jsx";
-import Olm from "/olm.png"
-import Cerberus from "/cerberus.png"
-import Gauntlet from "/gauntlet.png"
-import Hydra from "/hydra.png"
-import Nightmare from "/nightmare.png"
-import Timers from "/timers.png"
-import Tob from "/tob.png"
-import Zulrah from "/zulrah.png"
 import {useAuth} from "@/components/AuthContext.jsx";
 import {discordRedirect, isPluginExpired} from "@/lib/utils.js";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
@@ -36,128 +28,8 @@ import {useNavigate} from "react-router-dom";
 const Plugins = () => {
     const { logout, user, getUser, api, loading } = useAuth()
     const navigate = useNavigate();
-
-    const initialPlugins = [
-        {
-            id: 1,
-            title: "Chambers Helper",
-            name: 'Cox-Helper',
-            description: "Tracks olm's cycle for easy skipping and simple solo's.",
-            price: {
-                month: 500,
-                threeMonths: 1000,
-                year: 5000
-            },
-            backgroundImage: Olm,
-            isTopPick: true
-        },
-        {
-            id: 2,
-            title: "Theatre of Blood",
-            name: 'Theatre-of-Blood',
-            description: "Utilities for tick eating, hiding entities and tracking ticks for all bosses in the Theatre of Blood.",
-            price: {
-                month: 500,
-                threeMonths: 1000,
-                year: 5000
-            },
-            backgroundImage: Tob,
-            isTopPick: true
-        },
-        {
-            id: 3,
-            title: "Vorkath",
-            name: 'Vorkath',
-            description: "Highlights woox walk paths, optimal acid walk, and counts attacks.",
-            price: {
-                month: 100,
-                threeMonths: 250,
-                year: 1000
-            },
-            backgroundImage: "/api/placeholder/800/200",
-            isTopPick: false
-        },
-        {
-            id: 4,
-            title: "Zulrah",
-            name: 'Zulrah',
-            description: "Tracks Zulrah's rotation, where to stand, where to move, and what to pray.",
-            price: {
-                month: 200,
-                threeMonths: 500,
-                year: 1000
-            },
-            backgroundImage: Zulrah,
-            isTopPick: false
-        },
-        {
-            id: 5,
-            title: "Nightmare",
-            name: 'Nightmare',
-            description: "Tracks nightmare special attacks and includes a prayer helper and overlay.",
-            price: {
-                month: 200,
-                threeMonths: 500,
-                year: 1000
-            },
-            backgroundImage: Nightmare,
-            isTopPick: false
-        },
-        {
-            id: 6,
-            title: "Cerberus",
-            name: 'Cerberus',
-            description: "Tracks ghosts, cerberus attack cycle, highlights lava pools and includes prayer overlays.",
-            price: {
-                month: 100,
-                threeMonths: 250,
-                year: 1000
-            },
-            backgroundImage: Cerberus,
-            isTopPick: false
-        },
-        {
-            id: 7,
-            title: "Gauntlet Extended",
-            name: 'Gauntlet-Extended',
-            description: "Tracks prayer switches, player attacks, 5:1 method, audio cue's, resource highlights and more.",
-            price: {
-                month: 500,
-                threeMonths: 1000,
-                year: 5000
-            },
-            backgroundImage: Gauntlet,
-            isTopPick: true
-        },
-        {
-            id: 8,
-            title: "Effect Timers",
-            name: 'Effect-Timers',
-            description: "Tracks effect timers like: teleblocks, freezes, venges, imbued heart and more.",
-            price: {
-                month: 100,
-                threeMonths: 250,
-                year: 1000
-            },
-            backgroundImage: Timers,
-            isTopPick: false
-        },
-        {
-            id: 9,
-            title: "Alchemical Hydra",
-            name: "Alchemical-Hydra",
-            description: "Tracks hydra's attack cycle, prayer overlays, enrage phase prayer flicks, special attacks and more.",
-            price: {
-                month: 200,
-                threeMonths: 500,
-                year: 1000
-            },
-            backgroundImage: Hydra,
-            isTopPick: true
-        },
-    ];
-
-    const [plugins, setPlugins] = useState(initialPlugins);
+    const [plugins, setPlugins] = useState([]);
+    const [fullPluginList, setFullPluginList] = useState([]);
     const [search, setSearch] = useState("");
     const [sortBy, setSortBy] = useState("topPicks");
     const [open, setOpen] = useState(false);
@@ -184,7 +56,19 @@ const Plugins = () => {
     }, [])
 
     useEffect(() => {
-        let filteredPlugins = [...initialPlugins];
+        if (api) {
+            api.getPlugins().then(response => {
+                setPlugins(response.sort((a, b) => a.title.localeCompare(b.title)));
+                setFullPluginList(response.sort((a, b) => a.title.localeCompare(b.title)));
+            }).catch(error => {
+                console.log(error)
+                console.error(`failed to load plugins from API: ${error.message}`);
+            })
+        }
+    }, [api]);
+
+    useEffect(() => {
+        let filteredPlugins = [...fullPluginList];
 
         if (search) {
             const searchLower = search.toLowerCase();
@@ -196,10 +80,10 @@ const Plugins = () => {
 
         switch (sortBy) {
             case "priceAsc":
-                filteredPlugins.sort((a, b) => a.price.month - b.price.month);
+                filteredPlugins.sort((a, b) => a.priceDetails.month - b.priceDetails.month);
                 break;
             case "priceDesc":
-                filteredPlugins.sort((a, b) => b.price.month - a.price.month);
+                filteredPlugins.sort((a, b) => b.priceDetails.month - a.priceDetails.month);
                 break;
             case "nameAsc":
                 filteredPlugins.sort((a, b) => a.title.localeCompare(b.title));
@@ -246,7 +130,7 @@ const Plugins = () => {
         if (user == null) {
             return <Button
                 onClick={() => navigate('/login')}
-                className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white"
+                className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 border-0 outline-none text-white"
             >
                 <KeyRound />
                 Login to Purchase
@@ -331,16 +215,16 @@ const Plugins = () => {
                 {/* Plugins Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {plugins.map(plugin => (
-                        <div key={plugin.id} className="relative">
+                        <div key={plugin.name} className="relative">
                             <div
                                 className="absolute inset-0 rounded-lg bg-no-repeat bg-cover z-0 opacity-100"
-                                style={{ backgroundImage: `url(${plugin.backgroundImage})` }}
+                                style={{ backgroundImage: `url(${plugin.imageUrl})` }}
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/100 rounded-lg z-10" />
 
                             <Card className="relative z-20 border-0 bg-transparent overflow-hidden">
-                                {plugin.isTopPick && (
-                                    <div className="absolute top-0 right-0 bg-green-600 text-white px-3 py-1 text-xs font-bold">
+                                {plugin.topPick && (
+                                    <div className="absolute top-0 right-0 bg-green-600/75 text-white px-3 py-1 text-xs font-bold">
                                         TOP PICK
                                     </div>
                                 )}
@@ -356,15 +240,15 @@ const Plugins = () => {
                                             <h3 className="font-medium text-white mb-2">Subscription Options</h3>
                                             <div className="flex justify-between items-center mb-2">
                                                 <span className="text-gray-300">1 Month</span>
-                                                <span className="text-white font-bold">{plugin.price.month} Tokens</span>
+                                                <span className="text-white font-bold">{plugin.priceDetails.month} Tokens</span>
                                             </div>
                                             <div className="flex justify-between items-center mb-2">
                                                 <span className="text-gray-300">3 Months</span>
-                                                <span className="text-white font-bold">{plugin.price.threeMonths} Tokens</span>
+                                                <span className="text-white font-bold">{plugin.priceDetails.threeMonths} Tokens</span>
                                             </div>
                                             <div className="flex justify-between items-center">
                                                 <span className="text-gray-300">1 Year</span>
-                                                <span className="text-white font-bold">{plugin.price.year} Tokens</span>
+                                                <span className="text-white font-bold">{plugin.priceDetails.year} Tokens</span>
                                             </div>
                                         </div>
                                     </div>

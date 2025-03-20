@@ -77,6 +77,18 @@ class KubeApiClient extends ApiClient {
         }
     }
 
+    async getPlugins() {
+        return this.request("/api/v1/plugin/", {
+            method: "GET",
+        });
+    }
+
+    async getPlugin(name) {
+        return this.request("/api/v1/plugin/?name=" + name, {
+            method: "GET",
+        });
+    }
+
     async sendEmail(subject, message) {
         return this.request('/api/v1/support/send-message', {
             method: "POST",
@@ -111,12 +123,6 @@ class KubeApiClient extends ApiClient {
         }
 
         return this.request(`/api/v1/stripe/create-billing-session?sessionId=${sessionId}`, {
-            method: 'GET'
-        })
-    }
-
-    async getSubscriptionDetails(subscriptionId) {
-        return this.request(`/api/v1/stripe/subscription?id=${subscriptionId}`, {
             method: 'GET'
         })
     }

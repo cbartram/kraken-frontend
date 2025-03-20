@@ -10,7 +10,16 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [api, setApi] = useState(null);
+
+    // Be warned: only routes that do not require authentication can be called with this API.
+    // Once a user is authenticated
+    // with getUser() the full API will be available.
+    const [api, setApi] = useState(new KubeApiClient({
+        discordId: 'tmp',
+        credentials: {
+            refreshToken: 'null'
+        }
+    }));
 
     /**
      * getUser
