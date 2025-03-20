@@ -25,13 +25,13 @@ const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase }) => {
 
     const handlePurchase = () => {
         if (agreedToTerms) {
-            console.log(`Purchasing ${plugin.title} for ${priceForMonth(plugin.price)} tokens with ${subscriptionPeriod} subscription`);
             onPurchase(plugin, subscriptionPeriod);
         }
     };
 
 
     const priceForMonth = (price) => {
+        console.log(price)
         if(subscriptionPeriod === "monthly") {
             return price.month
         } else if(subscriptionPeriod === "3-month") {

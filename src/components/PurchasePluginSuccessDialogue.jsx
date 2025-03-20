@@ -32,15 +32,17 @@ const PurchasePluginSuccessDialog = ({ isOpen, onClose, successResponse }) => {
                         Purchase Successful
                     </AlertDialogTitle>
                     <AlertDialogDescription className="mt-2 text-base">
-                        Enjoy your brand new <span className="text-indigo-500 font-bold">{successResponse.pluginName}</span> plugin! <br />
-                        Here are some details you should know: <br /> <br/>
-                        <ul>
-                            <li>Plugin Name: <span className="text-green-400 font-bold">{successResponse.pluginName}</span></li>
-                            <li>License Key: <span className="text-green-400 font-bold">{successResponse.licenseKey}</span></li>
-                            <li>Expiration Time: <span className="text-green-400 font-bold">{formatDate(successResponse.expirationTimestamp)}</span></li>
-                        </ul>
-                        <br />
-                        <p>You can also find this information on your <a href="/profile">profile</a> page.</p>
+                        <div>
+                            <p>Enjoy your brand new <span className="text-indigo-500 font-bold">{successResponse.pluginName}</span> plugin! <br />
+                                Here are some details you should know:</p> <br /> <br/>
+                            <ul>
+                                <li>Plugin Name: <span className="text-green-400 font-bold">{successResponse.pluginName}</span></li>
+                                <li>License Key: <span className="text-green-400 font-bold">{successResponse.licenseKey}</span></li>
+                                <li>Expiration Time: <span className="text-green-400 font-bold">{formatDate(successResponse.expirationTimestamp)}</span></li>
+                            </ul>
+                            <br />
+                            <p>You can also find this information on your <a href="/profile">profile</a> page.</p>
+                        </div>
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
