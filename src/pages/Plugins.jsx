@@ -40,7 +40,11 @@ const Plugins = () => {
     const [errorMessage, setErrorMessage] = useState("");
     const [plugin, setPlugin] = useState({
         name: 'temp',
-        price: 100
+        priceDetails: {
+            month: 100,
+            threeMonth: 100,
+            year: 100,
+        }
     });
 
     // Have to get user manually since this route isn't wrapped in a <ProtectedRoute />
@@ -143,6 +147,8 @@ const Plugins = () => {
         if(typeof ts !== "undefined") {
             isExpired = isPluginExpired(ts.expirationTimestamp)
         }
+
+
         if (hasPurchased && !isExpired) {
             return <Button
                 disabled
@@ -244,7 +250,7 @@ const Plugins = () => {
                                             </div>
                                             <div className="flex justify-between items-center mb-2">
                                                 <span className="text-gray-300">3 Months</span>
-                                                <span className="text-white font-bold">{plugin.priceDetails.threeMonths} Tokens</span>
+                                                <span className="text-white font-bold">{plugin.priceDetails.threeMonth} Tokens</span>
                                             </div>
                                             <div className="flex justify-between items-center">
                                                 <span className="text-gray-300">1 Year</span>

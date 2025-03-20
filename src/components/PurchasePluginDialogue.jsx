@@ -35,7 +35,7 @@ const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase }) => {
         if(subscriptionPeriod === "monthly") {
             return price.month
         } else if(subscriptionPeriod === "3-month") {
-            return price.threeMonths
+            return price.threeMonth
         }
 
         return price.year
@@ -47,7 +47,7 @@ const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase }) => {
                 <AlertDialogHeader>
                     <AlertDialogTitle className="text-xl font-bold">Confirm Purchase</AlertDialogTitle>
                     <AlertDialogDescription className="mt-2 text-base">
-                        Are you sure you want to purchase <span className="font-semibold text-green-400">{plugin.title}</span> for <span className="font-semibold text-green-400">{priceForMonth(plugin.price)} tokens</span>? Your subscription will start immediately.
+                        Are you sure you want to purchase <span className="font-semibold text-green-400">{plugin.title}</span> for <span className="font-semibold text-green-400">{priceForMonth(plugin.priceDetails)} tokens</span>? Your subscription will start immediately.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
 
