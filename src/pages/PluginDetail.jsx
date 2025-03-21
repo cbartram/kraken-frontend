@@ -3,13 +3,29 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/compo
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Info, Sparkles} from 'lucide-react';
+import {Cog, Info, Notebook, ReceiptText, Sparkles} from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import {useParams} from "react-router-dom";
+import PurchasePluginSuccessDialog from "@/components/PurchasePluginSuccessDialogue.jsx";
+import ErrorDialog from "@/components/ErrorDialogue.jsx";
+import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
+import {reconcileSubPeriod} from "@/lib/utils.js";
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList, BreadcrumbPage,
+    BreadcrumbSeparator
+} from "@/components/ui/breadcrumb.js";
 
 const PluginDetailPage = () => {
-    const [selectedPricing, setSelectedPricing] = useState('monthly');
+    const [selectedPricing, setSelectedPricing] = useState('');
+    const [errorDialogueOpen, setErrorDialogueOpen] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [pluginSuccessDialogueOpen, setPluginSuccessDialogueOpen] = useState(false);
+    const [pluginResponse, setPluginResponse] = useState({});
+    const [errorMessage, setErrorMessage] = useState("");
     const [plugin, setPlugin] = useState({
         title: "Loading",
         thumbnail: "/api/placeholder/400/225",
@@ -42,6 +58,19 @@ const PluginDetailPage = () => {
         }
     }, [api]);
 
+    const handlePluginPurchase = async (plugin, subscriptionPeriod) => {
+        try {
+            const res = await api.purchasePlugin(plugin.name, subscriptionPeriod)
+            setPluginSuccessDialogueOpen(true)
+            setPluginResponse(res)
+            user.tokens -= plugin.priceDetails[reconcileSubPeriod(subscriptionPeriod)];
+        } catch (error) {
+            console.error(`failed to purchase plugin: ${error.message}`);
+            setErrorMessage(error.message)
+            setErrorDialogueOpen(true);
+        }
+    }
+
     const calculateSavings = (option) => {
         if (option === 'threeMonth') {
             const regularPrice = plugin.priceDetails.month * 3;
@@ -56,7 +85,25 @@ const PluginDetailPage = () => {
     return (
         <>
             <Navbar user={user} onLogout={logout} />
+            <PurchasePluginSuccessDialog isOpen={pluginSuccessDialogueOpen} onClose={() => setPluginSuccessDialogueOpen(false)} successResponse={pluginResponse} />
+            <ErrorDialog isOpen={errorDialogueOpen} onClose={() => setErrorDialogueOpen(false)} message={errorMessage} />
+            <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(plugin, subscriptionPeriod) => handlePluginPurchase(plugin, subscriptionPeriod)} plugin={plugin} />
             <div className="container mx-auto py-8 px-4">
+                <Breadcrumb className="mb-4">
+                    <BreadcrumbList>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href="/" className="text-gray-100 hover:text-gray-400">Home</BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href="/plugins" className="text-gray-100 hover:text-gray-400">Plugins</BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <BreadcrumbPage className="text-green-400">{plugin.name} plugin</BreadcrumbPage>
+                        </BreadcrumbItem>
+                    </BreadcrumbList>
+                </Breadcrumb>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Left Column - Image and Video */}
                     <div className="lg:col-span-2 space-y-6">
@@ -103,21 +150,21 @@ const PluginDetailPage = () => {
                                     <div className="grid grid-cols-3 gap-2">
                                         <Button
                                             variant={selectedPricing === 'month' ? "default" : "outline"}
-                                            className={selectedPricing === 'month' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:bg-indigo-100"}
+                                            className={selectedPricing === 'month' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:text-indigo-600 hover:bg-indigo-100"}
                                             onClick={() => setSelectedPricing('month')}
                                         >
                                             1 Month
                                         </Button>
                                         <Button
                                             variant={selectedPricing === 'threeMonth' ? "default" : "outline"}
-                                            className={selectedPricing === 'threeMonth' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:bg-indigo-100"}
+                                            className={selectedPricing === 'threeMonth' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:text-indigo-600 hover:bg-indigo-100"}
                                             onClick={() => setSelectedPricing('threeMonth')}
                                         >
                                             3 Months
                                         </Button>
                                         <Button
                                             variant={selectedPricing === 'year' ? "default" : "outline"}
-                                            className={selectedPricing === 'year' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:bg-indigo-100"}
+                                            className={selectedPricing === 'year' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:text-indigo-600 hover:bg-indigo-100"}
                                             onClick={() => setSelectedPricing('year')}
                                         >
                                             1 Year
@@ -140,7 +187,7 @@ const PluginDetailPage = () => {
                                     </div>
                                 </div>
 
-                                <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 font-medium">
+                                <Button disabled={selectedPricing === ''} onClick={() => setOpen(true)} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 font-medium">
                                     Purchase Plugin
                                 </Button>
                             </CardContent>
@@ -150,23 +197,25 @@ const PluginDetailPage = () => {
 
                 {/* Description and Configuration Tabs */}
                 <div className="my-4">
-                    <Tabs defaultValue="description">
-                        <TabsList className="grid grid-cols-2 bg-green-100">
+                    <Tabs defaultValue="configuration">
+                        <TabsList className="grid grid-cols-2 bg-gray-50">
                             <TabsTrigger
                                 value="description"
                                 className="data-[state=active]:bg-green-400 data-[state=active]:text-white"
                             >
+                                <ReceiptText />
                                 Description
                             </TabsTrigger>
                             <TabsTrigger
                                 value="configuration"
                                 className="data-[state=active]:bg-green-400 data-[state=active]:text-white"
                             >
+                                <Cog />
                                 Configuration Options
                             </TabsTrigger>
                         </TabsList>
 
-                        <TabsContent value="description" className="p-6 bg-white border border-gray-200 rounded-b-lg">
+                        <TabsContent value="description" className="bg-white border border-gray-200 rounded-b-lg p-6">
                             <div className="prose max-w-none">
                                 <p className="text-gray-700 leading-relaxed">
                                     {plugin.description}
@@ -180,14 +229,16 @@ const PluginDetailPage = () => {
                                     <div key={index} className="p-6">
                                         <div className="flex items-start">
                                             <div className="mr-4 mt-1">
-                                                <Info size={20} className="text-indigo-600" />
+                                                <Cog size={20} className="text-indigo-600" />
                                             </div>
                                             <div>
-                                                <h3 className="font-medium text-lg text-green-700">{config.name}</h3>
+                                                <div className="flex flex-row">
+                                                    <h3 className="font-medium text-lg text-green-700">{config.name}</h3>
+                                                    <Badge className={`ml-2 text-sm ${config.type === "boolean" ? 'bg-green-500/20 text-green-600' : 'bg-indigo-500/20 text-indigo-600'}`}>{config.type}</Badge>
+                                                </div>
                                                 <p className="mt-2 text-gray-600">{config.description}</p>
                                                 <div className="mt-2">
-                                                    <span className="text-sm font-medium text-gray-500">Type:</span>
-                                                    <span className="ml-2 text-sm text-indigo-600">{config.type}</span>
+                                                    <span className="text-sm font-medium text-gray-500">Section: {config.section === "" ? "None" : config.section}</span>
                                                 </div>
                                             </div>
                                         </div>

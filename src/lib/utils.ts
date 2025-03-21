@@ -48,6 +48,18 @@ export const discordRedirect = () => {
   }
 }
 
+export const reconcileSubPeriod = (period: string) => {
+  switch(period.toLowerCase()) {
+    case "monthly":
+      return "month"
+    case "3-month":
+      return "threeMonth"
+    case "yearly":
+      return "year"
+  }
+}
+
+
 export const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', {

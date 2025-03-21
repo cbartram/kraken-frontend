@@ -18,7 +18,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
-import {discordRedirect, isPluginExpired} from "@/lib/utils.js";
+import {discordRedirect, isPluginExpired, reconcileSubPeriod} from "@/lib/utils.js";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
 import PurchaseSuccessDialog from "@/components/PurchaseSuccessDialogue.jsx";
 import ErrorDialog from "@/components/ErrorDialogue.jsx";
@@ -119,10 +119,10 @@ const Plugins = () => {
 
     const handlePluginPurchase = async (plugin, subscriptionPeriod) => {
         try {
-            console.log(`purchasing plugin: ${plugin.name} for ${subscriptionPeriod} days`)
             const res = await api.purchasePlugin(plugin.name, subscriptionPeriod)
             setPluginSuccessDialogueOpen(true)
             setPluginResponse(res)
+            user.tokens -= plugin.priceDetails[reconcileSubPeriod(subscriptionPeriod)];
         } catch (error) {
             console.error(`failed to purchase plugin: ${error.message}`);
             setErrorMessage(error.message)
@@ -173,8 +173,10 @@ const Plugins = () => {
             <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
             <PurchasePluginSuccessDialog isOpen={pluginSuccessDialogueOpen} onClose={() => setPluginSuccessDialogueOpen(false)} successResponse={pluginResponse} />
             <ErrorDialog isOpen={errorDialogueOpen} onClose={() => setErrorDialogueOpen(false)} message={errorMessage} />
-            <PurchaseSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
             <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(plugin, subscriptionPeriod) => handlePluginPurchase(plugin, subscriptionPeriod)} plugin={plugin} />
+
+            { /* For purchasing kraken tokens */}
+            <PurchaseSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
             <div className="container mx-auto py-8">
                 <h1 className="text-4xl font-bold mb-6 text-center">Kraken Plugins</h1>
                 <p className="text-secondary text-center mb-4">View the full collection of available Kraken Plugins</p>
