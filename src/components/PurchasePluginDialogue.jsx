@@ -29,9 +29,7 @@ const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase }) => {
         }
     };
 
-
     const priceForMonth = (price) => {
-        console.log(price)
         if(subscriptionPeriod === "monthly") {
             return price.month
         } else if(subscriptionPeriod === "3-month") {
