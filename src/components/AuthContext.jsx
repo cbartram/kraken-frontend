@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import {createCognitoUser} from '@/lib/utils.ts'
 import {K8S_BASE_URL, isProd} from "@/lib/constants.ts";
 import {KubeApiClient} from "@/lib/api.js";

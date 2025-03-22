@@ -178,7 +178,7 @@ const Plugins = () => {
             { /* For purchasing kraken tokens */}
             <PurchaseSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
             <div className="container mx-auto py-8">
-                <h1 className="text-4xl font-bold mb-6 text-center">Kraken Plugins</h1>
+                <h1 className="text-4xl font-bold mb-6 text-center text-gray-900">Kraken Plugins</h1>
                 <p className="text-secondary text-center mb-4">View the full collection of available Kraken Plugins</p>
 
                 {/* Search and Filter Controls */}

@@ -9,6 +9,9 @@ import Navbar from "@/components/Navbar.jsx";
 import SkeletonLoading from "@/components/SkeletonLoading.jsx";
 import {formatDate, isPluginExpired} from "@/lib/utils.js";
 
+
+// FADE OUT KEPHRI PUZZLE WHEN DONE
+// Prayer widget infobox doesn't work in toa plugin
 const Profile = () => {
     const {user, logout, loading} = useAuth()
     const [plugins, setPlugins] = useState([])
@@ -61,7 +64,7 @@ const Profile = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* User Profile Card */}
-                        <Card className="md:col-span-1 bg-gray-100">
+                        <Card className="md:col-span-1 bg-gray-100 h-fit">
                             <CardHeader>
                                 <CardTitle className="text-xl">Profile</CardTitle>
                             </CardHeader>
@@ -96,72 +99,74 @@ const Profile = () => {
                                     </div>
                                 </CardHeader>
                                 <CardContent className="pt-4">
-                                    {plugins.map((plugin) => (
-                                        <div key={plugin.id} className="space-y-6 mb-6">
-                                            <div className="flex justify-between items-start">
-                                                <div>
-                                                    <h3 className="text-lg font-medium text-gray-900">{plugin.name}</h3>
-                                                    <div className="flex items-center text-sm text-gray-500 mt-1">
-                                                        <Package className="h-4 w-4 mr-2" />
-                                                        <span>Plugin ID: {plugin.id}</span>
+                                    <div className="space-y-8">
+                                        {plugins.map((plugin, index) => (
+                                            <div key={plugin.id} className={`p-4 bg-white rounded-lg shadow-sm ${index !== plugins.length - 1 ? 'mb-8' : ''}`}>
+                                                <div className="flex justify-between items-start">
+                                                    <div>
+                                                        <h3 className="text-xl font-semibold text-gray-900">{plugin.name}</h3>
+                                                        <div className="flex items-center text-sm text-gray-500 mt-1">
+                                                            <Package className="h-4 w-4 mr-2" />
+                                                            <span>Plugin ID: {plugin.id}</span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div>
-                                                    {getPluginStatusBadge(plugin)}
-                                                </div>
-                                            </div>
-
-                                            <Separator />
-
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                <div className="space-y-1">
-                                                    <p className="text-sm font-medium text-gray-900">Purchase Date</p>
-                                                    <div className="flex items-center text-sm text-gray-500">
-                                                        <CalendarDays className="h-4 w-4 mr-2" />
-                                                        <span>{formatDate(plugin.createdAt)}</span>
+                                                    <div>
+                                                        {getPluginStatusBadge(plugin)}
                                                     </div>
                                                 </div>
 
-                                                <div className="space-y-1">
-                                                    <p className="text-sm font-medium text-gray-900">Expiration Date</p>
-                                                    <div className="flex items-center text-sm text-gray-500">
-                                                        <CalendarDays className="h-4 w-4 mr-2" />
-                                                        <span>{formatDate(plugin.expirationTimestamp)}</span>
+                                                <Separator className="my-4" />
+
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                                                    <div className="p-3 bg-gray-50 rounded-md space-y-1">
+                                                        <p className="text-sm font-medium text-gray-900">Purchase Date</p>
+                                                        <div className="flex items-center text-sm text-gray-500">
+                                                            <CalendarDays className="h-4 w-4 mr-2" />
+                                                            <span>{formatDate(plugin.createdAt)}</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="p-3 bg-gray-50 rounded-md space-y-1">
+                                                        <p className="text-sm font-medium text-gray-900">Expiration Date</p>
+                                                        <div className="flex items-center text-sm text-gray-500">
+                                                            <CalendarDays className="h-4 w-4 mr-2" />
+                                                            <span>{formatDate(plugin.expirationTimestamp)}</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="p-3 bg-gray-50 rounded-md space-y-1">
+                                                        <p className="text-sm font-medium text-gray-900">License Key</p>
+                                                        <div className="flex items-center text-sm text-gray-500">
+                                                            <Key className="h-4 w-4 mr-2" />
+                                                            <span>{plugin.licenseKey}</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="p-3 bg-gray-50 rounded-md space-y-1">
+                                                        <p className="text-sm font-medium text-gray-900">Days until Expiration</p>
+                                                        <div className="flex items-center text-sm text-gray-500">
+                                                            <AlarmClockOff className="h-4 w-4 mr-2" />
+                                                            <span>{getDaysUntilExpiration(plugin.expirationTimestamp)}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="space-y-1">
-                                                    <p className="text-sm font-medium text-gray-900">License Key</p>
-                                                    <div className="flex items-center text-sm text-gray-500">
-                                                        <Key className="h-4 w-4 mr-2" />
-                                                        <span>{plugin.licenseKey}</span>
-                                                    </div>
-                                                </div>
-                                                <div className="space-y-1">
-                                                    <p className="text-sm font-medium text-gray-900">Days until Expiration</p>
-                                                    <div className="flex items-center text-sm text-gray-500">
-                                                        <AlarmClockOff className="h-4 w-4 mr-2" />
-                                                        <span>{getDaysUntilExpiration(plugin.expirationTimestamp)}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {
-                                                isExpiringSoon(plugin.expirationTimestamp) && (
-                                                    <div className="bg-orange-50 p-4 rounded-lg flex items-start">
-                                                        <AlertCircle className="h-5 w-5 text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
+                                                {isExpiringSoon(plugin.expirationTimestamp) && (
+                                                    <div className="bg-orange-50 p-4 rounded-lg flex items-start mt-4">
+                                                        <AlertCircle className="h-5 w-5 text-orange-500 mt-0.5 mr-3 flex-shrink-0" />
                                                         <div className="flex-1">
                                                             <p className="text-sm font-medium text-gray-900">
-                                                              Your plugin is expiring soon
+                                                                Your plugin is expiring soon
                                                             </p>
                                                             <p className="text-sm text-gray-700 mt-1">
                                                                 {`${getDaysUntilExpiration(plugin.expirationTimestamp)} days until your plugin expires.`}
                                                             </p>
                                                         </div>
                                                     </div>
-                                                )
-                                            }
-                                        </div>
-                                    ))}
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
                                 </CardContent>
                             </Card>
                         ) : (
