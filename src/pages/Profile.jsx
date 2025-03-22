@@ -9,8 +9,11 @@ import Navbar from "@/components/Navbar.jsx";
 import SkeletonLoading from "@/components/SkeletonLoading.jsx";
 import {formatDate, isPluginExpired} from "@/lib/utils.js";
 
-
-// FADE OUT KEPHRI PUZZLE WHEN DONE
+// TODO SPACING IS BAD ON THIS PAGE MAKE IT EASY TO TELL DIFFERENCE BETWEEN PLUGINS - solved
+// NIGHTMARE PLUGIN DOESNT HAVE TOP LICENSE KEY ITS AT THE BOTTOM OF CONFIG - solved
+// Dark mode messes with buttons makes them hard to read. - solved
+// FADE OUT KEPHRI PUZZLE WHEN DONE - solved
+// Solved scarabas matching puzzle persists between raids - solved
 // Prayer widget infobox doesn't work in toa plugin
 const Profile = () => {
     const {user, logout, loading} = useAuth()
