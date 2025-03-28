@@ -5,7 +5,7 @@ replicaCount: 1
 
 image:
   repository: cbartram/kraken-frontend
-  tag: "0.0.13"
+  tag: "0.0.14"
 
 service:
   type: ClusterIP

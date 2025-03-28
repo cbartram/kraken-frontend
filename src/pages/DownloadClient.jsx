@@ -19,6 +19,11 @@ const DownloadPage = () => {
         }));
     };
 
+    const downloadClient = () => {
+        setActiveStep(2)
+        window.location.href  = "https://github.com/cbartram/kraken-launcher/releases/tag/v2.7.5-SNAPSHOT"
+    }
+
     const renderStepNumber = (number, isActive) => (
         <div className={`flex items-center justify-center w-8 h-8 rounded-full ${isActive ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}>
             {activeStep > number ? <Check className="w-5 h-5" /> : number}
@@ -55,15 +60,16 @@ const DownloadPage = () => {
                                             <div className="space-y-2">
                                                 <h3 className="text-lg font-medium">Download the latest launcher</h3>
                                                 <p className="text-gray-600 dark:text-gray-400">
-                                                    Get the latest version of the Kraken launcher
+                                                    Get the latest version of the Kraken launcher by following the link
+                                                    and download the .jar file from the "Assets" section.
                                                 </p>
                                                 <Button
                                                     className="mt-2 bg-green-400 hover:bg-green-500"
-                                                    onClick={() => setActiveStep(2)}
+                                                    onClick={() => downloadClient()}
                                                     size="lg"
                                                 >
                                                     <Download className="mr-2 h-4 w-4" />
-                                                    Download kraken-launcher-1.0.5.jar
+                                                    Download Launcher
                                                 </Button>
                                             </div>
                                         </div>
@@ -169,7 +175,7 @@ const DownloadPage = () => {
                                 </CardContent>
                                 <CardFooter>
                                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                                        Need help? Join our <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline">Discord community</a> or check the <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline">FAQs</a>.
+                                        Need help? Join our <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline">Discord community</a> or check the <a href="/faq" className="text-blue-600 dark:text-blue-400 hover:underline">FAQs</a>.
                                     </p>
                                 </CardFooter>
                             </Card>
