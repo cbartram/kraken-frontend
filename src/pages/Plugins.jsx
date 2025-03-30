@@ -18,15 +18,17 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
-import {discordRedirect, isPluginExpired, reconcileSubPeriod} from "@/lib/utils.js";
+import {discordRedirect, formatDate, isPluginExpired, reconcileSubPeriod} from "@/lib/utils.js";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
 import PurchaseSuccessDialog from "@/components/PurchaseSuccessDialogue.jsx";
 import ErrorDialog from "@/components/ErrorDialogue.jsx";
 import PurchasePluginSuccessDialog from "@/components/PurchasePluginSuccessDialogue.jsx";
 import {useNavigate} from "react-router-dom";
+import FreeTrialDialogue from "@/components/FreeTrialDialogue.jsx";
+import { toast } from "sonner"
 
 const Plugins = () => {
-    const { logout, user, getUser, api, loading } = useAuth()
+    const { logout, user, getUser, setUser, api, loading } = useAuth()
     const navigate = useNavigate();
     const [plugins, setPlugins] = useState([]);
     const [fullPluginList, setFullPluginList] = useState([]);
@@ -36,6 +38,7 @@ const Plugins = () => {
     const [successAlertOpen, setSuccessAlertOpen] = useState(false);
     const [errorDialogueOpen, setErrorDialogueOpen] = useState(false);
     const [pluginSuccessDialogueOpen, setPluginSuccessDialogueOpen] = useState(false);
+    const [freeTrialDialogueOpen, setFreeTrialDialogueOpen] = useState(false);
     const [pluginResponse, setPluginResponse] = useState({});
     const [errorMessage, setErrorMessage] = useState("");
     const [plugin, setPlugin] = useState({
@@ -168,18 +171,64 @@ const Plugins = () => {
         </Button>
     }
 
+    const renderFreeTrialButton = () => {
+        if (user == null) {
+            return <Button
+                onClick={() => navigate("/login")}
+                className="w-75 cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
+            >
+                <Sparkles />
+                Start your 3 day Free Trial
+            </Button>
+        }
+
+        if(!user.usedFreeTrial) {
+            return <Button
+                onClick={() => setFreeTrialDialogueOpen(true)}
+                className="w-75 cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
+            >
+                <Sparkles />
+                Start your 3 day Free Trial
+            </Button>
+        }
+
+        // Weather the user is or isn't in their free trial period we know that they have already "used" their trial so
+        // show them the disabled button
+        return <Button
+            disabled
+            className="w-75 cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
+        >
+            <Sparkles />
+            Free Trial Used
+        </Button>
+    }
+
+    const handleFreeTrial = () => {
+        api.startTrial().then((res) => {
+            toast.success(`Free trial started successfully and will end on: ${formatDate(res.expires)}`)
+            setUser({ ...user, usedFreeTrial: true })
+        }).catch(err => {
+            toast.error(`There was an issue starting your free trial. Here's what we know: ${err}`)
+        })
+    }
+
     return (
         <div className="bg-gray-900 text-gray-100">
             <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
             <PurchasePluginSuccessDialog isOpen={pluginSuccessDialogueOpen} onClose={() => setPluginSuccessDialogueOpen(false)} successResponse={pluginResponse} />
             <ErrorDialog isOpen={errorDialogueOpen} onClose={() => setErrorDialogueOpen(false)} message={errorMessage} />
             <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(plugin, subscriptionPeriod) => handlePluginPurchase(plugin, subscriptionPeriod)} plugin={plugin} />
+            <FreeTrialDialogue isOpen={freeTrialDialogueOpen} onClose={() => setFreeTrialDialogueOpen(false)} onFreeTrialStart={() => handleFreeTrial()} />
 
             { /* For purchasing kraken tokens */}
             <PurchaseSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
             <div className="container mx-auto py-8">
-                <h1 className="text-4xl font-bold mb-6 text-center text-gray-900">Kraken Plugins</h1>
-                <p className="text-secondary text-center mb-4">View the full collection of available Kraken Plugins</p>
+                <h1 className="text-4xl font-bold mb-6 text-center text-green-400">Kraken Plugins</h1>
+                <p className="text-secondary text-center mb-4">View the full collection of available Kraken Plugins!</p>
+
+                <div className="flex align-middle justify-center mb-6">
+                    {renderFreeTrialButton()}
+                </div>
 
                 {/* Search and Filter Controls */}
                 <div className="flex flex-col md:flex-row gap-4 mb-8">

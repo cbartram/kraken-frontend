@@ -242,7 +242,7 @@ export default function Landing() {
 
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <Button onClick={() => navigate("/login")} className="bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-lg flex items-center gap-2 shadow-lg shadow-green-600/20">
-                                        Get Started
+                                        Get Started with a Free Trial
                                         <ArrowRight className="h-4 w-4" />
                                     </Button>
 
@@ -595,7 +595,8 @@ export default function Landing() {
                             Simple plugin pricing with <span className="text-green-500">Kraken Tokens</span>
                         </h2>
                         <p className="text-gray-300 max-w-3xl mx-auto">
-                            Purchase Kraken Tokens and use them to subscribe to our plugins. Choose the plugin and subscription length that fits your gameplay needs.
+                            Purchase Kraken Tokens and use them to subscribe to our plugins. Choose the plugin and subscription length that fits your gameplay needs. You
+                            can also get started today with a <span className="text-green-400 font-bold">3 day</span> day free trial!
                         </p>
                     </motion.div>
 

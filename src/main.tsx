@@ -28,9 +28,11 @@ import PluginDetailPage from '@/pages/PluginDetail'
 // @ts-ignore
 import { RedirectIfAuthenticated } from '@/components/RedirectIfAuthenticated.jsx'
 import './index.css'
+import { Toaster } from "@/components/ui/sonner"
 
 createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
+        <Toaster richColors closeButton />
         <AuthProvider>
             <Routes>
                 <Route

@@ -83,6 +83,12 @@ class KubeApiClient extends ApiClient {
         });
     }
 
+    async startTrial() {
+        return this.request("/api/v1/plugin/free-trial", {
+            method: "POST",
+        })
+    }
+
     async getPlugin(name) {
         return this.request("/api/v1/plugin/?name=" + name, {
             method: "GET",

@@ -73,6 +73,23 @@ export const isPluginExpired = (expirationTimestamp: string): boolean => {
   return new Date(expirationTimestamp) <= new Date();
 };
 
+export const isInFreeTrialPeriod = (trialEnd: string): boolean => {
+  try {
+    const now = new Date();
+    const compareDate = new Date(trialEnd);
+
+    if (isNaN(compareDate.getTime())) {
+      console.log(`${trialEnd} is not a valid date`);
+      return false;
+    }
+
+    return now > compareDate;
+  } catch (e) {
+    console.error("Error comparing dates for free trial", e);
+    return false;
+  }
+}
+
 /**
  * Creates a new user in Cognito. If the user already exists it will be returned instead.
  * @param req CreateUserRequest the user object to create.
