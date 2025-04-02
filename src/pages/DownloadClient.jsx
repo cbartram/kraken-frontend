@@ -3,7 +3,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Download, Terminal, RotateCcw, Check, ChevronDown, ChevronRight } from 'lucide-react';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu';
+import {Download, Terminal, Check, ChevronDown, ChevronRight, Grid2X2, Command, ArrowRight} from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 
@@ -11,6 +17,8 @@ const DownloadPage = () => {
     const {user, logout} = useAuth()
     const [activeStep, setActiveStep] = useState(1);
     const [expandedSteps, setExpandedSteps] = useState({ jagex: false });
+    const [selectedOS, setSelectedOS] = useState('windows');
+
 
     const toggleSection = (section) => {
         setExpandedSteps(prev => ({
@@ -19,13 +27,18 @@ const DownloadPage = () => {
         }));
     };
 
-    const downloadClient = () => {
-        setActiveStep(2)
-        window.location.href  = "https://github.com/cbartram/kraken-launcher/releases/tag/v2.7.5-SNAPSHOT"
-    }
+    const downloadClient = (os = selectedOS) => {
+        setSelectedOS(os);
+        setActiveStep(3);
 
+        if (os === 'windows') {
+            window.location.href = "https://kraken-bootstrap-static.s3.us-east-1.amazonaws.com/KrakenSetup.exe";
+        } else if (os === 'mac') {
+            window.location.href = "https://kraken-bootstrap-static.s3.us-east-1.amazonaws.com/kraken-launcher-2.7.4.jar";
+        }
+    };
     const renderStepNumber = (number, isActive) => (
-        <div className={`flex items-center justify-center w-8 h-8 rounded-full ${isActive ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}>
+        <div className={`flex items-center justify-center w-8 h-8 rounded-full flex-shrink-0 ${isActive ? 'bg-green-400 text-white' : 'bg-gray-200 text-gray-700'}`}>
             {activeStep > number ? <Check className="w-5 h-5" /> : number}
         </div>
     );
@@ -58,18 +71,18 @@ const DownloadPage = () => {
                                         <div className="flex gap-4">
                                             {renderStepNumber(1, activeStep >= 1)}
                                             <div className="space-y-2">
-                                                <h3 className="text-lg font-medium">Download the latest launcher</h3>
+                                                <h3 className="text-lg font-medium">Download & Install RuneLite</h3>
                                                 <p className="text-gray-600 dark:text-gray-400">
-                                                    Get the latest version of the Kraken launcher by following the link
-                                                    and download the .jar file from the "Assets" section.
+                                                    You likely already have RuneLite installed, however, in the chance
+                                                    that you don't go ahead and install RuneLite before Kraken.
                                                 </p>
                                                 <Button
-                                                    className="mt-2 bg-green-400 hover:bg-green-500"
-                                                    onClick={() => downloadClient()}
+                                                    className="mt-2 bg-zinc-200 hover:bg-zinc-300 text-orange-500"
+                                                    onClick={() => open("https://runelite.net/") && setActiveStep(2)}
                                                     size="lg"
                                                 >
                                                     <Download className="mr-2 h-4 w-4" />
-                                                    Download Launcher
+                                                    Download RuneLite
                                                 </Button>
                                             </div>
                                         </div>
@@ -79,30 +92,67 @@ const DownloadPage = () => {
                                         {/* Step 2 */}
                                         <div className="flex gap-4">
                                             {renderStepNumber(2, activeStep >= 2)}
+                                            <div className="space-y-2">
+                                                <h3 className="text-lg font-medium">Download & Install Kraken</h3>
+                                                <p className="text-gray-600 dark:text-gray-400">
+                                                    Download the Kraken Installer to install the Kraken Client.
+                                                </p>
+                                                <div className="flex mt-2">
+                                                    <Button
+                                                        className="rounded-r-none bg-green-400 hover:bg-green-500"
+                                                        onClick={() => downloadClient()}
+                                                        size="lg"
+                                                    >
+                                                        <Download className="mr-2 h-4 w-4" />
+                                                        Download for {selectedOS === 'windows' ? 'Windows' : 'Mac'}
+                                                    </Button>
+                                                    <DropdownMenu>
+                                                        <DropdownMenuTrigger asChild>
+                                                            <Button className="rounded-l-none border-l border-green-500 bg-green-400 hover:bg-green-500" size="lg">
+                                                                <ChevronDown className="h-4 w-4" />
+                                                            </Button>
+                                                        </DropdownMenuTrigger>
+                                                        <DropdownMenuContent align="end">
+                                                            <DropdownMenuItem onClick={() => setSelectedOS('windows')}>
+                                                                Windows
+                                                                <Grid2X2 />
+                                                            </DropdownMenuItem>
+                                                            <DropdownMenuItem onClick={() => setSelectedOS('mac')}>
+                                                                Mac
+                                                                <Command />
+                                                            </DropdownMenuItem>
+                                                        </DropdownMenuContent>
+                                                    </DropdownMenu>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <Separator />
+
+                                        {/* Step 3 */}
+                                        <div className="flex gap-4">
+                                            {renderStepNumber(3, activeStep >= 2)}
                                             <div className="space-y-2 w-full">
                                                 <h3 className="text-lg font-medium">Installation instructions</h3>
 
                                                 <Tabs defaultValue="windows" className="w-full">
                                                     <TabsList className="grid w-full grid-cols-2">
-                                                        <TabsTrigger value="windows">Windows</TabsTrigger>
-                                                        <TabsTrigger value="mac">Mac</TabsTrigger>
+                                                        <TabsTrigger value="windows"><Grid2X2 /> Windows</TabsTrigger>
+                                                        <TabsTrigger value="mac"><Command /> Mac</TabsTrigger>
                                                     </TabsList>
                                                     <TabsContent value="windows" className="p-4 bg-gray-100 dark:bg-gray-800 rounded-md mt-2">
                                                         <ol className="list-decimal pl-5 space-y-2">
-                                                            <li>Navigate to <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">C:\Users\&lt;YOUR_NAME&gt;\AppData\Local\RuneLite</code></li>
-                                                            <li>Rename <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code> to <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite-backup.jar</code></li>
-                                                            <li>Move the downloaded <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">kraken-launcher-&lt;version&gt;.jar</code> to the same folder</li>
-                                                            <li>Rename it to <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code></li>
-                                                            <li>Run with <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.exe</code> or via Jagex launcher</li>
+                                                            <li>Run <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">KrakenSetup.exe</code> and follow the prompts</li>
+                                                            <li>Run the client with <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.exe</code> or via the Jagex launcher</li>
                                                         </ol>
                                                     </TabsContent>
                                                     <TabsContent value="mac" className="p-4 bg-gray-100 dark:bg-gray-800 rounded-md mt-2">
                                                         <ol className="list-decimal pl-5 space-y-2">
-                                                            <li>Navigate to your RuneLite installation folder</li>
-                                                            <li>Make a backup of your current RuneLite.jar file</li>
-                                                            <li>Move the downloaded kraken-launcher file to the installation folder</li>
-                                                            <li>Rename it to match your original RuneLite jar file</li>
-                                                            <li>Launch RuneLite as normal</li>
+                                                            <li>Navigate to your RuneLite installation folder (Right click and Show Package Contents) <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">/Applications/RuneLite/Contents.app/resources</code></li>
+                                                            <li>Move the downloaded <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">Kraken-Launcher-2.7.5.jar</code> file to the installation folder</li>
+                                                            <li>Delete <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code></li>
+                                                            <li>Rename <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">Kraken-Launcher-2.7.4.jar</code> to <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code></li>
+                                                            <li>Launch RuneLite as normal through your Applications or the Jagex Launcher</li>
                                                         </ol>
                                                     </TabsContent>
                                                 </Tabs>
@@ -135,7 +185,6 @@ const DownloadPage = () => {
                                                             </ol>
                                                             <div className="mt-4 text-sm">
                                                                 <p>If you want to use a non-jagex account with Kraken you can delete the credentials.properties file to return your Kraken Client back to normal.</p>
-                                                                <p className="mt-1">If for any reason you need to invalidate the credentials, you can use the "End sessions" button under account settings on runescape.com.</p>
                                                             </div>
                                                         </div>
                                                     )}
@@ -153,9 +202,9 @@ const DownloadPage = () => {
 
                                         <Separator />
 
-                                        {/* Step 3 */}
+                                        {/* Step 4 */}
                                         <div className="flex gap-4">
-                                            {renderStepNumber(3, activeStep >= 3)}
+                                            {renderStepNumber(4, activeStep >= 3)}
                                             <div className="space-y-2">
                                                 <h3 className="text-lg font-medium">Launch and enjoy!</h3>
                                                 <p className="text-gray-600 dark:text-gray-400">
@@ -194,7 +243,7 @@ const DownloadPage = () => {
                                                 <li>Windows 10 or macOS 10.15+</li>
                                                 <li>2GB RAM</li>
                                                 <li>Java 11 or higher</li>
-                                                <li>500MB free disk space</li>
+                                                <li>75MB free disk space</li>
                                             </ul>
                                         </div>
                                         <div>
@@ -219,14 +268,12 @@ const DownloadPage = () => {
                                         Want to switch back to the official RuneLite client? Follow these steps:
                                     </p>
                                     <ol className="list-decimal pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                                        <li>Navigate to the RuneLite installation folder</li>
-                                        <li>Rename <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code> to something else</li>
-                                        <li>Rename <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite-backup.jar</code> to <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code></li>
+                                        <li>Press the Windows Start Key</li>
+                                        <li>Type <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite (Configure)</code> and hit enter</li>
+                                        <li>Select the "RuneLite Mode" checkbox</li>
+                                        <li>Click Save</li>
+                                        <li>RuneLite will now run as normal without Kraken Plugins</li>
                                     </ol>
-                                    <Button variant="outline" className="w-full mt-4" size="sm">
-                                        <RotateCcw className="mr-2 h-4 w-4" />
-                                        Restore Original Client
-                                    </Button>
                                 </CardContent>
                             </Card>
                         </div>

@@ -138,6 +138,9 @@ export default function Landing() {
                     {/* Desktop navigation */}
                     <ul className="hidden md:flex items-center space-x-6">
                         <motion.li whileHover={{scale: 1.1}}>
+                            <a href="/download" className="hover:text-green-500 text-green-400 transition-colors">Download Client</a>
+                        </motion.li>
+                        <motion.li whileHover={{scale: 1.1}}>
                             <a href="#features" className="hover:text-green-500 text-green-400 transition-colors">Features</a>
                         </motion.li>
                         <motion.li whileHover={{scale: 1.1}}>
