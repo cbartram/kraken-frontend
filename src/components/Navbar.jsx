@@ -57,7 +57,7 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
                                 <div className="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center cursor-pointer">
                                     <img
                                         alt="user profile avatar"
-                                        src={`https://cdn.discordapp.com/avatars/${user.discordId}/${user.avatarId}?size=56`}
+                                        src={user.avatarId.length > 0 ? `https://cdn.discordapp.com/avatars/${user.discordId}/${user.avatarId}?size=56`: 'https://kraken-plugins.duckdns.org/default.png'}
                                         className="w-10 h-10 rounded-full border-2 border-gray-800"
                                     />
                                 </div>
