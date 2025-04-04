@@ -83,16 +83,29 @@ class KubeApiClient extends ApiClient {
         });
     }
 
-    async startTrial() {
-        return this.request("/api/v1/plugin/free-trial", {
-            method: "POST",
-        })
-    }
-
     async getPlugin(name) {
         return this.request("/api/v1/plugin/?name=" + name, {
             method: "GET",
         });
+    }
+
+    async getPluginPacks() {
+        return this.request("/api/v1/plugin/pack", {
+            method: "GET",
+        });
+    }
+
+    async getPluginPack(name) {
+        return this.request("/api/v1/plugin/pack?name=" + name, {
+            method: "GET",
+        });
+    }
+
+
+    async startTrial() {
+        return this.request("/api/v1/plugin/free-trial", {
+            method: "POST",
+        })
     }
 
     async sendEmail(subject, message) {
@@ -107,6 +120,16 @@ class KubeApiClient extends ApiClient {
 
     async purchasePlugin(name, duration) {
         return this.request('/api/v1/plugin/purchase', {
+            method: 'POST',
+            body: JSON.stringify({
+                pluginName: name,
+                purchaseDuration: duration,
+            })
+        })
+    }
+
+    async purchasePluginPack(name, duration) {
+        return this.request('/api/v1/plugin/purchase-pack', {
             method: 'POST',
             body: JSON.stringify({
                 pluginName: name,
