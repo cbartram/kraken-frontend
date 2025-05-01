@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import {
     Carousel,
     CarouselContent,
@@ -8,49 +8,109 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Zulrah from '@/assets/carousel/zulrah_carousel.png'
+import AkkhaOrbs from '@/assets/carousel/akkha_orbs_carousel.png'
+import Gauntlet from '@/assets/carousel/gauntlet_carousel.png'
+import Inferno from '@/assets/carousel/inferno_carousel.png'
 
 // Sample plugin data - replace with your actual plugin data
 const pluginData = [
     {
         id: 1,
         name: "Olm Cycle Tracking",
-        description: "Real-time tracking for Olms cycle so you know when to skip, when to move, and what attacks are coming next.",
-        imageUrl: "/api/placeholder/800/500"
+        description: "Real-time tracking for Olms cycle so you know when to skip, when to move, and what attacks are coming next. Never miss a special skip or wonder if you are in cycle again!",
+        imageUrl: "/api/placeholder/800/500",
+        learnMore: "/plugins/Cox-Helper"
     },
     {
+        // Done
         id: 2,
         name: "Gauntlet Counters",
-        description: "Prayer and weapon attack counters for the Corrupted and regular gauntlet. This plugin also includes tick timers for each tornado!",
-        imageUrl: "/api/placeholder/800/500"
+        description: "Prayer and weapon attack counters for the corrupted and regular gauntlet. This plugin also includes tick timers for each tornado making it easy to see when they will despawn!",
+        imageUrl: Gauntlet,
+        learnMore: "/plugins/Gauntlet-Extended"
     },
     {
+        // Done
         id: 3,
         name: "Inferno Counters",
-        description: "Prayer counters, Mob tick timers, safespots, and guitar hero mode for every inferno monster.",
-        imageUrl: "/api/placeholder/800/500"
+        description: "Prayer counters, Mob tick timers, safespots, and guitar hero mode for every inferno monster so you know what is hitting you when and can easily tell if mobs are off ticked. ",
+        imageUrl: Inferno,
+        learnMore: "/plugins/Inferno"
     },
     {
         id: 4,
         name: "Nex Highlights",
         description: "Nex Tank Highlights, step under timers, altar highlighting, blood radius markers and more make Nex an absolute breeze in 3 mans.",
-        imageUrl: "/api/placeholder/800/500"
+        imageUrl: "/api/placeholder/800/500",
+        learnMore: "/plugins/Nex"
     },
     {
         id: 5,
         name: "Socket Soteseg",
         description: "Do you have buddies who use Kraken? Well Socket based plugins let you share data between your clients. Specifically this will reveal the entire safe path for the maze when you or your friends are chosen to run.",
-        imageUrl: "/api/placeholder/800/500"
+        imageUrl: "/api/placeholder/800/500",
+        learnMore: "/plugins/Socket-Sotetseg"
     },
     {
         id: 6,
-        name: "Socket Soteseg",
-        description: "Do you have buddies who use Kraken? Well Socket based plugins let you share data between your clients. Specifically this will reveal the entire safe path for the maze when you or your friends are chosen to run.",
-        imageUrl: "/api/placeholder/800/500"
+        name: "Theatre of Blood Nylo Indicators",
+        description: "Includes utilities for highlighting Aggressive nylos so you never have to memorize the whole Nylo room!",
+        imageUrl: "/api/placeholder/800/500",
+        learnMore: "/plugins/Theatre-of-Blood"
+    },
+    {
+        id: 7,
+        name: "Theatre of Blood Sotetseg Prayer Indicators",
+        description: "Tells you what to pray, when, and even tells you how to tick eat the green ball in Sotetseg so you don't look dumb saying \"I got this\" then tanking a 99.",
+        imageUrl: "/api/placeholder/800/500",
+        learnMore: "/plugins/Theatre-of-Blood"
+    },
+    {
+        // Done
+        id: 8,
+        name: "Tombs of Amascut Akkha Orbs",
+        description: "Shows a tick counter and which orbs will safely miss your player in Akkha's final stand. Forget about wondering if that diagonal orb is going to collide with you or narrowly miss you!",
+        imageUrl: AkkhaOrbs,
+        learnMore: "/plugins/ToA-Extended"
+    },
+    {
+        id: 9,
+        name: "Tombs of Amascut P2 Wardens Skulls",
+        description: "Shows exactly where skulls will land for P2 wardens so you can easily dodge them. You can actually look forward to the skull special now!",
+        imageUrl: "/api/placeholder/800/500",
+        learnMore: "/plugins/ToA-Extended"
+    },
+    {
+        id: 10,
+        name: "Tombs of Amascut Insanity",
+        description: "This feature automatically remembers the safe side for Insanity wardens runs. Gone are the days of having to recall if its left, right, or middle!",
+        imageUrl: "/api/placeholder/800/500",
+        learnMore: "/plugins/ToA-Extended"
+    },
+    {
+        // Done
+        id: 11,
+        name: "Zulrah Rotations",
+        description: "Tells you where to stand and what to pray to avoid Zulrah's attacks no matter the rotation!",
+        imageUrl: Zulrah,
+        learnMore: "/plugins/Zulrah"
     }
 ];
 
 export default function PluginCarousel() {
     const [activePlugin, setActivePlugin] = useState(pluginData[0]);
+    const [api, setApi] = useState()
+
+    useEffect(() => {
+        if(!api) {
+            return
+        }
+
+        api.on("select", () => {
+            setActivePlugin(pluginData[api.selectedScrollSnap()])
+        })
+    }, [api]);
 
     return (
         <section className="py-16 bg-slate-950">
@@ -66,11 +126,12 @@ export default function PluginCarousel() {
                     <Carousel
                         className="w-full"
                         onSelect={(index) => setActivePlugin(pluginData[index])}
+                        setApi={setApi}
                     >
                         <CarouselContent>
                             {pluginData.map((plugin) => (
                                 <CarouselItem key={plugin.id}>
-                                    <Card className="border-0 shadow-lg overflow-hidden">
+                                    <Card className="border-0 shadow-lg overflow-hidden p-0">
                                         <CardContent className="p-0">
                                             <img
                                                 src={plugin.imageUrl}
@@ -102,7 +163,7 @@ export default function PluginCarousel() {
                                 </CardDescription>
                             </CardContent>
                             <CardFooter>
-                                <Button onClick={() => window.location.href = "/plugins"}>Learn More</Button>
+                                <Button onClick={() => window.location.href = activePlugin.learnMore}>Learn More</Button>
                             </CardFooter>
                         </Card>
                     </div>
