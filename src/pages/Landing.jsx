@@ -17,16 +17,17 @@ import {
     CloudUpload,
     Gamepad,
     BellOff,
-    Wrench,
-    ArrowRight, Sparkles, Package, Trophy,
+    ArrowRight, Sparkles, Package, Trophy, Download, Unplug,
 } from 'lucide-react';
 import Logo from "@/assets/logo.png"
 import DiscordLogo from "@/assets/discord-mark-white.svg"
+import PluginShowcase from "@/components/landing_page_components/PluginShowcase";
 import {discordRedirect} from "@/lib/utils";
 import {useNavigate} from "react-router-dom";
 import Olm from "/olm.png";
 import Tob from "/tob.png";
 import Zulrah from "/zulrah.png";
+import PluginCarousel from "@/components/landing_page_components/PluginCarousel";
 
 export default function Landing() {
     const navigate = useNavigate();
@@ -138,10 +139,10 @@ export default function Landing() {
                     {/* Desktop navigation */}
                     <ul className="hidden md:flex items-center space-x-6">
                         <motion.li whileHover={{scale: 1.1}}>
-                            <a href="/download" className="hover:text-green-500 text-green-400 transition-colors">Download Client</a>
+                            <a href="/download" className="hover:text-green-500 transition-colors">Download Client</a>
                         </motion.li>
                         <motion.li whileHover={{scale: 1.1}}>
-                            <a href="#features" className="hover:text-green-500 text-green-400 transition-colors">Features</a>
+                            <a href="#features" className="hover:text-green-500 transition-colors">Features</a>
                         </motion.li>
                         <motion.li whileHover={{scale: 1.1}}>
                             <a href="/plugins" className="hover:text-green-500 transition-colors">Plugins</a>
@@ -251,7 +252,7 @@ export default function Landing() {
 
                                     <Button onClick={() => navigate("/plugins")} variant="outline" className="border-indigo-300 bg-indigo-500 text-indigo-100  hover:text-indigo-100 hover:bg-indigo-600 rounded-lg flex items-center gap-2">
                                         View Plugins
-                                        <Package className="h-4 w-4" />
+                                        <Unplug className="h-4 w-4" />
                                     </Button>
                                 </div>
                             </motion.div>
@@ -340,6 +341,9 @@ export default function Landing() {
                 </div>
             </div>
 
+            <PluginShowcase />
+            <PluginCarousel />
+
             {/* Features Section */}
             <section id="features" className="py-20 bg-gray-800">
                 <div className="container mx-auto px-4">
@@ -390,12 +394,12 @@ export default function Landing() {
                             {
                                 icon: <BellOff className="h-12 w-12 text-green-500"/>,
                                 title: "Quiet Plugins",
-                                description: "All our plugins are \"quiet\". Meaning, they assist you with tasks in game without any actual automation or input. This allows them to run silently just like a RuneLite plugin you would get from the PluginHub."
+                                description: "All our plugins are \"quiet\". Meaning, they assist you with tasks in game without any actual automation or input. No more Macroing bans!"
                             },
                             {
-                                icon: <Wrench className="h-12 w-12 text-green-500"/>,
-                                title: "Expertly Engineered",
-                                description: "Our plugins are battle tested to make sure they work under any condition."
+                                icon: <Download className="h-12 w-12 text-green-500"/>,
+                                title: "1 Click Install",
+                                description: "Install the Kraken Client once with 1 click. Updates to the client and plugins are automatically applied to your client."
                             }
                         ].map((feature, index) => (
                             <motion.div
@@ -599,7 +603,7 @@ export default function Landing() {
                         </h2>
                         <p className="text-gray-300 max-w-3xl mx-auto">
                             Purchase Kraken Tokens and use them to subscribe to our plugins. Choose the plugin and subscription length that fits your gameplay needs. You
-                            can also get started today with a <span className="text-green-400 font-bold">3 day</span> day free trial!
+                            can also get started today with a <span className="text-green-400 font-bold">3 day</span> day free trial for every plugin!
                         </p>
                     </motion.div>
 
