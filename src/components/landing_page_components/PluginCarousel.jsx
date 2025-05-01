@@ -12,6 +12,10 @@ import Zulrah from '@/assets/carousel/zulrah_carousel.png'
 import AkkhaOrbs from '@/assets/carousel/akkha_orbs_carousel.png'
 import Gauntlet from '@/assets/carousel/gauntlet_carousel.png'
 import Inferno from '@/assets/carousel/inferno_carousel.png'
+import Nylo from '@/assets/carousel/nylo_carousel.png'
+import Socket from '@/assets/carousel/socket_sote_carousel.png'
+import Sote from '@/assets/carousel/sote_prayer_carousel.png'
+import Verzik from '@/assets/carousel/verzik_yellows_carousel.png'
 
 // Sample plugin data - replace with your actual plugin data
 const pluginData = [
@@ -49,40 +53,47 @@ const pluginData = [
         id: 5,
         name: "Socket Soteseg",
         description: "Do you have buddies who use Kraken? Well Socket based plugins let you share data between your clients. Specifically this will reveal the entire safe path for the maze when you or your friends are chosen to run.",
-        imageUrl: "/api/placeholder/800/500",
+        imageUrl: Socket,
         learnMore: "/plugins/Socket-Sotetseg"
     },
     {
         id: 6,
         name: "Theatre of Blood Nylo Indicators",
         description: "Includes utilities for highlighting Aggressive nylos so you never have to memorize the whole Nylo room!",
-        imageUrl: "/api/placeholder/800/500",
+        imageUrl: Nylo,
         learnMore: "/plugins/Theatre-of-Blood"
     },
     {
         id: 7,
         name: "Theatre of Blood Sotetseg Prayer Indicators",
         description: "Tells you what to pray, when, and even tells you how to tick eat the green ball in Sotetseg so you don't look dumb saying \"I got this\" then tanking a 99.",
-        imageUrl: "/api/placeholder/800/500",
+        imageUrl: Sote,
+        learnMore: "/plugins/Theatre-of-Blood"
+    },
+    {
+        id: 8,
+        name: "Verzik Yellows",
+        description: "Tells you how many ticks until the yellow ball hits you. The plugin has a ton of other great Verzik utilities like attack timers for when to step under, Named Nylocas for easy pops, your specific tornado highlight, and more!",
+        imageUrl: Verzik,
         learnMore: "/plugins/Theatre-of-Blood"
     },
     {
         // Done
-        id: 8,
+        id: 9,
         name: "Tombs of Amascut Akkha Orbs",
         description: "Shows a tick counter and which orbs will safely miss your player in Akkha's final stand. Forget about wondering if that diagonal orb is going to collide with you or narrowly miss you!",
         imageUrl: AkkhaOrbs,
         learnMore: "/plugins/ToA-Extended"
     },
     {
-        id: 9,
+        id: 10,
         name: "Tombs of Amascut P2 Wardens Skulls",
         description: "Shows exactly where skulls will land for P2 wardens so you can easily dodge them. You can actually look forward to the skull special now!",
         imageUrl: "/api/placeholder/800/500",
         learnMore: "/plugins/ToA-Extended"
     },
     {
-        id: 10,
+        id: 11,
         name: "Tombs of Amascut Insanity",
         description: "This feature automatically remembers the safe side for Insanity wardens runs. Gone are the days of having to recall if its left, right, or middle!",
         imageUrl: "/api/placeholder/800/500",
@@ -90,7 +101,7 @@ const pluginData = [
     },
     {
         // Done
-        id: 11,
+        id: 12,
         name: "Zulrah Rotations",
         description: "Tells you where to stand and what to pray to avoid Zulrah's attacks no matter the rotation!",
         imageUrl: Zulrah,
