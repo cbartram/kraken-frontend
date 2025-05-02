@@ -29,7 +29,7 @@ const PluginShowcase = () => {
         <div ref={containerRef} className="relative bg-gray-900 text-white rounded-lg p-8 my-12 overflow-hidden">
             <h2 className="text-3xl font-bold mb-8 text-center">Powerful Plugin Management</h2>
 
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="hidden md:flex flex-col md:flex-row items-center justify-between gap-8">
                 {/* Image Column */}
                 <div className="relative w-full md:w-1/2 h-96">
                     <div className={`relative h-full transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-8'}`}>
@@ -77,7 +77,7 @@ const PluginShowcase = () => {
                 <div className="w-full md:w-1/2 space-y-6">
                     <div className={`bg-gray-800 p-4 rounded-lg transition-all duration-700 delay-200 ${isVisible ? 'opacity-100' : 'opacity-0 translate-x-8'}`}>
                         <h3 className="text-xl font-bold text-green-500 mb-2 flex flex-row"><Unplug  className="mr-2" />Familiar Plugin Interface</h3>
-                        <p>Our intuitive star-based favorites system and clean list layout make managing plugins a breeze. The interface follows RuneLite's established design patterns so you'll feel right at home.</p>
+                        <p>Kraken plugins is built directly on top of RuneLite. The interface follows RuneLite's established plugin patterns so you'll feel right at home.</p>
                     </div>
 
                     <div className={`bg-gray-800 p-4 rounded-lg transition-all duration-700 delay-400 ${isVisible ? 'opacity-100' : 'opacity-0 translate-x-8'}`}>

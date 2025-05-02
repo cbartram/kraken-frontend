@@ -17,7 +17,7 @@ import {
     CloudUpload,
     Gamepad,
     BellOff,
-    ArrowRight, Sparkles, Package, Trophy, Download, Unplug,
+    ArrowRight, Sparkles, Package, Trophy, Download, Unplug, Plug,
 } from 'lucide-react';
 import Logo from "@/assets/logo.png"
 import DiscordLogo from "@/assets/discord-mark-white.svg"
@@ -28,6 +28,7 @@ import Olm from "/olm.png";
 import Tob from "/tob.png";
 import Zulrah from "/zulrah.png";
 import PluginCarousel from "@/components/landing_page_components/PluginCarousel";
+import VideoShowcase from "@/components/landing_page_components/VideoShowcase.jsx";
 
 export default function Landing() {
     const navigate = useNavigate();
@@ -260,82 +261,7 @@ export default function Landing() {
 
                         {/* Interactive Loot Showcase */}
                         <div className="flex items-center justify-center">
-                            <motion.div
-                                className="relative w-full max-w-md"
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.3, duration: 0.6 }}
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-indigo-500/20 rounded-full blur-3xl" />
-
-                                <motion.div
-                                    className="relative bg-indigo-800/60 backdrop-blur-sm border border-indigo-500/30 p-8 rounded-2xl shadow-xl"
-                                    whileHover={{
-                                        y: -5,
-                                        boxShadow: "0 20px 25px -5px rgba(79, 70, 229, 0.4)"
-                                    }}
-                                    onHoverStart={() => setIsHovering(true)}
-                                    onHoverEnd={() => setIsHovering(false)}
-                                >
-                                    <div className="absolute -right-3 -top-3">
-                                        <motion.div
-                                            className="bg-green-200 rounded-full p-2 shadow-lg"
-                                            animate={{
-                                                rotate: [0, 10, 0, -10, 0],
-                                                scale: [1, 1.1, 1]
-                                            }}
-                                            transition={{
-                                                duration: 2,
-                                                repeat: Infinity,
-                                                repeatType: "loop"
-                                            }}
-                                        >
-                                            <img src={Logo} height={25} width={25} alt="Logo" />
-                                        </motion.div>
-                                    </div>
-
-                                    <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                                        <Trophy className="mr-2 h-6 w-6 text-green-400" />
-                                        Kraken Plugins
-                                    </h3>
-
-                                    <p className="text-indigo-200 mb-6">
-                                        Our plugins provide overpowered insights into the game <span className="font-bold">without</span> modifying RuneLite.
-                                    </p>
-
-                                    <div className="space-y-4">
-                                        {lootItems.map((item, index) => (
-                                            <motion.div
-                                                key={item.id}
-                                                className={`p-4 rounded-lg border ${
-                                                    activeLoot === index
-                                                        ? 'bg-green-500/20 border-green-500'
-                                                        : 'bg-indigo-700/40 border-indigo-600/50'
-                                                }`}
-                                                animate={{
-                                                    scale: activeLoot === index ? 1.05 : 1,
-                                                    y: activeLoot === index ? -5 : 0
-                                                }}
-                                                onClick={() => setActiveLoot(index)}
-                                                whileHover={{ scale: 1.03 }}
-                                                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                            >
-                                                <div className="flex justify-between items-center">
-                                                    <span className="font-medium text-white">{item.name}</span>
-                                                    <span className={`text-sm px-2 py-1 rounded ${
-                                                        item.rarity === "Insane" ? "bg-orange-500/20 text-orange-300" :
-                                                            item.rarity === "Overpowered" ? "bg-purple-500/20 text-purple-300" :
-                                                                "bg-blue-500/20 text-blue-300"
-                                                    }`}>
-                          {item.rarity}
-                        </span>
-                                                </div>
-                                                <div className="text-green-300 text-sm mt-1">{item.bonus}</div>
-                                            </motion.div>
-                                        ))}
-                                    </div>
-                                </motion.div>
-                            </motion.div>
+                            <VideoShowcase />
                         </div>
                     </div>
                 </div>
@@ -364,8 +290,7 @@ export default function Landing() {
                             viewport={{once: true}}
                             className="text-gray-300 max-w-2xl mx-auto"
                         >
-                            Our plugins are meticulously crafted by experienced engineers to provide unparalleled
-                            advantages in game.
+                            Kraken is built directly on top of an unmodified RuneLite client. This means that all of our plugins are 100% compatible with the official client.
                         </motion.p>
                     </div>
 
