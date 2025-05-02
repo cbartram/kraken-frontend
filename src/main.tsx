@@ -53,6 +53,7 @@ createRoot(document.getElementById('root')!).render(
                 />
                 <Route path="/discord/oauth" element={<AuthCallback />} />
                 <Route path="/faq" element={<FAQPage />} />
+                <Route path="/purchase" element={<PurchaseTokens />}/>
                 <Route path="/profile" element={
                     <ProtectedRoute>
                         <Profile />
@@ -62,12 +63,6 @@ createRoot(document.getElementById('root')!).render(
                 <Route path="/support" element={
                     <ProtectedRoute>
                         <Support />
-                    </ProtectedRoute>
-                }
-                />
-                <Route path="/purchase" element={
-                    <ProtectedRoute>
-                        <PurchaseTokens />
                     </ProtectedRoute>
                 }
                 />

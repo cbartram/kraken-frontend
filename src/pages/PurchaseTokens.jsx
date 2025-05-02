@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -9,7 +9,7 @@ import {useAuth} from "@/components/AuthContext.jsx";
 import {useNavigate} from "react-router-dom";
 
 const PurchaseTokens = () => {
-    const {user, logout, api, loading} = useAuth()
+    const {user, logout, api, loading, getUser} = useAuth()
     const [selectedPackage, setSelectedPackage] = useState(null);
     const [purchaseLoading, setPurchaseLoading] = useState(false);
 
@@ -26,6 +26,12 @@ const PurchaseTokens = () => {
         setSelectedPackage(packageId);
     };
 
+    // Have to get user manually since this route isn't wrapped in a <ProtectedRoute />
+    useEffect(() => {
+        getUser()
+    }, [])
+
+
     const handlePurchase = async () => {
         if (!selectedPackage) return;
         setPurchaseLoading(true);
@@ -41,6 +47,32 @@ const PurchaseTokens = () => {
         }
     };
 
+    const renderPurchaseButton = () => {
+        if (user != null) {
+            return <Button
+                onClick={handlePurchase}
+                disabled={!selectedPackage || purchaseLoading}
+                className="w-full md:w-auto bg-green-200 text-green-800 hover:bg-green-300 py-6 hover:border-0 hover:border-green-200 sm:w-auto"
+                size="lg"
+            >
+                {selectedPackage ?
+                    `Purchase ${tokenPackages.find(pkg => pkg.id === selectedPackage)?.amount.toLocaleString()} Tokens` :
+                    'Select a Package'}
+            </Button>
+        }
+
+        return <Button
+            onClick={() => window.location.href = '/login'}
+            disabled={!selectedPackage || purchaseLoading}
+            className="w-full md:w-auto bg-green-200 text-green-800 hover:bg-green-300 py-6 hover:border-0 hover:border-green-200 sm:w-auto"
+            size="lg"
+        >
+            {selectedPackage ?
+                `Login to Purchase ${tokenPackages.find(pkg => pkg.id === selectedPackage)?.amount.toLocaleString()} Tokens` :
+                'Select a Package'}
+        </Button>
+    }
+
     return (
         <div>
             <Navbar user={user} onLogout={logout} loading={loading} />
@@ -48,7 +80,7 @@ const PurchaseTokens = () => {
                 <div className="w-full max-w-4xl">
                     <div className="text-center mb-8">
                         <h1 className="text-3xl font-bold tracking-tight text-white">Purchase Tokens</h1>
-                        <p className="text-slate-600 mt-2">Select a token package to unlock premium RuneLite plugins</p>
+                        <p className="text-slate-600 mt-2">Select a token package to unlock Kraken's suite of plugins</p>
                     </div>
 
                     <Card className="mb-6 bg-gray-100">
@@ -87,16 +119,7 @@ const PurchaseTokens = () => {
                             </RadioGroup>
                         </CardContent>
                         <CardFooter className="flex justify-end border-t pt-6">
-                            <Button
-                                onClick={handlePurchase}
-                                disabled={!selectedPackage || purchaseLoading}
-                                className="w-full md:w-auto bg-green-200 text-green-800 hover:bg-green-300 py-6 hover:border-1 hover:border-green-200 sm:w-auto"
-                                size="lg"
-                            >
-                                {selectedPackage ?
-                                    `Purchase ${tokenPackages.find(pkg => pkg.id === selectedPackage)?.amount.toLocaleString()} Tokens` :
-                                    'Select a Package'}
-                            </Button>
+                            { renderPurchaseButton() }
                         </CardFooter>
                     </Card>
 
@@ -117,7 +140,7 @@ const PurchaseTokens = () => {
                                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                   </svg>
                                 </span>
-                                <span>Customize your Old School RuneScape experience</span>
+                                <span>Customize your Old School RuneScape experience with plugins for Skilling and Bossing</span>
                             </li>
                             <li className="flex items-start">
                               <span className="bg-green-100 p-1 rounded-full mr-2 mt-1">

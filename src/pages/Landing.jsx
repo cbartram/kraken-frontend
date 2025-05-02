@@ -17,7 +17,7 @@ import {
     CloudUpload,
     Gamepad,
     BellOff,
-    ArrowRight, Sparkles, Package, Trophy, Download, Unplug, Plug,
+    ArrowRight, Sparkles, Package, Trophy, Download, Unplug, Plug, Banknote,
 } from 'lucide-react';
 import Logo from "@/assets/logo.png"
 import DiscordLogo from "@/assets/discord-mark-white.svg"
@@ -424,8 +424,8 @@ export default function Landing() {
                         transition={{duration: 0.5, delay: 0.2}}
                         viewport={{once: true}}
                     >
-                        <Button className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6" onClick={() => navigate('/plugins')}>
-                            View All Plugins
+                        <Button className="bg-green-600/20 hover:bg-green-700/20 text-green-600 text-lg px-8 py-6" onClick={() => navigate('/plugins')}>
+                            <Unplug /> View All Plugins
                         </Button>
                     </motion.div>
                 </div>
@@ -445,7 +445,7 @@ export default function Landing() {
                             What Our <span className="text-green-500">Users Say</span>
                         </h2>
                         <p className="text-gray-300 max-w-2xl mx-auto">
-                            Join hundreds of satisfied RuneScape players who have enhanced their gameplay with our
+                            Join the numerous OldSchool RuneScape players who have enhanced their gameplay with our
                             premium plugins.
                         </p>
                     </motion.div>
@@ -453,21 +453,21 @@ export default function Landing() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             {
-                                name: "PkMaster99",
-                                role: "PvP Specialist",
-                                content: "The Effect Timers plugin completely changed my PvP game. The real-time suggestions and visual cues have improved my KD ratio significantly.",
+                                name: "Anonymous",
+                                role: "PvM Specialist",
+                                content: "The chamber of xeric plugin is actually OP for olm. I never could get skipping right but with this plugin it makes solos literally braindead. Highly recommend!",
                                 rating: 5
                             },
                             {
-                                name: "IronBTW",
-                                role: "Ironman Player",
-                                content: "As an Ironman, efficiency is everything. The Chambers plugin saved me countless hours of grinding in solos. Worth every gold piece!",
+                                name: "Anonymous",
+                                role: "Ironman",
+                                content: "As an Ironman, efficiency is everything so dying to alchemical hydra is just not an option. I love that the plugin tracks and counts attacks for you so you don't have to remember a thing.",
                                 rating: 5
                             },
                             {
-                                name: "MaxedMain",
-                                role: "Completionist",
-                                content: "I've tried many plugin suites, but this collection offers the best balance of features without breaking the bank. The ToB plugin is my personal favorite.",
+                                name: "Anonymous",
+                                role: "Maxed Main",
+                                content: "I've tried many plugin suites, but this collection offers the best balance of features without breaking the bank. The ToB plugin is my personal favorite!",
                                 rating: 4
                             }
                         ].map((testimonial, index) => (
@@ -533,7 +533,7 @@ export default function Landing() {
                     </motion.div>
 
                     {/* Flow Diagram */}
-                    <div className="flex flex-col items-center mb-16">
+                    <div className="flex flex-col items-center">
                         <motion.div
                             className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 w-full"
                             initial={{opacity: 0}}
@@ -617,6 +617,9 @@ export default function Landing() {
                                 <p className="text-gray-400">Access your premium plugin in the Kraken client instantly after purchase</p>
                             </motion.div>
                         </motion.div>
+                        <Button className="bg-green-500/20 text-green-500 hover:bg-green-600/20 text-lg px-8 py-6 mt-16" onClick={() => navigate('/purchase')}>
+                            <Banknote /> See Pricing Options
+                        </Button>
                     </div>
                 </div>
             </section>
