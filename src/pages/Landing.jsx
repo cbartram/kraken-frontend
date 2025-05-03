@@ -17,7 +17,7 @@ import {
     CloudUpload,
     Gamepad,
     BellOff,
-    ArrowRight, Sparkles, Package, Trophy, Download, Unplug, Plug, Banknote,
+    ArrowRight, Sparkles, Download, Unplug, Banknote,
 } from 'lucide-react';
 import Logo from "@/assets/logo.png"
 import DiscordLogo from "@/assets/discord-mark-white.svg"
@@ -29,6 +29,7 @@ import Tob from "/tob.png";
 import Zulrah from "/zulrah.png";
 import PluginCarousel from "@/components/landing_page_components/PluginCarousel";
 import VideoShowcase from "@/components/landing_page_components/VideoShowcase.jsx";
+import CallToAction from "@/components/landing_page_components/CallToAction.jsx";
 
 export default function Landing() {
     const navigate = useNavigate();
@@ -625,39 +626,7 @@ export default function Landing() {
             </section>
 
             {/* Call to Action */}
-            <section className="py-20 bg-gradient-to-br from-green-300 to-green-600 text-black">
-                <div className="container mx-auto px-4 text-center">
-                    <motion.h2
-                        initial={{opacity: 0, y: 20}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.5}}
-                        viewport={{once: true}}
-                        className="text-3xl md:text-4xl font-bold mb-6"
-                    >
-                        Ready to Transform Your RuneScape Experience?
-                    </motion.h2>
-                    <motion.p
-                        initial={{opacity: 0, y: 20}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.5, delay: 0.1}}
-                        viewport={{once: true}}
-                        className="text-xl max-w-2xl mx-auto mb-10"
-                    >
-                        Join thousands of players who have already upgraded their gameplay with our premium plugins.
-                    </motion.p>
-                    <motion.div
-                        initial={{opacity: 0, y: 20}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.5, delay: 0.2}}
-                        viewport={{once: true}}
-                    >
-                        <Button onClick={() => discordRedirect()} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white p-6 text-sm font-medium">
-                            <img src={DiscordLogo} height={25} width={25} />
-                            Sign In with Discord
-                        </Button>
-                    </motion.div>
-                </div>
-            </section>
+            <CallToAction />
 
             {/* Footer */}
             <footer className="py-12 bg-gray-900 border-t border-gray-700">
