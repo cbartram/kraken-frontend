@@ -31,6 +31,8 @@ import './index.css'
 import { Toaster } from "@/components/ui/sonner"
 // @ts-ignore
 import PrivacyPolicy from "@/pages/legal/PrivacyPolicy"
+//@ts-ignore
+import TermsAndConditions from "@/pages/legal/TermsAndConditions"
 
 createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
@@ -57,6 +59,7 @@ createRoot(document.getElementById('root')!).render(
                 <Route path="/faq" element={<FAQPage />} />
                 <Route path="/purchase" element={<PurchaseTokens />}/>
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
 
                 <Route path="/profile" element={
                     <ProtectedRoute>

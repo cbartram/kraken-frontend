@@ -49,7 +49,7 @@ export default function Footer() {
                         <ul className="space-y-2">
                             <li><a href="/privacy-policy" className="text-gray-400 hover:text-green-500">Privacy Policy</a></li>
                             <li><a href="#" className="text-gray-400 hover:text-green-500" onClick={() => setShowCookiePolicy(true)}>Cookie Policy</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-green-500">Terms & Conditions</a></li>
+                            <li><a href="/terms-and-conditions" className="text-gray-400 hover:text-green-500">Terms & Conditions</a></li>
                         </ul>
                         <CookiePolicy
                             showPolicy={showCookiePolicy}
