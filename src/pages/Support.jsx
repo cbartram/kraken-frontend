@@ -8,6 +8,7 @@ import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 import {useAuth} from "@/components/AuthContext.jsx";
 import Navbar from "@/components/Navbar.jsx";
 import {KubeApiClient} from "@/lib/api";
+import Footer from "@/components/Footer.jsx";
 
 const SupportEmailForm = () => {
     const {user, logout} = useAuth()
@@ -135,6 +136,7 @@ const SupportEmailForm = () => {
                 </form>
             </Card>
         </div>
+        <Footer />
     </>
     );
 };

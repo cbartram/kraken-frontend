@@ -12,6 +12,7 @@ import {
 import {Download, Terminal, Check, ChevronDown, ChevronRight, Grid2X2, Command, ArrowRight} from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
+import Footer from "@/components/Footer.jsx";
 
 const DownloadPage = () => {
     const {user, logout} = useAuth()
@@ -280,6 +281,7 @@ const DownloadPage = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

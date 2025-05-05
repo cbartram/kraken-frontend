@@ -39,6 +39,7 @@ import PurchasePluginSuccessDialog from "@/components/PurchasePluginSuccessDialo
 import {useNavigate} from "react-router-dom";
 import FreeTrialDialogue from "@/components/FreeTrialDialogue.jsx";
 import { toast } from "sonner"
+import Footer from "@/components/Footer.jsx";
 
 const Plugins = () => {
     const { logout, user, getUser, setUser, api, loading } = useAuth()
@@ -507,6 +508,7 @@ const Plugins = () => {
                     </TabsContent>
                 </Tabs>
             </div>
+            <Footer />
         </div>
     );
 };

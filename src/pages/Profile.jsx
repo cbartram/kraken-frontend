@@ -11,6 +11,7 @@ import {useAuth} from "@/components/AuthContext.jsx";
 import Navbar from "@/components/Navbar.jsx";
 import SkeletonLoading from "@/components/SkeletonLoading.jsx";
 import {formatDate, isPluginExpired} from "@/lib/utils.js";
+import Footer from "@/components/Footer.jsx";
 
 const Profile = () => {
     const {user, logout, loading} = useAuth();
@@ -303,6 +304,7 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 };

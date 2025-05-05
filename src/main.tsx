@@ -29,6 +29,8 @@ import PluginDetailPage from '@/pages/PluginDetail'
 import { RedirectIfAuthenticated } from '@/components/RedirectIfAuthenticated.jsx'
 import './index.css'
 import { Toaster } from "@/components/ui/sonner"
+// @ts-ignore
+import PrivacyPolicy from "@/pages/legal/PrivacyPolicy"
 
 createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
@@ -54,6 +56,8 @@ createRoot(document.getElementById('root')!).render(
                 <Route path="/discord/oauth" element={<AuthCallback />} />
                 <Route path="/faq" element={<FAQPage />} />
                 <Route path="/purchase" element={<PurchaseTokens />}/>
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
                 <Route path="/profile" element={
                     <ProtectedRoute>
                         <Profile />

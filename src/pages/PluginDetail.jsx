@@ -18,6 +18,7 @@ import {
     BreadcrumbList, BreadcrumbPage,
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb.js";
+import Footer from "@/components/Footer.jsx";
 
 const PluginDetailPage = () => {
     const [selectedPricing, setSelectedPricing] = useState('');
@@ -249,6 +250,7 @@ const PluginDetailPage = () => {
                     </Tabs>
                 </div>
             </div>
+            <Footer />
         </>
     );
 };

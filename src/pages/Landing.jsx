@@ -30,33 +30,11 @@ import Zulrah from "/zulrah.png";
 import PluginCarousel from "@/components/landing_page_components/PluginCarousel";
 import VideoShowcase from "@/components/landing_page_components/VideoShowcase.jsx";
 import CallToAction from "@/components/landing_page_components/CallToAction.jsx";
+import Footer from "@/components/Footer.jsx";
 
 export default function Landing() {
     const navigate = useNavigate();
     const [isNavOpen, setIsNavOpen] = useState(false);
-    const [isHovering, setIsHovering] = useState(false);
-    const [activeLoot, setActiveLoot] = useState(null);
-
-    // Sample loot items
-    const lootItems = [
-        { id: 1, name: "Theatre of Blood", rarity: "Insane", bonus: "Settings for every boss room." },
-        { id: 2, name: "Chambers of Xeric", rarity: "Overpowered", bonus: "Olm cycle tracker and room helpers." },
-        { id: 3, name: "Zulrah", rarity: "Powerful", bonus: "Where to stand, what to pray, and when to move." }
-    ];
-
-    useEffect(() => {
-        if (!isHovering) {
-            const interval = setInterval(() => {
-                setActiveLoot(prev => {
-                    if (prev === null) return 0;
-                    return (prev + 1) % lootItems.length;
-                });
-            }, 2000);
-
-            return () => clearInterval(interval);
-        }
-    }, [isHovering, lootItems.length]);
-
 
     const plugins = [
         {
@@ -629,57 +607,7 @@ export default function Landing() {
             <CallToAction />
 
             {/* Footer */}
-            <footer className="py-12 bg-gray-900 border-t border-gray-700">
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                        <div>
-                            <div className="flex items-center gap-2 mb-4">
-                                <img src={Logo} height={75} width={75} className="h-6 w-6 text-green-500" alt="logo"/>
-                                <span className="text-xl font-bold text-green-500">Kraken Plugins</span>
-                            </div>
-                            <p className="text-gray-400 mb-4">
-                                Elevating your Old School RuneScape experience with premium plugins.
-                            </p>
-                            <div className="flex gap-4">
-                                <a href="#" className="text-gray-400 hover:text-green-500">
-                                    <span className="sr-only">Discord</span>
-                                    {/* Discord icon would go here */}
-                                </a>
-                                <a href="#" className="text-gray-400 hover:text-green-500">
-                                    <span className="sr-only">Twitter</span>
-                                    {/* Twitter icon would go here */}
-                                </a>
-                                <a href="#" className="text-gray-400 hover:text-green-500">
-                                    <span className="sr-only">GitHub</span>
-                                    {/* GitHub icon would go here */}
-                                </a>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-lg mb-4">Products</h4>
-                            <ul className="space-y-2">
-                                <li><a href="/plugins" className="text-gray-400 hover:text-green-500">Plugins</a></li>
-                                <li><a href="/download" className="text-gray-400 hover:text-green-500">Client Download</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-lg mb-4">Resources</h4>
-                            <ul className="space-y-2">
-                                <li><a href="/faq" className="text-gray-400 hover:text-green-500">FAQ</a></li>
-                                <li><a href="#" className="text-gray-400 hover:text-green-500">Discord</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-lg mb-4">Legal</h4>
-                            <ul className="space-y-2">
-                                <li><a href="/" className="text-gray-400 hover:text-green-500">Privacy Policy</a></li>
-                                <li><a href="#" className="text-gray-400 hover:text-green-500">Cookie Policy</a></li>
-                                <li><a href="#" className="text-gray-400 hover:text-green-500">Terms & Conditions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 }

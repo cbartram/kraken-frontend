@@ -7,6 +7,7 @@ import { Coins } from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import {useNavigate} from "react-router-dom";
+import Footer from "@/components/Footer.jsx";
 
 const PurchaseTokens = () => {
     const {user, logout, api, loading, getUser} = useAuth()
@@ -76,7 +77,7 @@ const PurchaseTokens = () => {
     return (
         <div>
             <Navbar user={user} onLogout={logout} loading={loading} />
-            <div className="flex flex-col items-center min-h-screen p-6">
+            <div className="flex flex-col items-center min-h-screen p-4">
                 <div className="w-full max-w-4xl">
                     <div className="text-center mb-8">
                         <h1 className="text-3xl font-bold tracking-tight text-white">Purchase Tokens</h1>
@@ -154,6 +155,7 @@ const PurchaseTokens = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
