@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
-import { Loader2 } from 'lucide-react';
+import {Loader2, TriangleAlert} from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
+import Footer from "@/components/Footer.jsx";
 
 const PaymentProcessing = () => {
     const { user, logout } = useAuth();
     const [progress, setProgress] = useState(0);
+    const [canceled, setCanceled] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
         const totalDuration = 10000;
         const interval = 100;
         const increment = (interval / totalDuration) * 100;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const value = urlParams.get('canceled');
 
         const timer = setInterval(() => {
             setProgress(prevProgress => {
@@ -29,8 +34,38 @@ const PaymentProcessing = () => {
             });
         }, interval);
 
+        if(value === "true") {
+            setCanceled(true);
+            setTimeout(() => navigate('/plugins'), 8000);
+            clearInterval(timer)
+        }
+
         return () => clearInterval(timer);
-    }, [navigate]);
+    }, [navigate, canceled]);
+
+    if(canceled) {
+        return (
+            <div>
+                <Navbar user={user} onLogout={logout} />
+                <div className="flex min-h-screen items-center justify-center bg-gray-900">
+                    <Card className="w-full max-w-md border-green-200 shadow-lg">
+                        <CardContent className="pt-6">
+                            <div className="flex flex-col items-center space-y-6 text-center">
+                                <div>
+                                    <TriangleAlert size={100} className="text-rose-600 mx-auto" />
+                                    <h3 className="text-xl font-bold text-rose-600">Payment Canceled</h3>
+                                    <p className="mt-2 text-gray-600">
+                                        Your payment was canceled. You were <span className="text-rose-600 font-bold">NOT</span> charged. You will be redirected to the plugins page in a few seconds.
+                                    </p>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+                <Footer />
+            </div>
+        )
+    }
 
     return (
         <div>
@@ -69,8 +104,8 @@ const PaymentProcessing = () => {
                     </CardContent>
                 </Card>
             </div>
+            <Footer />
         </div>
-
     );
 };
 
