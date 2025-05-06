@@ -6,7 +6,7 @@ import {useEffect} from "react";
 
 // Terms and Conditions Page Component
 export default function TermsAndConditions() {
-    const { user, getUser, onLogout, loading } = useAuth()
+    const { user, getUser, logout, loading } = useAuth()
 
     // Have to get user manually since this route isn't wrapped in a <ProtectedRoute />
     useEffect(() => {
@@ -15,7 +15,7 @@ export default function TermsAndConditions() {
 
     return (
         <>
-            <Navbar user={user} onLogout={onLogout} loading={loading} />
+            <Navbar user={user} onLogout={logout} loading={loading} />
             <div className="min-h-screen bg-slate-50">
                 {/* Header */}
                 <header className="bg-green-600 text-white shadow-md">

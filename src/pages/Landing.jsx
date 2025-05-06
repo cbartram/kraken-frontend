@@ -17,7 +17,7 @@ import {
     CloudUpload,
     Gamepad,
     BellOff,
-    ArrowRight, Sparkles, Download, Unplug, Banknote,
+    ArrowRight, Sparkles, Download, Unplug, Banknote, Package,
 } from 'lucide-react';
 import Logo from "@/assets/logo.png"
 import DiscordLogo from "@/assets/discord-mark-white.svg"
@@ -94,7 +94,7 @@ export default function Landing() {
         <div className="min-h-screen bg-gray-900 text-gray-100">
             {/* Navigation */}
             <nav className="sticky top-0 z-50 bg-gray-800 border-b border-gray-700">
-                <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div className="container mx-auto px-4 py-4 flex justify-between items-center cursor-pointer">
                     <motion.div
                         initial={{opacity: 0, x: -20}}
                         animate={{opacity: 1, x: 0}}
@@ -102,12 +102,12 @@ export default function Landing() {
                         className="flex items-center gap-2"
                     >
                         <img src={Logo} height={50} width={50} />
-                        <span className="text-xl font-bold text-green-500">Kraken Plugins</span>
                     </motion.div>
 
                     {/* Mobile menu button */}
                     <div className="md:hidden">
                         <Button
+                            className="cursor-pointer"
                             variant="ghost"
                             size="icon"
                             onClick={() => setIsNavOpen(!isNavOpen)}
@@ -134,7 +134,7 @@ export default function Landing() {
                             <a href="#pricing" className="hover:text-green-500 transition-colors">Pricing</a>
                         </motion.li>
                         <motion.li whileTap={{scale: 0.95}}>
-                            <Button onClick={() => discordRedirect()} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
+                            <Button onClick={() => discordRedirect()} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium cursor-pointer">
                                 <img src={DiscordLogo} height={25} width={25} />
                                 Sign In with Discord
                             </Button>
@@ -158,7 +158,7 @@ export default function Landing() {
                                    className="hover:text-green-500 transition-colors">Testimonials</a></li>
                             <li><a href="#pricing" className="hover:text-green-500 transition-colors">Pricing</a></li>
                             <li>
-                                <Button className="bg-green-500 hover:bg-green-600 text-black w-full" onClick={() => navigate('/plugins')}>
+                                <Button className="bg-green-500 hover:bg-green-600 text-black w-full cursor-pointer" onClick={() => navigate('/plugins')}>
                                     Browse Plugins
                                 </Button>
                             </li>
@@ -225,12 +225,12 @@ export default function Landing() {
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <Button onClick={() => navigate("/login")} className="bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-lg flex items-center gap-2 shadow-lg shadow-green-600/20">
+                                    <Button onClick={() => navigate("/login")} className="bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-lg flex cursor-pointer items-center gap-2 shadow-lg shadow-green-600/20">
                                         Get Started with a Free Trial
                                         <ArrowRight className="h-4 w-4" />
                                     </Button>
 
-                                    <Button onClick={() => navigate("/plugins")} variant="outline" className="border-indigo-300 bg-indigo-500 text-indigo-100  hover:text-indigo-100 hover:bg-indigo-600 rounded-lg flex items-center gap-2">
+                                    <Button onClick={() => navigate("/plugins")} variant="outline" className="border-indigo-300 bg-indigo-500 text-indigo-100 cursor-pointer hover:text-indigo-100 hover:bg-indigo-600 rounded-lg flex items-center gap-2">
                                         View Plugins
                                         <Unplug className="h-4 w-4" />
                                     </Button>
@@ -269,7 +269,7 @@ export default function Landing() {
                             viewport={{once: true}}
                             className="text-gray-300 max-w-2xl mx-auto"
                         >
-                            Kraken is built directly on top of an unmodified RuneLite client. This means that all of our plugins are 100% compatible with the official client.
+                            Kraken is built directly on top of an unmodified RuneLite client. This means that all of our plugins are <span className="text-green-400 font-bold">100%</span> compatible with the official client.
                         </motion.p>
                     </div>
 
@@ -296,9 +296,9 @@ export default function Landing() {
                                 description: "Want to run RuneLite without any Kraken plugins? With RuneLite mode it's as easy as clicking a button!"
                             },
                             {
-                                icon: <BellOff className="h-12 w-12 text-green-500"/>,
-                                title: "Quiet Plugins",
-                                description: "All our plugins are \"quiet\". Meaning, they assist you with tasks in game without any actual automation or input. No more Macroing bans!"
+                                icon: <Package className="h-12 w-12 text-green-500"/>,
+                                title: "Plugin Packs",
+                                description: "Purchase a plugin pack to get a suite of plugins at a reduced price. We have packs for Raids, Slayer, entry mode PvM and more!"
                             },
                             {
                                 icon: <Download className="h-12 w-12 text-green-500"/>,
@@ -403,7 +403,7 @@ export default function Landing() {
                         transition={{duration: 0.5, delay: 0.2}}
                         viewport={{once: true}}
                     >
-                        <Button className="bg-green-600/20 hover:bg-green-700/20 text-green-600 text-lg px-8 py-6" onClick={() => navigate('/plugins')}>
+                        <Button className="bg-green-600/20 hover:bg-green-700/20 text-green-600 text-lg px-8 py-6 cursor-pointer" onClick={() => navigate('/plugins')}>
                             <Unplug /> View All Plugins
                         </Button>
                     </motion.div>
@@ -440,13 +440,13 @@ export default function Landing() {
                             {
                                 name: "Anonymous",
                                 role: "Ironman",
-                                content: "As an Ironman, efficiency is everything so dying to alchemical hydra is just not an option. I love that the plugin tracks and counts attacks for you so you don't have to remember a thing.",
+                                content: "I used to die to hydra all the time. Then I got the kraken plugin for it. I love that the plugin tracks and counts attacks for you so you don't have to remember a thing. Haven't died since!",
                                 rating: 5
                             },
                             {
                                 name: "Anonymous",
                                 role: "Maxed Main",
-                                content: "I've tried many plugin suites, but this collection offers the best balance of features without breaking the bank. The ToB plugin is my personal favorite!",
+                                content: "I've tried quite a few plugins, but this collection offers the best balance of features without breaking the bank. The ToB plugin is my personal favorite. Literally don't know how I did Sotetseg before.",
                                 rating: 4
                             }
                         ].map((testimonial, index) => (
@@ -596,17 +596,14 @@ export default function Landing() {
                                 <p className="text-gray-400">Access your premium plugin in the Kraken client instantly after purchase</p>
                             </motion.div>
                         </motion.div>
-                        <Button className="bg-green-500/20 text-green-500 hover:bg-green-600/20 text-lg px-8 py-6 mt-16" onClick={() => navigate('/purchase')}>
+                        <Button className="bg-green-500/20 text-green-500 hover:bg-green-600/20 text-lg px-8 py-6 mt-16 cursor-pointer" onClick={() => navigate('/purchase')}>
                             <Banknote /> See Pricing Options
                         </Button>
                     </div>
                 </div>
             </section>
 
-            {/* Call to Action */}
             <CallToAction />
-
-            {/* Footer */}
             <Footer />
         </div>
     )

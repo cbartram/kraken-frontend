@@ -94,7 +94,7 @@ const PluginShowcase = () => {
 
             <div className={`mt-8 text-center transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
                 <div>
-                    <button className="bg-gradient-to-r flex items-center mx-auto from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-6 rounded-lg transition-all" onClick={() => window.location.href = '/plugins'}>
+                    <button className="bg-gradient-to-r flex items-center mx-auto cursor-pointer from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-6 rounded-lg transition-all" onClick={() => window.location.href = '/plugins'}>
                         See All Plugins <Unplug className="ml-2" />
                     </button>
                 </div>

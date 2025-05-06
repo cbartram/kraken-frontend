@@ -115,18 +115,16 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
         <div className="bg-slate-700 text-white p-2 bg-gradient-to-r from-slate-700 to-slate-800 opacity-95 drop-shadow-lg">
             <div className="max-w-4xl mx-auto flex items-center justify-between">
                 <div className="flex items-center space-x-6">
-                    <nav className="flex items-center space-x-4">
+                    <nav className="flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href = "/"}>
                         <img src={Logo} alt="logo" height={40} width={40} />
-                        <h3 className="text-xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent m-0">Kraken Plugins</h3>
                     </nav>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <a href="/" className="hover:text-green-500 text-white-400 transition-colors font-bold">Home</a>
                     <a href="/plugins" className="hover:text-green-500 text-white-400 transition-colors font-bold">Plugins</a>
+                    <a href="/purchase" className="hover:text-green-500 text-white-400 transition-colors font-bold">Pricing</a>
                     {
                         user && !loading && (
                             <>
-                                <a href="/purchase" className="hover:text-green-500 text-white-400 transition-colors font-bold">Purchase Tokens</a>
                                 <a href="/download" className="hover:text-green-500 text-white-400 transition-colors font-bold">Download Client</a>
                             </>
                         )

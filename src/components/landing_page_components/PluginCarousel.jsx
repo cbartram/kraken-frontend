@@ -23,11 +23,10 @@ const pluginData = [
         id: 1,
         name: "Olm Cycle Tracking",
         description: "Real-time tracking for Olms cycle so you know when to skip, when to move, and what attacks are coming next. Never miss a special skip or wonder if you are in cycle again!",
-        imageUrl: "/api/placeholder/800/500",
+        imageUrl: "https://placehold.co/600x400",
         learnMore: "/plugins/Cox-Helper"
     },
     {
-        // Done
         id: 2,
         name: "Gauntlet Counters",
         description: "Prayer and weapon attack counters for the corrupted and regular gauntlet. This plugin also includes tick timers for each tornado making it easy to see when they will despawn!",
@@ -35,7 +34,6 @@ const pluginData = [
         learnMore: "/plugins/Gauntlet-Extended"
     },
     {
-        // Done
         id: 3,
         name: "Inferno Counters",
         description: "Prayer counters, Mob tick timers, safespots, and guitar hero mode for every inferno monster so you know what is hitting you when and can easily tell if mobs are off ticked. ",
@@ -46,7 +44,7 @@ const pluginData = [
         id: 4,
         name: "Nex Highlights",
         description: "Nex Tank Highlights, step under timers, altar highlighting, blood radius markers and more make Nex an absolute breeze in 3 mans.",
-        imageUrl: "/api/placeholder/800/500",
+        imageUrl: "https://placehold.co/600x400",
         learnMore: "/plugins/Nex"
     },
     {
@@ -78,7 +76,6 @@ const pluginData = [
         learnMore: "/plugins/Theatre-of-Blood"
     },
     {
-        // Done
         id: 9,
         name: "Tombs of Amascut Akkha Orbs",
         description: "Shows a tick counter and which orbs will safely miss your player in Akkha's final stand. Forget about wondering if that diagonal orb is going to collide with you or narrowly miss you!",
@@ -89,18 +86,17 @@ const pluginData = [
         id: 10,
         name: "Tombs of Amascut P2 Wardens Skulls",
         description: "Shows exactly where skulls will land for P2 wardens so you can easily dodge them. You can actually look forward to the skull special now!",
-        imageUrl: "/api/placeholder/800/500",
+        imageUrl: "https://placehold.co/600x400",
         learnMore: "/plugins/ToA-Extended"
     },
     {
         id: 11,
         name: "Tombs of Amascut Insanity",
         description: "This feature automatically remembers the safe side for Insanity wardens runs. Gone are the days of having to recall if its left, right, or middle!",
-        imageUrl: "/api/placeholder/800/500",
+        imageUrl: "https://placehold.co/600x400",
         learnMore: "/plugins/ToA-Extended"
     },
     {
-        // Done
         id: 12,
         name: "Zulrah Rotations",
         description: "Tells you where to stand and what to pray to avoid Zulrah's attacks no matter the rotation!",
@@ -129,7 +125,7 @@ export default function PluginCarousel() {
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold tracking-tight mb-3">Fan Favorite <span className="text-green-500">Features</span></h2>
                     <p className="text-gray-500 max-w-2xl mx-auto">
-                        These plugin features are loved by our user. We know you'll love them too!
+                        These plugin features are loved by our users and we know you'll love them too!
                     </p>
                 </div>
 
@@ -156,10 +152,10 @@ export default function PluginCarousel() {
                         </CarouselContent>
 
                         <div className="absolute -left-12 top-1/2 -translate-y-1/2">
-                            <CarouselPrevious className="h-10 w-10" />
+                            <CarouselPrevious className="h-10 w-10 bg-green-500" />
                         </div>
                         <div className="absolute -right-12 top-1/2 -translate-y-1/2">
-                            <CarouselNext className="h-10 w-10" />
+                            <CarouselNext className="h-10 w-10 bg-green-500" />
                         </div>
                     </Carousel>
 

@@ -313,14 +313,14 @@ const Plugins = () => {
                     <TabsList className="grid grid-cols-2 bg-gray-50">
                         <TabsTrigger
                             value="plugins"
-                            className="data-[state=active]:bg-green-400 data-[state=active]:text-white"
+                            className="data-[state=active]:bg-green-400 data-[state=active]:text-white cursor-pointer"
                         >
                             <Plug />
                             Individual Plugins
                         </TabsTrigger>
                         <TabsTrigger
                             value="packs"
-                            className="data-[state=active]:bg-green-400 data-[state=active]:text-white"
+                            className="data-[state=active]:bg-green-400 data-[state=active]:text-white cursor-pointer"
                         >
                             <Box />
                             Plugin Packs
