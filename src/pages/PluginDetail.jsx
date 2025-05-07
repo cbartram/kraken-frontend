@@ -19,6 +19,12 @@ import {
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb.js";
 import Footer from "@/components/Footer.jsx";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger
+} from '@/components/ui/accordion';
 
 const PluginDetailPage = () => {
     const [selectedPricing, setSelectedPricing] = useState('');
@@ -27,6 +33,7 @@ const PluginDetailPage = () => {
     const [pluginSuccessDialogueOpen, setPluginSuccessDialogueOpen] = useState(false);
     const [pluginResponse, setPluginResponse] = useState({});
     const [errorMessage, setErrorMessage] = useState("");
+    const [groupedConfig, setGroupedConfig] = useState({});
     const [plugin, setPlugin] = useState({
         title: "Loading",
         thumbnail: "/api/placeholder/400/225",
@@ -39,8 +46,8 @@ const PluginDetailPage = () => {
         },
         configurationOptions: [
             {
-                name: "Growth Notifications",
-                description: "Configure when and how you receive notifications about your crop growth stages. Options include desktop notifications, in-game chat messages, or both.",
+                name: "Loading",
+                description: "Plugin details are loading...",
                 default: "In-game only"
             },
         ]
@@ -59,6 +66,30 @@ const PluginDetailPage = () => {
         }
     }, [api]);
 
+    useEffect(() => {
+        if (!plugin?.configurationOptions) return;
+
+        const grouped = plugin.configurationOptions.reduce((acc, config) => {
+            const section = config.section === "" ? "General" : config.section;
+
+            if (!acc[section]) {
+                acc[section] = [];
+            }
+
+            acc[section].push(config);
+            return acc;
+        }, {});
+
+        setGroupedConfig(grouped);
+    }, [plugin]);
+
+    // Get sorted section names
+    const sections = Object.keys(groupedConfig).sort((a, b) => {
+        if (a === "General") return -1;
+        if (b === "General") return 1;
+        return a.localeCompare(b);
+    });
+
     const handlePluginPurchase = async (plugin, subscriptionPeriod) => {
         try {
             const res = await api.purchasePlugin(plugin.name, subscriptionPeriod)
@@ -75,10 +106,19 @@ const PluginDetailPage = () => {
     const calculateSavings = (option) => {
         if (option === 'threeMonth') {
             const regularPrice = plugin.priceDetails.month * 3;
-            return ((regularPrice - plugin.priceDetails.threeMonth) / regularPrice * 100).toFixed(0);
+            const price = ((regularPrice - plugin.priceDetails.threeMonth) / regularPrice * 100)
+            if(isNaN(price)) {
+                return 0
+            }
+            return price.toFixed(0);
         } else if (option === 'year') {
             const regularPrice = plugin.priceDetails.month * 12;
-            return ((regularPrice - plugin.priceDetails.year) / regularPrice * 100).toFixed(0);
+            const price = ((regularPrice - plugin.priceDetails.year) / regularPrice * 100)
+
+            if(isNaN(price)) {
+                return 0
+            }
+            return price.toFixed(0);
         }
         return 0;
     };
@@ -188,7 +228,7 @@ const PluginDetailPage = () => {
                                     </div>
                                 </div>
 
-                                <Button disabled={selectedPricing === ''} onClick={() => setOpen(true)} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 font-medium">
+                                <Button disabled={selectedPricing === '' || !user} onClick={() => setOpen(true)} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 font-medium">
                                     Purchase Plugin
                                 </Button>
                             </CardContent>
@@ -224,28 +264,38 @@ const PluginDetailPage = () => {
                             </div>
                         </TabsContent>
 
-                        <TabsContent value="configuration" className="bg-white border border-gray-200 rounded-b-lg">
-                            <div className="divide-y">
-                                {plugin.configurationOptions.map((config, index) => (
-                                    <div key={index} className="p-6">
-                                        <div className="flex items-start">
-                                            <div className="mr-4 mt-1">
-                                                <Cog size={20} className="text-indigo-600" />
+                        <TabsContent value="configuration" className="bg-white border border-gray-200 rounded-b-lg p-4">
+                            <Accordion type="multiple" className="w-full" defaultValue={["General"]}>
+                                {sections.map((section) => (
+                                    <AccordionItem key={section} value={section} className="border-b">
+                                        <AccordionTrigger className="py-4 text-lg font-medium text-indigo-700">
+                                            {section}
+                                        </AccordionTrigger>
+                                        <AccordionContent>
+                                            <div className="divide-y">
+                                                {groupedConfig[section].map((config, index) => (
+                                                    <div key={index} className="py-4">
+                                                        <div className="flex items-start">
+                                                            <div className="mr-4 mt-1">
+                                                                <Cog size={20} className="text-indigo-600" />
+                                                            </div>
+                                                            <div>
+                                                                <div className="flex flex-row items-center">
+                                                                    <h3 className="font-medium text-lg text-green-700">{config.name}</h3>
+                                                                    <Badge className={`ml-2 text-sm ${config.type === "boolean" ? 'bg-green-500/20 text-green-600' : 'bg-indigo-500/20 text-indigo-600'}`}>
+                                                                        {config.type}
+                                                                    </Badge>
+                                                                </div>
+                                                                <p className="mt-2 text-gray-600">{config.description}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                ))}
                                             </div>
-                                            <div>
-                                                <div className="flex flex-row">
-                                                    <h3 className="font-medium text-lg text-green-700">{config.name}</h3>
-                                                    <Badge className={`ml-2 text-sm ${config.type === "boolean" ? 'bg-green-500/20 text-green-600' : 'bg-indigo-500/20 text-indigo-600'}`}>{config.type}</Badge>
-                                                </div>
-                                                <p className="mt-2 text-gray-600">{config.description}</p>
-                                                <div className="mt-2">
-                                                    <span className="text-sm font-medium text-gray-500">Section: {config.section === "" ? "None" : config.section}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        </AccordionContent>
+                                    </AccordionItem>
                                 ))}
-                            </div>
+                            </Accordion>
                         </TabsContent>
                     </Tabs>
                 </div>
