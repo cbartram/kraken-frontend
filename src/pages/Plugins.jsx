@@ -379,8 +379,11 @@ const Plugins = () => {
                             {plugins.map(plugin => (
                                 <div key={plugin.name} className="relative">
                                     <div
-                                        className="absolute inset-0 rounded-lg bg-no-repeat bg-cover z-0 opacity-100"
-                                        style={{ backgroundImage: `url(${plugin.imageUrl})` }}
+                                        className="absolute inset-0 rounded-lg bg-no-repeat bg-cover bg-center z-0 opacity-100"
+                                        style={{
+                                            backgroundImage: `url(${plugin.imageUrl})`,
+                                            backgroundPosition: plugin.backgroundPosition || 'center',
+                                    }}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/100 rounded-lg z-10" />
 
@@ -442,8 +445,11 @@ const Plugins = () => {
                             {pluginPacks.map(pack => (
                                 <div key={pack.name} className="relative">
                                     <div
-                                        className="absolute inset-0 rounded-lg bg-no-repeat bg-cover z-0 opacity-100"
-                                        style={{ backgroundImage: `url(${pack.imageUrl})` }}
+                                        className="absolute inset-0 rounded-lg bg-no-repeat bg-cover bg-center z-0 opacity-100"
+                                        style={{
+                                            backgroundImage: `url(${pack.imageUrl})`,
+                                            backgroundPosition: pack.backgroundPosition || 'center',
+                                    }}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/100 rounded-lg z-10" />
 
