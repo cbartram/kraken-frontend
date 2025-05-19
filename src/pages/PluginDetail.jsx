@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
+import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Cog, Info, Notebook, ReceiptText, Sparkles} from 'lucide-react';
+import { Cog, ReceiptText, Sparkles} from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import {useParams} from "react-router-dom";
