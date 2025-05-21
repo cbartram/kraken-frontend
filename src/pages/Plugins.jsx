@@ -10,7 +10,7 @@ import {
     Package,
     Cog,
     Plug,
-    Box
+    Box, CircleDashed, FlaskConical
 } from 'lucide-react';
 import {
     Card,
@@ -40,6 +40,7 @@ import {useNavigate} from "react-router-dom";
 import FreeTrialDialogue from "@/components/FreeTrialDialogue.jsx";
 import { toast } from "sonner"
 import Footer from "@/components/Footer.jsx";
+import BetaPluginDialog from "@/components/BetaPluginDialogue.jsx";
 
 const Plugins = () => {
     const { logout, user, getUser, setUser, api, loading } = useAuth()
@@ -52,6 +53,7 @@ const Plugins = () => {
     const [sortBy, setSortBy] = useState("topPicks");
     const [activeTab, setActiveTab] = useState("plugins");
     const [open, setOpen] = useState(false);
+    const [betaAlertOpen, setBetaAlertOpen] = useState(false);
     const [successAlertOpen, setSuccessAlertOpen] = useState(false);
     const [errorDialogueOpen, setErrorDialogueOpen] = useState(false);
     const [pluginSuccessDialogueOpen, setPluginSuccessDialogueOpen] = useState(false);
@@ -182,6 +184,16 @@ const Plugins = () => {
         setOpen(true)
     }
 
+    const showBetaDialogue = (item, type) => {
+        if(user == null) {
+            discordRedirect()
+            return
+        }
+
+        setSelectedItem({...item, type})
+        setBetaAlertOpen(true)
+    }
+
     const handleItemPurchase = async (item, subscriptionPeriod) => {
         try {
             let res;
@@ -213,7 +225,7 @@ const Plugins = () => {
             </Button>
         }
 
-        let hasPurchased = false;
+        let hasPurchased;
         let isExpired = false;
 
         if (type === 'plugin') {
@@ -242,7 +254,7 @@ const Plugins = () => {
         }
 
         return <Button
-            onClick={() => showPurchaseDialogue(item, type)}
+            onClick={() => item.isInBeta ? showBetaDialogue(item,type) : showPurchaseDialogue(item, type)}
             className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white"
         >
             <Coins className="mr-2" />
@@ -297,6 +309,7 @@ const Plugins = () => {
             <PurchasePluginSuccessDialog isOpen={pluginSuccessDialogueOpen} onClose={() => setPluginSuccessDialogueOpen(false)} successResponse={pluginResponse} />
             <ErrorDialog isOpen={errorDialogueOpen} onClose={() => setErrorDialogueOpen(false)} message={errorMessage} />
             <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(item, subscriptionPeriod) => handleItemPurchase(item, subscriptionPeriod)} plugin={selectedItem} />
+            <BetaPluginDialog isOpen={betaAlertOpen} onClose={() => setBetaAlertOpen(false)} onPurchase={(item, subscriptionPeriod) => handleItemPurchase(item, subscriptionPeriod)} plugin={selectedItem} />
             <FreeTrialDialogue isOpen={freeTrialDialogueOpen} onClose={() => setFreeTrialDialogueOpen(false)} onFreeTrialStart={() => handleFreeTrial()} />
 
             { /* For purchasing kraken tokens */}
@@ -388,14 +401,23 @@ const Plugins = () => {
                                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/100 rounded-lg z-10" />
 
                                     <Card className="relative z-20 border-0 bg-transparent overflow-hidden">
-                                        {plugin.isTopPick && (
+                                        {plugin.topPick && (
                                             <div className="absolute top-0 right-0 bg-green-600/75 text-white px-3 py-1 text-xs font-bold">
                                                 TOP PICK
                                             </div>
                                         )}
 
                                         <CardHeader className="mb-24">
-                                            <CardTitle className="text-2xl text-white">{plugin.title}</CardTitle>
+                                            <CardTitle className="text-2xl text-white">
+                                                    {plugin.title}
+
+                                                {plugin.isInBeta &&
+                                                    <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-green-500/20 text-green-400 mb-4">
+                                                        <FlaskConical className="mr-1 h-4 w-4" />
+                                                        Beta Plugin
+                                                    </span>
+                                                }
+                                            </CardTitle>
                                             <CardDescription className="text-gray-200 min-h-24">{plugin.description}</CardDescription>
                                         </CardHeader>
 
@@ -405,15 +427,15 @@ const Plugins = () => {
                                                     <h3 className="font-medium text-white mb-2">Subscription Options</h3>
                                                     <div className="flex justify-between items-center mb-2">
                                                         <span className="text-gray-300">1 Month</span>
-                                                        <span className="text-white font-bold">{plugin.priceDetails.month} Tokens</span>
+                                                        <span className="text-white font-bold">{plugin.priceDetails.month === 0 ? <span className="text-green-400">FREE</span> : `${plugin.priceDetails.month} Tokens`}</span>
                                                     </div>
                                                     <div className="flex justify-between items-center mb-2">
                                                         <span className="text-gray-300">3 Months</span>
-                                                        <span className="text-white font-bold">{plugin.priceDetails.threeMonth} Tokens</span>
+                                                        <span className="text-white font-bold">{plugin.priceDetails.threeMonth === 0 ? <span className="text-green-400">FREE</span> : `${plugin.priceDetails.threeMonth} Tokens`}</span>
                                                     </div>
                                                     <div className="flex justify-between items-center">
                                                         <span className="text-gray-300">1 Year</span>
-                                                        <span className="text-white font-bold">{plugin.priceDetails.year} Tokens</span>
+                                                        <span className="text-white font-bold">{plugin.priceDetails.year === 0 ? <span className="text-green-400">FREE</span> : `${plugin.priceDetails.year} Tokens`}</span>
                                                     </div>
                                                 </div>
                                             </div>
