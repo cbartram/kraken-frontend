@@ -71,6 +71,9 @@ const DownloadPage = () => {
                                         {/* Step 1 */}
                                         <div className="flex gap-4">
                                             {renderStepNumber(1, activeStep >= 1)}
+                                            <div className={`flex items-center justify-center w-8 h-8 rounded-full flex-shrink-0 ${isActive ? 'bg-green-400 text-white' : 'bg-gray-200 text-gray-700'}`}>
+                                                {activeStep > number ? <Check className="w-5 h-5" /> : number}
+                                            </div>
                                             <div className="space-y-2">
                                                 <h3 className="text-lg font-medium">Download & Install RuneLite</h3>
                                                 <p className="text-gray-600 dark:text-gray-400">

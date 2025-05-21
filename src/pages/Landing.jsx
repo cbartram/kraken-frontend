@@ -16,7 +16,6 @@ import {
     VenetianMask,
     CloudUpload,
     Gamepad,
-    BellOff,
     ArrowRight, Sparkles, Download, Unplug, Banknote, Package,
 } from 'lucide-react';
 import Logo from "@/assets/logo.png"

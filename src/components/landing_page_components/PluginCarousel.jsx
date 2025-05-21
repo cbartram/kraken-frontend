@@ -16,6 +16,7 @@ import Nylo from '@/assets/carousel/nylo_carousel.png'
 import Socket from '@/assets/carousel/socket_sote_carousel.png'
 import Sote from '@/assets/carousel/sote_prayer_carousel.png'
 import Verzik from '@/assets/carousel/verzik_yellows_carousel.png'
+import Olm from '@/assets/carousel/olm_plugin.png'
 
 // Sample plugin data - replace with your actual plugin data
 const pluginData = [
@@ -23,7 +24,7 @@ const pluginData = [
         id: 1,
         name: "Olm Cycle Tracking",
         description: "Real-time tracking for Olms cycle so you know when to skip, when to move, and what attacks are coming next. Never miss a special skip or wonder if you are in cycle again!",
-        imageUrl: "https://placehold.co/600x400",
+        imageUrl: Olm,
         learnMore: "/plugins/Cox-Helper"
     },
     {

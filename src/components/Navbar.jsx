@@ -70,28 +70,11 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
                                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuGroup>
-                                    <DropdownMenuItem onClick={() => window.location.href = "/plugins"}>
-                                        Plugins
-                                        <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem onClick={() => window.location.href = "/purchase"}>
-                                        Purchase Tokens
-                                        <DropdownMenuShortcut>⌘T</DropdownMenuShortcut>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem onClick={() => window.location.href = "/download"}>
-                                        Download Client
-                                        <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
-                                    </DropdownMenuItem>
                                     <DropdownMenuItem onClick={() => window.location.href = "/profile"}>
                                         Profile
                                         <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem onClick={() => window.location.href = "/support"}>
-                                        Support
-                                        <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                                    </DropdownMenuItem>
                                 </DropdownMenuGroup>
-                                <DropdownMenuSeparator />
                                 <DropdownMenuItem onClick={onLogout}>
                                     Log out
                                     <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
@@ -129,6 +112,7 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
                             </>
                         )
                     }
+                    <a href="/support" className="hover:text-green-500 text-white-400 transition-colors font-bold">Support</a>
                     {renderNav(loading, user)}
                 </div>
             </div>
