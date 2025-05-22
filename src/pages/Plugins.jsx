@@ -10,7 +10,7 @@ import {
     Package,
     Cog,
     Plug,
-    Box, CircleDashed, FlaskConical
+    Box, CircleDashed, FlaskConical, DollarSign
 } from 'lucide-react';
 import {
     Card,
@@ -294,6 +294,17 @@ const Plugins = () => {
         </Button>
     }
 
+    const renderPrice = (plugin, duration, saleDuration) => {
+        if(plugin.priceDetails.month === 0 && plugin.priceDetails.threeMonth === 0 && plugin.priceDetails.year === 0) {
+            return <span className="text-green-400">FREE</span>
+        }
+
+        if(plugin.saleDiscount > 0) {
+            return <span className="text-orange-500 font-bold"><span className="text-white line-through">{plugin.priceDetails[duration]}</span> {plugin.priceDetails[saleDuration]} Tokens</span>
+        }
+        return <span className="text-white font-bold">{plugin.priceDetails[duration]} Tokens</span>
+    }
+
     const handleFreeTrial = () => {
         api.startTrial().then((res) => {
             toast.success(`Free trial started successfully and will end on: ${formatDate(res.expires)}`)
@@ -424,18 +435,27 @@ const Plugins = () => {
                                         <CardContent>
                                             <div className="flex flex-col mt-12">
                                                 <div className="bg-black/50 p-4 rounded-lg">
-                                                    <h3 className="font-medium text-white mb-2">Subscription Options</h3>
+                                                    <div className="flex">
+                                                        <h3 className="font-medium text-white mb-2">Subscription Options</h3>
+                                                        {
+                                                            plugin.saleDiscount > 0 &&
+                                                            <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg- bg-amber-500/20 text-amber-400 mb-4">
+                                                        {plugin.saleDiscount}% OFF
+                                                    </span>
+                                                        }
+                                                    </div>
                                                     <div className="flex justify-between items-center mb-2">
                                                         <span className="text-gray-300">1 Month</span>
-                                                        <span className="text-white font-bold">{plugin.priceDetails.month === 0 ? <span className="text-green-400">FREE</span> : `${plugin.priceDetails.month} Tokens`}</span>
+                                                        {renderPrice(plugin, 'month', 'saleMonth')}
                                                     </div>
                                                     <div className="flex justify-between items-center mb-2">
                                                         <span className="text-gray-300">3 Months</span>
-                                                        <span className="text-white font-bold">{plugin.priceDetails.threeMonth === 0 ? <span className="text-green-400">FREE</span> : `${plugin.priceDetails.threeMonth} Tokens`}</span>
+                                                        {renderPrice(plugin, 'threeMonth', 'saleThreeMonth')}
+
                                                     </div>
                                                     <div className="flex justify-between items-center">
                                                         <span className="text-gray-300">1 Year</span>
-                                                        <span className="text-white font-bold">{plugin.priceDetails.year === 0 ? <span className="text-green-400">FREE</span> : `${plugin.priceDetails.year} Tokens`}</span>
+                                                        {renderPrice(plugin, 'year', 'saleYear')}
                                                     </div>
                                                 </div>
                                             </div>
@@ -548,7 +568,7 @@ function getSortLabel(sortBy) {
         case "priceDesc": return "Price (High to Low)";
         case "nameAsc": return "Name (A-Z)";
         case "nameDesc": return "Name (Z-A)";
-        case "topPicks": return "Top Picks";
+        case "topPick": return "Top Picks";
         case "discount": return "Best Discount";
         default: return "Top Picks";
     }
