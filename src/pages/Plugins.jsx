@@ -41,10 +41,12 @@ import FreeTrialDialogue from "@/components/FreeTrialDialogue.jsx";
 import { toast } from "sonner"
 import Footer from "@/components/Footer.jsx";
 import BetaPluginDialog from "@/components/BetaPluginDialogue.jsx";
+import SaleBanner from "@/components/SaleBanner.jsx";
 
 const Plugins = () => {
     const { logout, user, getUser, setUser, api, loading } = useAuth()
     const navigate = useNavigate();
+    const [sales, setSales] = useState({});
     const [plugins, setPlugins] = useState([]);
     const [pluginPacks, setPluginPacks] = useState([]);
     const [fullPluginList, setFullPluginList] = useState([]);
@@ -92,6 +94,19 @@ const Plugins = () => {
                 console.log(error)
                 console.error(`failed to load plugins from API: ${error.message}`);
             })
+
+            // Load Sales
+            api.getSales().then(response => {
+                if(response.length > 0) {
+                    // Note: This will only advertise the first sale if for some reason there are multiple sales at the
+                    // same time.
+                    setSales(response[0]);
+                }
+            }).catch(error => {
+                console.log(error)
+                console.error(`failed to load sales from API: ${error.message}`);
+            })
+
 
             // Load plugin packs
             api.getPluginPacks().then(response => {
@@ -329,6 +344,7 @@ const Plugins = () => {
                 <h1 className="text-4xl font-bold mb-6 text-center text-green-400">Kraken Plugins</h1>
                 <p className="text-secondary text-center mb-4">View the full collection of available Kraken Plugins and Plugin Packs!</p>
 
+                <SaleBanner saleData={sales} />
                 <div className="flex align-middle justify-center mb-6">
                     {renderFreeTrialButton()}
                 </div>

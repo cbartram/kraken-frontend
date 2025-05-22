@@ -83,6 +83,12 @@ class KubeApiClient extends ApiClient {
         });
     }
 
+    async getSales() {
+        return this.request("/api/v1/sale/", {
+            method: "GET",
+        });
+    }
+
     async getPlugin(name) {
         return this.request("/api/v1/plugin/?name=" + name, {
             method: "GET",
