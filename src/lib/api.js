@@ -114,11 +114,11 @@ class KubeApiClient extends ApiClient {
         })
     }
 
-    async sendEmail(subject, message) {
+    async sendEmail(subjectPrefix, subject, message) {
         return this.request('/api/v1/support/send-message', {
             method: "POST",
             body: JSON.stringify({
-                subject,
+                subject: subjectPrefix + " " + subject,
                 message,
             })
         })

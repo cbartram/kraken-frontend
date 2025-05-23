@@ -180,7 +180,7 @@ const SupportEmailForm = () => {
         setError('');
 
         try {
-            const res = await kubeApi.sendEmail(subject, message);
+            const res = await kubeApi.sendEmail("Support Request:", subject, message);
             console.log(res);
             setStatus('success');
 
