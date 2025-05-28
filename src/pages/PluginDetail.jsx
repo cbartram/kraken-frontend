@@ -123,6 +123,12 @@ const PluginDetailPage = () => {
         return 0;
     };
 
+    const getYouTubeID = (url) => {
+        const regex = /https:\/\/youtu\.be\/([\w-]{11})/;
+        const match = url.match(regex);
+        return match ? match[1] : null;
+    };
+
     return (
         <>
             <Navbar user={user} onLogout={logout} />
@@ -151,12 +157,13 @@ const PluginDetailPage = () => {
                         <Card className="overflow-hidden">
                             <CardContent className="p-6">
                                 <div className="aspect-video bg-zinc-100 rounded-lg flex items-center justify-center">
-                                    <div className="text-center">
-                                        <p className="text-zinc-500 mb-2">Plugin Video Demo</p>
-                                        <Button variant="outline" className="bg-indigo-600 text-white hover:bg-indigo-700">
-                                            Watch Demo
-                                        </Button>
-                                    </div>
+                                        <iframe
+                                            style={{width: '100%', height: '100%'}}
+                                                src={`https://www.youtube.com/embed/${getYouTubeID(plugin.videoUrl)}`}
+                                                title="YouTube video player" frameBorder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerPolicy="strict-origin-when-cross-origin"
+                                                allowFullScreen></iframe>
                                 </div>
                             </CardContent>
                         </Card>
