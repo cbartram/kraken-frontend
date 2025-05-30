@@ -10,7 +10,7 @@ import {
     Package,
     Cog,
     Plug,
-    Box, CircleDashed, FlaskConical, DollarSign
+    Box, CircleDashed, FlaskConical, DollarSign, LoaderCircle
 } from 'lucide-react';
 import {
     Card,
@@ -88,8 +88,8 @@ const Plugins = () => {
         if (api) {
             // Load plugins
             api.getPlugins().then(response => {
-                setPlugins(response.sort((a, b) => a.title.localeCompare(b.title)));
-                setFullPluginList(response.sort((a, b) => a.title.localeCompare(b.title)));
+                setPlugins(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false})));
+                setFullPluginList(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false})));
             }).catch(error => {
                 console.log(error)
                 console.error(`failed to load plugins from API: ${error.message}`);
@@ -110,8 +110,8 @@ const Plugins = () => {
 
             // Load plugin packs
             api.getPluginPacks().then(response => {
-                setPluginPacks(response.sort((a, b) => a.title.localeCompare(b.title)));
-                setFullPluginPackList(response.sort((a, b) => a.title.localeCompare(b.title)));
+                setPluginPacks(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false})));
+                setFullPluginPackList(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false})));
             }).catch(error => {
                 console.log(error)
                 console.error(`failed to load plugin packs from API: ${error.message}`);
@@ -210,6 +210,8 @@ const Plugins = () => {
     }
 
     const handleItemPurchase = async (item, subscriptionPeriod) => {
+        setPlugins((plugins) => plugins.map(p => p.name === item.name ? { ...p, loading: true } : p))
+        setPluginPacks(packs => packs.map(p => p.name === item.name ? { ...p, loading: true } : p))
         try {
             let res;
             if (item.type === 'plugin') {
@@ -219,7 +221,6 @@ const Plugins = () => {
                 res = await api.purchasePluginPack(item.name, subscriptionPeriod)
                 user.tokens -= item.priceDetails[reconcileSubPeriod(subscriptionPeriod)];
             }
-
             setPluginResponse(res)
             setPluginSuccessDialogueOpen(true)
         } catch (error) {
@@ -227,6 +228,9 @@ const Plugins = () => {
             setErrorMessage(error.message)
             setErrorDialogueOpen(true);
         }
+        setPlugins((plugins) => plugins.map(p => ({ ...p, loading: false })))
+        setPluginPacks(packs => packs.map(p => ({ ...p, loading: false })))
+
     }
 
     const renderPurchaseButton = (item, type) => {
@@ -269,11 +273,14 @@ const Plugins = () => {
         }
 
         return <Button
+            disabled={item.loading}
             onClick={() => item.isInBeta ? showBetaDialogue(item,type) : showPurchaseDialogue(item, type)}
             className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-indigo-600 hover:bg-indigo-700 text-white"
         >
-            <Coins className="mr-2" />
-            Purchase
+            {
+                item.loading ? <><LoaderCircle className="animate-spin mr-2" /> Purchasing...</> : <><Coins className="mr-2" />
+                Purchase</>
+            }
         </Button>
     }
 
