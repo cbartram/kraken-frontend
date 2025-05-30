@@ -71,9 +71,6 @@ const DownloadPage = () => {
                                         {/* Step 1 */}
                                         <div className="flex gap-4">
                                             {renderStepNumber(1, activeStep >= 1)}
-                                            <div className={`flex items-center justify-center w-8 h-8 rounded-full flex-shrink-0 ${isActive ? 'bg-green-400 text-white' : 'bg-gray-200 text-gray-700'}`}>
-                                                {activeStep > number ? <Check className="w-5 h-5" /> : number}
-                                            </div>
                                             <div className="space-y-2">
                                                 <h3 className="text-lg font-medium">Download & Install RuneLite</h3>
                                                 <p className="text-gray-600 dark:text-gray-400">
@@ -135,7 +132,7 @@ const DownloadPage = () => {
 
                                         {/* Step 3 */}
                                         <div className="flex gap-4">
-                                            {renderStepNumber(3, activeStep >= 2)}
+                                            {renderStepNumber(3, activeStep >= 3)}
                                             <div className="space-y-2 w-full">
                                                 <h3 className="text-lg font-medium">Installation instructions</h3>
 
@@ -196,7 +193,7 @@ const DownloadPage = () => {
 
                                                 <Button
                                                     variant="outline"
-                                                    onClick={() => setActiveStep(3)}
+                                                    onClick={() => setActiveStep(4)}
                                                     className="mt-4"
                                                 >
                                                     I've completed this step
@@ -208,13 +205,11 @@ const DownloadPage = () => {
 
                                         {/* Step 4 */}
                                         <div className="flex gap-4">
-                                            {renderStepNumber(4, activeStep >= 3)}
+                                            {renderStepNumber(4, activeStep >= 4)}
                                             <div className="space-y-2">
                                                 <h3 className="text-lg font-medium">Launch and enjoy!</h3>
-                                                <p className="text-gray-600 dark:text-gray-400">
-                                                    Launch the client and start using Kraken Plugins
-                                                </p>
-                                                {activeStep >= 3 && (
+
+                                                {activeStep >= 4 && (
                                                     <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md mt-2">
                                                         <p className="flex items-center">
                                                             <Check className="mr-2 h-5 w-5 text-green-600 dark:text-green-400" />
