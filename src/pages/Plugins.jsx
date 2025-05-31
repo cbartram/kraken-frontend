@@ -86,10 +86,10 @@ const Plugins = () => {
 
     useEffect(() => {
         if (api) {
-            // Load plugins
             api.getPlugins().then(response => {
-                setPlugins(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false})));
-                setFullPluginList(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false})));
+                // Add additional metadata to plugins to let the button know how to react to loading or purchased states.
+                setPlugins(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false, purchased: false})));
+                setFullPluginList(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false, purchased: false})));
             }).catch(error => {
                 console.log(error)
                 console.error(`failed to load plugins from API: ${error.message}`);
@@ -110,8 +110,8 @@ const Plugins = () => {
 
             // Load plugin packs
             api.getPluginPacks().then(response => {
-                setPluginPacks(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false})));
-                setFullPluginPackList(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false})));
+                setPluginPacks(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false, purchased: false })));
+                setFullPluginPackList(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false, purchased: false })));
             }).catch(error => {
                 console.log(error)
                 console.error(`failed to load plugin packs from API: ${error.message}`);
@@ -210,8 +210,8 @@ const Plugins = () => {
     }
 
     const handleItemPurchase = async (item, subscriptionPeriod) => {
-        setPlugins((plugins) => plugins.map(p => p.name === item.name ? { ...p, loading: true } : p))
-        setPluginPacks(packs => packs.map(p => p.name === item.name ? { ...p, loading: true } : p))
+        setPlugins((plugins) => plugins.map(p => p.name === item.name ? { ...p, loading: true, purchased: false } : p))
+        setPluginPacks(packs => packs.map(p => p.name === item.name ? { ...p, loading: true, purchased: false } : p))
         try {
             let res;
             if (item.type === 'plugin') {
@@ -221,15 +221,23 @@ const Plugins = () => {
                 res = await api.purchasePluginPack(item.name, subscriptionPeriod)
                 user.tokens -= item.priceDetails[reconcileSubPeriod(subscriptionPeriod)];
             }
+
             setPluginResponse(res)
             setPluginSuccessDialogueOpen(true)
+
+            // Update the plugin to be "purchased" this will take effect from the user object on page refresh.
+            setPlugins((plugins) => plugins.map(p => p.name === item.name ? ({ ...p, loading: false, purchased: true }) : p))
+            setPluginPacks(packs => packs.map(p => p.name === item.name ? ({ ...p, loading: false, purchased: true }) : p))
         } catch (error) {
             console.error(`failed to purchase ${item.type}: ${error.message}`);
             setErrorMessage(error.message)
             setErrorDialogueOpen(true);
+
+            // Update the plugin state to still remain un-purchased if something went wrong so users can try again.
+            setPlugins((plugins) => plugins.map(p => p.name === item.name ? ({ ...p, loading: false, purchased: false }) : p))
+            setPluginPacks(packs => packs.map(p => p.name === item.name ? ({ ...p, loading: false, purchased: false }) : p))
         }
-        setPlugins((plugins) => plugins.map(p => ({ ...p, loading: false })))
-        setPluginPacks(packs => packs.map(p => ({ ...p, loading: false })))
+
 
     }
 
@@ -262,7 +270,7 @@ const Plugins = () => {
             }
         }
 
-        if (hasPurchased && !isExpired) {
+        if ((hasPurchased && !isExpired) || item.purchased) {
             return <Button
                 disabled
                 className="w-full cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
