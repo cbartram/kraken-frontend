@@ -8,9 +8,10 @@ import {
     ReceiptText,
     Sparkles,
     Package,
-    Cog,
     Plug,
-    Box, CircleDashed, FlaskConical, DollarSign, LoaderCircle
+    Box,
+    FlaskConical,
+    LoaderCircle
 } from 'lucide-react';
 import {
     Card,
@@ -42,6 +43,7 @@ import { toast } from "sonner"
 import Footer from "@/components/Footer.jsx";
 import BetaPluginDialog from "@/components/BetaPluginDialogue.jsx";
 import SaleBanner from "@/components/SaleBanner.jsx";
+import ReactGA from "react-ga4";
 
 const Plugins = () => {
     const { logout, user, getUser, setUser, api, loading } = useAuth()
@@ -74,6 +76,12 @@ const Plugins = () => {
 
     // Have to get user manually since this route isn't wrapped in a <ProtectedRoute />
     useEffect(() => {
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/plugins/",
+            title: "Plugins Page",
+        });
+
         const urlParams = new URLSearchParams(window.location.search);
         const value = urlParams.get('payment');
 

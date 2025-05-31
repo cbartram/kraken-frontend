@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar.jsx";
 import React, {useEffect, useState} from "react";
 import {useAuth} from "@/components/AuthContext.jsx";
 import Footer from "@/components/Footer.jsx";
+import ReactGA from "react-ga4";
 
 // Privacy Policy Page Component
 export default function PrivacyPolicyPage() {
@@ -11,6 +12,11 @@ export default function PrivacyPolicyPage() {
     // Have to get user manually since this route isn't wrapped in a <ProtectedRoute />
     useEffect(() => {
         getUser()
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/privacy-policy",
+            title: "Privacy Policy Page",
+        });
     }, [])
 
     return (

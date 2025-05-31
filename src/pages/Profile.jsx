@@ -12,6 +12,7 @@ import Navbar from "@/components/Navbar.jsx";
 import SkeletonLoading from "@/components/SkeletonLoading.jsx";
 import {formatDate, isPluginExpired} from "@/lib/utils.js";
 import Footer from "@/components/Footer.jsx";
+import ReactGA from "react-ga4";
 
 const Profile = () => {
     const {user, logout, loading} = useAuth();
@@ -22,6 +23,14 @@ const Profile = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [filteredPlugins, setFilteredPlugins] = useState([]);
     const itemsPerPage = 3; // Number of plugins per page
+
+    useEffect(() => {
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/profile",
+            title: "Profile Page",
+        });
+    }, []);
 
     useEffect(() => {
         if (user != null) {

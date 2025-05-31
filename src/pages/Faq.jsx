@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { ChevronDown, ChevronUp, Heart } from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import {useNavigate} from "react-router-dom";
+import ReactGA from "react-ga4";
 
 const FAQItem = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/faw",
+            title: "FAQ Page",
+        });
+    }, []);
 
     return (
         <div className="border-b border-gray-200 last:border-b-0">

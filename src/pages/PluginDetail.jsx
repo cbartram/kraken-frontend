@@ -25,6 +25,7 @@ import {
     AccordionItem,
     AccordionTrigger
 } from '@/components/ui/accordion';
+import ReactGA from "react-ga4";
 
 const PluginDetailPage = () => {
     const [selectedPricing, setSelectedPricing] = useState('');
@@ -59,6 +60,11 @@ const PluginDetailPage = () => {
         if (api) {
             api.getPlugin(name).then(response => {
                 setPlugin(response);
+                ReactGA.send({
+                    hitType: 'pageview',
+                    page: `/plugins/${response.title}`,
+                    title: `Plugins ${response.title} Page`,
+                });
             }).catch(error => {
                 console.log(error)
                 console.error(`failed to load plugins from API: ${error.message}`);

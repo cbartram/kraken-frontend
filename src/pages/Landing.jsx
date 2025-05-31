@@ -30,6 +30,7 @@ import PluginCarousel from "@/components/landing_page_components/PluginCarousel"
 import VideoShowcase from "@/components/landing_page_components/VideoShowcase.jsx";
 import CallToAction from "@/components/landing_page_components/CallToAction.jsx";
 import Footer from "@/components/Footer.jsx";
+import ReactGA from "react-ga4";
 
 export default function Landing() {
     const navigate = useNavigate();
@@ -77,8 +78,6 @@ export default function Landing() {
         },
     ];
 
-
-    // Card hover animation
     const cardVariants = {
         hover: {
             scale: 1.05,
@@ -88,6 +87,14 @@ export default function Landing() {
             }
         }
     };
+
+    useEffect(() => {
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/",
+            title: "Landing Page",
+        });
+    }, []);
 
     return (
         <div className="min-h-screen bg-gray-900 text-gray-100">

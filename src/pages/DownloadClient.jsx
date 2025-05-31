@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,10 +9,11 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
-import {Download, Terminal, Check, ChevronDown, ChevronRight, Grid2X2, Command, ArrowRight} from 'lucide-react';
+import {Download, Terminal, Check, ChevronDown, ChevronRight, Grid2X2, Command} from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import Footer from "@/components/Footer.jsx";
+import ReactGA from "react-ga4";
 
 const DownloadPage = () => {
     const {user, logout} = useAuth()
@@ -20,6 +21,13 @@ const DownloadPage = () => {
     const [expandedSteps, setExpandedSteps] = useState({ jagex: false });
     const [selectedOS, setSelectedOS] = useState('windows');
 
+    useEffect(() => {
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/download",
+            title: "Download Client Page",
+        });
+    }, []);
 
     const toggleSection = (section) => {
         setExpandedSteps(prev => ({
@@ -38,6 +46,7 @@ const DownloadPage = () => {
             window.location.href = "https://kraken-bootstrap-static.s3.us-east-1.amazonaws.com/kraken-launcher-2.7.4.jar";
         }
     };
+
     const renderStepNumber = (number, isActive) => (
         <div className={`flex items-center justify-center w-8 h-8 rounded-full flex-shrink-0 ${isActive ? 'bg-green-400 text-white' : 'bg-gray-200 text-gray-700'}`}>
             {activeStep > number ? <Check className="w-5 h-5" /> : number}

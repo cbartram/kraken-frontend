@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { X, Cookie, Check, Shield } from 'lucide-react';
+import ReactGA from "react-ga4";
 
 export default function CookiePolicy({ showPolicy, onCookiePolicyClick, onClose }) {
     const [showDetails, setShowDetails] = useState(false);
@@ -23,6 +24,14 @@ export default function CookiePolicy({ showPolicy, onCookiePolicyClick, onClose 
             </div>
         );
     }
+
+    useEffect(() => {
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/cookie",
+            title: "Cookie Policy Page",
+        });
+    }, []);
 
     return (
         <div className="fixed inset-0 flex items-end justify-center p-4 sm:p-6 z-50">

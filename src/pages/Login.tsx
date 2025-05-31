@@ -10,6 +10,7 @@ import {
     AlertTitle,
 } from "@/components/ui/alert"
 import {discordRedirect} from "@/lib/utils";
+import ReactGA from "react-ga4";
 
 
 const Login = () => {
@@ -17,6 +18,14 @@ const Login = () => {
     const [authFailedAlert, setAuthFailedAlert] = useState("")
 
     useEffect(() => {
+        useEffect(() => {
+            ReactGA.send({
+                hitType: 'pageview',
+                page: "/login",
+                title: "Login Page",
+            });
+        }, []);
+
         const urlParams = new URLSearchParams(window.location.search);
         const value = urlParams.get('error');
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -26,6 +26,7 @@ import Screenshot from '@/assets/screenshot.png'
 import ClientLauncher from '@/assets/client_launcher_logs.png'
 import RuneLiteFolder from '@/assets/runelite_folder.png';
 import { Separator } from "@/components/ui/separator.js";
+import ReactGA from "react-ga4";
 
 const SupportEmailForm = () => {
     const { user, logout } = useAuth();
@@ -152,6 +153,14 @@ const SupportEmailForm = () => {
             message: ""
         }
     };
+
+    useEffect(() => {
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/support",
+            title: "Support Page",
+        });
+    }, []);
 
     const handleTabChange = (tabId) => {
         setActiveTab(tabId);

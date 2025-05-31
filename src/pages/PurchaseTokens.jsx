@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/accordion"
 
 import Footer from "@/components/Footer.jsx";
+import ReactGA from "react-ga4";
 
 const PurchaseTokens = () => {
     const {user, logout, api, loading, getUser} = useAuth()
@@ -99,6 +100,11 @@ const PurchaseTokens = () => {
 
     useEffect(() => {
         getUser()
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/purchase",
+            title: "Purchase Tokens Page",
+        });
     }, [])
 
     const handlePurchase = async () => {

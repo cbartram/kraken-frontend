@@ -3,6 +3,7 @@ import Footer from "@/components/Footer.jsx";
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import {useEffect} from "react";
+import ReactGA from "react-ga4";
 
 // Terms and Conditions Page Component
 export default function TermsAndConditions() {
@@ -11,6 +12,12 @@ export default function TermsAndConditions() {
     // Have to get user manually since this route isn't wrapped in a <ProtectedRoute />
     useEffect(() => {
         getUser()
+
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/terms-and-conditions",
+            title: "Terms and Conditions Page",
+        });
     }, [])
 
     return (
