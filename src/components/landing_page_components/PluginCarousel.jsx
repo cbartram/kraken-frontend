@@ -17,8 +17,10 @@ import Socket from '@/assets/carousel/socket_sote_carousel.png'
 import Sote from '@/assets/carousel/sote_prayer_carousel.png'
 import Verzik from '@/assets/carousel/verzik_yellows_carousel.png'
 import Olm from '@/assets/carousel/olm_plugin.png'
+import Nex from '@/assets/carousel/nex_carousel.png'
+import ToaSkulls from '@/assets/carousel/toa_skulls_carousel.png'
+import ToaInsanity from '@/assets/carousel/toa_insanity_carousel.png'
 
-// Sample plugin data - replace with your actual plugin data
 const pluginData = [
     {
         id: 1,
@@ -45,7 +47,7 @@ const pluginData = [
         id: 4,
         name: "Nex Highlights",
         description: "Nex Tank Highlights, step under timers, altar highlighting, blood radius markers and more make Nex an absolute breeze in 3 mans.",
-        imageUrl: "https://placehold.co/600x400",
+        imageUrl: Nex,
         learnMore: "/plugins/Nex"
     },
     {
@@ -87,14 +89,14 @@ const pluginData = [
         id: 10,
         name: "Tombs of Amascut P2 Wardens Skulls",
         description: "Shows exactly where skulls will land for P2 wardens so you can easily dodge them. You can actually look forward to the skull special now!",
-        imageUrl: "https://placehold.co/600x400",
+        imageUrl: ToaSkulls,
         learnMore: "/plugins/ToA-Extended"
     },
     {
         id: 11,
         name: "Tombs of Amascut Insanity",
         description: "This feature automatically remembers the safe side for Insanity wardens runs. Gone are the days of having to recall if its left, right, or middle!",
-        imageUrl: "https://placehold.co/600x400",
+        imageUrl: ToaInsanity,
         learnMore: "/plugins/ToA-Extended"
     },
     {
