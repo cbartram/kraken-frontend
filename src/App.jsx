@@ -23,6 +23,7 @@ import './index.css'
 function App() {
 
     useEffect(() => {
+        console.log("Initializing GA4")
         ReactGA.initialize("G-57JXXGGCTJ", {
             debug: process.env.NODE_ENV === 'development',
         });
