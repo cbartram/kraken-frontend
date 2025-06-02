@@ -143,7 +143,6 @@ const FAQPage = () => {
                         <li>Select your preferred token package</li>
                         <li>Complete the checkout process using any of our supported payment methods (Credit Card, PayPal, or CashApp)</li>
                     </ol>
-                    <p className="text-sm mt-2">Bulk discounts are available for purchases over 1000 tokens.</p>
                 </div>
             )
         },
@@ -155,6 +154,31 @@ const FAQPage = () => {
                     <p>Tokens provide flexibility, allowing you to customize your experience by paying only for the plugins you want. Tokens also
                     make it easier on us because we don't have to manage pricing and sales for hundreds of different plugins especially as more plugins are added.
                     </p>
+                    <p>Once you have purchased tokens you can unlock as many plugins as you'd like in a self service manner (assuming you have the tokens to pay for them).</p>
+                </div>
+            )
+        },
+        {
+            question: "Can I purchase tokens with GP?",
+            answer: (
+                <div className="space-y-2">
+                    <p>Yes, you can purchase tokens with OSRS GP. Just check the "OSRS GP" button when on the <a href="/purchase">purchase page</a> for instructions on how this process works.</p>
+                </div>
+            )
+        },
+        {
+            question: "Do you offer refunds / plugin swapping / store credit or anything of this nature?",
+            answer: (
+                <div className="space-y-2">
+                    <p>Refunds are handled on a case by case basis but all plugin sales are final. Do not expect a refund or credit because of a ban.</p>
+                </div>
+            )
+        },
+        {
+            question: "Do you offer payment plans or buy now pay later options?",
+            answer: (
+                <div className="space-y-2">
+                    <p>No, we do not. You must pay up front in either GP or USD.</p>
                 </div>
             )
         },
@@ -184,6 +208,14 @@ const FAQPage = () => {
             )
         },
         {
+            question: "Do you offer licenses other than 1 month, 3 month or 1 year?",
+            answer: (
+                <div className="space-y-2">
+                    <p>No, at this point those are the only durations for plugin licenses.</p>
+                </div>
+            )
+        },
+        {
             question: "How can I tell when my plugin will expire?",
             answer: (
                 <div className="space-y-2">
@@ -206,9 +238,25 @@ const FAQPage = () => {
             )
         },
         {
+            question: "How do I know the plugin will function as expected?",
+            answer: (
+                <div className="space-y-2">
+                    <p>
+                        You can head over to the <a href="/plugins">plugins page</a> and click on the plugin details to see
+                        a video of the plugin in action along with the configuration options provided for the plugin.
+                    </p>
+                    <p>
+                        We also offer a free trial for 3 days of all the plugins so if there's a plugin you are interested in then
+                        check out the free trial!
+                    </p>
+                </div>
+            )
+        },
+        {
             question: "I purchased a plugin but it isn't loading in the client?",
             answer: (
                 <div className="space-y-2">
+                    <p>First restart the client. New plugins are only loaded once on client start.</p>
                     <p>Make sure you are signed into the same discord account as the one you purchased your plugin on. Plugins are associated with your discord id
                     so if you purchase a plugin under discord user: "abc" but login to the client with discord user: "xyz" then you won't see your plugins. If all else
                     fails, restart the client and then open a support ticket.</p>
@@ -219,7 +267,7 @@ const FAQPage = () => {
             question: "Can I develop my own plugins?",
             answer: (
                 <div className="space-y-2">
-                    <p>Yes! Open a support ticket and we can discuss how to get your plugin added to Kraken!</p>
+                    <p>Yes, we would love some contributions! Open a support ticket and we can discuss how to get your custom plugin added to Kraken.</p>
                 </div>
             )
         },
