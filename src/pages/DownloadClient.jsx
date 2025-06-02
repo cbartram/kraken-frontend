@@ -41,9 +41,9 @@ const DownloadPage = () => {
         setActiveStep(3);
 
         if (os === 'windows') {
-            window.location.href = "https://kraken-bootstrap-static.s3.us-east-1.amazonaws.com/KrakenSetup.exe";
+            window.location.href = "https://minio-kraken.duckdns.org/kraken-bootstrap-static/KrakenSetup.exe"
         } else if (os === 'mac') {
-            window.location.href = "https://kraken-bootstrap-static.s3.us-east-1.amazonaws.com/kraken-launcher-2.7.4.jar";
+            window.location.href = "https://minio-kraken.duckdns.org/kraken-bootstrap-static/kraken-launcher-2.7.4.jar";
         }
     };
 
