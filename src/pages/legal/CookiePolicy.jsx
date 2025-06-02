@@ -25,14 +25,6 @@ export default function CookiePolicy({ showPolicy, onCookiePolicyClick, onClose 
         );
     }
 
-    useEffect(() => {
-        ReactGA.send({
-            hitType: 'pageview',
-            page: "/cookie",
-            title: "Cookie Policy Page",
-        });
-    }, []);
-
     return (
         <div className="fixed inset-0 flex items-end justify-center p-4 sm:p-6 z-50">
             <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm" />

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import {useNavigate} from "react-router-dom";
 import ReactGA from "react-ga4";
+import Footer from "@/components/Footer.jsx";
 
 const FAQItem = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -260,6 +261,7 @@ const FAQPage = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
 
     );

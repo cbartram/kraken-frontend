@@ -18,13 +18,11 @@ const Login = () => {
     const [authFailedAlert, setAuthFailedAlert] = useState("")
 
     useEffect(() => {
-        useEffect(() => {
-            ReactGA.send({
-                hitType: 'pageview',
-                page: "/login",
-                title: "Login Page",
-            });
-        }, []);
+        ReactGA.send({
+            hitType: 'pageview',
+            page: "/login",
+            title: "Login Page",
+        });
 
         const urlParams = new URLSearchParams(window.location.search);
         const value = urlParams.get('error');
