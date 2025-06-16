@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from 'react';
 import {CalendarDays, Package, AlertCircle, Key, AlarmClockOff, Search} from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -70,8 +69,15 @@ const Profile = () => {
         } else if (isExpiringSoon(plugin.expirationTimestamp)) {
             return <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-100">Expiring Soon</Badge>;
         } else {
-            return <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-100">Active</Badge>;
+            return <Badge className="bg-green-500/20 text-green-600 hover:bg-green-700 hover:text-white">Active</Badge>;
         }
+    };
+
+    // Calculate plugin counts
+    const getPluginCounts = () => {
+        const activeCount = filteredPlugins.filter(plugin => !isPluginExpired(plugin.expirationTimestamp)).length;
+        const expiredCount = filteredPlugins.filter(plugin => isPluginExpired(plugin.expirationTimestamp)).length;
+        return { activeCount, expiredCount };
     };
 
     // Pagination logic
@@ -153,7 +159,14 @@ const Profile = () => {
                                 <CardHeader className="flex flex-row items-start justify-between space-y-0">
                                     <div>
                                         <CardTitle className="text-xl">Purchased Plugins</CardTitle>
-                                        <CardDescription>Currently active plugins</CardDescription>
+                                        <CardDescription className="flex gap-2 mt-2">
+                                            <Badge className="bg-green-500/20 text-green-600 hover:bg-green-700 hover:text-white">
+                                                {getPluginCounts().activeCount} Active
+                                            </Badge>
+                                            <Badge className="bg-rose-500/20 text-rose-600 hover:bg-rose-700 hover:text-white">
+                                                {getPluginCounts().expiredCount} Expired
+                                            </Badge>
+                                        </CardDescription>
                                     </div>
                                     <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">
                                         {filteredPlugins.length} {filteredPlugins.length === 1 ? 'Plugin' : 'Plugins'}
@@ -240,6 +253,11 @@ const Profile = () => {
                                                                 </div>
                                                             </div>
                                                         )}
+
+                                                        {
+                                                            isPluginExpired(plugin.expirationTimestamp) &&
+                                                            <Button className="mt-4 text-sm font-medium bg-indigo-500/20 text-indigo-600 w-full hover:bg-indigo-700 hover:text-white cursor-pointer" onClick={() => window.location.href=`/plugins/${plugin.name}`}>Renew Plugin</Button>
+                                                        }
                                                     </div>
                                                 ))}
                                             </div>
