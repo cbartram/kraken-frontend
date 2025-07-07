@@ -53,6 +53,8 @@ const Plugins = () => {
     const [pluginPacks, setPluginPacks] = useState([]);
     const [fullPluginList, setFullPluginList] = useState([]);
     const [fullPluginPackList, setFullPluginPackList] = useState([]);
+    const [betaPlugins, setBetaPlugins] = useState([]);
+    const [fullBetaPluginList, setFullBetaPluginList] = useState([]);
     const [search, setSearch] = useState("");
     const [sortBy, setSortBy] = useState("topPicks");
     const [activeTab, setActiveTab] = useState("plugins");
@@ -98,6 +100,8 @@ const Plugins = () => {
                 // Add additional metadata to plugins to let the button know how to react to loading or purchased states.
                 setPlugins(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false, purchased: false})));
                 setFullPluginList(response.sort((a, b) => a.title.localeCompare(b.title)).map(p => ({ ...p, loading: false, purchased: false})));
+                setBetaPlugins(response.sort((a, b) => a.title.localeCompare(b.title)).filter(p => p.isInBeta).map(p => ({ ...p, loading: false, purchased: false })));
+                setFullBetaPluginList(response.sort((a, b) => a.title.localeCompare(b.title)).filter(p => p.isInBeta).map(p => ({ ...p, loading: false, purchased: false })));
             }).catch(error => {
                 console.log(error)
                 console.error(`failed to load plugins from API: ${error.message}`);
@@ -194,7 +198,37 @@ const Plugins = () => {
             }
 
             setPluginPacks(filteredPacks);
+        } else if (activeTab === "beta") {
+        let filteredBeta = [...fullBetaPluginList];
+
+        if (search) {
+            const searchLower = search.toLowerCase();
+            filteredBeta = filteredBeta.filter(plugin =>
+                plugin.title.toLowerCase().includes(searchLower) ||
+                plugin.description.toLowerCase().includes(searchLower)
+            );
         }
+
+        switch (sortBy) {
+            case "priceAsc":
+                filteredBeta.sort((a, b) => a.priceDetails.month - b.priceDetails.month);
+                break;
+            case "priceDesc":
+                filteredBeta.sort((a, b) => b.priceDetails.month - a.priceDetails.month);
+                break;
+            case "nameAsc":
+                filteredBeta.sort((a, b) => a.title.localeCompare(b.title));
+                break;
+            case "nameDesc":
+                filteredBeta.sort((a, b) => b.title.localeCompare(a.title));
+                break;
+            default:
+                filteredBeta.sort((a, b) => a.title.localeCompare(b.title));
+                break;
+        }
+
+        setBetaPlugins(filteredBeta);
+    }
     }, [search, sortBy, activeTab, fullPluginList, fullPluginPackList]);
 
     const showPurchaseDialogue = (item, type) => {
@@ -373,13 +407,13 @@ const Plugins = () => {
                 </div>
 
                 <Tabs value={activeTab} onValueChange={setActiveTab}>
-                    <TabsList className="grid grid-cols-2 bg-gray-50">
+                    <TabsList className="grid grid-cols-3 bg-gray-50">
                         <TabsTrigger
                             value="plugins"
                             className="data-[state=active]:bg-green-400 data-[state=active]:text-white cursor-pointer"
                         >
                             <Plug />
-                            Individual Plugins
+                            All Plugins
                         </TabsTrigger>
                         <TabsTrigger
                             value="packs"
@@ -387,6 +421,13 @@ const Plugins = () => {
                         >
                             <Box />
                             Plugin Packs
+                        </TabsTrigger>
+                        <TabsTrigger
+                            value="beta"
+                            className="data-[state=active]:bg-green-400 data-[state=active]:text-white cursor-pointer"
+                        >
+                            <FlaskConical className="mr-1" />
+                            Beta Plugins
                         </TabsTrigger>
                     </TabsList>
 
@@ -589,6 +630,80 @@ const Plugins = () => {
                         {pluginPacks.length === 0 && (
                             <div className="text-center py-12">
                                 <h3 className="text-xl font-medium mb-2">No plugin packs found</h3>
+                                <p className="text-gray-500">Try adjusting your search criteria</p>
+                            </div>
+                        )}
+                    </TabsContent>
+                    <TabsContent value="beta">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {betaPlugins.map(plugin => (
+                                <div key={plugin.name} className="relative">
+                                    <div
+                                        className="absolute inset-0 rounded-lg bg-no-repeat bg-cover bg-center z-0 opacity-100"
+                                        style={{
+                                            backgroundImage: `url(${plugin.imageUrl})`,
+                                            backgroundPosition: plugin.backgroundPosition || 'center',
+                                        }}
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/100 rounded-lg z-10" />
+
+                                    <Card className="relative z-20 border-0 bg-transparent overflow-hidden">
+                                        <CardHeader className="mb-24">
+                                            <CardTitle className="text-2xl text-white">
+                                                {plugin.title}
+                                                {plugin.isInBeta &&
+                                                    <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-green-500/20 text-green-400 mb-4">
+                                    <FlaskConical className="mr-1 h-4 w-4" />
+                                    Beta Plugin
+                                </span>
+                                                }
+                                            </CardTitle>
+                                            <CardDescription className="text-gray-200 min-h-24">{plugin.description}</CardDescription>
+                                        </CardHeader>
+
+                                        <CardContent>
+                                            <div className="flex flex-col mt-12">
+                                                <div className="bg-black/50 p-4 rounded-lg">
+                                                    <div className="flex">
+                                                        <h3 className="font-medium text-white mb-2">Subscription Options</h3>
+                                                        {
+                                                            plugin.saleDiscount > 0 &&
+                                                            <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-amber-500/20 text-amber-400 mb-4">
+                                            {plugin.saleDiscount}% OFF
+                                        </span>
+                                                        }
+                                                    </div>
+                                                    <div className="flex justify-between items-center mb-2">
+                                                        <span className="text-gray-300">1 Month</span>
+                                                        {renderPrice(plugin, 'month', 'saleMonth')}
+                                                    </div>
+                                                    <div className="flex justify-between items-center mb-2">
+                                                        <span className="text-gray-300">3 Months</span>
+                                                        {renderPrice(plugin, 'threeMonth', 'saleThreeMonth')}
+                                                    </div>
+                                                    <div className="flex justify-between items-center">
+                                                        <span className="text-gray-300">1 Year</span>
+                                                        {renderPrice(plugin, 'year', 'saleYear')}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </CardContent>
+
+                                        <CardFooter className="flex flex-col">
+                                            {renderPurchaseButton(plugin, 'plugin')}
+                                            <Button onClick={() => navigate("/plugins/" + plugin.name)} className="bg-slate-500 hover:bg-slate-600 mt-4 w-full">
+                                                <ReceiptText className="mr-2" />
+                                                More Details
+                                            </Button>
+                                        </CardFooter>
+                                    </Card>
+                                </div>
+                            ))}
+                        </div>
+
+                        {betaPlugins.length === 0 && (
+                            <div className="text-center py-12">
+                                <h3 className="text-xl font-medium mb-2">No beta plugins found</h3>
                                 <p className="text-gray-500">Try adjusting your search criteria</p>
                             </div>
                         )}
