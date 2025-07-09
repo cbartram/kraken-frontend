@@ -88,8 +88,6 @@ workflows:
           context:
             - Kraken Env
       - deploy-prod:
-          context:
-            - Kraken Env
           requires:
             - build-and-deploy
           filters:
