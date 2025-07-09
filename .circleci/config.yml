@@ -6,9 +6,6 @@ jobs:
       - image: cimg/node:24.3.0
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.14
-          docker_layer_caching: true
       - run:
           name: Calculate cache key
           command: |-
@@ -88,6 +85,8 @@ workflows:
           context:
             - Kraken Env
       - deploy-prod:
+          context:
+            - Kraken Env
           requires:
             - build-and-deploy
           filters:
