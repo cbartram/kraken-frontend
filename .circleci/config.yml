@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-and-deploy:
     docker:
-      - image: cimg/node:18.20
+      - image: cimg/node:24.3.0
     steps:
       - checkout
       - setup_remote_docker:
