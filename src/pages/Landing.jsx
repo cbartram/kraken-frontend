@@ -283,8 +283,9 @@ export default function Landing() {
                         {[
                             {
                                 icon: <BotOff className="h-12 w-12 text-green-500"/>,
-                                title: "No plugin automation",
-                                description: "None of our plugins are \"bots\". They assist you with additional in game information using RuneLite\'s official un-modified API.",
+                                title: "Minimal automation",
+                                description: "None of our plugins are \"bots\". Although some plugins can auto switch prayers most simply assist you with additional in game information. None of the plugins use injection" +
+                                    "and are all 100% compatible with RuneLite\'s official un-modified API. Kraken doesn't modify the RuneLite client in any way.",
                             },
                             {
                                 icon: <VenetianMask className="h-12 w-12 text-green-500"/>,
