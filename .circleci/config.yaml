@@ -1,0 +1,101 @@
+version: 2.1
+
+jobs:
+  build-and-deploy:
+    docker:
+      - image: cimg/node:18.20
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true
+      - run:
+          name: Calculate cache key
+          command: |-
+            find . -name 'package.json' -o -name 'package-lock.json' -o -name 'yarn.lock' | \
+                    sort | xargs cat > /tmp/CIRCLECI_CACHE_KEY
+      - restore_cache:
+          key: node-deps-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
+      - run:
+          name: Install Dependencies
+          command: npm ci
+      - save_cache:
+          key: node-deps-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
+          paths:
+            - ~/.npm
+            - node_modules
+      - run:
+          name: Build React Frontend
+          command: npm run build
+      - run:
+          name: Build and Push Docker Image
+          command: |
+            # Set image tag based on branch
+            if [ "$CIRCLE_BRANCH" = "main" ] || [ "$CIRCLE_BRANCH" = "master" ]; then
+              TAG="latest"
+            else
+              TAG="$CIRCLE_BRANCH-$CIRCLE_SHA1"
+            fi
+            
+            IMAGE_NAME="cbartram/kraken-frontend:$TAG"            
+            docker build . -f Dockerfile -t "$IMAGE_NAME"            
+            docker push "$IMAGE_NAME"
+            
+            # Store the image name for later use
+            echo "$IMAGE_NAME" > /tmp/docker_image_name
+      - persist_to_workspace:
+          root: /tmp
+          paths:
+            - docker_image_name
+
+  deploy-prod:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /tmp
+      - run:
+          name: Install Helm
+          command: |
+            curl https://get.helm.sh/helm-v3.12.0-linux-amd64.tar.gz | tar xz
+            sudo mv linux-amd64/helm /usr/local/bin/helm
+            helm version
+      - run:
+          name: Install kubectl
+          command: |
+            curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+            chmod +x kubectl
+            sudo mv kubectl /usr/local/bin/
+            kubectl version --client
+      - run:
+          name: Deploy to Kubernetes with Helm
+          command: |
+            IMAGE_NAME=$(cat /tmp/docker_image_name)
+            echo "Deploying image: $IMAGE_NAME"
+            
+            # Update the image tag in values or pass it as a parameter
+            helm upgrade kraken-frontend ./manifests/kraken-frontend \
+              -f ./manifests/kraken-frontend/values.yaml \
+              --set image.repository=cbartram/kraken-frontend \
+              --set image.tag=$(echo $IMAGE_NAME | cut -d':' -f2) \
+              --install \
+              --wait \
+              --timeout=300s
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - build-and-deploy:
+          context:
+            - Kraken Env
+      - deploy-prod:
+          context:
+            - Kraken Env
+          requires:
+            - build-and-deploy
+          filters:
+            branches:
+              only:
+                - main
+                - master
