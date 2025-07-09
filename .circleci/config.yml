@@ -37,7 +37,7 @@ jobs:
             
             IMAGE_NAME="$DOCKER_USER/kraken-frontend:$TAG"            
             docker build . -f Dockerfile -t "$IMAGE_NAME"
-            echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-st
+            echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-stdin
             docker push "$IMAGE_NAME"
             
             echo "$IMAGE_NAME" > /tmp/docker_image_name
