@@ -30,7 +30,6 @@ jobs:
       - run:
           name: Build and Push Docker Image
           command: |
-            # Set image tag based on branch
             if [ "$CIRCLE_BRANCH" = "main" ] || [ "$CIRCLE_BRANCH" = "master" ]; then
               TAG="latest"
             else
@@ -74,7 +73,6 @@ jobs:
             IMAGE_NAME=$(cat /tmp/docker_image_name)
             echo "Deploying image: $IMAGE_NAME"
             
-            # Update the image tag in values or pass it as a parameter
             helm upgrade kraken-frontend ./manifests/kraken-frontend \
               -f ./manifests/kraken-frontend/values.yaml \
               --set image.repository=cbartram/kraken-frontend \
