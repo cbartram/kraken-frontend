@@ -1,6 +1,8 @@
 import Logo from "@/assets/logo.png";
 import CookiePolicy from "@/pages/legal/CookiePolicy.jsx";
 import React, {useState} from "react";
+import {Button} from "@/components/ui/button.js";
+import DiscordLogo from "@/assets/discord-mark-white.svg";
 
 export default function Footer() {
     const [showCookiePolicy, setShowCookiePolicy] = useState(false);
@@ -17,6 +19,10 @@ export default function Footer() {
                         <p className="text-gray-400 mb-4">
                             Elevating your Old School RuneScape experience with premium plugins.
                         </p>
+                        <Button onClick={() => window.open("https://discord.gg/bbPS2AP7Cq", '_blank').focus()} className="mt-4  bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
+                            <img src={DiscordLogo} height={25} width={25} />
+                            Join our Discord
+                        </Button>
                         <div className="flex gap-4">
                             <a href="#" className="text-gray-400 hover:text-green-500">
                                 <span className="sr-only">Discord</span>
@@ -41,7 +47,7 @@ export default function Footer() {
                         <h4 className="font-bold text-lg mb-4 text-white">Resources</h4>
                         <ul className="space-y-2">
                             <li><a href="/faq" className="text-gray-400 hover:text-green-500">FAQ</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-green-500">Discord</a></li>
+                            <li><a href="https://discord.gg/bbPS2AP7Cq" className="text-gray-400 hover:text-green-500">Discord</a></li>
                         </ul>
                     </div>
                     <div>
