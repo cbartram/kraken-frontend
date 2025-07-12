@@ -77,7 +77,7 @@ jobs:
           command: |
             VERSION_TAG="0.1.$CIRCLE_BUILD_NUM"
             argocd app set kraken-frontend -p image.tag=$VERSION_TAG --grpc-web
-            argocd app sync kraken-frontend
+            argocd app sync kraken-frontend --prune
       - run:
           name: Deploy Complete
           command: argocd app wait kraken-frontend

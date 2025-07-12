@@ -241,6 +241,10 @@ export default function Landing() {
                                         <Unplug className="h-4 w-4" />
                                     </Button>
                                 </div>
+                                <Button onClick={() => window.open("https://discord.gg/bbPS2AP7Cq", '_blank').focus()} className="mt-4 w-95 bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
+                                    <img src={DiscordLogo} height={25} width={25} />
+                                    Join our Discord
+                                </Button>
                             </motion.div>
                         </div>
 

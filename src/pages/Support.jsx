@@ -27,6 +27,8 @@ import ClientLauncher from '@/assets/client_launcher_logs.png'
 import RuneLiteFolder from '@/assets/runelite_folder.png';
 import { Separator } from "@/components/ui/separator.js";
 import ReactGA from "react-ga4";
+import DiscordLogo from "@/assets/discord-mark-white.svg";
+
 
 const SupportEmailForm = () => {
     const { user, logout } = useAuth();
@@ -401,8 +403,19 @@ const SupportEmailForm = () => {
                     <CardHeader className="bg-white border-b border-gray-100">
                         <CardTitle className="text-xl font-semibold text-gray-900">Contact Support</CardTitle>
                         <CardDescription className="text-gray-500">
-                            Our support team typically responds within 24 hours.
+                            Our support team typically responds within 24 hours. Alternatively, you can join our Discord server for faster assistance.
                         </CardDescription>
+                        <Button
+                            onClick={() =>
+                                window
+                                    .open("https://discord.gg/bbPS2AP7Cq", "_blank")
+                                    .focus()
+                            }
+                            className="w-50 bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5fc] text-white text-sm font-medium flex items-center gap-2 px-4 py-2 rounded"
+                        >
+                            <img src={DiscordLogo} height={25} width={25} alt="Discord" />
+                            Join our Discord
+                        </Button>
                     </CardHeader>
 
                     <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">

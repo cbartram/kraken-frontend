@@ -238,6 +238,18 @@ const FAQPage = () => {
             )
         },
         {
+            question: "How does the pray flicking automation work. I thought this doesn't modify RuneLite?",
+            answer: (
+                <div className="space-y-2">
+                    <p>Great question! Prayer flicking automation works by creating a fake Menu entry for your prayer and simulating a "click" on it with a virtual mouse.</p>
+                    <p>
+                       It doesn't  modify RuneLite through injection or reflection, it doesn't send spoofed packets to Jagex's servers, and it doesn't create any detectable OS level mouse events.
+                        This is why it is able to switch prayers without being on the Prayer tab. From RuneLite's perspective it simply looks like you right clicked the prayer and selected the menu entry "Activate/Deactivate".
+                    </p>
+                </div>
+            )
+        },
+        {
             question: "How do I know the plugin will function as expected?",
             answer: (
                 <div className="space-y-2">

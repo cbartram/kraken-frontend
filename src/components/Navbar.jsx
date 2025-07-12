@@ -1,5 +1,5 @@
 import React from 'react';
-import {ChevronDown, Coins} from 'lucide-react';
+import {Coins} from 'lucide-react';
 import {Skeleton} from "@/components/ui/skeleton";
 import {
     DropdownMenu,

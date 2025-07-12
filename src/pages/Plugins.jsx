@@ -44,6 +44,7 @@ import Footer from "@/components/Footer.jsx";
 import BetaPluginDialog from "@/components/BetaPluginDialogue.jsx";
 import SaleBanner from "@/components/SaleBanner.jsx";
 import ReactGA from "react-ga4";
+import DiscordLogo from "@/assets/discord-mark-white.svg";
 
 const Plugins = () => {
     const { logout, user, getUser, setUser, api, loading } = useAuth()
@@ -402,8 +403,24 @@ const Plugins = () => {
                 <p className="text-secondary text-center mb-4">View the full collection of available Kraken Plugins and Plugin Packs!</p>
 
                 <SaleBanner saleData={sales} />
-                <div className="flex align-middle justify-center mb-6">
-                    {renderFreeTrialButton()}
+                <div className="flex items-center justify-center">
+                    <div className="flex flex-col items-center space-y-4">
+                        {renderFreeTrialButton()}
+
+                        <span className="text-gray-500 text-sm font-medium">or</span>
+
+                        <Button
+                            onClick={() =>
+                                window
+                                    .open("https://discord.gg/bbPS2AP7Cq", "_blank")
+                                    .focus()
+                            }
+                            className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5fc] text-white text-sm font-medium flex items-center gap-2 px-4 py-2 rounded"
+                        >
+                            <img src={DiscordLogo} height={25} width={25} alt="Discord" />
+                            Join our Discord
+                        </Button>
+                    </div>
                 </div>
 
                 <Tabs value={activeTab} onValueChange={setActiveTab}>
