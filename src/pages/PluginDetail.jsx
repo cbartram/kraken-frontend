@@ -10,7 +10,7 @@ import {useParams} from "react-router-dom";
 import PurchasePluginSuccessDialog from "@/components/PurchasePluginSuccessDialogue.jsx";
 import ErrorDialog from "@/components/ErrorDialogue.jsx";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
-import {reconcileSubPeriod} from "@/lib/utils.js";
+import {reconcileSubPeriod, reverseReconcileSubPeriod} from "@/lib/utils.js";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -140,7 +140,13 @@ const PluginDetailPage = () => {
             <Navbar user={user} onLogout={logout} />
             <PurchasePluginSuccessDialog isOpen={pluginSuccessDialogueOpen} onClose={() => setPluginSuccessDialogueOpen(false)} successResponse={pluginResponse} />
             <ErrorDialog isOpen={errorDialogueOpen} onClose={() => setErrorDialogueOpen(false)} message={errorMessage} />
-            <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(plugin, subscriptionPeriod) => handlePluginPurchase(plugin, subscriptionPeriod)} plugin={plugin} />
+            <PurchasePluginDialog
+                isOpen={open}
+                onClose={() => setOpen(false)}
+                onPurchase={(plugin, subscriptionPeriod) => handlePluginPurchase(plugin, subscriptionPeriod)}
+                plugin={plugin}
+                defaultSubscriptionPeriod={reverseReconcileSubPeriod(selectedPricing)}
+            />
             <div className="container mx-auto py-8 px-4">
                 <Breadcrumb className="mb-4">
                     <BreadcrumbList>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     AlertDialog,
     AlertDialogAction,
@@ -19,9 +19,15 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 
-const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase }) => {
-    const [subscriptionPeriod, setSubscriptionPeriod] = useState("monthly");
+const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase, defaultSubscriptionPeriod = "monthly"  }) => {
+    const [subscriptionPeriod, setSubscriptionPeriod] = useState(defaultSubscriptionPeriod);
     const [agreedToTerms, setAgreedToTerms] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            setSubscriptionPeriod(defaultSubscriptionPeriod);
+        }
+    }, [defaultSubscriptionPeriod, isOpen]);
 
     const handlePurchase = () => {
         if (agreedToTerms) {
@@ -48,7 +54,6 @@ const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase }) => {
                         Are you sure you want to purchase <span className="font-semibold text-green-400">{plugin.title}</span> for <span className="font-semibold text-green-400">{priceForMonth(plugin.priceDetails)} tokens</span>? Your subscription will start immediately.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
-
                 <div className="space-y-4 my-4">
                     <div className="space-y-2">
                         <Label htmlFor="subscription-period">Subscription Period</Label>
