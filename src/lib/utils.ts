@@ -59,6 +59,19 @@ export const reconcileSubPeriod = (period: string) => {
   }
 }
 
+export const reverseReconcileSubPeriod = (pricing: string) => {
+  switch (pricing) {
+    case 'month':
+      return 'monthly';
+    case 'threeMonth':
+      return '3-month';
+    case 'year':
+      return 'yearly';
+    default:
+      return 'monthly';
+  }
+};
+
 
 export const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
