@@ -506,7 +506,7 @@ const Plugins = () => {
                                             backgroundPosition: plugin.backgroundPosition || 'center',
                                     }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/100 rounded-lg z-10" />
+                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/100 rounded-lg z-10" />
 
                                     <Card className="relative z-20 border-0 bg-transparent overflow-hidden">
                                         {plugin.topPick && (
@@ -516,22 +516,30 @@ const Plugins = () => {
                                         )}
 
                                         <CardHeader className="mb-24">
-                                            <CardTitle className="text-2xl text-white">
+                                            <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 -m-4">
+                                                <CardTitle className="text-2xl text-white drop-shadow-lg">
                                                     {plugin.title}
 
-                                                {plugin.isInBeta &&
-                                                    <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-green-500/20 text-green-400 mb-4">
+                                                    {plugin.isInBeta &&
+                                                        <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-green-500/20 text-green-400 mb-4">
                                                         <FlaskConical className="mr-1 h-4 w-4" />
                                                         Beta Plugin
                                                     </span>
-                                                }
-                                            </CardTitle>
-                                            <CardDescription className="text-gray-200 min-h-24">{plugin.description}</CardDescription>
+                                                    }
+                                                    {plugin.latestVersion &&
+                                                        <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-400 mb-4">
+                                                        <Package className="mr-1 h-4 w-4" />
+                                                        v{plugin.latestVersion}
+                                                    </span>
+                                                    }
+                                                </CardTitle>
+                                                <CardDescription className="text-gray-200 min-h-24">{plugin.description}</CardDescription>
+                                            </div>
                                         </CardHeader>
 
                                         <CardContent>
                                             <div className="flex flex-col mt-12">
-                                                <div className="bg-black/50 p-4 rounded-lg">
+                                                <div className="bg-black/50 p-4 rounded-lg backdrop-blur-sm">
                                                     <div className="flex">
                                                         <h3 className="font-medium text-white mb-2">Subscription Options</h3>
                                                         {
