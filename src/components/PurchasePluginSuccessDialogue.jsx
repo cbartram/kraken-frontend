@@ -12,7 +12,35 @@ import {
 import {CheckCircle} from "lucide-react";
 import {formatDate} from "@/lib/utils.js";
 
-const PurchasePluginSuccessDialog = ({ isOpen, onClose, successResponse }) => {
+const PurchasePluginSuccessDialog = ({ isOpen, onClose, successResponse, pack = false }) => {
+
+    const renderContent = () => {
+        if(pack) {
+            return (
+                <div>
+                    <p>Enjoy your brand new plugins!</p>
+                    <br />
+                    <p>You will find your license keys for your new plugins on your <a href="/profile" className="text-indigo-500 font-bold hover:underline hover:text-indigo-600">profile</a> page.</p>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <p>Enjoy your brand new <span className="text-indigo-500 font-bold">{successResponse.pluginName}</span> plugin!
+                        <br />
+                        Here are some details you should know:
+                    </p>
+                    <ul className="mt-3">
+                        <li>Plugin Name: <span className="text-green-400 font-bold">{successResponse.pluginName}</span></li>
+                        <li>License Key: <span className="text-green-400 font-bold">{successResponse.licenseKey}</span></li>
+                        <li>Expiration Time: <span className="text-green-400 font-bold">{formatDate(successResponse.expirationTimestamp)}</span></li>
+                    </ul>
+                    <p className="mt-3">You can also find this information on your <a href="/profile" className="text-indigo-500 font-bold hover:underline hover:text-indigo-600">profile</a> page.</p>
+                </div>
+            )
+        }
+    }
+
     return (
         <AlertDialog open={isOpen} onOpenChange={onClose}>
             <AlertDialogContent className="max-w-md">
@@ -23,17 +51,7 @@ const PurchasePluginSuccessDialog = ({ isOpen, onClose, successResponse }) => {
                         Purchase Successful
                     </AlertDialogTitle>
                     <AlertDialogDescription className="mt-2 text-base">
-                        <div>
-                            <p>Enjoy your brand new <span className="text-indigo-500 font-bold">{successResponse.pluginName}</span> plugin! <br />
-                                Here are some details you should know:</p> <br /> <br/>
-                            <ul>
-                                <li>Plugin Name: <span className="text-green-400 font-bold">{successResponse.pluginName}</span></li>
-                                <li>License Key: <span className="text-green-400 font-bold">{successResponse.licenseKey}</span></li>
-                                <li>Expiration Time: <span className="text-green-400 font-bold">{formatDate(successResponse.expirationTimestamp)}</span></li>
-                            </ul>
-                            <br />
-                            <p>You can also find this information on your <a href="/profile">profile</a> page.</p>
-                        </div>
+                        {renderContent()}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

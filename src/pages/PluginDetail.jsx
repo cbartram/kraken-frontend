@@ -195,10 +195,13 @@ const PluginDetailPage = () => {
                                             />
                                             <div className="flex flex-col">
                                                 {plugin.title}
-                                                <Badge className="rounded-full px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-600 mt-1 w-fit flex items-center gap-1">
-                                                    <Sparkles />
-                                                    Top Plugin
-                                                </Badge>
+                                                {
+                                                    plugin.latestVersion &&
+                                                    <Badge className="rounded-full px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-600 mt-1 w-fit flex items-center gap-1">
+                                                        <Sparkles />
+                                                        v{plugin.latestVersion}
+                                                    </Badge>
+                                                }
                                             </div>
                                         </CardTitle>
                                     </div>
