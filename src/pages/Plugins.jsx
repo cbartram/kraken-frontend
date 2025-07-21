@@ -64,6 +64,7 @@ const Plugins = () => {
     const [successAlertOpen, setSuccessAlertOpen] = useState(false);
     const [errorDialogueOpen, setErrorDialogueOpen] = useState(false);
     const [pluginSuccessDialogueOpen, setPluginSuccessDialogueOpen] = useState(false);
+    const [pluginSuccessDialoguePack, setPluginSuccessDialoguePack] = useState(false);
     const [freeTrialDialogueOpen, setFreeTrialDialogueOpen] = useState(false);
     const [pluginResponse, setPluginResponse] = useState({});
     const [errorMessage, setErrorMessage] = useState("");
@@ -130,6 +131,7 @@ const Plugins = () => {
                 console.error(`failed to load plugin packs from API: ${error.message}`);
             })
         }
+
     }, [api]);
 
     useEffect(() => {
@@ -260,9 +262,11 @@ const Plugins = () => {
             if (item.type === 'plugin') {
                 res = await api.purchasePlugin(item.name, subscriptionPeriod)
                 user.tokens -= item.priceDetails[reconcileSubPeriod(subscriptionPeriod)];
+                setPluginSuccessDialoguePack(false)
             } else {
                 res = await api.purchasePluginPack(item.name, subscriptionPeriod)
                 user.tokens -= item.priceDetails[reconcileSubPeriod(subscriptionPeriod)];
+                setPluginSuccessDialoguePack(true)
             }
 
             setPluginResponse(res)
@@ -390,7 +394,7 @@ const Plugins = () => {
     return (
         <div className="bg-gray-900 text-gray-100">
             <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
-            <PurchasePluginSuccessDialog isOpen={pluginSuccessDialogueOpen} onClose={() => setPluginSuccessDialogueOpen(false)} successResponse={pluginResponse} />
+            <PurchasePluginSuccessDialog isOpen={pluginSuccessDialogueOpen} pack={pluginSuccessDialoguePack} onClose={() => setPluginSuccessDialogueOpen(false)} successResponse={pluginResponse} />
             <ErrorDialog isOpen={errorDialogueOpen} onClose={() => setErrorDialogueOpen(false)} message={errorMessage} />
             <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(item, subscriptionPeriod) => handleItemPurchase(item, subscriptionPeriod)} plugin={selectedItem} />
             <BetaPluginDialog isOpen={betaAlertOpen} onClose={() => setBetaAlertOpen(false)} onPurchase={(item, subscriptionPeriod) => handleItemPurchase(item, subscriptionPeriod)} plugin={selectedItem} />
@@ -415,7 +419,7 @@ const Plugins = () => {
                                     .open("https://discord.gg/bbPS2AP7Cq", "_blank")
                                     .focus()
                             }
-                            className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5fc] text-white text-sm font-medium flex items-center gap-2 px-4 py-2 rounded"
+                            className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5fc] text-white text-sm font-medium flex items-center gap-2 px-4 py-2 rounded cursor-pointer"
                         >
                             <img src={DiscordLogo} height={25} width={25} alt="Discord" />
                             Join our Discord
@@ -608,15 +612,17 @@ const Plugins = () => {
                                         )}
 
                                         <CardHeader className="mb-16">
-                                            <div className="flex items-center gap-2">
-                                                <Package className="h-6 w-6 text-purple-400" />
-                                                <CardTitle className="text-2xl text-white">{pack.title}</CardTitle>
+                                            <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 -m-4">
+                                                <div className="flex items-center gap-2">
+                                                    <Package className="h-6 w-6 text-purple-400" />
+                                                    <CardTitle className="text-2xl text-white">{pack.title}</CardTitle>
+                                                </div>
+                                                <CardDescription className="text-gray-200 min-h-24">{pack.description}</CardDescription>
                                             </div>
-                                            <CardDescription className="text-gray-200 min-h-24">{pack.description}</CardDescription>
                                         </CardHeader>
 
                                         <CardContent>
-                                            <div className="bg-black/50 p-4 rounded-lg mb-4">
+                                            <div className="bg-black/50 p-4 backdrop-blur-sm rounded-lg mb-4">
                                                 <h3 className="font-medium text-white mb-2">Included Plugins</h3>
                                                 <ul className="list-disc list-inside text-gray-300">
                                                     {pack.items.map(item => (
@@ -626,7 +632,7 @@ const Plugins = () => {
                                             </div>
 
                                             <div className="flex flex-col">
-                                                <div className="bg-black/50 p-4 rounded-lg">
+                                                <div className="bg-black/50 p-4 backdrop-blur-sm rounded-lg">
                                                     <h3 className="font-medium text-white mb-2">Subscription Options</h3>
                                                     <div className="flex justify-between items-center mb-2">
                                                         <span className="text-gray-300">1 Month</span>
