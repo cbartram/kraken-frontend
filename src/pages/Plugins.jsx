@@ -532,7 +532,7 @@ const Plugins = () => {
                                                     }
                                                     {plugin.latestVersion &&
                                                         <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-400 mb-4">
-                                                        <Package className="mr-1 h-4 w-4" />
+                                                        <Sparkles className="mr-1 h-4 w-4" />
                                                         v{plugin.latestVersion}
                                                     </span>
                                                     }
