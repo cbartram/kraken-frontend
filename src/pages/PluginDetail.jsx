@@ -3,7 +3,7 @@ import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import { Cog, ReceiptText, Sparkles} from 'lucide-react';
+import {Clock, Cog, ReceiptText, Sparkles} from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import {useParams} from "react-router-dom";
@@ -135,6 +135,27 @@ const PluginDetailPage = () => {
         return match ? match[1] : null;
     };
 
+    const sortVersions = (a, b) => {
+        let a1;
+        let b1;
+
+        a1 = a.version.split('.');
+        b1 = b.version.split('.');
+
+        const len = Math.min(a1.length, b1.length);
+
+        for (let i = 0; i < len; i++) {
+            const a2 = +a1[ i ] || 0;
+            const b2 = +b1[ i ] || 0;
+
+            if (a2 !== b2) {
+                return a2 > b2 ? -1 : 1;
+            }
+        }
+
+        return b1.length - a1.length;
+    }
+
     return (
         <>
             <Navbar user={user} onLogout={logout} />
@@ -261,7 +282,7 @@ const PluginDetailPage = () => {
                 {/* Description and Configuration Tabs */}
                 <div className="my-4">
                     <Tabs defaultValue="configuration">
-                        <TabsList className="grid grid-cols-2 bg-gray-50">
+                        <TabsList className="grid grid-cols-3 bg-gray-50">
                             <TabsTrigger
                                 value="description"
                                 className="data-[state=active]:bg-green-400 data-[state=active]:text-white"
@@ -275,6 +296,13 @@ const PluginDetailPage = () => {
                             >
                                 <Cog />
                                 Configuration Options
+                            </TabsTrigger>
+                            <TabsTrigger
+                                value="versions"
+                                className="data-[state=active]:bg-green-400 data-[state=active]:text-white"
+                            >
+                                <Clock />
+                                Version History
                             </TabsTrigger>
                         </TabsList>
 
@@ -318,6 +346,43 @@ const PluginDetailPage = () => {
                                     </AccordionItem>
                                 ))}
                             </Accordion>
+                        </TabsContent>
+
+                        <TabsContent value="versions" className="bg-white border border-gray-200 rounded-b-lg p-6">
+                            <div className="space-y-4">
+                                <h3 className="text-lg font-semibold text-gray-800 mb-4">Version History</h3>
+                                {plugin.versions && plugin.versions.length > 0 ? (
+                                    <div className="space-y-3">
+                                        {plugin.versions.sort(sortVersions).map((version, index) => (
+                                            <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg border">
+                                                <div className="flex items-center gap-3">
+                                                    <Badge
+                                                        variant={index === 0 ? "default" : "secondary"}
+                                                        className={index === 0 ? "bg-green-500 text-white" : ""}
+                                                    >
+                                                        v{version.version}
+                                                    </Badge>
+                                                    <div>
+                                                        <p className="font-medium text-gray-800">
+                                                            {`Version ${version.version}`}
+                                                        </p>
+                                                        {version.releaseDate && (
+                                                            <p className="text-sm text-gray-600">
+                                                                Released: {new Date(version.releaseDate).toLocaleDateString()}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                                {index === 0 && (
+                                                    <span className="text-sm text-green-600 font-medium">Current</span>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p className="text-gray-500 text-center py-8">No version history available</p>
+                                )}
+                            </div>
                         </TabsContent>
                     </Tabs>
                 </div>
