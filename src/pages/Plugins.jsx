@@ -399,7 +399,6 @@ const Plugins = () => {
             <PurchasePluginDialog isOpen={open} onClose={() => setOpen(false)} onPurchase={(item, subscriptionPeriod) => handleItemPurchase(item, subscriptionPeriod)} plugin={selectedItem} />
             <BetaPluginDialog isOpen={betaAlertOpen} onClose={() => setBetaAlertOpen(false)} onPurchase={(item, subscriptionPeriod) => handleItemPurchase(item, subscriptionPeriod)} plugin={selectedItem} />
             <FreeTrialDialogue isOpen={freeTrialDialogueOpen} onClose={() => setFreeTrialDialogueOpen(false)} onFreeTrialStart={() => handleFreeTrial()} />
-
             { /* For purchasing kraken tokens */}
             <PurchaseSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
             <div className="container mx-auto py-8">
@@ -434,21 +433,21 @@ const Plugins = () => {
                             className="data-[state=active]:bg-green-400 data-[state=active]:text-white cursor-pointer"
                         >
                             <Plug />
-                            All Plugins
+                            All Plugins ({plugins.length})
                         </TabsTrigger>
                         <TabsTrigger
                             value="packs"
                             className="data-[state=active]:bg-green-400 data-[state=active]:text-white cursor-pointer"
                         >
                             <Box />
-                            Plugin Packs
+                            Plugin Packs ({pluginPacks.length})
                         </TabsTrigger>
                         <TabsTrigger
                             value="beta"
                             className="data-[state=active]:bg-green-400 data-[state=active]:text-white cursor-pointer"
                         >
                             <FlaskConical className="mr-1" />
-                            Beta Plugins
+                            Beta Plugins ({betaPlugins.length})
                         </TabsTrigger>
                     </TabsList>
 
@@ -457,7 +456,7 @@ const Plugins = () => {
                         <div className="relative flex-grow">
                             <Search className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
                             <Input
-                                placeholder={activeTab === "plugins" ? "Search plugins..." : "Search plugin packs..."}
+                                placeholder={activeTab === "plugins" ? `Search ${plugins.length} plugins...` : "Search plugin packs..."}
                                 className="pl-10"
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
