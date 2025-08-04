@@ -19,7 +19,7 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 
-const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase, defaultSubscriptionPeriod = "monthly"  }) => {
+const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase, defaultSubscriptionPeriod = "monthly" }) => {
     const [subscriptionPeriod, setSubscriptionPeriod] = useState(defaultSubscriptionPeriod);
     const [agreedToTerms, setAgreedToTerms] = useState(false);
 
@@ -36,11 +36,11 @@ const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase, defaultSubs
     };
 
     const priceForMonth = (price) => {
-        if(subscriptionPeriod === "monthly") {
+        if (subscriptionPeriod === "monthly") {
             return price.month
-        } else if(subscriptionPeriod === "3-month") {
+        } else if (subscriptionPeriod === "3-month") {
             return price.threeMonth
-        } else if(subscriptionPeriod === "yearly") {
+        } else if (subscriptionPeriod === "yearly") {
             return price.year
         }
 
@@ -53,7 +53,10 @@ const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase, defaultSubs
                 <AlertDialogHeader>
                     <AlertDialogTitle className="text-xl font-bold">Confirm Purchase</AlertDialogTitle>
                     <AlertDialogDescription className="mt-2 text-base">
-                        Are you sure you want to purchase <span className="font-semibold text-green-400">{plugin.title}</span> for <span className="font-semibold text-green-400">{priceForMonth(plugin.priceDetails)} tokens</span>? Your subscription will start immediately.
+                        Are you sure you want to purchase <span
+                        className="font-semibold text-green-400">{plugin.title}</span> for <span
+                        className="font-semibold text-green-400">{priceForMonth(plugin.priceDetails)} tokens</span>?
+                        Your subscription will start immediately.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <div className="space-y-4 my-4">
@@ -61,17 +64,19 @@ const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase, defaultSubs
                         <Label htmlFor="subscription-period">Subscription Period</Label>
                         <Select value={subscriptionPeriod} onValueChange={setSubscriptionPeriod}>
                             <SelectTrigger id="subscription-period" className="w-full">
-                                <SelectValue placeholder="Select subscription period" />
+                                <SelectValue placeholder="Select subscription period"/>
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectItem value="monthly">Monthly</SelectItem>
                                 <SelectItem value="3-month">3 Months</SelectItem>
                                 <SelectItem value="yearly">Yearly</SelectItem>
-                                <SelectItem value="lifetime">Lifetime</SelectItem>
+                                {
+                                    plugin.type === "plugin" &&
+                                    <SelectItem value="lifetime">Lifetime</SelectItem>
+                                }
                             </SelectContent>
                         </Select>
                     </div>
-
                     <div className="flex items-center space-x-2">
                         <Checkbox
                             id="terms"
