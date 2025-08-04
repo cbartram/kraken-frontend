@@ -561,9 +561,13 @@ const Plugins = () => {
                                                         {renderPrice(plugin, 'threeMonth', 'saleThreeMonth')}
 
                                                     </div>
-                                                    <div className="flex justify-between items-center">
+                                                    <div className="flex justify-between items-center mb-2">
                                                         <span className="text-gray-300">1 Year</span>
                                                         {renderPrice(plugin, 'year', 'saleYear')}
+                                                    </div>
+                                                    <div className="flex justify-between items-center">
+                                                        <span className="text-gray-300">Lifetime</span>
+                                                        {renderPrice(plugin, 'lifetime', 'saleLifetime')}
                                                     </div>
                                                 </div>
                                             </div>

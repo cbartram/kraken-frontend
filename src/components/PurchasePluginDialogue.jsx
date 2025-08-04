@@ -40,9 +40,11 @@ const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase, defaultSubs
             return price.month
         } else if(subscriptionPeriod === "3-month") {
             return price.threeMonth
+        } else if(subscriptionPeriod === "yearly") {
+            return price.year
         }
 
-        return price.year
+        return price.lifetime
     }
 
     return (
@@ -65,6 +67,7 @@ const PurchasePluginDialog = ({ isOpen, onClose, plugin, onPurchase, defaultSubs
                                 <SelectItem value="monthly">Monthly</SelectItem>
                                 <SelectItem value="3-month">3 Months</SelectItem>
                                 <SelectItem value="yearly">Yearly</SelectItem>
+                                <SelectItem value="lifetime">Lifetime</SelectItem>
                             </SelectContent>
                         </Select>
                     </div>
