@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {CalendarDays, Package, AlertCircle, Key, AlarmClockOff, Search} from 'lucide-react';
+import {CalendarDays, Package, AlertCircle, Key, AlarmClockOff, Search, Unplug} from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -55,11 +55,21 @@ const Profile = () => {
         const expirationDate = new Date(expirationTimestamp);
         const diffTime = expirationDate - now;
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        if(diffDays > (365 * 5)) {
+            return "Never"
+        }
+
         return diffDays > 0 ? diffDays : 0;
     };
 
     const isExpiringSoon = (expirationTimestamp) => {
         const daysUntilExpiration = getDaysUntilExpiration(expirationTimestamp);
+
+        if(daysUntilExpiration === "Never") {
+            return false;
+        }
+
         return daysUntilExpiration <= 7 && daysUntilExpiration > 0;
     };
 
@@ -195,7 +205,7 @@ const Profile = () => {
                                                             <div>
                                                                 <h3 className="text-xl font-semibold text-gray-900">{plugin.name}</h3>
                                                                 <div className="flex items-center text-sm text-gray-500 mt-1">
-                                                                    <Package className="h-4 w-4 mr-2" />
+                                                                    <Unplug className="h-4 w-4 mr-2" />
                                                                     <span>Plugin ID: {plugin.id}</span>
                                                                 </div>
                                                             </div>

@@ -77,8 +77,18 @@ export const reverseReconcileSubPeriod = (pricing: string) => {
 };
 
 
+
 export const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
+  const now = new Date();
+
+  const fiveYearsFromNow = new Date();
+  fiveYearsFromNow.setFullYear(now.getFullYear() + 5);
+
+  if (date > fiveYearsFromNow) {
+    return "Never";
+  }
+
   return date.toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
