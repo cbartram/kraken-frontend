@@ -56,6 +56,8 @@ export const reconcileSubPeriod = (period: string) => {
       return "threeMonth"
     case "yearly":
       return "year"
+    case "lifetime":
+      return "lifetime"
   }
 }
 
@@ -67,14 +69,26 @@ export const reverseReconcileSubPeriod = (pricing: string) => {
       return '3-month';
     case 'year':
       return 'yearly';
+    case 'lifetime':
+      return 'lifetime'
     default:
       return 'monthly';
   }
 };
 
 
+
 export const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
+  const now = new Date();
+
+  const fiveYearsFromNow = new Date();
+  fiveYearsFromNow.setFullYear(now.getFullYear() + 5);
+
+  if (date > fiveYearsFromNow) {
+    return "Never";
+  }
+
   return date.toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
@@ -85,23 +99,6 @@ export const formatDate = (dateString: string): string => {
 export const isPluginExpired = (expirationTimestamp: string): boolean => {
   return new Date(expirationTimestamp) <= new Date();
 };
-
-export const isInFreeTrialPeriod = (trialEnd: string): boolean => {
-  try {
-    const now = new Date();
-    const compareDate = new Date(trialEnd);
-
-    if (isNaN(compareDate.getTime())) {
-      console.log(`${trialEnd} is not a valid date`);
-      return false;
-    }
-
-    return now > compareDate;
-  } catch (e) {
-    console.error("Error comparing dates for free trial", e);
-    return false;
-  }
-}
 
 /**
  * Creates a new user in Cognito. If the user already exists it will be returned instead.

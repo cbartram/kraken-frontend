@@ -34,7 +34,7 @@ import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import {discordRedirect, formatDate, isPluginExpired, reconcileSubPeriod} from "@/lib/utils.js";
 import PurchasePluginDialog from "@/components/PurchasePluginDialogue.jsx";
-import PurchaseSuccessDialog from "@/components/PurchaseSuccessDialogue.jsx";
+import PurchaseTokensSuccessDialog from "@/components/PurchaseTokensSuccessDialogue.jsx";
 import ErrorDialog from "@/components/ErrorDialogue.jsx";
 import PurchasePluginSuccessDialog from "@/components/PurchasePluginSuccessDialogue.jsx";
 import {useNavigate} from "react-router-dom";
@@ -400,7 +400,7 @@ const Plugins = () => {
             <BetaPluginDialog isOpen={betaAlertOpen} onClose={() => setBetaAlertOpen(false)} onPurchase={(item, subscriptionPeriod) => handleItemPurchase(item, subscriptionPeriod)} plugin={selectedItem} />
             <FreeTrialDialogue isOpen={freeTrialDialogueOpen} onClose={() => setFreeTrialDialogueOpen(false)} onFreeTrialStart={() => handleFreeTrial()} />
             { /* For purchasing kraken tokens */}
-            <PurchaseSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
+            <PurchaseTokensSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
             <div className="container mx-auto py-8">
                 <h1 className="text-4xl font-bold mb-6 text-center text-green-400">Kraken Plugins</h1>
                 <p className="text-secondary text-center mb-4">View the full collection of available Kraken Plugins and Plugin Packs!</p>
@@ -561,9 +561,13 @@ const Plugins = () => {
                                                         {renderPrice(plugin, 'threeMonth', 'saleThreeMonth')}
 
                                                     </div>
-                                                    <div className="flex justify-between items-center">
+                                                    <div className="flex justify-between items-center mb-2">
                                                         <span className="text-gray-300">1 Year</span>
                                                         {renderPrice(plugin, 'year', 'saleYear')}
+                                                    </div>
+                                                    <div className="flex justify-between items-center">
+                                                        <span className="text-gray-300">Lifetime</span>
+                                                        {renderPrice(plugin, 'lifetime', 'saleLifetime')}
                                                     </div>
                                                 </div>
                                             </div>

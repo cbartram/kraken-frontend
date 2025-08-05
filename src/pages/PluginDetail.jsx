@@ -43,7 +43,8 @@ const PluginDetailPage = () => {
         priceDetails: {
             month: 0,
             threeMonth: 0,
-            year: 0
+            year: 0,
+            lifetime: 0,
         },
         configurationOptions: [
             {
@@ -231,7 +232,7 @@ const PluginDetailPage = () => {
                             <CardContent>
                                 <div className="mb-6">
                                     <h3 className="text-lg font-medium mb-4">Choose your subscription</h3>
-                                    <div className="grid grid-cols-3 gap-2">
+                                    <div className="grid grid-cols-4 gap-2">
                                         <Button
                                             variant={selectedPricing === 'month' ? "default" : "outline"}
                                             className={selectedPricing === 'month' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:text-indigo-600 hover:bg-indigo-100"}
@@ -252,6 +253,13 @@ const PluginDetailPage = () => {
                                             onClick={() => setSelectedPricing('year')}
                                         >
                                             1 Year
+                                        </Button>
+                                        <Button
+                                            variant={selectedPricing === 'lifetime' ? "default" : "outline"}
+                                            className={selectedPricing === 'lifetime' ? "bg-indigo-500/20 text-indigo-600 hover:bg-indigo-500/20" : "border-indigo-600 text-indigo-600 hover:text-indigo-600 hover:bg-indigo-100"}
+                                            onClick={() => setSelectedPricing('lifetime')}
+                                        >
+                                            Lifetime
                                         </Button>
                                     </div>
 
