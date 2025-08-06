@@ -19,6 +19,7 @@ import {ProtectedRoute} from "@/components/ProtectedRoute";
 import {useEffect} from "react";
 import ReactGA from 'react-ga4'
 import './index.css'
+import SalesManagement from "@/pages/SaleManagement.jsx";
 
 function App() {
 
@@ -55,6 +56,13 @@ function App() {
                     <Route path="/purchase" element={<PurchaseTokens />}/>
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+
+                    <Route path="/admin/management/sales" element={
+                        <ProtectedRoute>
+                            <SalesManagement />
+                        </ProtectedRoute>
+                    }
+                    />
 
                     <Route path="/profile" element={
                         <ProtectedRoute>
