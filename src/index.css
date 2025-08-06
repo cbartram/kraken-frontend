@@ -63,6 +63,19 @@ h1 {
   line-height: 1.1;
 }
 
+.react-datetime-picker__wrapper {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  color: #111827; /* Tailwind gray-900 */
+}
+.react-datetime-picker__inputGroup__input {
+  border: none;
+  background: transparent;
+}
+.react-datetime-picker__calendar {
+  z-index: 50 !important;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color: #213547;

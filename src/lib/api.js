@@ -89,6 +89,21 @@ class KubeApiClient extends ApiClient {
         });
     }
 
+    async createSale(name, description, discount, startTime, endTime, active, pluginNames) {
+        return this.request("/api/v1/sale/create", {
+            method: "POST",
+            body: JSON.stringify({
+                "name": name,
+                "description": description,
+                "discount": discount,
+                "startTime": startTime,
+                "endTime": endTime,
+                "active": active,
+                "pluginNames": pluginNames,
+            })
+        });
+    }
+
     async getPlugin(name) {
         return this.request("/api/v1/plugin/?name=" + name, {
             method: "GET",
