@@ -122,6 +122,16 @@ class KubeApiClient extends ApiClient {
         });
     }
 
+    async createTicket(username, tokens, gp) {
+        return this.request("/api/v1/discord/create-ticket", {
+            method: "POST",
+            body: JSON.stringify({
+                ingameUsername: username,
+                tokens,
+                gp
+            })
+        })
+    }
 
     async startTrial() {
         return this.request("/api/v1/plugin/free-trial", {
