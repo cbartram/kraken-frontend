@@ -28,7 +28,6 @@ const PurchaseTokens = () => {
     // GP payment form state
     const [gpPaymentInfo, setGpPaymentInfo] = useState({
         ingameUsername: '',
-        emailAddress: ''
     });
 
     const tokenPackages = [
@@ -121,12 +120,12 @@ const PurchaseTokens = () => {
                 The user ${user?.discordUsername},
                 has made a purchase request for ${pkg.amount.toLocaleString()} tokens with ${formatGP(pkg.gpPrice)} GP.
                 In-game username: ${gpPaymentInfo.ingameUsername}
-                Email address: ${gpPaymentInfo.emailAddress}
                 Discord ID: ${user?.discordId}
                 Discord Username: ${user?.discordUsername}
                 You must PM/email them in game a world to hop to, collect payment asap, and update their kraken db with an additional ${pkg.amount.toLocaleString()} tokens
                 `)
-                console.log('Email sent:', res);
+
+                await api.createTicket(gpPaymentInfo?.ingameUsername, pkg.amount.toLocaleString(), formatGP(pkg.gpPrice));
                 setGpPaymentSubmitted(true);
             }
         } catch (error) {
@@ -137,8 +136,7 @@ const PurchaseTokens = () => {
     };
 
     const isGpFormValid = () => {
-        return gpPaymentInfo.ingameUsername.trim() !== '' &&
-            gpPaymentInfo.emailAddress.trim() !== '';
+        return gpPaymentInfo.ingameUsername.trim() !== ''
     };
 
     const renderPurchaseButton = () => {
@@ -162,7 +160,7 @@ const PurchaseTokens = () => {
         return <Button
             onClick={() => window.location.href = '/login'}
             disabled={!selectedPackage || purchaseLoading}
-            className="w-full md:w-auto bg-green-200 text-green-800 hover:bg-green-300 py-6 hover:border-0 hover:border-green-200 sm:w-auto"
+            className={`w-full md:w-auto ${paymentMethod === 'gp' ? 'bg-yellow-200 text-yellow-800 hover:bg-yellow-300 hover:border-yellow-200 py-6 hover:border-0 sm:w-auto' : 'bg-green-200 text-green-800 hover:bg-green-300 py-6 hover:border-0 hover:border-green-200 sm:w-auto'}`}
             size="lg"
         >
             {selectedPackage ?
@@ -212,10 +210,6 @@ const PurchaseTokens = () => {
                                             <span className="font-medium text-gray-700">In-game Username:</span>
                                             <span className="ml-2 text-gray-900">{gpPaymentInfo?.ingameUsername}</span>
                                         </div>
-                                        <div>
-                                            <span className="font-medium text-gray-700">Email:</span>
-                                            <span className="ml-2 text-gray-900">{gpPaymentInfo?.emailAddress}</span>
-                                        </div>
                                     </div>
                                 </div>
 
@@ -223,12 +217,20 @@ const PurchaseTokens = () => {
                                     <h3 className="font-semibold text-blue-800 mb-2">What happens next?</h3>
                                     <ul className="text-sm text-blue-700 space-y-2">
                                         <li className="flex items-start">
-                                <span className="bg-blue-100 p-1 rounded-full mr-2 mt-0.5">
-                                    <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                    </svg>
-                                </span>
-                                            You will receive an <span className="font-bold mx-1">email confirmation</span> shortly at {gpPaymentInfo?.emailAddress}
+                                            <span className="bg-blue-100 p-1 rounded-full mr-2 mt-0.5">
+                                                <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </span>
+                                            You should see a new ticket opened for you in the Kraken Plugins discord server.
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="bg-blue-100 p-1 rounded-full mr-2 mt-0.5">
+                                                <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </span>
+                                            A staff member will you in the newly created Discord ticket to coordinate in game meetup.
                                         </li>
                                         <li className="flex items-start">
                                 <span className="bg-blue-100 p-1 rounded-full mr-2 mt-0.5">
@@ -236,7 +238,7 @@ const PurchaseTokens = () => {
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                     </svg>
                                 </span>
-                                            A staff member will <span className="font-bold mx-1">private message you in-game</span> at "{gpPaymentInfo?.ingameUsername}" with a world to meet
+                                            Meet at the specified location and world to complete the GP transfer. Make sure you are logged into Old School RuneScape on: on the account: <span className="font-bold">"{gpPaymentInfo?.ingameUsername}"</span>
                                         </li>
                                         <li className="flex items-start">
                                 <span className="bg-blue-100 p-1 rounded-full mr-2 mt-0.5">
@@ -244,15 +246,7 @@ const PurchaseTokens = () => {
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                     </svg>
                                 </span>
-                                            Meet at the <span className="font-bold mx-1">Grand Exchange</span> on the specified world to complete the GP transfer
-                                        </li>
-                                        <li className="flex items-start">
-                                <span className="bg-blue-100 p-1 rounded-full mr-2 mt-0.5">
-                                    <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                    </svg>
-                                </span>
-                                            Your tokens will be <span className="font-bold mx-1">automatically added</span> to your account once payment is received
+                                            Your tokens will be <span className="font-bold mx-1">manually added</span> to your account by a staff member once payment is received
                                         </li>
                                     </ul>
                                 </div>
@@ -260,7 +254,7 @@ const PurchaseTokens = () => {
                                 <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
                                     <p className="text-sm text-yellow-700">
                                         <strong>Please note:</strong> Orders placed between 9:00 PM - 8:00 AM U.S. Eastern Standard Time may experience delays.
-                                        Make sure your private chat is set to <span className="font-bold">ON</span> so we can contact you in-game.
+                                        Make sure you check Discord as a new ticket will have been created to facilitate the GP transfer.
                                     </p>
                                 </div>
                             </CardContent>
@@ -269,7 +263,7 @@ const PurchaseTokens = () => {
                                     onClick={() => {
                                         setGpPaymentSubmitted(false);
                                         setSelectedPackage(null);
-                                        setGpPaymentInfo({ ingameUsername: '', emailAddress: '' });
+                                        setGpPaymentInfo({ ingameUsername: '' });
                                         setSubmittedPackageInfo(null);
                                     }}
                                     variant="outline"
@@ -376,7 +370,9 @@ const PurchaseTokens = () => {
                                     {/* GP Payment Information Form */}
                                     <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                                         <h3 className="font-semibold text-blue-800 mb-4">Payment Information</h3>
-                                        <p className="text-blue-600 mb-6">Once GP has been paid, your tokens will be immediately updated for you to purchase plugins.</p>
+                                        <p className="text-gray-800 mb-6">
+                                            Once GP has been transferred, your tokens will be updated by a staff member so you can purchase plugins. You <span className="font-bold">MUST</span> join
+                                        the <a className="font-bold hover:underline text-[#5865F2]" href="https://discord.gg/bbPS2AP7Cq">Kraken Plugins Discord Server</a> as a new ticket will be created to communicate the meetup.</p>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                             <div>
                                                 <Label htmlFor="ingame-username" className="text-sm font-medium text-blue-700">
@@ -391,25 +387,8 @@ const PurchaseTokens = () => {
                                                     className="mt-1"
                                                     required
                                                 />
-                                                <p className="text-xs text-blue-600 mt-1">
+                                                <p className="text-xs text-gray-800 mt-1">
                                                     Your username must exactly match your in game name. If it doesn't we cannot accept GP from the account.
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <Label htmlFor="email-address" className="text-sm font-medium text-blue-700">
-                                                    Email Address *
-                                                </Label>
-                                                <Input
-                                                    id="email-address"
-                                                    type="email"
-                                                    placeholder="Enter your email address"
-                                                    value={gpPaymentInfo.emailAddress}
-                                                    onChange={(e) => handleGpPaymentInfoChange('emailAddress', e.target.value)}
-                                                    className="mt-1"
-                                                    required
-                                                />
-                                                <p className="text-xs text-blue-600 mt-1">
-                                                    Your email is required in case we can't reach you in game for collecting the GP.
                                                 </p>
                                             </div>
                                             <div>
@@ -449,11 +428,11 @@ const PurchaseTokens = () => {
                                                 </AccordionTrigger>
                                                 <AccordionContent>
                                                     <div className="mx-4">
-                                                        <ul className="mt-2 ml-4 list-disc text-blue-600">
+                                                        <ul className="mt-2 ml-4 list-disc text-gray-800">
                                                             <li>If your order is between the hours of 9:00 PM - 8:00 AM U.S. Eastern Standard Time there <span className="font-bold">will be a delay</span> in our ability to accept GP payment.</li>
-                                                            <li>Make sure to have your private chat: <span className='font-bold'>ON</span> as information about the transfer may be communicated in-game if you are unreachable via email.</li>
-                                                            <li>Double check your Kraken discord, if you have multiple discord accounts please make sure you are signed into the right one before purchasing tokens.</li>
-                                                            <li>You will be contacted via email first and PM second about the world to hop to and a high level account will collect the GP at the Grand Exchange on the specified world.</li>
+                                                            <li>Make sure to join the <a className="font-bold hover:underline text-[#5865F2]" href="https://discord.gg/bbPS2AP7Cq">Kraken Plugins Discord Server</a> as a new ticket will be created to communicate the meetup.</li>
+                                                            <li>Double check your Discord name listed above, if you have multiple discord accounts please make sure you are signed into the right one before purchasing tokens. Plugins are only authorized to a single Discord account.</li>
+                                                            <li>You will be contacted via a Discord ticket in the Kraken Plugins server for the world and location to hop to. A high level account will collect the GP on the specified world.</li>
                                                         </ul>
                                                     </div>
                                                 </AccordionContent>
@@ -462,7 +441,6 @@ const PurchaseTokens = () => {
                                     </div>
                                 </div>
                             )}
-
                             { renderPurchaseButton() }
                         </CardFooter>
                     </Card>
