@@ -233,12 +233,12 @@ const PurchaseTokens = () => {
                                             A staff member will you in the newly created Discord ticket to coordinate in game meetup.
                                         </li>
                                         <li className="flex items-start">
-                                <span className="bg-blue-100 p-1 rounded-full mr-2 mt-0.5">
-                                    <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                    </svg>
-                                </span>
-                                            Meet at the specified location and world to complete the GP transfer. Make sure you are logged into Old School RuneScape on: on the account: <span className="font-bold">"{gpPaymentInfo?.ingameUsername}"</span>
+                                        <span className="bg-blue-100 p-1 rounded-full mr-2 mt-0.5">
+                                            <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        </span>
+                                            Meet at the specified location and world to complete the GP transfer. Make sure you use the OSRS account: <br> <span className="font-bold">"{gpPaymentInfo?.ingameUsername}"</span>
                                         </li>
                                         <li className="flex items-start">
                                 <span className="bg-blue-100 p-1 rounded-full mr-2 mt-0.5">
