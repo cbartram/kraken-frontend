@@ -372,7 +372,7 @@ const Plugins = () => {
     }
 
     const renderPrice = (plugin, duration, saleDuration) => {
-        if(plugin.priceDetails.month === 0 && plugin.priceDetails.threeMonth === 0 && plugin.priceDetails.year === 0) {
+        if((plugin.priceDetails.month === 0 && plugin.priceDetails.threeMonth === 0 && plugin.priceDetails.year === 0) || plugin.isInBeta) {
             return <span className="text-green-400">FREE</span>
         }
 
@@ -683,21 +683,24 @@ const Plugins = () => {
 
                                     <Card className="relative z-20 border-0 bg-transparent overflow-hidden">
                                         <CardHeader className="mb-24">
-                                            <CardTitle className="text-2xl text-white">
-                                                {plugin.title}
-                                                {plugin.isInBeta &&
+                                            <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 -m-4">
+                                                <CardTitle className="text-2xl text-white">
+                                                    {plugin.title}
+                                                    {plugin.isInBeta &&
                                                     <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-green-500/20 text-green-400 mb-4">
-                                    <FlaskConical className="mr-1 h-4 w-4" />
-                                    Beta Plugin
-                                </span>
+                                                        <FlaskConical className="mr-1 h-4 w-4" />
+                                                        Beta Plugin
+                                                    </span>
                                                 }
-                                            </CardTitle>
-                                            <CardDescription className="text-gray-200 min-h-24">{plugin.description}</CardDescription>
+                                                </CardTitle>
+
+                                                <CardDescription className="text-gray-200 min-h-24">{plugin.description}</CardDescription>
+                                            </div>
                                         </CardHeader>
 
                                         <CardContent>
                                             <div className="flex flex-col mt-12">
-                                                <div className="bg-black/50 p-4 rounded-lg">
+                                                <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 -m-4">
                                                     <div className="flex">
                                                         <h3 className="font-medium text-white mb-2">Subscription Options</h3>
                                                         {
