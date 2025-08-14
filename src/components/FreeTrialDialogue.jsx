@@ -33,7 +33,7 @@ const FreeTrialDialogue = ({ isOpen, onClose, onFreeTrialStart }) => {
                             <p>Your Overpowered Kraken plugins are only a click away! <br />
                                 Here are some details you should know:</p> <br/>
                             <ul>
-                                <li> - Your free trial lasts <span className="text-green-400 font-bold">3 days</span></li>
+                                <li> - Your free trial lasts <span className="text-green-400 font-bold">7 days</span></li>
                                 <li> - Your free trial starts <span className="text-green-400 font-bold">immediately</span></li>
                                 <li> - You will be granted access to <span className="text-green-400 font-bold">ALL</span> Kraken plugins, trial plugins do <span className="text-green-400 font-bold">NOT</span> require a license key.</li>
                                 <li> - You will <span className="text-green-400 font-bold">NOT</span> be charged after your free trial ends</li>
@@ -45,7 +45,7 @@ const FreeTrialDialogue = ({ isOpen, onClose, onFreeTrialStart }) => {
                             <div className="flex align-middle justify-center mt-4">
                                 <Button className="w-75 bg-green-400 hover:bg-green-500" onClick={() => startFreeTrial()}>
                                     <Sparkles />
-                                    Start Free Trial
+                                    Start 7 Day Free Trial
                                 </Button>
                             </div>
                         </div>
