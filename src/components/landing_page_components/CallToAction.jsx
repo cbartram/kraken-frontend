@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight, Users, Star, Award, Shield } from "lucide-react";
 import {discordRedirect} from "@/lib/utils.js";
-import Video from "@/assets/runelite_masked.mp4";
+import Video from "@/assets/runelite_masked_v2.mp4";
 
 export default function CallToAction() {
     const [isHovered, setIsHovered] = useState(false);

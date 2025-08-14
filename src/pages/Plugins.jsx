@@ -66,6 +66,8 @@ const Plugins = () => {
     const [pluginSuccessDialogueOpen, setPluginSuccessDialogueOpen] = useState(false);
     const [pluginSuccessDialoguePack, setPluginSuccessDialoguePack] = useState(false);
     const [freeTrialDialogueOpen, setFreeTrialDialogueOpen] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 9;
     const [pluginResponse, setPluginResponse] = useState({});
     const [errorMessage, setErrorMessage] = useState("");
     const [selectedItem, setSelectedItem] = useState({
@@ -169,6 +171,7 @@ const Plugins = () => {
             }
 
             setPlugins(filteredPlugins);
+            setCurrentPage(1);
         } else if (activeTab === "packs") {
             let filteredPacks = [...fullPluginPackList];
 
@@ -201,6 +204,7 @@ const Plugins = () => {
             }
 
             setPluginPacks(filteredPacks);
+            setCurrentPage(1);
         } else if (activeTab === "beta") {
         let filteredBeta = [...fullBetaPluginList];
 
@@ -231,6 +235,7 @@ const Plugins = () => {
         }
 
         setBetaPlugins(filteredBeta);
+        setCurrentPage(1);
     }
     }, [search, sortBy, activeTab, fullPluginList, fullPluginPackList]);
 
@@ -391,6 +396,117 @@ const Plugins = () => {
         })
     }
 
+    const renderPluginsContent = () => {
+        const indexOfLastItem = currentPage * itemsPerPage;
+        const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+        const currentItems = plugins.slice(indexOfFirstItem, indexOfLastItem);
+
+        return (
+            <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {
+                        currentItems.map(plugin => (
+                        <div key={plugin.name} className="relative">
+                            <div
+                                className="absolute inset-0 rounded-lg bg-no-repeat bg-cover bg-center z-0 opacity-100"
+                                style={{
+                                    backgroundImage: `url(${plugin.imageUrl})`,
+                                    backgroundPosition: plugin.backgroundPosition || 'center',
+                                }}
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/100 rounded-lg z-10" />
+
+                            <Card className="relative z-20 border-0 bg-transparent overflow-hidden">
+                                {plugin.topPick && (
+                                    <div className="absolute top-0 right-0 bg-green-600/75 text-white px-3 py-1 text-xs font-bold">
+                                        TOP PICK
+                                    </div>
+                                )}
+
+                                <CardHeader className="mb-24">
+                                    <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 -m-4">
+                                        <CardTitle className="text-2xl text-white drop-shadow-lg">
+                                            {plugin.title}
+
+                                            {plugin.isInBeta &&
+                                                <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-green-500/20 text-green-400 mb-4">
+                                                            <FlaskConical className="mr-1 h-4 w-4" />
+                                                            Beta Plugin
+                                                        </span>
+                                            }
+                                            {plugin.latestVersion &&
+                                                <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-400 mb-4">
+                                                            <Sparkles className="mr-1 h-4 w-4" />
+                                                            v{plugin.latestVersion}
+                                                        </span>
+                                            }
+                                        </CardTitle>
+                                        <CardDescription className="text-gray-200 min-h-24">{plugin.description}</CardDescription>
+                                    </div>
+                                </CardHeader>
+
+                                <CardContent>
+                                    <div className="flex flex-col mt-12">
+                                        <div className="bg-black/50 p-4 rounded-lg backdrop-blur-sm">
+                                            <div className="flex">
+                                                <h3 className="font-medium text-white mb-2">Subscription Options</h3>
+                                                {
+                                                    plugin.saleDiscount > 0 &&
+                                                    <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg- bg-amber-500/20 text-amber-400 mb-4">
+                                                            {plugin.saleDiscount}% OFF
+                                                        </span>
+                                                }
+                                            </div>
+                                            <div className="flex justify-between items-center mb-2">
+                                                <span className="text-gray-300">1 Month</span>
+                                                {renderPrice(plugin, 'month', 'saleMonth')}
+                                            </div>
+                                            <div className="flex justify-between items-center mb-2">
+                                                <span className="text-gray-300">3 Months</span>
+                                                {renderPrice(plugin, 'threeMonth', 'saleThreeMonth')}
+
+                                            </div>
+                                            <div className="flex justify-between items-center mb-2">
+                                                <span className="text-gray-300">1 Year</span>
+                                                {renderPrice(plugin, 'year', 'saleYear')}
+                                            </div>
+                                            <div className="flex justify-between items-center">
+                                                <span className="text-gray-300">Lifetime</span>
+                                                {renderPrice(plugin, 'lifetime', 'saleLifetime')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </CardContent>
+
+                                <CardFooter className="flex flex-col">
+                                    {renderPurchaseButton(plugin, 'plugin')}
+                                    <Button onClick={() => navigate("/plugins/" + plugin.name)} className="bg-slate-500 hover:bg-slate-600 mt-4 w-full">
+                                        <ReceiptText className="mr-2" />
+                                        More Details
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                        </div>
+                        ))
+                    }
+                </div>
+
+                <div className="flex justify-center mt-6 space-x-2">
+                    {Array.from({ length: Math.ceil(plugins.length / itemsPerPage) }, (_, i) => (
+                        <Button
+                            key={i}
+                            className={`bg-green-500/20 text-green-600 hover:bg-green-400 hover:text-white ${currentPage == i + 1 ? 'text-green-800 bg-green-400' : ''}`}
+                            onClick={() => setCurrentPage(i + 1)}
+                            // variant={currentPage === i + 1 ? "default" : "outline"}
+                        >
+                            {i + 1}
+                        </Button>
+                    ))}
+                </div>
+            </>
+        )
+    }
+
     return (
         <div className="bg-gray-900 text-gray-100">
             <Navbar onLogout={logout} user={user} onBillingSession={() => {}} loading={loading} />
@@ -498,93 +614,7 @@ const Plugins = () => {
                     </div>
 
                     <TabsContent value="plugins">
-                        {/* Plugins Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {plugins.map(plugin => (
-                                <div key={plugin.name} className="relative">
-                                    <div
-                                        className="absolute inset-0 rounded-lg bg-no-repeat bg-cover bg-center z-0 opacity-100"
-                                        style={{
-                                            backgroundImage: `url(${plugin.imageUrl})`,
-                                            backgroundPosition: plugin.backgroundPosition || 'center',
-                                    }}
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/100 rounded-lg z-10" />
-
-                                    <Card className="relative z-20 border-0 bg-transparent overflow-hidden">
-                                        {plugin.topPick && (
-                                            <div className="absolute top-0 right-0 bg-green-600/75 text-white px-3 py-1 text-xs font-bold">
-                                                TOP PICK
-                                            </div>
-                                        )}
-
-                                        <CardHeader className="mb-24">
-                                            <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 -m-4">
-                                                <CardTitle className="text-2xl text-white drop-shadow-lg">
-                                                    {plugin.title}
-
-                                                    {plugin.isInBeta &&
-                                                        <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-green-500/20 text-green-400 mb-4">
-                                                        <FlaskConical className="mr-1 h-4 w-4" />
-                                                        Beta Plugin
-                                                    </span>
-                                                    }
-                                                    {plugin.latestVersion &&
-                                                        <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-400 mb-4">
-                                                        <Sparkles className="mr-1 h-4 w-4" />
-                                                        v{plugin.latestVersion}
-                                                    </span>
-                                                    }
-                                                </CardTitle>
-                                                <CardDescription className="text-gray-200 min-h-24">{plugin.description}</CardDescription>
-                                            </div>
-                                        </CardHeader>
-
-                                        <CardContent>
-                                            <div className="flex flex-col mt-12">
-                                                <div className="bg-black/50 p-4 rounded-lg backdrop-blur-sm">
-                                                    <div className="flex">
-                                                        <h3 className="font-medium text-white mb-2">Subscription Options</h3>
-                                                        {
-                                                            plugin.saleDiscount > 0 &&
-                                                            <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg- bg-amber-500/20 text-amber-400 mb-4">
-                                                        {plugin.saleDiscount}% OFF
-                                                    </span>
-                                                        }
-                                                    </div>
-                                                    <div className="flex justify-between items-center mb-2">
-                                                        <span className="text-gray-300">1 Month</span>
-                                                        {renderPrice(plugin, 'month', 'saleMonth')}
-                                                    </div>
-                                                    <div className="flex justify-between items-center mb-2">
-                                                        <span className="text-gray-300">3 Months</span>
-                                                        {renderPrice(plugin, 'threeMonth', 'saleThreeMonth')}
-
-                                                    </div>
-                                                    <div className="flex justify-between items-center mb-2">
-                                                        <span className="text-gray-300">1 Year</span>
-                                                        {renderPrice(plugin, 'year', 'saleYear')}
-                                                    </div>
-                                                    <div className="flex justify-between items-center">
-                                                        <span className="text-gray-300">Lifetime</span>
-                                                        {renderPrice(plugin, 'lifetime', 'saleLifetime')}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </CardContent>
-
-                                        <CardFooter className="flex flex-col">
-                                            {renderPurchaseButton(plugin, 'plugin')}
-                                            <Button onClick={() => navigate("/plugins/" + plugin.name)} className="bg-slate-500 hover:bg-slate-600 mt-4 w-full">
-                                                <ReceiptText className="mr-2" />
-                                                More Details
-                                            </Button>
-                                        </CardFooter>
-                                    </Card>
-                                </div>
-                            ))}
-                        </div>
-
+                        {renderPluginsContent()}
                         {plugins.length === 0 && (
                             <div className="text-center py-12">
                                 <h3 className="text-xl font-medium mb-2">No plugins found</h3>
