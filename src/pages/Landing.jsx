@@ -232,7 +232,7 @@ export default function Landing() {
 
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <Button onClick={() => navigate("/login")} className="bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-lg flex cursor-pointer items-center gap-2 shadow-lg shadow-green-600/20">
-                                        Get Started with a Free Trial
+                                        Get Started with a 7 day Free Trial
                                         <ArrowRight className="h-4 w-4" />
                                     </Button>
 

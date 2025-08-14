@@ -346,7 +346,7 @@ const Plugins = () => {
                 className="w-75 cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
             >
                 <Sparkles className="mr-2" />
-                Start your 3 day Free Trial
+                Start your 7 day Free Trial
             </Button>
         }
 
@@ -356,7 +356,7 @@ const Plugins = () => {
                 className="w-75 cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
             >
                 <Sparkles className="mr-2" />
-                Start your 3 day Free Trial
+                Start your 7 day Free Trial
             </Button>
         }
 
