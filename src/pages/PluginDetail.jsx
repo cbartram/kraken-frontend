@@ -3,7 +3,7 @@ import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
 import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
-import {Clock, Cog, ReceiptText, Sparkles} from 'lucide-react';
+import {Clock, Cog, GitCommitHorizontal, ReceiptText, Sparkles} from 'lucide-react';
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import {useParams} from "react-router-dom";
@@ -210,21 +210,30 @@ const PluginDetailPage = () => {
                                 <div className="flex justify-between items-start">
                                     <div>
                                         <CardTitle className="text-2xl font-bold text-green-400 flex items-center gap-3">
+                                            <div>
+                                                {plugin.title}
+                                                <div className="flex flex-row">
+                                                    {
+                                                        plugin.latestVersion &&
+                                                        <Badge className="rounded-full px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-600 mt-1 w-fit flex items-center gap-1 mr-3">
+                                                            <GitCommitHorizontal />
+                                                            v{plugin.latestVersion}
+                                                        </Badge>
+                                                    }
+                                                    {
+                                                        plugin.topPick &&
+                                                        <Badge className="rounded-full px-3 py-1 text-sm font-medium bg-green-500/20 text-green-600 mt-1 w-fit flex items-center gap-1">
+                                                            <Sparkles />
+                                                            Popular Pick
+                                                        </Badge>
+                                                    }
+                                                </div>
+                                            </div>
                                             <img
                                                 src={plugin.imageUrl}
                                                 alt={plugin.title}
-                                                className="w-20 h-20 object-cover rounded-lg shadow-md"
+                                                className="w-50 h-20 object-cover rounded-lg shadow-md"
                                             />
-                                            <div className="flex flex-col">
-                                                {plugin.title}
-                                                {
-                                                    plugin.latestVersion &&
-                                                    <Badge className="rounded-full px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-600 mt-1 w-fit flex items-center gap-1">
-                                                        <Sparkles />
-                                                        v{plugin.latestVersion}
-                                                    </Badge>
-                                                }
-                                            </div>
                                         </CardTitle>
                                     </div>
                                 </div>

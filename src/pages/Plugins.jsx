@@ -11,7 +11,7 @@ import {
     Plug,
     Box,
     FlaskConical,
-    LoaderCircle
+    LoaderCircle, Github, GitCommitHorizontal
 } from 'lucide-react';
 import {
     Card,
@@ -430,12 +430,6 @@ const Plugins = () => {
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/100 rounded-lg z-10" />
 
                             <Card className="relative z-20 border-0 bg-transparent overflow-hidden">
-                                {plugin.topPick && (
-                                    <div className="absolute top-0 right-0 bg-green-600/75 text-white px-3 py-1 text-xs font-bold">
-                                        TOP PICK
-                                    </div>
-                                )}
-
                                 <CardHeader className="mb-24">
                                     <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 -m-4">
                                         <CardTitle className="text-2xl text-white drop-shadow-lg">
@@ -449,10 +443,16 @@ const Plugins = () => {
                                             }
                                             {plugin.latestVersion &&
                                                 <span className="inline-flex items-center justify-items-center rounded-full mx-3 px-3 py-1 text-sm font-medium bg-indigo-500/20 text-indigo-400 mb-4">
-                                                            <Sparkles className="mr-1 h-4 w-4" />
+                                                            <GitCommitHorizontal className="mr-1 h-4 w-4" />
                                                             v{plugin.latestVersion}
                                                         </span>
                                             }
+                                            {plugin.topPick && (
+                                                <span className="inline-flex items-center justify-items-center rounded-full px-3 py-1 text-sm font-medium bg-emerald-500/20 text-emerald-400 mb-4">
+                                                            <Sparkles className="mr-1 h-4 w-4" />
+                                                    Popular Pick
+                                                </span>
+                                            )}
                                         </CardTitle>
                                         <CardDescription className="text-gray-200 min-h-24">{plugin.description}</CardDescription>
                                     </div>
