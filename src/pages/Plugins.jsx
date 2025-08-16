@@ -67,7 +67,7 @@ const Plugins = () => {
     const [pluginSuccessDialoguePack, setPluginSuccessDialoguePack] = useState(false);
     const [freeTrialDialogueOpen, setFreeTrialDialogueOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 9;
+    const itemsPerPage = 6;
     const [pluginResponse, setPluginResponse] = useState({});
     const [errorMessage, setErrorMessage] = useState("");
     const [selectedItem, setSelectedItem] = useState({
@@ -239,6 +239,19 @@ const Plugins = () => {
     }
     }, [search, sortBy, activeTab, fullPluginList, fullPluginPackList]);
 
+    // Helper function to get readable sort label
+    function getSortLabel(sortBy) {
+        switch (sortBy) {
+            case "priceAsc": return "Price (Low to High)";
+            case "priceDesc": return "Price (High to Low)";
+            case "nameAsc": return "Name (A-Z)";
+            case "nameDesc": return "Name (Z-A)";
+            case "topPick": return "Top Picks";
+            case "discount": return "Best Discount";
+            default: return "Top Picks";
+        }
+    }
+
     const showPurchaseDialogue = (item, type) => {
         if(user == null) {
             discordRedirect()
@@ -348,7 +361,7 @@ const Plugins = () => {
         if (user == null) {
             return <Button
                 onClick={() => navigate("/login")}
-                className="w-75 cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
+                className="w-full sm:w-auto cursor-pointer h-10 px-4 rounded-sm font-medium mt-4 bg-emerald-600 hover:bg-emerald-700 text-white"
             >
                 <Sparkles className="mr-2" />
                 Start your 7 day Free Trial
@@ -358,7 +371,7 @@ const Plugins = () => {
         if(!user.usedFreeTrial) {
             return <Button
                 onClick={() => setFreeTrialDialogueOpen(true)}
-                className="w-75 cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
+                className="w-full sm:w-auto cursor-pointer h-10 px-4 rounded-sm font-medium mt-4 bg-emerald-600 hover:bg-emerald-700 text-white"
             >
                 <Sparkles className="mr-2" />
                 Start your 7 day Free Trial
@@ -369,7 +382,7 @@ const Plugins = () => {
         // show them the disabled button
         return <Button
             disabled
-            className="w-75 cursor-pointer h-10 px-4 rounded-md font-medium mt-4 bg-green-600 hover:bg-green-700 text-white"
+            className="w-75 cursor-pointer h-10 px-4 rounded-sm font-medium mt-4 bg-emerald-600 hover:bg-emerald-700 text-white"
         >
             <Sparkles className="mr-2" />
             Free Trial Used
@@ -497,7 +510,6 @@ const Plugins = () => {
                             key={i}
                             className={`bg-green-500/20 text-green-600 hover:bg-green-400 hover:text-white ${currentPage == i + 1 ? 'text-green-800 bg-green-400' : ''}`}
                             onClick={() => setCurrentPage(i + 1)}
-                            // variant={currentPage === i + 1 ? "default" : "outline"}
                         >
                             {i + 1}
                         </Button>
@@ -518,32 +530,42 @@ const Plugins = () => {
             { /* For purchasing kraken tokens */}
             <PurchaseTokensSuccessDialog isOpen={successAlertOpen} onClose={() => setSuccessAlertOpen(false)} />
             <div className="container mx-auto py-8">
-                <h1 className="text-4xl font-bold mb-6 text-center text-green-400">Kraken Plugins</h1>
-                <p className="text-secondary text-center mb-4">View the full collection of available Kraken Plugins and Plugin Packs!</p>
+                <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-emerald-500/20 via-emerald-500/10 to-transparent pointer-events-none" />
+
+                {/* Subtle grid overlay */}
+                <div className="absolute inset-0 opacity-20 pointer-events-none">
+                    <div className="absolute inset-0" style={{
+                        backgroundImage: `
+                        linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px)
+                    `,
+                        backgroundSize: '50px 50px'
+                    }} />
+                </div>
+
+
+                <div className="text-center mb-6 sm:mb-8">
+                    <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-emerald-600">Kraken Plugins</h1>
+                    <p className="text-gray-300 text-sm sm:text-base px-2">
+                        View the full collection of available Kraken Plugins and Plugin Packs!
+                    </p>
+                </div>
 
                 <SaleBanner saleData={sales} />
-                <div className="flex items-center justify-center">
-                    <div className="flex flex-col items-center space-y-4">
-                        {renderFreeTrialButton()}
-
-                        <span className="text-gray-500 text-sm font-medium">or</span>
-
-                        <Button
-                            onClick={() =>
-                                window
-                                    .open("https://discord.gg/bbPS2AP7Cq", "_blank")
-                                    .focus()
-                            }
-                            className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5fc] text-white text-sm font-medium flex items-center gap-2 px-4 py-2 rounded cursor-pointer"
-                        >
-                            <img src={DiscordLogo} height={25} width={25} alt="Discord" />
-                            Join our Discord
-                        </Button>
-                    </div>
+                <div className="flex flex-col items-center space-y-3 mb-6 sm:mb-8 px-4">
+                    {renderFreeTrialButton()}
+                    <Button onClick={() => {
+                        window.open("https://discord.gg/bbPS2AP7Cq", "_blank").focus()
+                    }} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] text-white text-sm font-medium flex items-center gap-2 px-4 py-2 rounded cursor-pointer w-full sm:w-auto">
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37.07.07 0 0 0 3.638 4.4c-3.07 4.583-3.897 9.04-3.485 13.437a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.033.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.033.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                        Join our Discord
+                    </Button>
                 </div>
 
                 <Tabs value={activeTab} onValueChange={setActiveTab}>
-                    <TabsList className="grid grid-cols-3 bg-gray-50">
+                    <TabsList className="grid grid-cols-3 text-white bg-gray-200 backdrop-blur-sm">
                         <TabsTrigger
                             value="plugins"
                             className="data-[state=active]:bg-green-400 data-[state=active]:text-white cursor-pointer"
@@ -581,7 +603,7 @@ const Plugins = () => {
 
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button variant="outline" className="w-full md:w-auto px-4 rounded-md font-medium bg-indigo-600 hover:bg-indigo-700 text-white">
+                                <Button className="w-full md:w-auto px-4 rounded-md font-medium bg-indigo-600 hover:bg-indigo-700 text-white">
                                     <ArrowUpDown className="mr-2 h-4 w-4" />
                                     Sort by: {getSortLabel(sortBy)}
                                 </Button>
@@ -781,18 +803,5 @@ const Plugins = () => {
         </div>
     );
 };
-
-// Helper function to get readable sort label
-function getSortLabel(sortBy) {
-    switch (sortBy) {
-        case "priceAsc": return "Price (Low to High)";
-        case "priceDesc": return "Price (High to Low)";
-        case "nameAsc": return "Name (A-Z)";
-        case "nameDesc": return "Name (Z-A)";
-        case "topPick": return "Top Picks";
-        case "discount": return "Best Discount";
-        default: return "Top Picks";
-    }
-}
 
 export default Plugins;

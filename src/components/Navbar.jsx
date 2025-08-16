@@ -1,6 +1,6 @@
-import React from 'react';
-import {Coins} from 'lucide-react';
-import {Skeleton} from "@/components/ui/skeleton";
+import React, { useState } from 'react';
+import { Coins, Menu, X } from 'lucide-react';
+import { Skeleton } from "@/components/ui/skeleton";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -10,22 +10,21 @@ import {
     DropdownMenuSeparator,
     DropdownMenuShortcut,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import Logo from '@/assets/logo.png'
-import {Button} from "@/components/ui/button";
-import {discordRedirect} from "@/lib/utils";
+} from "@/components/ui/dropdown-menu";
+import Logo from '@/assets/logo.png';
+import { Button } from "@/components/ui/button";
+import { discordRedirect } from "@/lib/utils";
 import DiscordLogo from "@/assets/discord-mark-white.svg";
 
-
 const Navbar = ({ onLogout, user, skeleton, loading }) => {
-    if(skeleton) {
+    const [mobileOpen, setMobileOpen] = useState(false);
+
+    if (skeleton) {
         return (
             <div className="bg-slate-700 text-white p-4 bg-gradient-to-r from-slate-700 to-slate-800 opacity-95 drop-shadow-lg">
                 <div className="max-w-4xl mx-auto flex items-center justify-between">
                     <div className="flex items-center space-x-6">
-                        <nav className="flex space-x-4">
-
-                        </nav>
+                        <nav className="flex space-x-4" />
                     </div>
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center">
@@ -35,7 +34,7 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 
     const renderNav = (loading, user) => {
@@ -45,7 +44,7 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
                     <Skeleton className="h-8 w-8 rounded-md" />
                     <Skeleton className="h-6 w-32" />
                 </>
-            )
+            );
         }
 
         if (user != null && !loading) {
@@ -57,20 +56,27 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
                                 <div className="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center cursor-pointer">
                                     <img
                                         alt="user profile avatar"
-                                        src={user.avatarId.length > 0 ? `https://cdn.discordapp.com/avatars/${user.discordId}/${user.avatarId}?size=56`: 'https://kraken-plugins.duckdns.org/default.png'}
+                                        src={
+                                            user.avatarId.length > 0
+                                                ? `https://cdn.discordapp.com/avatars/${user.discordId}/${user.avatarId}?size=56`
+                                                : "https://kraken-plugins.duckdns.org/default.png"
+                                        }
                                         className="w-10 h-10 rounded-full border-2 border-gray-800"
                                     />
                                 </div>
                             </DropdownMenuTrigger>
                             <span className="text-sm text-white flex font-bold">
-                                <Coins />
-                                Tokens: &nbsp; <span className="text-green-400 font-bold">{user.tokens}</span>
-                            </span>
+                <Coins />
+                Tokens:&nbsp;
+                                <span className="text-green-400 font-bold">{user.tokens}</span>
+              </span>
                             <DropdownMenuContent className="w-56">
                                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuGroup>
-                                    <DropdownMenuItem onClick={() => window.location.href = "/profile"}>
+                                    <DropdownMenuItem
+                                        onClick={() => (window.location.href = "/profile")}
+                                    >
                                         Profile
                                         <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
                                     </DropdownMenuItem>
@@ -83,41 +89,88 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
                         </DropdownMenu>
                     </div>
                 </div>
-            )
+            );
         }
 
         return (
-            <Button onClick={() => discordRedirect()} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
+            <Button
+                onClick={() => discordRedirect()}
+                className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] text-white text-sm font-medium"
+            >
                 <img src={DiscordLogo} height={25} width={25} />
                 Sign In with Discord
             </Button>
-        )
-    }
+        );
+    };
+
+    const navLinks = (
+        <>
+            <a
+                href="/plugins"
+                className="hover:text-green-500 transition-colors font-bold"
+            >
+                Plugins
+            </a>
+            <a
+                href="/purchase"
+                className="hover:text-green-500 transition-colors font-bold"
+            >
+                Pricing
+            </a>
+            {user && !loading && (
+                <a
+                    href="/download"
+                    className="hover:text-green-500 transition-colors font-bold"
+                >
+                    Download Client
+                </a>
+            )}
+            <a
+                href="/support"
+                className="hover:text-green-500 transition-colors font-bold"
+            >
+                Support
+            </a>
+        </>
+    );
 
     return (
         <div className="bg-slate-700 text-white p-2 bg-gradient-to-r from-slate-700 to-slate-800 opacity-95 drop-shadow-lg">
             <div className="max-w-4xl mx-auto flex items-center justify-between">
-                <div className="flex items-center space-x-6">
-                    <nav className="flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href = "/"}>
-                        <img src={Logo} alt="logo" height={40} width={40} />
-                    </nav>
+                {/* Left Logo */}
+                <div
+                    className="flex items-center space-x-6 cursor-pointer"
+                    onClick={() => (window.location.href = "/")}
+                >
+                    <img src={Logo} alt="logo" height={40} width={40} />
                 </div>
-                <div className="flex items-center space-x-4">
-                    <a href="/plugins" className="hover:text-green-500 text-white-400 transition-colors font-bold">Plugins</a>
-                    <a href="/purchase" className="hover:text-green-500 text-white-400 transition-colors font-bold">Pricing</a>
-                    {
-                        user && !loading && (
-                            <>
-                                <a href="/download" className="hover:text-green-500 text-white-400 transition-colors font-bold">Download Client</a>
-                            </>
-                        )
-                    }
-                    <a href="/support" className="hover:text-green-500 text-white-400 transition-colors font-bold">Support</a>
+
+                {/* Desktop nav */}
+                <div className="hidden md:flex items-center space-x-6">
+                    {navLinks}
                     {renderNav(loading, user)}
                 </div>
-            </div>
-        </div>
-    )
-}
 
-export default Navbar
+                {/* Mobile menu button */}
+                <div className="md:hidden flex items-center space-x-2">
+                    {renderNav(loading, user)}
+                    <button
+                        onClick={() => setMobileOpen(!mobileOpen)}
+                        className="p-2 rounded-md hover:bg-slate-600"
+                    >
+                        {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile dropdown */}
+            {mobileOpen && (
+                <div className="md:hidden flex flex-col items-start space-y-2 px-4 pb-4">
+                    {navLinks}
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default Navbar;
