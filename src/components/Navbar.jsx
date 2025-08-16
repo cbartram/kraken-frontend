@@ -126,6 +126,12 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
                 </a>
             )}
             <a
+                href="/about"
+                className="hover:text-green-500 transition-colors font-bold"
+            >
+                About Us
+            </a>
+            <a
                 href="/support"
                 className="hover:text-green-500 transition-colors font-bold"
             >

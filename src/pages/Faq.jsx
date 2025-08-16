@@ -12,7 +12,7 @@ const FAQItem = ({ question, answer }) => {
     useEffect(() => {
         ReactGA.send({
             hitType: 'pageview',
-            page: "/faw",
+            page: "/faq",
             title: "FAQ Page",
         });
     }, []);

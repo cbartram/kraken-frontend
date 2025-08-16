@@ -166,10 +166,10 @@ export default function Landing() {
                             <a href="/plugins" className="hover:text-green-500 transition-colors">Plugins</a>
                         </motion.li>
                         <motion.li whileHover={{scale: 1.1}}>
-                            <a href="#testimonials" className="hover:text-green-500 transition-colors">Testimonials</a>
+                            <a href="/about" className="hover:text-green-500 transition-colors">About Us</a>
                         </motion.li>
                         <motion.li whileHover={{scale: 1.1}}>
-                            <a href="#pricing" className="hover:text-green-500 transition-colors">Pricing</a>
+                            <a href="/purchase" className="hover:text-green-500 transition-colors">Pricing</a>
                         </motion.li>
                         <motion.li whileTap={{scale: 0.95}}>
                             <Button onClick={() => discordRedirect()} className="bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium cursor-pointer">
@@ -191,10 +191,10 @@ export default function Landing() {
                         <ul className="flex flex-col items-center py-4 space-y-4">
                             <li><a href="#features" className="hover:text-green-500 transition-colors">Features</a>
                             </li>
-                            <li><a href="#plugins" className="hover:text-green-500 transition-colors">Plugins</a></li>
+                            <li><a href="/plugins" className="hover:text-green-500 transition-colors">Plugins</a></li>
                             <li><a href="#testimonials"
                                    className="hover:text-green-500 transition-colors">Testimonials</a></li>
-                            <li><a href="#pricing" className="hover:text-green-500 transition-colors">Pricing</a></li>
+                            <li><a href="/purchase" className="hover:text-green-500 transition-colors">Pricing</a></li>
                             <li>
                                 <Button className="bg-green-500 hover:bg-green-600 text-black w-full cursor-pointer" onClick={() => navigate('/plugins')}>
                                     Browse Plugins
