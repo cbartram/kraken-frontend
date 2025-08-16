@@ -31,6 +31,7 @@ import VideoShowcase from "@/components/landing_page_components/VideoShowcase.js
 import CallToAction from "@/components/landing_page_components/CallToAction.jsx";
 import Footer from "@/components/Footer.jsx";
 import ReactGA from "react-ga4";
+import TestimonialsSection from "@/components/landing_page_components/TestimonialsSection.jsx";
 
 export default function Landing() {
     const navigate = useNavigate();
@@ -77,7 +78,38 @@ export default function Landing() {
             isTopPick: true
         },
     ];
-
+    const features = [
+        {
+            icon: <BotOff className="h-12 w-12 text-green-500 transition-all duration-300 group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]"/>,
+            title: "Minimal automation",
+            description: "None of our plugins are \"bots\". Although some plugins can auto switch prayers most simply assist you with additional in game information. None of the plugins use injection and are all 100% compatible with RuneLite's official un-modified API.",
+        },
+        {
+            icon: <VenetianMask className="h-12 w-12 text-green-500 transition-all duration-300 group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]"/>,
+            title: "Incognito Client",
+            description: "The Kraken client doesn't modify RuneLite in any way, sideloading all the plugins during runtime. Plugins run the exact same way as any normal plugin installed through the Plugin Hub. This makes Kraken & its plugins nearly impossible to detect."
+        },
+        {
+            icon: <CloudUpload className="h-12 w-12 text-green-500 transition-all duration-300 group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]"/>,
+            title: "Regular Updates",
+            description: "Frequent, automatic updates ensure compatibility with the latest RuneLite and OSRS versions and are applied instantly to your client."
+        },
+        {
+            icon: <Gamepad className="h-12 w-12 text-green-500 transition-all duration-300 group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]"/>,
+            title: "RuneLite Mode",
+            description: "Want to run RuneLite without any Kraken plugins? With RuneLite mode it's as easy as clicking a button!"
+        },
+        {
+            icon: <Package className="h-12 w-12 text-green-500 transition-all duration-300 group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]"/>,
+            title: "Plugin Packs",
+            description: "Purchase a plugin pack to get a suite of plugins at a reduced price. We have packs for Raids, Slayer, entry mode PvM and more!"
+        },
+        {
+            icon: <Download className="h-12 w-12 text-green-500 transition-all duration-300 group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]"/>,
+            title: "1 Click Install",
+            description: "Install the Kraken Client once with 1 click. Updates to the client and plugins are automatically applied to your account."
+        }
+    ];
     const cardVariants = {
         hover: {
             scale: 1.05,
@@ -219,7 +251,7 @@ export default function Landing() {
                             >
                               <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-green-500/20 text-green-400 mb-4">
                                 <Sparkles className="mr-1 h-4 w-4" />
-                                Game Easy
+                                7 Day Free Trial
                               </span>
 
                                 <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -231,17 +263,12 @@ export default function Landing() {
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <Button onClick={() => navigate("/login")} className="bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-lg flex cursor-pointer items-center gap-2 shadow-lg shadow-green-600/20">
-                                        Get Started with a 7 day Free Trial
-                                        <ArrowRight className="h-4 w-4" />
-                                    </Button>
-
-                                    <Button onClick={() => navigate("/plugins")} variant="outline" className="border-indigo-300 bg-indigo-500 text-indigo-100 cursor-pointer hover:text-indigo-100 hover:bg-indigo-600 rounded-lg flex items-center gap-2">
+                                    <Button onClick={() => navigate("/plugins")} className="w-full bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-lg flex cursor-pointer items-center gap-2 shadow-lg shadow-green-600/20">
                                         View Plugins
                                         <Unplug className="h-4 w-4" />
                                     </Button>
                                 </div>
-                                <Button onClick={() => window.open("https://discord.gg/bbPS2AP7Cq", '_blank').focus()} className="mt-4 w-95 bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
+                                <Button onClick={() => window.open("https://discord.gg/bbPS2AP7Cq", '_blank').focus()} className="mt-4 w-full bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
                                     <img src={DiscordLogo} height={25} width={25} />
                                     Join our Discord
                                 </Button>
@@ -260,7 +287,7 @@ export default function Landing() {
             <PluginCarousel />
 
             {/* Features Section */}
-            <section id="features" className="py-20 bg-gray-800">
+            <section id="features" className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
                         <motion.h2
@@ -282,53 +309,35 @@ export default function Landing() {
                             Kraken is built directly on top of an unmodified RuneLite client. This means that all of our plugins are <span className="text-green-400 font-bold">100%</span> compatible with the official client.
                         </motion.p>
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[
-                            {
-                                icon: <BotOff className="h-12 w-12 text-green-500"/>,
-                                title: "Minimal automation",
-                                description: "None of our plugins are \"bots\". Although some plugins can auto switch prayers most simply assist you with additional in game information. None of the plugins use injection" +
-                                    " and are all 100% compatible with RuneLite\'s official un-modified API.",
-                            },
-                            {
-                                icon: <VenetianMask className="h-12 w-12 text-green-500"/>,
-                                title: "Incognito Client",
-                                description: "The Kraken client doesn't modify RuneLite in any way, sideloading all the plugins during runtime. Plugins run the exact same way as any normal plugin installed through the Plugin Hub. This makes Kraken & its plugins nearly impossible to detect."
-                            },
-                            {
-                                icon: <CloudUpload className="h-12 w-12 text-green-500"/>,
-                                title: "Regular Updates",
-                                description: "Frequent, automatic updates ensure compatibility with the latest RuneLite and OSRS versions and are applied instantly to your client."
-                            },
-                            {
-                                icon: <Gamepad className="h-12 w-12 text-green-500"/>,
-                                title: "RuneLite Mode",
-                                description: "Want to run RuneLite without any Kraken plugins? With RuneLite mode it's as easy as clicking a button!"
-                            },
-                            {
-                                icon: <Package className="h-12 w-12 text-green-500"/>,
-                                title: "Plugin Packs",
-                                description: "Purchase a plugin pack to get a suite of plugins at a reduced price. We have packs for Raids, Slayer, entry mode PvM and more!"
-                            },
-                            {
-                                icon: <Download className="h-12 w-12 text-green-500"/>,
-                                title: "1 Click Install",
-                                description: "Install the Kraken Client once with 1 click. Updates to the client and plugins are automatically applied to your account."
-                            }
-                        ].map((feature, index) => (
+                        {features.map((feature, index) => (
                             <motion.div
                                 key={index}
                                 initial={{opacity: 0, y: 20}}
                                 whileInView={{opacity: 1, y: 0}}
-                                transition={{duration: 0.5, delay: index * 0.1}}
+                                transition={{duration: 0.1 }}
                                 viewport={{once: true}}
-                                whileHover={{y: -5}}
-                                className="bg-gray-700 p-6 rounded-lg border border-gray-600"
+                                whileHover={{y: -8}}
+                                className="group relative bg-gray-700 p-6 rounded-lg border border-gray-600 hover:bg-gray-600 hover:border-gray-500 transition-all duration-300 cursor-pointer overflow-hidden"
                             >
-                                <div className="mb-4">{feature.icon}</div>
-                                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                                <p className="text-gray-300">{feature.description}</p>
+                                {/* Top light bar */}
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                                {/* Subtle glow effect */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+
+                                {/* Content */}
+                                <div className="relative z-10">
+                                    <div className="mb-4 inline-block p-3 bg-gray-600 group-hover:bg-gray-300 rounded-xl border border-gray-500 group-hover:border-green-400/50 transition-all duration-200 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+                                        {feature.icon}
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-2 text-white group-hover:text-green-50 transition-colors duration-300">
+                                        {feature.title}
+                                    </h3>
+                                    <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
+                                        {feature.description}
+                                    </p>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
@@ -414,94 +423,15 @@ export default function Landing() {
                         transition={{duration: 0.5, delay: 0.2}}
                         viewport={{once: true}}
                     >
-                        <Button className="bg-green-600/20 hover:bg-green-700/20 text-green-600 text-lg px-8 py-6 cursor-pointer" onClick={() => navigate('/plugins')}>
-                            <Unplug /> View All Plugins
-                        </Button>
+                        <button className="bg-gradient-to-r flex items-center mx-auto cursor-pointer from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-6 rounded-lg transition-all" onClick={() => window.location.href = '/plugins'}>
+                            View All Plugins <Unplug className="ml-2" />
+                        </button>
                     </motion.div>
                 </div>
             </section>
 
             {/* Testimonials Section */}
-            <section id="testimonials" className="py-20 bg-gray-800">
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        className="text-center mb-16"
-                        initial={{opacity: 0}}
-                        whileInView={{opacity: 1}}
-                        transition={{duration: 0.5}}
-                        viewport={{once: true}}
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            What Our <span className="text-green-500">Users Say</span>
-                        </h2>
-                        <p className="text-gray-300 max-w-2xl mx-auto">
-                            Join the numerous OldSchool RuneScape players who have enhanced their gameplay with our
-                            premium plugins.
-                        </p>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[
-                            {
-                                name: "Anonymous",
-                                role: "PvM Specialist",
-                                content: "The chamber of xeric plugin is actually OP for olm. I never could get skipping right but with this plugin it makes solos literally braindead. Highly recommend!",
-                                rating: 5
-                            },
-                            {
-                                name: "Anonymous",
-                                role: "Ironman",
-                                content: "I used to die to hydra all the time. Then I got the kraken plugin for it. I love that the plugin tracks and counts attacks for you so you don't have to remember a thing. Haven't died since!",
-                                rating: 5
-                            },
-                            {
-                                name: "Anonymous",
-                                role: "Maxed Main",
-                                content: "I've tried quite a few plugins, but this collection offers the best balance of features without breaking the bank. The ToB plugin is my personal favorite. Literally don't know how I did Sotetseg before.",
-                                rating: 4
-                            }
-                        ].map((testimonial, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{opacity: 0, y: 20}}
-                                whileInView={{opacity: 1, y: 0}}
-                                transition={{duration: 0.5, delay: index * 0.1}}
-                                viewport={{once: true}}
-                                whileHover={{y: -5}}
-                            >
-                                <Card className="bg-gray-700 border-gray-600 h-full">
-                                    <CardHeader>
-                                        <div className="flex items-center gap-2">
-                                            <div
-                                                className="bg-green-500 h-10 w-10 rounded-full flex items-center justify-center font-bold text-white">
-                                                {testimonial.name.charAt(0)}
-                                            </div>
-                                            <div>
-                                                <CardTitle className="text-lg text-gray-300">{testimonial.name}</CardTitle>
-                                                <CardDescription
-                                                    className="text-gray-400">{testimonial.role}</CardDescription>
-                                            </div>
-                                        </div>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <p className="text-gray-300">{testimonial.content}</p>
-                                    </CardContent>
-                                    <CardFooter>
-                                        <div className="flex">
-                                            {[...Array(testimonial.rating)].map((_, i) => (
-                                                <Star key={i} className="h-5 w-5 fill-green-500 text-green-500"/>
-                                            ))}
-                                            {[...Array(5 - testimonial.rating)].map((_, i) => (
-                                                <Star key={i} className="h-5 w-5 text-gray-500"/>
-                                            ))}
-                                        </div>
-                                    </CardFooter>
-                                </Card>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <TestimonialsSection />
 
             {/* Pricing Section */}
             <section id="pricing" className="py-20 bg-gray-900">

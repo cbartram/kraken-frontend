@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PluginDemo from '@/assets/kraken-demo.png'
 import DiscordIcon from '@/assets/discord-mark-white.svg'
 import {Cog, CogIcon, TvMinimal, Unplug} from "lucide-react";
@@ -27,6 +27,13 @@ const PluginShowcase = () => {
 
     return (
         <div ref={containerRef} className="relative bg-gray-900 text-white rounded-lg p-8 my-12 overflow-hidden">
+            {/* Subtle grid overlay */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: `linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px)`,
+                    backgroundSize: '50px 50px'
+                }} />
+            </div>
             <h2 className="text-3xl font-bold mb-8 text-center">Powerful Plugin Management</h2>
 
             <div className="hidden md:flex flex-col md:flex-row items-center justify-between gap-8">
