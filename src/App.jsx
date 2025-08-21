@@ -20,6 +20,7 @@ import {useEffect} from "react";
 import ReactGA from 'react-ga4'
 import './index.css'
 import SalesManagement from "@/pages/SaleManagement.jsx";
+import AboutUsPage from "@/pages/AboutUs.jsx";
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
                     />
                     <Route path="/discord/oauth" element={<AuthCallback />} />
                     <Route path="/faq" element={<FAQPage />} />
+                    <Route path="/about" element={<AboutUsPage />} />
                     <Route path="/purchase" element={<PurchaseTokens />}/>
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
