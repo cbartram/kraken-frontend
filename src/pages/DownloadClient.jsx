@@ -232,7 +232,7 @@ const DownloadPage = () => {
                                 </CardContent>
                                 <CardFooter>
                                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                                        Need help? Join our <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline">Discord community</a> or check the <a href="/faq" className="text-blue-600 dark:text-blue-400 hover:underline">FAQs</a>.
+                                        Need help? Join our <a href="https://discord.gg/bbPS2AP7Cq" className="text-blue-600 dark:text-blue-400 hover:underline">Discord community</a> or check the <a href="/faq" className="text-blue-600 dark:text-blue-400 hover:underline">FAQs</a>.
                                     </p>
                                 </CardFooter>
                             </Card>
