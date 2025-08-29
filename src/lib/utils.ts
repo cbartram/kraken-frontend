@@ -42,7 +42,7 @@ export function formatBytes(bytes: number): string {
 
 export const discordRedirect = () => {
   if(isProd()) {
-    window.location.href = "https://discord.com/oauth2/authorize?client_id=1303515055777648640&response_type=code&redirect_uri=https%3A%2F%2Fkraken-plugins.duckdns.org%2Fdiscord%2Foauth&scope=identify+email"
+    window.location.href = "https://discord.com/oauth2/authorize?client_id=1303515055777648640&response_type=code&redirect_uri=https%3A%2F%2Fkraken-plugins.com%2Fdiscord%2Foauth&scope=identify+email"
   } else {
     window.location.href = "https://discord.com/oauth2/authorize?client_id=1303515055777648640&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2Fdiscord%2Foauth&scope=identify+email"
   }

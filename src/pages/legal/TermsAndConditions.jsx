@@ -47,7 +47,7 @@ export default function TermsAndConditions() {
                                 General
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                These terms and conditions outline the rules and regulations for the use of the Kraken Plugins Website, located at https://kraken-plugins.duckdns.com/.
+                                These terms and conditions outline the rules and regulations for the use of the Kraken Plugins Website, located at <a href="https://kraken-plugins.com">https://kraken-plugins.com</a>.
                             </p>
                             <p className="text-slate-700 mb-4">
                                 By accessing this website we assume you accept these terms and conditions. Do not continue to use Kraken Plugins if you do not agree to take all of the terms and conditions stated on this page.
