@@ -59,7 +59,7 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
                                         src={
                                             user.avatarId.length > 0
                                                 ? `https://cdn.discordapp.com/avatars/${user.discordId}/${user.avatarId}?size=56`
-                                                : "https://kraken-plugins.duckdns.org/default.png"
+                                                : "https://kraken-plugins.com/default.png"
                                         }
                                         className="w-10 h-10 rounded-full border-2 border-gray-800"
                                     />

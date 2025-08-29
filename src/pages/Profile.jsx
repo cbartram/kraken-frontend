@@ -145,7 +145,7 @@ const Profile = () => {
                             <CardContent>
                                 <div className="flex flex-col items-center space-y-4">
                                     <img
-                                        src={user.avatarId.length > 0 ? `https://cdn.discordapp.com/avatars/${user.discordId}/${user.avatarId}?size=56`: 'https://kraken-plugins.duckdns.org/default.png'}
+                                        src={user.avatarId.length > 0 ? `https://cdn.discordapp.com/avatars/${user.discordId}/${user.avatarId}?size=56`: 'https://kraken-plugins.com/default.png'}
                                         alt="Avatar"
                                         className="rounded-full w-20 h-20 border border-gray-200"
                                     />

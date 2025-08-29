@@ -211,7 +211,7 @@ const FAQPage = () => {
             question: "Do you offer licenses other than 1 month, 3 month or 1 year?",
             answer: (
                 <div className="space-y-2">
-                    <p>No, at this point those are the only durations for plugin licenses.</p>
+                    <p>We do offer lifetime licenses for plugins as well! They are more expensive but certainly cheaper over the long run if you plan to do the content for awhile.</p>
                 </div>
             )
         },

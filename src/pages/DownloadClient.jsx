@@ -41,9 +41,9 @@ const DownloadPage = () => {
         setActiveStep(3);
 
         if (os === 'windows') {
-            window.location.href = "https://minio-kraken.duckdns.org/kraken-bootstrap-static/KrakenSetup.exe"
+            window.location.href = "https://minio.kraken-plugins.com/kraken-bootstrap-static/KrakenSetup.exe"
         } else if (os === 'mac') {
-            window.location.href = "https://minio-kraken.duckdns.org/kraken-bootstrap-static/kraken-launcher-2.7.6.jar";
+            window.location.href = "https://minio.kraken-plugins.com/kraken-bootstrap-static/kraken-launcher-2.7.6.jar";
         }
     };
 
@@ -232,7 +232,7 @@ const DownloadPage = () => {
                                 </CardContent>
                                 <CardFooter>
                                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                                        Need help? Join our <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline">Discord community</a> or check the <a href="/faq" className="text-blue-600 dark:text-blue-400 hover:underline">FAQs</a>.
+                                        Need help? Join our <a href="https://discord.gg/bbPS2AP7Cq" className="text-blue-600 dark:text-blue-400 hover:underline">Discord community</a> or check the <a href="/faq" className="text-blue-600 dark:text-blue-400 hover:underline">FAQs</a>.
                                     </p>
                                 </CardFooter>
                             </Card>

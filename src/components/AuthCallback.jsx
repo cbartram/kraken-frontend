@@ -69,7 +69,7 @@ const AuthCallback = () => {
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify({ code, redirectUri: isProd() ?  'https://kraken-plugins.duckdns.org/discord/oauth' : 'http://localhost:5173/discord/oauth' }),
+                        body: JSON.stringify({ code, redirectUri: isProd() ?  'https://kraken-plugins.com/discord/oauth' : 'http://localhost:5173/discord/oauth' }),
                     });
 
                     if(response.status === 200) {

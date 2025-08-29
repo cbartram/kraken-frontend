@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
                                 Thank you for choosing our services.
                                 We are committed to protecting your personal information and your right to privacy.
                                 This Privacy Policy describes how we collect, use, and share your information when you use our website and services.
-                                At Kraken Plugins, accessible from https://kraken-plugins.duckdns.com, one of our main priorities is the privacy of our visitors.
+                                At Kraken Plugins, accessible from <a href="https://kraken-plugins.com">https://kraken-plugins.com</a>, one of our main priorities is the privacy of our visitors.
 
                                 If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
 
