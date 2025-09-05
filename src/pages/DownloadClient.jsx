@@ -10,6 +10,7 @@ import {
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 import {Download, Terminal, Check, ChevronDown, ChevronRight, Grid2X2, Command} from 'lucide-react';
+import PluginEnable from '@/assets/plugin-enable.png'
 import Navbar from "@/components/Navbar.jsx";
 import {useAuth} from "@/components/AuthContext.jsx";
 import Footer from "@/components/Footer.jsx";
@@ -154,14 +155,23 @@ const DownloadPage = () => {
                                                         <ol className="list-decimal pl-5 space-y-2">
                                                             <li>Run <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">KrakenSetup.exe</code> and follow the prompts</li>
                                                             <li>Run the client with <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.exe</code> or via the Jagex launcher</li>
+                                                            <li>
+                                                                Search for <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">"Kraken"</code> in your plugins and enable the "Kraken Plugins" plugin.
+                                                            </li>
                                                         </ol>
+                                                        <img
+                                                            alt="enable-plugin"
+                                                            className="mt-3 rounded-lg shadow-md bg-white dark:bg-gray-700 p-2 border border-gray-200 dark:border-gray-600"
+                                                            src={PluginEnable}
+                                                        />
+
                                                     </TabsContent>
                                                     <TabsContent value="mac" className="p-4 bg-gray-100 dark:bg-gray-800 rounded-md mt-2">
                                                         <ol className="list-decimal pl-5 space-y-2">
                                                             <li>Navigate to your RuneLite installation folder (Right click and Show Package Contents) <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">/Applications/RuneLite/Contents.app/resources</code></li>
-                                                            <li>Move the downloaded <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">Kraken-Launcher-2.7.5.jar</code> file to the installation folder</li>
+                                                            <li>Move the downloaded <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">Kraken-Launcher-2.7.6.jar</code> file to the installation folder</li>
                                                             <li>Delete <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code></li>
-                                                            <li>Rename <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">Kraken-Launcher-2.7.4.jar</code> to <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code></li>
+                                                            <li>Rename <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">Kraken-Launcher-2.7.6.jar</code> to <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code></li>
                                                             <li>Launch RuneLite as normal through your Applications or the Jagex Launcher</li>
                                                         </ol>
                                                     </TabsContent>
@@ -217,7 +227,6 @@ const DownloadPage = () => {
                                             {renderStepNumber(4, activeStep >= 4)}
                                             <div className="space-y-2">
                                                 <h3 className="text-lg font-medium">Launch and enjoy!</h3>
-
                                                 {activeStep >= 4 && (
                                                     <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md mt-2">
                                                         <p className="flex items-center">
