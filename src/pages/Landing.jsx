@@ -30,6 +30,7 @@ import CallToAction from "@/components/landing_page_components/CallToAction.jsx"
 import Footer from "@/components/Footer.jsx";
 import ReactGA from "react-ga4";
 import TestimonialsSection from "@/components/landing_page_components/TestimonialsSection.jsx";
+import {DISCORD_LINK} from "@/constants.jsx";
 
 export default function Landing() {
     const navigate = useNavigate();
@@ -266,7 +267,7 @@ export default function Landing() {
                                         <Unplug className="h-4 w-4" />
                                     </Button>
                                 </div>
-                                <Button onClick={() => window.open("https://discord.gg/bbPS2AP7Cq", '_blank').focus()} className="mt-4 w-full bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
+                                <Button onClick={() => window.open(DISCORD_LINK, '_blank').focus()} className="mt-4 w-full bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5bfc] text-white text-sm font-medium">
                                     <img src={DiscordLogo} height={25} width={25} />
                                     Join our Discord
                                 </Button>

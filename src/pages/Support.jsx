@@ -28,6 +28,7 @@ import RuneLiteFolder from '@/assets/runelite_folder.png';
 import { Separator } from "@/components/ui/separator.js";
 import ReactGA from "react-ga4";
 import DiscordLogo from "@/assets/discord-mark-white.svg";
+import {DISCORD_LINK} from "@/constants.jsx";
 
 
 const SupportEmailForm = () => {
@@ -408,7 +409,7 @@ const SupportEmailForm = () => {
                         <Button
                             onClick={() =>
                                 window
-                                    .open("https://discord.gg/bbPS2AP7Cq", "_blank")
+                                    .open(DISCORD_LINK, "_blank")
                                     .focus()
                             }
                             className="w-50 bg-[#5865f2] hover:bg-[#707cfa] active:bg-[#4c5bfc] focus:outline-none focus:bg-[#4c5fc] text-white text-sm font-medium flex items-center gap-2 px-4 py-2 rounded"
