@@ -16,6 +16,7 @@ import {
 
 import Footer from "@/components/Footer.jsx";
 import ReactGA from "react-ga4";
+import {DISCORD_LINK} from "@/constants.jsx";
 
 const PurchaseTokens = () => {
     const {user, logout, api, loading, getUser} = useAuth()
@@ -372,7 +373,7 @@ const PurchaseTokens = () => {
                                         <h3 className="font-semibold text-blue-800 mb-4">Payment Information</h3>
                                         <p className="text-gray-800 mb-6">
                                             Once GP has been transferred, your tokens will be updated by a staff member so you can purchase plugins. You <span className="font-bold">MUST</span> join
-                                        the <a className="font-bold hover:underline text-[#5865F2]" href="https://discord.gg/bbPS2AP7Cq">Kraken Plugins Discord Server</a> as a new ticket will be created to communicate the meetup.</p>
+                                        the <a className="font-bold hover:underline text-[#5865F2]" href={DISCORD_LINK}>Kraken Plugins Discord Server</a> as a new ticket will be created to communicate the meetup.</p>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                             <div>
                                                 <Label htmlFor="ingame-username" className="text-sm font-medium text-blue-700">
@@ -430,7 +431,7 @@ const PurchaseTokens = () => {
                                                     <div className="mx-4">
                                                         <ul className="mt-2 ml-4 list-disc text-gray-800">
                                                             <li>If your order is between the hours of 9:00 PM - 8:00 AM U.S. Eastern Standard Time there <span className="font-bold">will be a delay</span> in our ability to accept GP payment.</li>
-                                                            <li>Make sure to join the <a className="font-bold hover:underline text-[#5865F2]" href="https://discord.gg/bbPS2AP7Cq">Kraken Plugins Discord Server</a> as a new ticket will be created to communicate the meetup.</li>
+                                                            <li>Make sure to join the <a className="font-bold hover:underline text-[#5865F2]" href={DISCORD_LINK}>Kraken Plugins Discord Server</a> as a new ticket will be created to communicate the meetup.</li>
                                                             <li>Double check your Discord name listed above, if you have multiple discord accounts please make sure you are signed into the right one before purchasing tokens. Plugins are only authorized to a single Discord account.</li>
                                                             <li>You will be contacted via a Discord ticket in the Kraken Plugins server for the world and location to hop to. A high level account will collect the GP on the specified world.</li>
                                                         </ul>
