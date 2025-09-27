@@ -38,6 +38,11 @@ Once GP has been transferred, your tokens will be updated by a staff member so y
 - Double check your Discord name listed above, if you have multiple discord accounts please make sure you are signed into the right one before purchasing tokens. Plugins are only authorized to a single Discord account.
 - You will be contacted via a Discord ticket in the [Kraken Plugins Discord server](https://discord.gg/9Tzgf9ePJy) for the world and location to hop to. A high level account will collect the GP on the specified world.
 
+## Refunds
+
+Refunds are given on a case by case basis and OSRS character bans :warning: **DO NOT** guarantee eligibility for a refund. Due to RWT crackdowns from Jagex
+OSRS GP purchases are not eligible for refunds.
+
 # Licensing
 
 When you purchase a plugin with Kraken tokens you will be granted a license to use the plugin for a specified amount of time.

@@ -56,7 +56,6 @@ export default defineConfig({
             {
                 text: 'Support',
                 items: [
-                    { text: 'Common Issues', link: '/support/issues' },
                     { text: 'Contact Support', link: '/support/contact' }
                 ]
             }
