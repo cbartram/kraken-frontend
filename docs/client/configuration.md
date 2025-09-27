@@ -10,6 +10,27 @@ If this plugin is disabled, enable it. You should now see the Kraken icon in you
 
 ![kraken-plugins-plugin](../images/kraken-plugins-plugin.png)
 
+The Kraken client has several configuration options namely:
+
+- Skip Hook Load
+- Skip Packet Load
+- Debug Logs
+
+Skip Hook load will skip loading a JSON file with references to client classes invoked using reflection. In english: 
+"Don't load data I need to click things in the game.", ultimately this means that plugins which use automation like:
+prayer flicking, gear swapping, spell casting, etc... will not function. Generally this option is here in case 
+some type of game update occurs which doesn't break the game client but does break automation within Kraken.
+
+Skip Packet Load is similar to skipping the hook load in that it will skip loading and registering a RuneLite plugin which
+enables the use of packets within plugins. Packets send data directly to game servers rather than having to actually use a mouse
+to interact with the canvas or reflection to invoke a client method. 
+
+Finally debug logs will print Kraken debug logs when outputting to the RuneLite logs folder. This can give some more insight into
+what is going wrong when launching the client or using plugins. 
+
+> :warning: If the client fails to load it's likely due to a game update. Checking these options may help get the client to load
+> but generally **WILL NOT** and you'll have to wait for a Kraken update to play with the plugins again.
+
 ## Signing In
 
 When you first launch the client you will see a "Sign in with Discord" button in the Kraken sidebar. Clicking this 

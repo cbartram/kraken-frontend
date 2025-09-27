@@ -41,8 +41,7 @@ export default defineConfig({
             {
                 text: 'Plugins',
                 items: [
-                    { text: 'Available Plugins', link: '/plugins/available' },
-                    { text: 'Managing Plugins', link: '/plugins/managing' },
+                    { text: 'Available Plugins', link: '/plugins/plugins' },
                     { text: 'License Keys', link: '/plugins/license' },
                 ]
             },

@@ -37,3 +37,8 @@ Once GP has been transferred, your tokens will be updated by a staff member so y
 - Make sure to join the [Kraken Plugins Discord Server](https://discord.gg/9Tzgf9ePJy) as a new ticket will be created to communicate the meetup.
 - Double check your Discord name listed above, if you have multiple discord accounts please make sure you are signed into the right one before purchasing tokens. Plugins are only authorized to a single Discord account.
 - You will be contacted via a Discord ticket in the [Kraken Plugins Discord server](https://discord.gg/9Tzgf9ePJy) for the world and location to hop to. A high level account will collect the GP on the specified world.
+
+# Licensing
+
+When you purchase a plugin with Kraken tokens you will be granted a license to use the plugin for a specified amount of time.
+To learn more about licensing and how they work with Kraken see our [licensing docs](../plugins/license.md).
