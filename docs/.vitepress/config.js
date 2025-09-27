@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
     title: "Kraken Plugins",
     description: "Extended Old School RuneScape Plugins",
+    base: '/docs/',
     themeConfig: {
         nav: [
             { text: 'Home', link: 'https://kraken-plugins.com' },
