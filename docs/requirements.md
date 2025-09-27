@@ -38,7 +38,6 @@ Kraken is fairly lightweight and so the hardware requirements align closely with
 - Java 17 or higher
 - 1GB free disk space
 
-
 ## Hardware Locks
 
 Kraken's plugins all implement a Hardware-ID (HWID) lock. This means that when you sign in to the Kraken client for the first time 

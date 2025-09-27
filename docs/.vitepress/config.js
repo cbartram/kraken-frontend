@@ -31,6 +31,12 @@ export default defineConfig({
                 ]
             },
             {
+                text: 'Tokens',
+                items: [
+                    { text: 'Purchasing Tokens', link: '/tokens/purchasing' },
+                ]
+            },
+            {
                 text: 'Plugins',
                 items: [
                     { text: 'Available Plugins', link: '/plugins/available' },
