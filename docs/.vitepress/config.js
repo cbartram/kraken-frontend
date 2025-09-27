@@ -18,7 +18,8 @@ export default defineConfig({
                 text: 'Introduction',
                 items: [
                     { text: 'Overview', link: '/' },
-                    { text: 'Requirements', link: '/intro/requirements' },
+                    { text: 'Signing Up', link: '/signup' },
+                    { text: 'Requirements', link: '/requirements' },
                 ]
             },
             {
@@ -26,29 +27,16 @@ export default defineConfig({
                 items: [
                     { text: 'Download & Install', link: '/client/download' },
                     { text: 'Running the Client', link: '/client/running' },
-                    { text: 'Offline Mode', link: '/client/offline' }
-                ]
-            },
-            {
-                text: 'Licensing',
-                items: [
-                    { text: 'Finding Your License Key', link: '/license/finding' },
-                    { text: 'Entering Your Key', link: '/license/entering' },
-                    { text: 'Troubleshooting Keys', link: '/license/troubleshooting' }
-                ]
-            },
-            {
-                text: 'Settings & Options',
-                items: [
-                    { text: 'General Settings', link: '/settings/general' },
-                    { text: 'Plugin Options', link: '/settings/plugins' }
+                    { text: 'Configuration & Options', link: '/client/configuration' }
                 ]
             },
             {
                 text: 'Plugins',
                 items: [
                     { text: 'Available Plugins', link: '/plugins/available' },
-                    { text: 'Managing Plugins', link: '/plugins/managing' }
+                    { text: 'Managing Plugins', link: '/plugins/managing' },
+                    { text: 'License Keys', link: '/plugins/license' },
+                    { text: 'Troubleshooting Keys', link: '/license/troubleshooting' }
                 ]
             },
             {
