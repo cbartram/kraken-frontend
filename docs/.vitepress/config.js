@@ -26,8 +26,8 @@ export default defineConfig({
                 text: 'Client Setup',
                 items: [
                     { text: 'Download & Install', link: '/client/download' },
-                    { text: 'Running the Client', link: '/client/running' },
-                    { text: 'Configuration & Options', link: '/client/configuration' }
+                    { text: 'Configuration & Options', link: '/client/configuration' },
+                    { text: 'Launcher Options', link: '/client/launcher-configuration' },
                 ]
             },
             {
@@ -43,6 +43,14 @@ export default defineConfig({
                     { text: 'Managing Plugins', link: '/plugins/managing' },
                     { text: 'License Keys', link: '/plugins/license' },
                     { text: 'Troubleshooting Keys', link: '/license/troubleshooting' }
+                ]
+            },
+              {
+                text: 'Developer',
+                items: [
+                    { text: 'API Access', link: '/api/intro' },
+                    { text: 'Client Loading', link: '/api/client' },
+                    { text: 'Plugin Loading', link: '/api/plugins' },
                 ]
             },
             {

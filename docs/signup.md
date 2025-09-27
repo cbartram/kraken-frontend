@@ -18,7 +18,7 @@ only way to sign in and out of the Kraken client and website.
 
 ## Client Signup
 
-When you first launch the client you will see a "Sign in with Discord" button in the Kraken sidepanel. Clicking this 
+When you first launch the client you will see a "Sign in with Discord" button in the Kraken sidebar. Clicking this 
 button will open up a new page in your web browser and grant Kraken access to view a few properties on your Discord account
 and sign you into the client. Signing in to the client is generally a one time process unless you use multiple discord
 account with Krakens although, this is **NOT** recommended.
