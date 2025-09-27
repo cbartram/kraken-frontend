@@ -2,6 +2,8 @@
 outline: deep
 ---
 
+<img alt="logo" height="128" src="./images/logo.png" width="128"/>
+
 # Kraken Plugins Documentation
 
 Kraken Plugins are a suite of installable plugins fully compatible with RuneLite which extend your client's capabilities
