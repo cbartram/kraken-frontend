@@ -125,6 +125,9 @@ const Navbar = ({ onLogout, user, skeleton, loading }) => {
                     Download Client
                 </a>
             )}
+            <a href="https://kraken-plugins.com/docs" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors font-bold">
+                Docs
+            </a>
             <a
                 href="/about"
                 className="hover:text-green-500 transition-colors font-bold"

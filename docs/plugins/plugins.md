@@ -67,7 +67,7 @@ discord account to your specific computer. This is a security precaution put in 
 
 If you try to log in to your account from another machine (a laptop or friends computer for example) you may receive this message:
 
-![hwid-lock](images/hardware-id-error.png)
+![hwid-lock](../images/hardware-id-error.png)
 
-which simply means your hardware ID is locked to another device and your plugin will not load. You can reach out to the [kraken support channel](support/contact.md) in
+which simply means your hardware ID is locked to another device and your plugin will not load. You can reach out to the [kraken support channel](../support/contact.md) in
 Discord for help getting additional hardware ID's added or reset.

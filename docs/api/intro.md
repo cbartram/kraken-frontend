@@ -249,15 +249,7 @@ A deployment consists of:
 * [Gradle](https://gradle.org/) — Build tool
 * [RuneLite](https://runelite.net) — Used for as the backbone for the API
 
-## 🤝 Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
 ## 🔖 Versioning
 
 We use [Semantic Versioning](http://semver.org/).
 See the [tags on this repository](https://github.com/cbartram/kraken-api/tags) for available releases.
-
-## 📜 License
-
-This project is licensed under the [GNU General Public License 3.0](LICENSE.md).

@@ -23,7 +23,7 @@ RuneLite.
 
 You can launch RuneLite as you normally would through either the Jagex Launcher or Desktop Icon.
 
-![windows-install](../images/windows-install.png)
+![windows-install](../images/windows-configure.png)
 
 ### Mac
 
