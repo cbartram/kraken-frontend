@@ -17,7 +17,7 @@ button will open up a new page in your web browser and grant Kraken access to vi
 and sign you into the client. Signing in to the client is generally a one time process unless you use multiple discord
 account with Krakens although, this is **NOT** recommended.
 
-![client-signin](images/sign-up-client.png)
+![client-signin](../images/sign-up-client.png)
 
 ## Account Linking
 
@@ -41,7 +41,7 @@ constantly update Kraken or its dependencies! This also allows Kraken to expose 
 - Update Hooks
 - Proxies
 
-See the following sections for more information on each of these features.
+See [launcher configuration](launcher-configuration.md) for more detailed information on each of these features.
 
 ## Windows
 
@@ -49,7 +49,7 @@ To configure the launcher on windows press your start key and search for "RuneLi
 will launch a window where you can configure options for how RuneLite and Kraken start. See more information about
 each of these [options here](launcher-configuration.md)
 
-![windows-launcher](../images/windows-launcher.png)
+![windows-launcher](../images/windows-configure.png)
 
 ## Mac
 
@@ -63,9 +63,12 @@ See more information about each of these [options here](launcher-configuration.m
 
 ![macos-launcher](../images/macos-launcher.png)
 
+
+# Proxy Configuration
+
+The Kraken Launcher supports SOCKS5 proxies. For more information on setting up proxies view our [proxy documentation](proxy.md).
+
 # Plugin Configuration
 
 Kraken Plugins work just like normal RuneLite plugins you can configure them by clicking the "Cog" icon and tweaking
-various settings for each plugin. 
-
-# Proxy Configuration
+various settings for each plugin.

@@ -27,9 +27,9 @@ account with Krakens although, this is **NOT** recommended.
 
 ## Account Linking
 
-It is **VERY** important that you sign in to the same discord account on both the website and the client. When purchasing plugins on the website
-your plugins will be associated with the discord account you are currently logged in with. If you sign in to a different discord account on the client
-your plugins will **NEVER** show up for you.
-
 Your discord account is the common element between the website and the client so please use the same Discord account when signing
-into both the website and the client!
+into both the website and the client! When purchasing plugins on the website your plugins will be associated with the 
+discord account you are currently logged in with. If you sign in to a different discord account on the client your plugins 
+will **NEVER** show up for you.
+
+> :warning: It is **VERY** important that you sign in to the same discord account on both the website and the client. 

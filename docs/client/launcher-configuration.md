@@ -3,6 +3,8 @@
 This document covers the various launcher configuration options which are present and what each option does. You
 are free to modify or change any of these options at any time.
 
+![windows-configuration](../images/windows-launcher.png)
+
 | **Option Name**            | **Description**                                                                                                                                                                                                                                                     | **Type**   | **Example**                                               |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|-----------------------------------------------------------|
 | RuneLite Mode              | Disables all Kraken dependency and external plugin loading and loads RuneLite 100% normally.                                                                                                                                                                        | True/False | N/A                                                       |

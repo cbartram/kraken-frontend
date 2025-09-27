@@ -26,13 +26,15 @@ export default defineConfig({
                 text: 'Client Setup',
                 items: [
                     { text: 'Download & Install', link: '/client/download' },
-                    { text: 'Configuration & Options', link: '/client/configuration' },
+                    { text: 'Client Setup', link: '/client/configuration' },
                     { text: 'Launcher Options', link: '/client/launcher-configuration' },
+                    { text: 'Proxies', link: '/client/proxy' },
                 ]
             },
             {
                 text: 'Tokens',
                 items: [
+                    { text: 'About', link: '/tokens/about' },
                     { text: 'Purchasing Tokens', link: '/tokens/purchasing' },
                 ]
             },
@@ -42,7 +44,6 @@ export default defineConfig({
                     { text: 'Available Plugins', link: '/plugins/available' },
                     { text: 'Managing Plugins', link: '/plugins/managing' },
                     { text: 'License Keys', link: '/plugins/license' },
-                    { text: 'Troubleshooting Keys', link: '/license/troubleshooting' }
                 ]
             },
               {
