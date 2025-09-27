@@ -49,8 +49,6 @@ export default defineConfig({
                 text: 'Developer',
                 items: [
                     { text: 'API Access', link: '/api/intro' },
-                    { text: 'Client Loading', link: '/api/client' },
-                    { text: 'Plugin Loading', link: '/api/plugins' },
                 ]
             },
             {
