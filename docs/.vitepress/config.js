@@ -50,6 +50,8 @@ export default defineConfig({
                 text: 'Developer',
                 items: [
                     { text: 'API Access', link: '/api/intro' },
+                    { text: 'Building the API', link: '/api/building' },
+                    { text: 'Using the API', link: '/api/using'}
                 ]
             },
             {
