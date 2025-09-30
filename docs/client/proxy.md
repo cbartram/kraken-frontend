@@ -13,3 +13,13 @@ For example `192.168.50.13:4355`. Kraken also supports proxies with authenticati
 your proxy string: `192.168.50.13:5555:user:password` to enable proxy authentication.
 
 ![kraken-proxy](../images/kraken-proxy.png)
+
+## Recommended Proxies
+
+Typically, we would always advise individuals to source their own proxies as it will be the safest and least used.
+However,if you're unsure where to buy a proxy from, here are some suggestions:
+
+- [Ace Proxies](https://www.aceproxies.com/)
+- [IPRoyal](https://iproyal.com/)
+
+When purchasing a proxy, please ensure it is IPv4 `SOCKS5`, we do not support other proxies such as HTTP.
