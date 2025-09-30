@@ -44,6 +44,7 @@ export default defineConfig({
                 items: [
                     { text: 'Available Plugins', link: '/plugins/plugins' },
                     { text: 'License Keys', link: '/plugins/license' },
+                    { text: 'Third Party Plugins', link: '/plugins/thirdparty' },
                 ]
             },
               {
@@ -57,7 +58,9 @@ export default defineConfig({
             {
                 text: 'Support',
                 items: [
-                    { text: 'Contact Support', link: '/support/contact' }
+                    { text: 'Contact Support', link: '/support/contact' },
+                    { text: 'Hardware Acceleration', link: '/support/hw-acceleration' },
+                    { text: 'Accessing Logs', link: '/support/logs' }
                 ]
             }
         ],
