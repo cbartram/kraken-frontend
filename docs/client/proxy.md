@@ -14,6 +14,13 @@ your proxy string: `192.168.50.13:5555:user:password` to enable proxy authentica
 
 ![kraken-proxy](../images/kraken-proxy.png)
 
+## Verifying the Proxy
+
+You can verify that the proxy is active and working by checking the configuration of the `Kraken Plugins` plugin. Your
+current proxy settings will be shown in the plugin header if they are set.
+
+![proxy-plugin](../images/proxy-plugin.png)
+
 ## Recommended Proxies
 
 Typically, we would always advise individuals to source their own proxies as it will be the safest and least used.
