@@ -40,8 +40,10 @@ Once GP has been transferred, your tokens will be updated by a staff member so y
 
 ## Refunds
 
-Refunds are given on a case by case basis and OSRS character bans :warning: **DO NOT** guarantee eligibility for a refund. Due to RWT crackdowns from Jagex
-OSRS GP purchases are not eligible for refunds.
+Refunds are given on a case by case basis. Bans **DO NOT** guarantee eligibility for a refund.
+Due to RWT crackdowns from Jagex OSRS GP purchases are not eligible for refunds.
+
+> :warning: **OSRS character bans DO NOT guarantee eligibility for a refund**
 
 # Licensing
 
