@@ -1,6 +1,8 @@
 # Third Party & Sideloaded Plugin Policy
 
-Third party plugins are plugins which have been created by other plugin developers and are open source. Some examples of 
+Third party plugins are plugins which have been created by other plugin developers and are open source. Often times these open source
+repositories can be neglected and may not work on the latest version of the RuneLite API. It's like an old rusty engine, sometimes it takes a little
+grease and effort to restore the plugins and get them running again! Some examples of 
 third party plugin repositories include:
 
 - [Kotori Plugins](https://github.com/OreoCupcakes/kotori-plugins)
@@ -20,10 +22,10 @@ The Kraken client does support the use of **some** third party plugins with seve
 
 ## Sideloading Plugins
 
-In order to sideload plugins add the plugin JAR files to the `~/.runelite/sideloaded-plugins` directory on your MacOS or Windows system.
-If the directory does not exist simply create it. If the plugin is compatible with Kraken it will be loaded on the next client restart 
-and you will see it denoted by a yellow `[ S ]` in the client plugins panel. This means that the plugin is a third party plugin and was 
-sideloaded.
+In order to sideload plugins add the plugin JAR files to the `~/.runelite/kraken/sideloaded-plugins` directory on your MacOS or Windows system.
+If the directory does not exist simply create it or run the client and the directory will be created automatically. If the plugin 
+is compatible with Kraken it will be loaded on the next client restart  and you will see it denoted by a yellow `[ S ]` 
+in the client plugins panel. This means that the plugin is a third party plugin and was sideloaded.
 
 ![sideloaded](../images/sideloaded.png)
 
@@ -34,5 +36,8 @@ Launch RuneLite in safe mode using the following command: `"%localappdata%\runel
 This temporarily disables all 3rd party plugins, which will allow you to confirm if the issue is caused by a 3rd party plugin and isn't a core RuneLite issue.
 If the issue is caused by a 3rd party plugin, you should isolate which plugin it is and then uninstall the plugin.
 
+### Logs
+
 You can also check the client logs in `~/.runelite/logs/client.log` and upload them to [Kraken Support](https://kraken-plugins.com/support) 
-to get some help in resolving issues. There is no guarantee that Kraken will be able to fully support all your third party plugins.
+to get some help in resolving issues. There is no guarantee that Kraken will be able to fully support all your third party plugins but sometimes
+the issue is simple and can get you unblocked and playing quickly!
