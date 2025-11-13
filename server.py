@@ -12,27 +12,60 @@ class SPAHandler(SimpleHTTPRequestHandler):
         super().__init__(*args, directory="static", **kwargs)
 
     def do_GET(self):
-        # Check if the requested file exists in static directory
-        file_path = os.path.join(self.directory, self.path.lstrip('/'))
+        # Normalize path
+        clean_path = self.path.split('?')[0]  # Remove query strings
+        file_path = os.path.join(self.directory, clean_path.lstrip('/'))
 
-        # If the path is for a static file that exists (like .js, .css, images), serve it
-        if os.path.isfile(file_path):
-            return super().do_GET()
-
-        if self.path.startswith('/javadoc'):
-            docs_index = os.path.join(self.directory, 'javadoc', 'index.html')
-            if os.path.isfile(docs_index):
+        # Handle /javadoc/* paths
+        if clean_path.startswith('/javadoc'):
+            # If it's exactly /javadoc or /javadoc/, serve index.html
+            if clean_path == '/javadoc' or clean_path == '/javadoc/':
                 self.path = '/javadoc/index.html'
                 return super().do_GET()
 
-        # If it's a docs path, try to serve docs/index.html
-        if self.path.startswith('/docs'):
-            docs_index = os.path.join(self.directory, 'docs', 'index.html')
-            if os.path.isfile(docs_index):
+            # For any other /javadoc/* path, try to serve the file directly
+            if os.path.isfile(file_path):
+                return super().do_GET()
+
+            # If file doesn't exist and it's a directory, try index.html in that directory
+            if os.path.isdir(file_path):
+                index_path = os.path.join(file_path, 'index.html')
+                if os.path.isfile(index_path):
+                    self.path = clean_path.rstrip('/') + '/index.html'
+                    return super().do_GET()
+
+            # If nothing found, return 404
+            self.send_error(404, "File not found")
+            return
+
+        # Handle /docs/* paths
+        if clean_path.startswith('/docs'):
+            # If it's exactly /docs or /docs/, serve index.html
+            if clean_path == '/docs' or clean_path == '/docs/':
                 self.path = '/docs/index.html'
                 return super().do_GET()
 
-        # For all other routes, serve index.html
+            # For any other /docs/* path, try to serve the file directly
+            if os.path.isfile(file_path):
+                return super().do_GET()
+
+            # If file doesn't exist and it's a directory, try index.html in that directory
+            if os.path.isdir(file_path):
+                index_path = os.path.join(file_path, 'index.html')
+                if os.path.isfile(index_path):
+                    self.path = clean_path.rstrip('/') + '/index.html'
+                    return super().do_GET()
+
+            # For docs, fall back to /docs/index.html (for client-side routing)
+            self.path = '/docs/index.html'
+            return super().do_GET()
+
+        # For all other paths - handle as SPA
+        # If the file exists (static assets like .js, .css, images), serve it
+        if os.path.isfile(file_path):
+            return super().do_GET()
+
+        # Otherwise, serve the SPA's index.html (for client-side routing)
         self.path = '/index.html'
         return super().do_GET()
 
