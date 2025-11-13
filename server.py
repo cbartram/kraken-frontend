@@ -16,26 +16,26 @@ class SPAHandler(SimpleHTTPRequestHandler):
         file_path = os.path.join(self.directory, self.path.lstrip('/'))
 
         # If the path is for a static file that exists (like .js, .css, images), serve it
-        # This will serve /javadoc/com/mypackage/MyClass.html
         if os.path.isfile(file_path):
             return super().do_GET()
 
-        if self.path.startswith('/javadoc'):
-            docs_index = os.path.join(self.directory, 'javadoc', 'index.html')
-            if os.path.isfile(docs_index):
-                self.path = '/javadoc/index.html'
-                return super().do_GET()
+        if os.path.isdir(file_path):
+            # If it doesn't end in a slash, redirect to add one.
+            # This is crucial for Javadoc's relative links to work.
+            if not self.path.endswith('/'):
+                self.send_response(301)
+                self.send_header('Location', self.path + '/')
+                self.end_headers()
+                return
 
-        # If it's a docs path, try to serve docs/index.html (VitePress SPA)
-        if self.path.startswith('/docs'):
-            docs_index = os.path.join(self.directory, 'docs', 'index.html')
-            if os.path.isfile(docs_index):
-                self.path = '/docs/index.html'
-                return super().do_GET()
+            # If it is a directory and ends with a slash,
+            # try to serve its index.html file
+            index_file = os.path.join(file_path, 'index.html')
 
-        # For all other routes, serve index.html (Main SPA)
-        self.path = '/index.html'
-        return super().do_GET()
+            # This will check for /app/static/javadoc/index.html
+            if os.path.isfile(index_file):
+                self.path = os.path.join(self.path, 'index.html')
+                return super().do_GET()
 
     def guess_type(self, path):
         base, ext = os.path.splitext(path)
