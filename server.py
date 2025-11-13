@@ -16,17 +16,24 @@ class SPAHandler(SimpleHTTPRequestHandler):
         file_path = os.path.join(self.directory, self.path.lstrip('/'))
 
         # If the path is for a static file that exists (like .js, .css, images), serve it
+        # This will serve /javadoc/com/mypackage/MyClass.html
         if os.path.isfile(file_path):
             return super().do_GET()
 
-        # If it's a docs path, try to serve docs/index.html
+        if self.path.startswith('/javadoc'):
+            docs_index = os.path.join(self.directory, 'javadoc', 'index.html')
+            if os.path.isfile(docs_index):
+                self.path = '/javadoc/index.html'
+                return super().do_GET()
+
+        # If it's a docs path, try to serve docs/index.html (VitePress SPA)
         if self.path.startswith('/docs'):
             docs_index = os.path.join(self.directory, 'docs', 'index.html')
             if os.path.isfile(docs_index):
                 self.path = '/docs/index.html'
                 return super().do_GET()
 
-        # For all other routes, serve index.html
+        # For all other routes, serve index.html (Main SPA)
         self.path = '/index.html'
         return super().do_GET()
 
