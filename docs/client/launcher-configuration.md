@@ -3,6 +3,13 @@
 This document covers the various launcher configuration options which are present and what each option does. You
 are free to modify or change any of these options at any time.
 
+To open and configure the launcher options search for "RuneLite (configure)" in your Windows start menu. 
+
+![config-win](../images/configure-windows-start-menu.png)
+
+Once you select the option from your start menu you will see the following dialogue box allowing you to edit the launcher
+configuration options:
+
 ![windows-configuration](../images/windows-launcher.png)
 
 | **Option Name**            | **Description**                                                                                                                                                                                                                                                     | **Type**   | **Example**                                               |
