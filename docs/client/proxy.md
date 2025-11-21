@@ -24,7 +24,8 @@ current proxy settings will be shown in the plugin header if they are set.
 ## Recommended Proxies
 
 Typically, we would always advise individuals to source their own proxies as it will be the safest and least used.
-However,if you're unsure where to buy a proxy from, here are some suggestions:
+However,if you're unsure where to buy a proxy from, here are some suggestions (we are not affiliated with any of the following
+proxy companies and do not endorse their product, they are just options to let you know what to look for):
 
 - [Ace Proxies](https://www.aceproxies.com/)
 - [IPRoyal](https://iproyal.com/)
