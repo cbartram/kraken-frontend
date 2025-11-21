@@ -32,7 +32,7 @@ export default function TermsAndConditions() {
                             <h1 className="text-2xl md:text-3xl font-bold">Terms and Conditions</h1>
                         </div>
                         <p className="mt-2 text-green-100">
-                            Last updated: May 5, 2025
+                            Effective Date: May 5, 2025
                         </p>
                     </div>
                 </header>
@@ -44,16 +44,16 @@ export default function TermsAndConditions() {
                         <section className="mb-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Book size={20} className="text-green-600" />
-                                General
+                                General Overview
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                These terms and conditions outline the rules and regulations for the use of the Kraken Plugins Website, located at <a href="https://kraken-plugins.com">https://kraken-plugins.com</a>.
+                                These stipulations define the rules and obligations regarding the use of the Kraken Plugins Website, accessible at <a href="https://kraken-plugins.com">https://kraken-plugins.com</a>.
                             </p>
                             <p className="text-slate-700 mb-4">
-                                By accessing this website we assume you accept these terms and conditions. Do not continue to use Kraken Plugins if you do not agree to take all of the terms and conditions stated on this page.
+                                By navigating and using this website, you imply your full acceptance of these terms and conditions. If you do not agree to adhere to all the terms stated on this page, you must discontinue the use of Kraken Plugins immediately.
                             </p>
                             <p className="text-slate-700">
-                                The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company's terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client's needs in respect of provision of the Company's stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.
+                                The following terminology applies to these Terms and Conditions, the Privacy Statement, the Disclaimer Notice, and all related Agreements: "Client", "You", and "Your" refer to you, the individual accessing this website and accepting the Company's terms. "The Company", "Ourselves", "We", "Our", and "Us" refer to our entity. "Party", "Parties", or "Us" refers to both the Client and ourselves collectively. All terms relate to the offer, acceptance, and consideration of payment required to undertake our assistance to the Client in the most effective manner to meet the Client's needs regarding the Company's services, in accordance with the prevailing laws of the Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization, and/or gender-specific terms are considered interchangeable and refer to the same.
                             </p>
                         </section>
 
@@ -61,13 +61,13 @@ export default function TermsAndConditions() {
                         <section className="mb-8 border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Cookie size={20} className="text-green-600" />
-                                Cookies
+                                Cookie Usage
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                We employ the use of cookies. By accessing Kraken Plugins, you agreed to use cookies in agreement with the Kraken Plugins Privacy Policy.
+                                We utilize cookies on this platform. By accessing Kraken Plugins, you consent to the use of cookies in accordance with the Kraken Plugins Privacy Policy.
                             </p>
                             <p className="text-slate-700">
-                                Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
+                                Most interactive websites employ cookies to retrieve user details for each visit. Our website uses cookies to facilitate the functionality of specific areas, improving the user experience for visitors. Additionally, some of our affiliate or advertising partners may also utilize cookies.
                             </p>
                         </section>
 
@@ -75,22 +75,22 @@ export default function TermsAndConditions() {
                         <section className="mb-8 border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Scale size={20} className="text-green-600" />
-                                License
+                                Intellectual Property License
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                Unless otherwise stated, Kraken Plugins and/or its licensors own the intellectual property rights for all material on Kraken Plugins. All intellectual property rights are reserved. You may access this from Kraken Plugins for your own personal use subjected to restrictions set in these terms and conditions.
+                                Unless explicitly stated otherwise, Kraken Plugins and/or its licensors hold the intellectual property rights for all material on Kraken Plugins. All rights are reserved. You may access content from Kraken Plugins for personal use only, subject to the restrictions outlined in these terms.
                             </p>
                             <p className="text-slate-700 mb-4">
-                                You must not:
+                                You are strictly prohibited from:
                             </p>
                             <ul className="list-disc list-inside text-slate-700 pl-4 space-y-2 mb-4">
-                                <li>Republish material from Kraken Plugins</li>
-                                <li>Sell, rent or sub-license material from Kraken Plugins</li>
-                                <li>Reproduce, duplicate or copy material from Kraken Plugins</li>
-                                <li>Redistribute content from Kraken Plugins</li>
+                                <li>Republishing material from Kraken Plugins</li>
+                                <li>Selling, renting, or sub-licensing material from Kraken Plugins</li>
+                                <li>Reproducing, duplicating, or copying material from Kraken Plugins</li>
+                                <li>Redistributing content from Kraken Plugins</li>
                             </ul>
                             <p className="text-slate-700">
-                                This Agreement shall begin on the date hereof.
+                                This Agreement is effective as of the date hereof.
                             </p>
                         </section>
 
@@ -98,10 +98,10 @@ export default function TermsAndConditions() {
                         <section className="mb-8 border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Link size={20} className="text-green-600" />
-                                iFrames
+                                iFrames and Embedding
                             </h2>
                             <p className="text-slate-700">
-                                Without prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual presentation or appearance of our Website.
+                                You may not create frames around our web pages that alter the visual presentation or appearance of our Website in any way without prior approval and written permission.
                             </p>
                         </section>
 
@@ -112,7 +112,7 @@ export default function TermsAndConditions() {
                                 Content Liability
                             </h2>
                             <p className="text-slate-700">
-                                We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.
+                                We accept no responsibility for any content that appears on your Website. You agree to indemnify and defend us against all claims arising from your Website. No link(s) should appear on any Website that could be interpreted as libelous, obscene, or criminal, or that infringes, violates, or advocates the infringement or violation of any third-party rights.
                             </p>
                         </section>
 
@@ -123,7 +123,7 @@ export default function TermsAndConditions() {
                                 Your Privacy
                             </h2>
                             <p className="text-slate-700">
-                                Please read <a href="#" className="text-green-600 hover:text-green-700 underline">Privacy Policy</a>
+                                Please review our <a href="#" className="text-green-600 hover:text-green-700 underline">Privacy Policy</a>.
                             </p>
                         </section>
 
@@ -134,7 +134,7 @@ export default function TermsAndConditions() {
                                 Reservation of Rights
                             </h2>
                             <p className="text-slate-700">
-                                We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it's linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.
+                                We reserve the right to request the removal of all links or any specific link to our Website. You agree to remove all links to our Website immediately upon request. We also reserve the right to amend these terms and conditions and our linking policy at any time. By continuing to link to our Website, you agree to be bound by and follow these linking terms and conditions.
                             </p>
                         </section>
 
@@ -142,13 +142,13 @@ export default function TermsAndConditions() {
                         <section className="mb-8 border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Trash2 size={20} className="text-green-600" />
-                                Removal of links from our website
+                                Link Removal Requests
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.
+                                If you discover any link on our Website that is offensive for any reason, you are welcome to contact and inform us at any time. While we will consider requests to remove links, we are not obligated to do so or to respond to you directly.
                             </p>
                             <p className="text-slate-700">
-                                We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.
+                                We do not guarantee the correctness of the information on this website, nor do we warrant its completeness or accuracy. Furthermore, we do not promise that the website will remain available or that the material on the website will be kept up to date.
                             </p>
                         </section>
 
@@ -156,10 +156,10 @@ export default function TermsAndConditions() {
                         <section className="border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <AlertTriangle size={20} className="text-green-600" />
-                                Disclaimer
+                                Legal Disclaimer
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website. Nothing in this disclaimer will:
+                                To the maximum extent permitted by applicable law, we exclude all representations, warranties, and conditions relating to our website and the use of this website. Nothing in this disclaimer will:
                             </p>
                             <ul className="list-disc list-inside text-slate-700 pl-4 space-y-2 mb-4">
                                 <li>limit or exclude our or your liability for fraud or fraudulent misrepresentation;</li>
@@ -167,7 +167,7 @@ export default function TermsAndConditions() {
                                 <li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
                             </ul>
                             <p className="text-slate-700">
-                                The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.
+                                The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort, and for breach of statutory duty.
                             </p>
                         </section>
                     </div>

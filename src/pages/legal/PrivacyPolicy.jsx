@@ -28,10 +28,10 @@ export default function PrivacyPolicyPage() {
                     <div className="container mx-auto py-8 px-4 md:px-6">
                         <div className="flex items-center gap-3">
                             <Shield size={32} />
-                            <h1 className="text-2xl md:text-3xl font-bold">Privacy Policy</h1>
+                            <h1 className="text-2xl md:text-3xl font-bold">Privacy Statement</h1>
                         </div>
                         <p className="mt-2 text-green-100">
-                            Last updated: May 5, 2025
+                            Effective Date: May 5, 2025
                         </p>
                     </div>
                 </header>
@@ -43,20 +43,20 @@ export default function PrivacyPolicyPage() {
                         <section className="mb-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Lock size={20} className="text-green-600" />
-                                General
+                                General Overview
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                Thank you for choosing our services.
-                                We are committed to protecting your personal information and your right to privacy.
-                                This Privacy Policy describes how we collect, use, and share your information when you use our website and services.
-                                At Kraken Plugins, accessible from <a href="https://kraken-plugins.com">https://kraken-plugins.com</a>, one of our main priorities is the privacy of our visitors.
+                                We appreciate your trust in our services.
+                                We are dedicated to safeguarding your personal data and respecting your right to privacy.
+                                This document outlines our protocols regarding the collection, utilization, and distribution of your data when engaging with our ecosystem.
+                                At Kraken Plugins, located at <a href="https://kraken-plugins.com">https://kraken-plugins.com</a>, visitor privacy is a paramount concern.
 
-                                If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
+                                Should you have further inquiries or require clarification regarding our Privacy Statement, please feel free to reach out to our support team.
 
-                                This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Kraken Plugins. This policy is not applicable to any information collected offline or via channels other than this website.
+                                This policy pertains exclusively to our digital operations and is valid for users of our website regarding information shared and/or harvested within Kraken Plugins. This policy does not extend to data gathered offline or through channels external to this domain.
                             </p>
                             <p className="text-slate-700">
-                                Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the site or use our services.
+                                Please review this statement thoroughly. If you do not consent to the terms laid out in this Privacy Policy, you must refrain from accessing this site or utilizing our services.
                             </p>
                         </section>
 
@@ -64,49 +64,49 @@ export default function PrivacyPolicyPage() {
                         <section className="mb-8 border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Database size={20} className="text-green-600" />
-                                Information We Collect
+                                Data Collection
                             </h2>
                             <div className="space-y-4">
                                 <div>
-                                    <h3 className="text-lg font-medium text-slate-800">Personal Information</h3>
+                                    <h3 className="text-lg font-medium text-slate-800">Personal Identifiers</h3>
                                     <p className="text-slate-700">
-                                        We may collect personal identification information, including but not limited to:
+                                        We may request personal identification details, which may include, but are not limited to:
                                     </p>
                                     <ul className="list-disc list-inside mt-2 text-slate-700 pl-4">
-                                        <li>Name</li>
-                                        <li>Email address</li>
-                                        <li>Phone number</li>
-                                        <li>Billing address</li>
-                                        <li>Account login credentials</li>
+                                        <li>Full Name</li>
+                                        <li>Electronic mail (Email) address</li>
+                                        <li>Telephone contact numbers</li>
+                                        <li>Billing and payment addresses</li>
+                                        <li>Account authentication credentials</li>
                                     </ul>
                                 </div>
 
                                 <div>
-                                    <h3 className="text-lg font-medium text-slate-800">Usage Data</h3>
+                                    <h3 className="text-lg font-medium text-slate-800">Usage Telemetry</h3>
                                     <p className="text-slate-700">
-                                        We may also collect information about how you access and use our website and services, including:
+                                        We also gather data regarding your interaction with our platform and services, such as:
                                     </p>
                                     <ul className="list-disc list-inside mt-2 text-slate-700 pl-4">
-                                        <li>Your IP address</li>
-                                        <li>Browser type and version</li>
-                                        <li>Pages you visit on our site</li>
-                                        <li>Time and date of your visit</li>
-                                        <li>Time spent on pages</li>
-                                        <li>Device information</li>
+                                        <li>Your Network (IP) address</li>
+                                        <li>Browser specifications and version</li>
+                                        <li>Navigation history within our site</li>
+                                        <li>Timestamps of your sessions</li>
+                                        <li>Duration of page engagement</li>
+                                        <li>Hardware and device specifics</li>
                                     </ul>
 
                                     <p className="text-slate-700 my-4">
-                                        Kraken Plugins follows a standard procedure of using log files.
-                                        These files log visitors when they visit websites.
-                                        The information collected by log files include internet protocol (IP) addresses, date and time stamp.
-                                        These are not linked to any information that is personally identifiable.
-                                        The purpose of the information is for analyzing the usage of our plugins.
+                                        Kraken Plugins adheres to standard industry protocols regarding log files.
+                                        These records track visitors during their sessions on the website.
+                                        The data captured includes internet protocol (IP) addresses, timestamps, and navigation paths.
+                                        This data is not linked to personally identifiable information.
+                                        The primary objective is to analyze trends and plugin performance.
                                     </p>
 
                                     <p className="text-slate-700 my-4">
-                                        Kraken Plugins does not knowingly collect any Personal Identifiable Information from children under the age of 13.
-                                        If you think that your child provided this kind of information on our website,
-                                        we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
+                                        Kraken Plugins does not intentionally solicit Personal Identifiable Information from minors under the age of 13.
+                                        If you suspect that your child has submitted such data to our platform,
+                                        we urge you to contact us immediately so we can take swift action to expunge such records from our database.
                                     </p>
                                 </div>
                             </div>
@@ -116,20 +116,20 @@ export default function PrivacyPolicyPage() {
                         <section className="mb-8 border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Eye size={20} className="text-green-600" />
-                                How We Use Your Information
+                                Utilization of Data
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                We use the information we collect in various ways, including to:
+                                We leverage the collected data for multiple objectives, including to:
                             </p>
                             <ul className="list-disc list-inside text-slate-700 pl-4 space-y-2">
-                                <li>Provide, operate, and maintain our website and services</li>
-                                <li>Improve, personalize, and expand our website and services</li>
-                                <li>Understand and analyze how you use our website</li>
-                                <li>Develop new products, services, features, and functionality</li>
-                                <li>Communicate with you, either directly or through one of our partners, for customer service, updates, and other information relating to the website</li>
-                                <li>Process your transactions</li>
-                                <li>Send you emails and notifications</li>
-                                <li>Find and prevent fraud</li>
+                                <li>Facilitate, maintain, and operate our digital infrastructure</li>
+                                <li>Enhance, customize, and scale our service offerings</li>
+                                <li>Analyze user behavior to optimize platform performance</li>
+                                <li>Innovate new products, features, and specialized functionality</li>
+                                <li>Manage correspondence with you, directly or via partners, regarding support, updates, and operational news</li>
+                                <li>Execute and verify financial transactions</li>
+                                <li>Dispatch administrative emails and push notifications</li>
+                                <li>Identify and mitigate potential fraud or security risks</li>
                             </ul>
                         </section>
 
@@ -137,17 +137,17 @@ export default function PrivacyPolicyPage() {
                         <section className="mb-8 border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Share2 size={20} className="text-green-600" />
-                                Information Sharing
+                                Third-Party Disclosure
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                We may share your information with third parties in certain situations, including:
+                                We may disclose your information to external parties under specific circumstances, such as:
                             </p>
                             <ul className="list-disc list-inside text-slate-700 pl-4 space-y-2">
-                                <li>With service providers who assist us in operating our website and providing our services</li>
-                                <li>To comply with legal obligations</li>
-                                <li>To protect and defend our rights and property</li>
-                                <li>With business partners with your consent</li>
-                                <li>With other users when you share information through the site</li>
+                                <li>With vendors and service providers who support our operational infrastructure</li>
+                                <li>To adhere to statutory and legal requirements</li>
+                                <li>To safeguard our intellectual property and legal rights</li>
+                                <li>With strategic business partners, provided we have your consent</li>
+                                <li>With other community members when you voluntarily share data via the platform</li>
                             </ul>
                         </section>
 
@@ -155,27 +155,27 @@ export default function PrivacyPolicyPage() {
                         <section className="mb-8 border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <HelpCircle size={20} className="text-green-600" />
-                                Your Rights
+                                User Rights
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                Depending on your location, you may have certain rights regarding your personal information:
+                                Depending on your jurisdiction, you may possess specific rights concerning your personal data:
                             </p>
                             <div className="space-y-4">
                                 <div>
-                                    <h3 className="text-lg font-medium text-slate-800">Right to Access</h3>
-                                    <p className="text-slate-700">You have the right to request copies of your personal information.</p>
+                                    <h3 className="text-lg font-medium text-slate-800">Right to Inspect</h3>
+                                    <p className="text-slate-700">You retain the right to request copies of the personal data we hold about you.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-medium text-slate-800">Right to Rectification</h3>
-                                    <p className="text-slate-700">You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</p>
+                                    <h3 className="text-lg font-medium text-slate-800">Right to Correction</h3>
+                                    <p className="text-slate-700">You may request that we rectify any information you deem inaccurate or supplement information you believe is incomplete.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-medium text-slate-800">Right to Erasure</h3>
-                                    <p className="text-slate-700">You have the right to request that we erase your personal information, under certain conditions.</p>
+                                    <h3 className="text-lg font-medium text-slate-800">Right to Deletion</h3>
+                                    <p className="text-slate-700">You have the right to request the erasure of your personal data under specific legal conditions.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-medium text-slate-800">Right to Restrict Processing</h3>
-                                    <p className="text-slate-700">You have the right to request that we restrict the processing of your personal information, under certain conditions.</p>
+                                    <h3 className="text-lg font-medium text-slate-800">Right to Restriction</h3>
+                                    <p className="text-slate-700">You may request that we limit the processing of your personal data under specific legal conditions.</p>
                                 </div>
                             </div>
                         </section>
@@ -184,10 +184,10 @@ export default function PrivacyPolicyPage() {
                         <section className="mb-8 border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Clock size={20} className="text-green-600" />
-                                Data Retention
+                                Data Retention Policy
                             </h2>
                             <p className="text-slate-700">
-                                We will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.
+                                We store your personal information only for the duration necessary to fulfill the objectives outlined in this statement. We retain and utilize your data to the extent required to comply with legal obligations, resolve disputes, and enforce our agreements.
                             </p>
                         </section>
 
@@ -195,20 +195,20 @@ export default function PrivacyPolicyPage() {
                         <section className="border-t border-slate-200 pt-8">
                             <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">
                                 <Bell size={20} className="text-green-600" />
-                                Updates to This Policy
+                                Policy Modifications
                             </h2>
                             <p className="text-slate-700 mb-4">
-                                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this page.
+                                We reserve the right to modify this Privacy Policy periodically. We will alert you to any significant changes by publishing the revised policy on this page and updating the "Effective Date" located at the top.
                             </p>
                             <p className="text-slate-700">
-                                You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+                                We advise you to review this page regularly for any updates. Changes to this policy become effective immediately upon being posted here.
                             </p>
                         </section>
                     </div>
                 </main>
 
                 {/* Footer */}
-               <Footer />
+                <Footer />
             </div>
         </>
     );
