@@ -9,7 +9,7 @@ Staff members, such as Admins or Developers, will frequently ask for you to prov
 
 Follow these steps to locate your logs on Windows:
 
-1.  Press the $\text{Win} + \text{R}$ keys on your keyboard ($\text{⊞ Win} + \text{R}$).
+1.  Press the Win + R keys on your keyboard.
 2.  **Copy & Paste** the following path into the run field:
     `%userprofile%\.runelite\logs`
 3.  Hit **'OK'**. This action will load up your RuneLite logs folder.
@@ -20,7 +20,7 @@ Follow these steps to locate your logs on Windows:
 Follow these steps to locate your logs on Mac:
 
 1.  Open the **Finder** application.
-2.  Press the following key combination: $\text{Shift} + \text{CMD} + \text{G}$ ($\text{⇧} + \text{⌘} + \text{G}$).
+2.  Press the following key combination: Shift + CMD + G (⇧ + ⌘ + G).
 3.  **Copy & paste** the following path in the pop-up box:
     `~/.runelite/logs`
 4.  Hit the **Enter** key. This action will load up your RuneLite logs folder.
