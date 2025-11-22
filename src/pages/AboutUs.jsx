@@ -4,7 +4,7 @@ import {
     CheckCircle,
     Shield,
     RefreshCwIcon,
-    Lock,
+    Heart,
     Zap
 } from 'lucide-react';
 import Footer from "@/components/Footer.jsx";
@@ -33,22 +33,22 @@ export default function AboutUsPage() {
         {
             icon: <RefreshCwIcon className="w-8 h-8 text-emerald-600" />,
             title: "Regular Updates",
-            description: "Game updates? We're on it. New content? Already supported. Plugin improvements? Done. Our team ensures you're never left behind when Jagex makes changes."
+            description: "Client updates quickly and efficiently after Jagex or RuneLite releases new revisions."
         },
         {
             icon: <Shield className="w-8 h-8 text-emerald-600" />,
             title: "Safety First",
-            description: "Your account security is our top priority. Every plugin is designed with multiple layers of anti-detection measures to keep you safe."
+            description: "Plugins load quietly in a standard way to RuneLite, packet utilities are automated, and network traffic is encrypted."
         },
         {
             icon: <Zap className="w-8 h-8 text-emerald-600" />,
-            title: "Performance Matters",
-            description: "Lightweight, efficient code that enhances your game without slowing it down. We optimize all of our plugins for minimal resource usage."
+            title: "Performance",
+            description: "Our plugins are designed to be fast to load and execute. We optimize our overlays to reduce lag spikes and ensure tick perfect accuracy"
         },
         {
-            icon: <Lock className="w-8 h-8 text-emerald-600" />,
-            title: "Privacy Protected",
-            description: "We never collect personal data or game credentials. Your privacy is sacred, and we've built our platform to respect that."
+            icon: <Heart className="w-8 h-8 text-emerald-600" />,
+            title: "Support",
+            description: "Friendly and easy to reach support when you need it, both through the website and on Discord!"
         }
     ];
 
