@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -274,15 +274,6 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <div class="block">Toggles a prayer on or off.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggle(net.runelite.api.Prayer,boolean,boolean)">toggle</a></span>&#8203;(net.runelite.api.Prayer&nbsp;prayer,
-      boolean&nbsp;activate,
-      boolean&nbsp;useReflect)</code></th>
-<td class="colLast">
-<div class="block">Toggles a prayer on or off.</div>
-</td>
-</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -356,24 +347,6 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 </dl>
 </li>
 </ul>
-<a id="toggle(net.runelite.api.Prayer,boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>toggle</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;toggle&#8203;(net.runelite.api.Prayer&nbsp;prayer,
-                      boolean&nbsp;activate)</pre>
-<div class="block">Toggles a prayer on or off. This will use reflection based prayer toggles by default.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>prayer</code> - The Prayer to toggle</dd>
-<dd><code>activate</code> - True if the prayer should be turned on and false if it should be turned off</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>Boolean true if the prayer was activated/deactivated successfully and false otherwise.</dd>
-</dl>
-</li>
-</ul>
 <a id="toggle(net.runelite.api.Prayer)">
 <!--   -->
 </a>
@@ -390,21 +363,19 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 </dl>
 </li>
 </ul>
-<a id="toggle(net.runelite.api.Prayer,boolean,boolean)">
+<a id="toggle(net.runelite.api.Prayer,boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>toggle</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;toggle&#8203;(net.runelite.api.Prayer&nbsp;prayer,
-                      boolean&nbsp;activate,
-                      boolean&nbsp;useReflect)</pre>
+                      boolean&nbsp;activate)</pre>
 <div class="block">Toggles a prayer on or off.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>prayer</code> - The Prayer to toggle</dd>
 <dd><code>activate</code> - True if the prayer should be turned on and false if it should be turned off</dd>
-<dd><code>useReflect</code> - True if the prayer should be activated via reflection and false if it should fall back to mouse events.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Boolean true if the prayer was activated/deactivated successfully and false otherwise.</dd>
 </dl>

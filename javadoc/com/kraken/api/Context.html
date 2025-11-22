@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -181,12 +181,11 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(net.runelite.api.Client,net.runelite.client.callback.ClientThread,com.kraken.api.input.VirtualMouse,net.runelite.client.eventbus.EventBus,com.google.inject.Injector,com.kraken.api.core.loader.HooksLoader)">Context</a></span>&#8203;(net.runelite.api.Client&nbsp;client,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(net.runelite.api.Client,net.runelite.client.callback.ClientThread,com.kraken.api.input.VirtualMouse,net.runelite.client.eventbus.EventBus,com.google.inject.Injector)">Context</a></span>&#8203;(net.runelite.api.Client&nbsp;client,
        net.runelite.client.callback.ClientThread&nbsp;clientThread,
        <a href="input/VirtualMouse.html" title="class in com.kraken.api.input">VirtualMouse</a>&nbsp;mouse,
        net.runelite.client.eventbus.EventBus&nbsp;eventBus,
-       com.google.inject.Injector&nbsp;injector,
-       <a href="core/loader/HooksLoader.html" title="class in com.kraken.api.core.loader">HooksLoader</a>&nbsp;loader)</code></th>
+       com.google.inject.Injector&nbsp;injector)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -239,38 +238,31 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loadHooks()">loadHooks</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Loads hooks containing key obfuscated RuneLite client methods for use in the API.</div>
-</td>
-</tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#register()">register</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Registers all Service classes that have methods annotated with @Subscribe to the EventBus.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#runOnClientThread(java.lang.Runnable)">runOnClientThread</a></span>&#8203;(java.lang.Runnable&nbsp;method)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#runOnClientThread(java.util.concurrent.Callable)">runOnClientThread</a></span>&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method)</code></th>
 <td class="colLast">
 <div class="block">Run a method on the client thread, returning the result directly.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;java.util.Optional&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#runOnClientThreadOptional(java.util.concurrent.Callable)">runOnClientThreadOptional</a></span>&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method)</code></th>
 <td class="colLast">
 <div class="block">Run a method on the client thread, returning an optional of the result.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#runOnSeperateThread(java.util.concurrent.Callable)">runOnSeperateThread</a></span>&#8203;(java.util.concurrent.Callable&lt;?&gt;&nbsp;method)</code></th>
 <td class="colLast">
@@ -329,7 +321,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(net.runelite.api.Client,net.runelite.client.callback.ClientThread,com.kraken.api.input.VirtualMouse,net.runelite.client.eventbus.EventBus,com.google.inject.Injector,com.kraken.api.core.loader.HooksLoader)">
+<a id="&lt;init&gt;(net.runelite.api.Client,net.runelite.client.callback.ClientThread,com.kraken.api.input.VirtualMouse,net.runelite.client.eventbus.EventBus,com.google.inject.Injector)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -340,8 +332,7 @@ public&nbsp;Context&#8203;(net.runelite.api.Client&nbsp;client,
                net.runelite.client.callback.ClientThread&nbsp;clientThread,
                <a href="input/VirtualMouse.html" title="class in com.kraken.api.input">VirtualMouse</a>&nbsp;mouse,
                net.runelite.client.eventbus.EventBus&nbsp;eventBus,
-               com.google.inject.Injector&nbsp;injector,
-               <a href="core/loader/HooksLoader.html" title="class in com.kraken.api.core.loader">HooksLoader</a>&nbsp;loader)</pre>
+               com.google.inject.Injector&nbsp;injector)</pre>
 </li>
 </ul>
 </li>
@@ -354,18 +345,6 @@ public&nbsp;Context&#8203;(net.runelite.api.Client&nbsp;client,
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="loadHooks()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>loadHooks</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;loadHooks()</pre>
-<div class="block">Loads hooks containing key obfuscated RuneLite client methods for use in the API. This is called by the Script class
- to ensure that the hooks are loaded and set before any scripts are run. This ensures that reflection based operations like
- prayer flicking, movement, and other interactions with the RuneLite client can be performed correctly by the implementing script.</div>
-</li>
-</ul>
 <a id="initializePackets()">
 <!--   -->
 </a>
@@ -376,7 +355,7 @@ public&nbsp;Context&#8203;(net.runelite.api.Client&nbsp;client,
 <div class="block">Initializes packet queueing functionality by either loading the client packet
  sending method from the cached json file or running an analysis on the RuneLite injected client
  to determine the packet sending method.
-
+ <p>
  This is required to be called before packets can actually be sent i.e. its necessary to know the packet
  method in the client before calling it with reflection.</div>
 </li>

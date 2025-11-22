@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -136,8 +136,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <hr>
-<pre>@Singleton
-public class <span class="typeNameLabel">MovementService</span>
+<pre>public class <span class="typeNameLabel">MovementService</span>
 extends <a href="../../core/AbstractService.html" title="class in com.kraken.api.core">AbstractService</a></pre>
 </li>
 </ul>
@@ -198,108 +197,60 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCalculatedPath()">getCalculatedPath</a></span>()</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#cancelCurrentMovement()">cancelCurrentMovement</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the full calculated path for visualization</div>
+<div class="block">Cancels the current movement task.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>double</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMovementProgress()">getMovementProgress</a></span>()</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#destroy()">destroy</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the current movement progress (0.0 to 1.0)</div>
+<div class="block">Cleanup resources when service is destroyed.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="MovementStats.html" title="class in com.kraken.api.interaction.movement">MovementStats</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMovementStats()">getMovementStats</a></span>()</code></th>
+<td class="colFirst"><code>net.runelite.api.coords.WorldPoint</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCurrentDestination()">getCurrentDestination</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets detailed movement statistics for debugging/display</div>
+<div class="block">Gets the current destination if movement is active.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRemainingPath()">getRemainingPath</a></span>()</code></th>
+<td class="colFirst"><code><a href="MovementState.html" title="enum in com.kraken.api.interaction.movement">MovementState</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCurrentMovementState()">getCurrentMovementState</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the remaining waypoints in the current path</div>
+<div class="block">Gets the current movement status.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTotalWaypoints()">getTotalWaypoints</a></span>()</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#moveTo(net.runelite.api.coords.LocalPoint)">moveTo</a></span>&#8203;(net.runelite.api.coords.LocalPoint&nbsp;point)</code></th>
 <td class="colLast">
-<div class="block">Gets the total number of waypoints in the current path</div>
+<div class="block">Moves the player to a given local point using packets.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reachableTiles()">reachableTiles</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#moveTo(net.runelite.api.coords.WorldPoint)">moveTo</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;point)</code></th>
+<td class="colLast">
+<div class="block">Moves the player to a specific world point.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resetPath()">resetPath</a></span>()</code></th>
+<td class="colFirst"><code><a href="MovementState.html" title="enum in com.kraken.api.interaction.movement">MovementState</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#walkTo(net.runelite.api.coords.WorldPoint)">walkTo</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;point)</code></th>
 <td class="colLast">
-<div class="block">Resets a current path and clears it from memory.</div>
+<div class="block">Synchronous version that blocks until movement completes.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sceneWalk(int,int)">sceneWalk</a></span>&#8203;(int&nbsp;sceneX,
-         int&nbsp;sceneY)</code></th>
+<td class="colFirst"><code>java.util.concurrent.CompletableFuture&lt;<a href="MovementState.html" title="enum in com.kraken.api.interaction.movement">MovementState</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#walkToAsync(net.runelite.api.coords.WorldPoint)">walkToAsync</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;destination)</code></th>
 <td class="colLast">
-<div class="block">Core walking method for scene coordinates.</div>
+<div class="block">Initiates walking to a destination point asynchronously.</div>
 </td>
-</tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sceneWalk(int,int,int)">sceneWalk</a></span>&#8203;(int&nbsp;worldPointX,
-         int&nbsp;worldPointY,
-         int&nbsp;plane)</code></th>
-<td class="colLast">
-<div class="block">Convenience overload for walking to a specific (x, y, plane) world coordinate.</div>
-</td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sceneWalk(net.runelite.api.coords.LocalPoint)">sceneWalk</a></span>&#8203;(net.runelite.api.coords.LocalPoint&nbsp;localPoint)</code></th>
-<td class="colLast">
-<div class="block">Walks to a <code>LocalPoint</code>, which is a coordinate relative to the currently loaded scene.</div>
-</td>
-</tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sceneWalk(net.runelite.api.coords.WorldPoint)">sceneWalk</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint)</code></th>
-<td class="colLast">
-<div class="block">Convenience overload for walking to a <code>WorldPoint</code> without instance conversion.</div>
-</td>
-</tr>
-<tr id="i11" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sceneWalk(net.runelite.api.coords.WorldPoint,boolean)">sceneWalk</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint,
-         boolean&nbsp;convertForInstance)</code></th>
-<td class="colLast">
-<div class="block">Attempts to walk to a given <code>WorldPoint</code> by converting it to a scene coordinate
- and setting the internal RuneLite walking fields via reflection.</div>
-</td>
-</tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#walkTo(net.runelite.api.coords.WorldPoint)">walkTo</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;target)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i13" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#walkTo(net.runelite.api.coords.WorldPoint,int)">walkTo</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;target,
-      int&nbsp;distance)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i14" class="altColor">
-<td class="colFirst"><code><a href="MovementState.html" title="enum in com.kraken.api.interaction.movement">MovementState</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#walkWithState(net.runelite.api.coords.WorldPoint,int)">walkWithState</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;target,
-             int&nbsp;distance)</code></th>
-<td class="colLast">&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -344,204 +295,117 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="walkToAsync(net.runelite.api.coords.WorldPoint)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>walkToAsync</h4>
+<pre class="methodSignature">public&nbsp;java.util.concurrent.CompletableFuture&lt;<a href="MovementState.html" title="enum in com.kraken.api.interaction.movement">MovementState</a>&gt;&nbsp;walkToAsync&#8203;(net.runelite.api.coords.WorldPoint&nbsp;destination)</pre>
+<div class="block">Initiates walking to a destination point asynchronously.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>destination</code> - The target WorldPoint</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>CompletableFuture that completes when movement finishes</dd>
+</dl>
+</li>
+</ul>
 <a id="walkTo(net.runelite.api.coords.WorldPoint)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>walkTo</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;walkTo&#8203;(net.runelite.api.coords.WorldPoint&nbsp;target)</pre>
-</li>
-</ul>
-<a id="walkTo(net.runelite.api.coords.WorldPoint,int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>walkTo</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;walkTo&#8203;(net.runelite.api.coords.WorldPoint&nbsp;target,
-                      int&nbsp;distance)</pre>
-</li>
-</ul>
-<a id="walkWithState(net.runelite.api.coords.WorldPoint,int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>walkWithState</h4>
-<pre class="methodSignature">public&nbsp;<a href="MovementState.html" title="enum in com.kraken.api.interaction.movement">MovementState</a>&nbsp;walkWithState&#8203;(net.runelite.api.coords.WorldPoint&nbsp;target,
-                                   int&nbsp;distance)</pre>
-</li>
-</ul>
-<a id="reachableTiles()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>reachableTiles</h4>
-<pre class="methodSignature">public&nbsp;java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;reachableTiles()</pre>
-</li>
-</ul>
-<a id="getMovementProgress()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getMovementProgress</h4>
-<pre class="methodSignature">public&nbsp;double&nbsp;getMovementProgress()</pre>
-<div class="block">Gets the current movement progress (0.0 to 1.0)</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The movement progress as a double between 0.0 and 1.0</dd>
-</dl>
-</li>
-</ul>
-<a id="getCalculatedPath()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getCalculatedPath</h4>
-<pre class="methodSignature">public&nbsp;java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;getCalculatedPath()</pre>
-<div class="block">Gets the full calculated path for visualization</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>A list of world points representing the calculated path</dd>
-</dl>
-</li>
-</ul>
-<a id="getRemainingPath()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getRemainingPath</h4>
-<pre class="methodSignature">public&nbsp;java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;getRemainingPath()</pre>
-<div class="block">Gets the remaining waypoints in the current path</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The list of world points for the path remaining (the path that has not yet been traversed).</dd>
-</dl>
-</li>
-</ul>
-<a id="getTotalWaypoints()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getTotalWaypoints</h4>
-<pre class="methodSignature">public&nbsp;int&nbsp;getTotalWaypoints()</pre>
-<div class="block">Gets the total number of waypoints in the current path</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>the total amount of waypoints in the path.</dd>
-</dl>
-</li>
-</ul>
-<a id="getMovementStats()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getMovementStats</h4>
-<pre class="methodSignature">public&nbsp;<a href="MovementStats.html" title="class in com.kraken.api.interaction.movement">MovementStats</a>&nbsp;getMovementStats()</pre>
-<div class="block">Gets detailed movement statistics for debugging/display</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>Movement statistics for the currently traversable path.</dd>
-</dl>
-</li>
-</ul>
-<a id="resetPath()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>resetPath</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;resetPath()</pre>
-<div class="block">Resets a current path and clears it from memory.</div>
-</li>
-</ul>
-<a id="sceneWalk(net.runelite.api.coords.WorldPoint,boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>sceneWalk</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sceneWalk&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint,
-                      boolean&nbsp;convertForInstance)</pre>
-<div class="block">Attempts to walk to a given <code>WorldPoint</code> by converting it to a scene coordinate
- and setting the internal RuneLite walking fields via reflection.</div>
+<pre class="methodSignature">public&nbsp;<a href="MovementState.html" title="enum in com.kraken.api.interaction.movement">MovementState</a>&nbsp;walkTo&#8203;(net.runelite.api.coords.WorldPoint&nbsp;point)</pre>
+<div class="block">Synchronous version that blocks until movement completes.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>worldPoint</code> - The absolute in-game world coordinates to walk to.</dd>
-<dd><code>convertForInstance</code> - Whether to convert the world point into an instanced coordinate.
-                           Used when the player is inside a dynamically generated region (e.g., dungeons, raids).</dd>
+<dd><code>point</code> - The world point to walk to</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current movement state. This is an enum value representing
+ the current state of the players path traversal i.e blocked, walking, completed, etc...</dd>
 </dl>
 </li>
 </ul>
-<a id="sceneWalk(net.runelite.api.coords.WorldPoint)">
+<a id="getCurrentMovementState()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>sceneWalk</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sceneWalk&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint)</pre>
-<div class="block">Convenience overload for walking to a <code>WorldPoint</code> without instance conversion.</div>
+<h4>getCurrentMovementState</h4>
+<pre class="methodSignature">public&nbsp;<a href="MovementState.html" title="enum in com.kraken.api.interaction.movement">MovementState</a>&nbsp;getCurrentMovementState()</pre>
+<div class="block">Gets the current movement status.</div>
 <dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>worldPoint</code> - The world coordinates to walk to.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current movement state. This is an enum value representing
+ the current state of the players path traversal i.e blocked, walking, completed, etc...</dd>
 </dl>
 </li>
 </ul>
-<a id="sceneWalk(int,int,int)">
+<a id="getCurrentDestination()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>sceneWalk</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sceneWalk&#8203;(int&nbsp;worldPointX,
-                      int&nbsp;worldPointY,
-                      int&nbsp;plane)</pre>
-<div class="block">Convenience overload for walking to a specific (x, y, plane) world coordinate.</div>
+<h4>getCurrentDestination</h4>
+<pre class="methodSignature">public&nbsp;net.runelite.api.coords.WorldPoint&nbsp;getCurrentDestination()</pre>
+<div class="block">Gets the current destination if movement is active.</div>
 <dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>worldPointX</code> - The X world coordinate.</dd>
-<dd><code>worldPointY</code> - The Y world coordinate.</dd>
-<dd><code>plane</code> - The Z level (0 = ground floor).</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current world point for the destination tile</dd>
 </dl>
 </li>
 </ul>
-<a id="sceneWalk(net.runelite.api.coords.LocalPoint)">
+<a id="cancelCurrentMovement()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>sceneWalk</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sceneWalk&#8203;(net.runelite.api.coords.LocalPoint&nbsp;localPoint)</pre>
-<div class="block">Walks to a <code>LocalPoint</code>, which is a coordinate relative to the currently loaded scene.</div>
+<h4>cancelCurrentMovement</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;cancelCurrentMovement()</pre>
+<div class="block">Cancels the current movement task.</div>
+</li>
+</ul>
+<a id="moveTo(net.runelite.api.coords.WorldPoint)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>moveTo</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;moveTo&#8203;(net.runelite.api.coords.WorldPoint&nbsp;point)</pre>
+<div class="block">Moves the player to a specific world point. This takes into account when it is called
+ from within an instance and will convert the world point from an instance world point into a
+ normal world point which is moveable.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>localPoint</code> - The scene-relative coordinates to walk to.</dd>
+<dd><code>point</code> - The world point to move towards</dd>
 </dl>
 </li>
 </ul>
-<a id="sceneWalk(int,int)">
+<a id="moveTo(net.runelite.api.coords.LocalPoint)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>moveTo</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;moveTo&#8203;(net.runelite.api.coords.LocalPoint&nbsp;point)</pre>
+<div class="block">Moves the player to a given local point using packets. This method assumes that if the local point passed
+ is in an instance it</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>point</code> - The local point to move to</dd>
+</dl>
+</li>
+</ul>
+<a id="destroy()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>sceneWalk</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sceneWalk&#8203;(int&nbsp;sceneX,
-                      int&nbsp;sceneY)</pre>
-<div class="block">Core walking method for scene coordinates.
- Sets internal RuneLite scene walking variables via reflection to simulate a click-to-walk action.
- TODO When in fixed mode no stretch plugin SceneWalk actually walks to where your actual mouse last left the canvas. This needs a real mouse to work it seems</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sceneX</code> - The X coordinate within the loaded scene grid.</dd>
-<dd><code>sceneY</code> - The Y coordinate within the loaded scene grid.</dd>
-</dl>
+<h4>destroy</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;destroy()</pre>
+<div class="block">Cleanup resources when service is destroyed.</div>
 </li>
 </ul>
 </li>

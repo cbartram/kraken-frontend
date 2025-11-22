@@ -365,8 +365,8 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 </tr>
 <tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggleSpecialAttackReflect(int,int)">toggleSpecialAttackReflect</a></span>&#8203;(int&nbsp;energyRequired,
-                          int&nbsp;delay)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggleSpecialAttack(int,int)">toggleSpecialAttack</a></span>&#8203;(int&nbsp;energyRequired,
+                   int&nbsp;delay)</code></th>
 <td class="colLast">
 <div class="block">Sets the special attack state if the current special attack energy is greater than or equal to the required special attack energy using reflection instead of mouse events.</div>
 </td>
@@ -549,21 +549,6 @@ public&nbsp;void&nbsp;onVarbitChanged&#8203;(net.runelite.api.events.VarbitChang
 </dl>
 </li>
 </ul>
-<a id="toggleSpecialAttack(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>toggleSpecialAttack</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;toggleSpecialAttack&#8203;(int&nbsp;energyRequired)</pre>
-<div class="block">Sets the special attack state if current special attack energy is greater than or equal to the required special
- attack energy</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>energyRequired</code> - int, 100 = 100%</dd>
-</dl>
-</li>
-</ul>
 <a id="getHealthPercentage()">
 <!--   -->
 </a>
@@ -637,14 +622,29 @@ public&nbsp;void&nbsp;onVarbitChanged&#8203;(net.runelite.api.events.VarbitChang
 </dl>
 </li>
 </ul>
-<a id="toggleSpecialAttackReflect(int,int)">
+<a id="toggleSpecialAttack(int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>toggleSpecialAttackReflect</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;toggleSpecialAttackReflect&#8203;(int&nbsp;energyRequired,
-                                       int&nbsp;delay)</pre>
+<h4>toggleSpecialAttack</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;toggleSpecialAttack&#8203;(int&nbsp;energyRequired)</pre>
+<div class="block">Sets the special attack state if current special attack energy is greater than or equal to the required special
+ attack energy</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>energyRequired</code> - int, 100 = 100%</dd>
+</dl>
+</li>
+</ul>
+<a id="toggleSpecialAttack(int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toggleSpecialAttack</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;toggleSpecialAttack&#8203;(int&nbsp;energyRequired,
+                                int&nbsp;delay)</pre>
 <div class="block">Sets the special attack state if the current special attack energy is greater than or equal to the required special attack energy using reflection instead of mouse events.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
