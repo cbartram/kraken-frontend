@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -322,27 +322,19 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 </tr>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(net.runelite.api.NPC,java.lang.String)">interactReflect</a></span>&#8203;(net.runelite.api.NPC&nbsp;npc,
-               java.lang.String&nbsp;action)</code></th>
-<td class="colLast">
-<div class="block">Interacts with an NPC using a specified action.</div>
-</td>
-</tr>
-<tr id="i18" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInteractingWithPlayer(net.runelite.api.NPC)">isInteractingWithPlayer</a></span>&#8203;(net.runelite.api.NPC&nbsp;npc)</code></th>
 <td class="colLast">
 <div class="block">Checks if this NPC is currently interacting with the player.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isMoving(net.runelite.api.NPC)">isMoving</a></span>&#8203;(net.runelite.api.NPC&nbsp;npc)</code></th>
 <td class="colLast">
 <div class="block">Checks if this NPC is currently moving.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isWithinDistance(net.runelite.api.NPC,net.runelite.api.coords.WorldPoint,int)">isWithinDistance</a></span>&#8203;(net.runelite.api.NPC&nbsp;npc,
                 net.runelite.api.coords.WorldPoint&nbsp;anchor,
@@ -351,7 +343,7 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <div class="block">Checks if this NPC is within a specified distance from a given location.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isWithinDistanceFromPlayer(net.runelite.api.NPC,int)">isWithinDistanceFromPlayer</a></span>&#8203;(net.runelite.api.NPC&nbsp;npc,
                           int&nbsp;maxDistance)</code></th>
@@ -775,34 +767,6 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <dd><code>npc</code> - The npc health to check</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Health percentage (0-100), or -1 if unknown</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(net.runelite.api.NPC,java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(net.runelite.api.NPC&nbsp;npc,
-                               java.lang.String&nbsp;action)</pre>
-<div class="block">Interacts with an NPC using a specified action.
-
- <p>This method performs interaction logic, including:</p>
- <ul>
-   <li>Checking if the NPC is reachable.</li>
-   <li>Handling cases where the bot repeatedly fails to reach the NPC.</li>
-   <li>Determining the correct <code>MenuAction</code> for the specified interaction.</li>
-   <li>Executing the interaction via the RuneLite menu system.</li>
- </ul>
-
- <p>If the NPC cannot be reached after multiple attempts, the bot will pause all scripts and notify the user.</p></div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>npc</code> - The <code>NPC</code> to interact with.</dd>
-<dd><code>action</code> - The action to perform on the NPC (e.g., "Talk-to", "Attack", "Trade").</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>true</code> if the interaction was successfully executed, <code>false</code> if the NPC was unreachable.</dd>
 </dl>
 </li>
 </ul>

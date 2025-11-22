@@ -136,8 +136,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <hr>
-<pre>@Singleton
-public class <span class="typeNameLabel">CameraService</span>
+<pre>public class <span class="typeNameLabel">CameraService</span>
 extends <a href="../../core/AbstractService.html" title="class in com.kraken.api.core">AbstractService</a></pre>
 </li>
 </ul>
@@ -200,27 +199,37 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#adjustPitch(float)">adjustPitch</a></span>&#8203;(float&nbsp;percentage)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Adjusts the camera pitch to the specified percentage.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#angleToTile(net.runelite.api.Actor)">angleToTile</a></span>&#8203;(net.runelite.api.Actor&nbsp;t)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Calculates the angle in degrees from the local player to the specified actor.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#angleToTile(net.runelite.api.coords.LocalPoint)">angleToTile</a></span>&#8203;(net.runelite.api.coords.LocalPoint&nbsp;localPoint)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Calculates the angle in degrees from the local player to the specified local point.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#angleToTile(net.runelite.api.coords.WorldPoint)">angleToTile</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Calculates the angle in degrees from the local player to the specified world point.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#angleToTile(net.runelite.api.TileObject)">angleToTile</a></span>&#8203;(net.runelite.api.TileObject&nbsp;t)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Calculates the angle in degrees from the local player to the specified tile object.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
@@ -232,7 +241,9 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#cameraPitchPercentage()">cameraPitchPercentage</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Calculates the current camera pitch as a percentage of the total pitch range.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -254,47 +265,65 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAngle()">getAngle</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the current camera yaw angle.</div>
+</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAngleTo(int)">getAngleTo</a></span>&#8203;(int&nbsp;degrees)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Calculates the angular difference between the current camera angle and the target angle.</div>
+</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCharacterAngle(net.runelite.api.Actor)">getCharacterAngle</a></span>&#8203;(net.runelite.api.Actor&nbsp;actor)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the camera angle needed to face the specified actor.</div>
+</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getObjectAngle(net.runelite.api.TileObject)">getObjectAngle</a></span>&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the camera angle needed to face the specified tile object.</div>
+</td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPitch()">getPitch</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the current camera pitch value.</div>
+</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTileAngle(net.runelite.api.Actor)">getTileAngle</a></span>&#8203;(net.runelite.api.Actor&nbsp;actor)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Calculates the camera angle needed to face the specified actor.</div>
+</td>
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTileAngle(net.runelite.api.TileObject)">getTileAngle</a></span>&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Calculates the camera angle needed to face the specified tile object.</div>
+</td>
 </tr>
 <tr id="i16" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getYaw()">getYaw</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the current camera yaw (compass facing direction).</div>
+</td>
 </tr>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getZoom()">getZoom</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the current camera zoom level.</div>
+</td>
 </tr>
 <tr id="i18" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -323,12 +352,16 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <tr id="i21" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isTileOnScreen(net.runelite.api.coords.LocalPoint)">isTileOnScreen</a></span>&#8203;(net.runelite.api.coords.LocalPoint&nbsp;localPoint)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Checks if the specified local point is visible on the screen.</div>
+</td>
 </tr>
 <tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isTileOnScreen(net.runelite.api.TileObject)">isTileOnScreen</a></span>&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Checks if the specified tile object is visible on the screen.</div>
+</td>
 </tr>
 <tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -362,17 +395,23 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <tr id="i27" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPitch(int)">setPitch</a></span>&#8203;(int&nbsp;pitch)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Sets the camera pitch to the specified value.</div>
+</td>
 </tr>
 <tr id="i28" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setYaw(int)">setYaw</a></span>&#8203;(int&nbsp;yaw)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Sets the camera yaw (compass facing direction).</div>
+</td>
 </tr>
 <tr id="i29" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setZoom(int)">setZoom</a></span>&#8203;(int&nbsp;zoom)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Sets the camera zoom to the specified level.</div>
+</td>
 </tr>
 <tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -391,35 +430,47 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <tr id="i32" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#turnTo(net.runelite.api.Actor)">turnTo</a></span>&#8203;(net.runelite.api.Actor&nbsp;actor)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Rotates the camera to face the specified actor with a default maximum angle of 40 degrees.</div>
+</td>
 </tr>
 <tr id="i33" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#turnTo(net.runelite.api.Actor,int)">turnTo</a></span>&#8203;(net.runelite.api.Actor&nbsp;actor,
       int&nbsp;maxAngle)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Rotates the camera to face the specified actor with a custom maximum angle.</div>
+</td>
 </tr>
 <tr id="i34" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#turnTo(net.runelite.api.coords.LocalPoint)">turnTo</a></span>&#8203;(net.runelite.api.coords.LocalPoint&nbsp;localPoint)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Rotates the camera to face the specified local point with a default maximum angle of 40 degrees.</div>
+</td>
 </tr>
 <tr id="i35" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#turnTo(net.runelite.api.coords.LocalPoint,int)">turnTo</a></span>&#8203;(net.runelite.api.coords.LocalPoint&nbsp;localPoint,
       int&nbsp;maxAngle)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Rotates the camera to face the specified local point with a custom maximum angle.</div>
+</td>
 </tr>
 <tr id="i36" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#turnTo(net.runelite.api.TileObject)">turnTo</a></span>&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Rotates the camera to face the specified tile object with a default maximum angle of 40 degrees.</div>
+</td>
 </tr>
 <tr id="i37" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#turnTo(net.runelite.api.TileObject,int)">turnTo</a></span>&#8203;(net.runelite.api.TileObject&nbsp;tileObject,
       int&nbsp;maxAngle)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Rotates the camera to face the specified tile object with a custom maximum angle.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -471,6 +522,13 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>angleToTile</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;angleToTile&#8203;(net.runelite.api.Actor&nbsp;t)</pre>
+<div class="block">Calculates the angle in degrees from the local player to the specified actor.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the target actor</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the angle in degrees (0-359), where 0 is east and increases counter-clockwise</dd>
+</dl>
 </li>
 </ul>
 <a id="angleToTile(net.runelite.api.TileObject)">
@@ -480,6 +538,13 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>angleToTile</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;angleToTile&#8203;(net.runelite.api.TileObject&nbsp;t)</pre>
+<div class="block">Calculates the angle in degrees from the local player to the specified tile object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the target tile object</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the angle in degrees (0-359), where 0 is east and increases counter-clockwise</dd>
+</dl>
 </li>
 </ul>
 <a id="angleToTile(net.runelite.api.coords.LocalPoint)">
@@ -489,6 +554,13 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>angleToTile</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;angleToTile&#8203;(net.runelite.api.coords.LocalPoint&nbsp;localPoint)</pre>
+<div class="block">Calculates the angle in degrees from the local player to the specified local point.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>localPoint</code> - the target local point</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the angle in degrees (0-359), where 0 is east and increases counter-clockwise</dd>
+</dl>
 </li>
 </ul>
 <a id="angleToTile(net.runelite.api.coords.WorldPoint)">
@@ -498,6 +570,13 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>angleToTile</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;angleToTile&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint)</pre>
+<div class="block">Calculates the angle in degrees from the local player to the specified world point.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>worldPoint</code> - the target world point</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the angle in degrees (0-359), where 0 is east and increases counter-clockwise</dd>
+</dl>
 </li>
 </ul>
 <a id="turnTo(net.runelite.api.Actor)">
@@ -507,6 +586,11 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>turnTo</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;turnTo&#8203;(net.runelite.api.Actor&nbsp;actor)</pre>
+<div class="block">Rotates the camera to face the specified actor with a default maximum angle of 40 degrees.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actor</code> - the actor to turn towards</dd>
+</dl>
 </li>
 </ul>
 <a id="turnTo(net.runelite.api.Actor,int)">
@@ -517,6 +601,12 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <h4>turnTo</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;turnTo&#8203;(net.runelite.api.Actor&nbsp;actor,
                    int&nbsp;maxAngle)</pre>
+<div class="block">Rotates the camera to face the specified actor with a custom maximum angle.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actor</code> - the actor to turn towards</dd>
+<dd><code>maxAngle</code> - the maximum angle to rotate in a single adjustment</dd>
+</dl>
 </li>
 </ul>
 <a id="turnTo(net.runelite.api.TileObject)">
@@ -526,6 +616,11 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>turnTo</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;turnTo&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</pre>
+<div class="block">Rotates the camera to face the specified tile object with a default maximum angle of 40 degrees.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tileObject</code> - the tile object to turn towards</dd>
+</dl>
 </li>
 </ul>
 <a id="turnTo(net.runelite.api.TileObject,int)">
@@ -536,6 +631,12 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <h4>turnTo</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;turnTo&#8203;(net.runelite.api.TileObject&nbsp;tileObject,
                    int&nbsp;maxAngle)</pre>
+<div class="block">Rotates the camera to face the specified tile object with a custom maximum angle.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tileObject</code> - the tile object to turn towards</dd>
+<dd><code>maxAngle</code> - the maximum angle to rotate in a single adjustment</dd>
+</dl>
 </li>
 </ul>
 <a id="turnTo(net.runelite.api.coords.LocalPoint)">
@@ -545,6 +646,11 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>turnTo</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;turnTo&#8203;(net.runelite.api.coords.LocalPoint&nbsp;localPoint)</pre>
+<div class="block">Rotates the camera to face the specified local point with a default maximum angle of 40 degrees.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>localPoint</code> - the local point to turn towards</dd>
+</dl>
 </li>
 </ul>
 <a id="turnTo(net.runelite.api.coords.LocalPoint,int)">
@@ -555,6 +661,12 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <h4>turnTo</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;turnTo&#8203;(net.runelite.api.coords.LocalPoint&nbsp;localPoint,
                    int&nbsp;maxAngle)</pre>
+<div class="block">Rotates the camera to face the specified local point with a custom maximum angle.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>localPoint</code> - the local point to turn towards</dd>
+<dd><code>maxAngle</code> - the maximum angle to rotate in a single adjustment</dd>
+</dl>
 </li>
 </ul>
 <a id="getCharacterAngle(net.runelite.api.Actor)">
@@ -564,6 +676,13 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>getCharacterAngle</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getCharacterAngle&#8203;(net.runelite.api.Actor&nbsp;actor)</pre>
+<div class="block">Gets the camera angle needed to face the specified actor.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actor</code> - the target actor</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the camera angle in degrees (0-359)</dd>
+</dl>
 </li>
 </ul>
 <a id="getObjectAngle(net.runelite.api.TileObject)">
@@ -573,6 +692,13 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>getObjectAngle</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getObjectAngle&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</pre>
+<div class="block">Gets the camera angle needed to face the specified tile object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tileObject</code> - the target tile object</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the camera angle in degrees (0-359)</dd>
+</dl>
 </li>
 </ul>
 <a id="getTileAngle(net.runelite.api.Actor)">
@@ -582,6 +708,14 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>getTileAngle</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getTileAngle&#8203;(net.runelite.api.Actor&nbsp;actor)</pre>
+<div class="block">Calculates the camera angle needed to face the specified actor.
+ Adjusts the mathematical angle to camera coordinates.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actor</code> - the target actor</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the camera angle in degrees (0-359)</dd>
+</dl>
 </li>
 </ul>
 <a id="getTileAngle(net.runelite.api.TileObject)">
@@ -591,6 +725,14 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>getTileAngle</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getTileAngle&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</pre>
+<div class="block">Calculates the camera angle needed to face the specified tile object.
+ Adjusts the mathematical angle to camera coordinates.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tileObject</code> - the target tile object</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the camera angle in degrees (0-359)</dd>
+</dl>
 </li>
 </ul>
 <a id="isAngleGood(int,int)">
@@ -636,6 +778,12 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>adjustPitch</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;adjustPitch&#8203;(float&nbsp;percentage)</pre>
+<div class="block">Adjusts the camera pitch to the specified percentage.
+ Uses keyboard input to smoothly transition to the target pitch.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>percentage</code> - the target pitch as a percentage (0.0 to 1.0, where 0 is looking down and 1 is looking up)</dd>
+</dl>
 </li>
 </ul>
 <a id="getPitch()">
@@ -645,6 +793,11 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>getPitch</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getPitch()</pre>
+<div class="block">Gets the current camera pitch value.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current camera pitch (128-383, where 128 is looking down and 383 is looking up)</dd>
+</dl>
 </li>
 </ul>
 <a id="setPitch(int)">
@@ -654,6 +807,12 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>setPitch</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setPitch&#8203;(int&nbsp;pitch)</pre>
+<div class="block">Sets the camera pitch to the specified value.
+ The pitch is clamped between the minimum (128) and maximum (383) values.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pitch</code> - the target pitch value (will be clamped to 128-383 range)</dd>
+</dl>
 </li>
 </ul>
 <a id="cameraPitchPercentage()">
@@ -663,6 +822,11 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>cameraPitchPercentage</h4>
 <pre class="methodSignature">public&nbsp;float&nbsp;cameraPitchPercentage()</pre>
+<div class="block">Calculates the current camera pitch as a percentage of the total pitch range.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the pitch percentage (0.0 to 1.0, where 0 is looking down and 1 is looking up)</dd>
+</dl>
 </li>
 </ul>
 <a id="getAngleTo(int)">
@@ -672,6 +836,14 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>getAngleTo</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getAngleTo&#8203;(int&nbsp;degrees)</pre>
+<div class="block">Calculates the angular difference between the current camera angle and the target angle.
+ Returns a positive value if the target is to the left, negative if to the right.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>degrees</code> - the target angle in degrees</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the angular difference (-180 to 180 degrees)</dd>
+</dl>
 </li>
 </ul>
 <a id="getAngle()">
@@ -681,6 +853,12 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>getAngle</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getAngle()</pre>
+<div class="block">Gets the current camera yaw angle.
+ Converts from the client's fixed-point radians to degrees.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current camera angle in degrees (0-359)</dd>
+</dl>
 </li>
 </ul>
 <a id="calculateCameraYaw(int)">
@@ -744,6 +922,13 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>isTileOnScreen</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isTileOnScreen&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</pre>
+<div class="block">Checks if the specified tile object is visible on the screen.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tileObject</code> - the tile object to check</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the tile object is within the viewport bounds, false otherwise</dd>
+</dl>
 </li>
 </ul>
 <a id="isTileOnScreen(net.runelite.api.coords.LocalPoint)">
@@ -753,6 +938,14 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>isTileOnScreen</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isTileOnScreen&#8203;(net.runelite.api.coords.LocalPoint&nbsp;localPoint)</pre>
+<div class="block">Checks if the specified local point is visible on the screen.
+ Verifies that the tile polygon intersects with the viewport and that the tile is in front of the camera.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>localPoint</code> - the local point to check</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the tile is within the viewport bounds and in front of the camera, false otherwise</dd>
+</dl>
 </li>
 </ul>
 <a id="getZoom()">
@@ -762,6 +955,11 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>getZoom</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getZoom()</pre>
+<div class="block">Gets the current camera zoom level.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current zoom value from VarClientInt.CAMERA_ZOOM_RESIZABLE_VIEWPORT</dd>
+</dl>
 </li>
 </ul>
 <a id="setZoom(int)">
@@ -771,6 +969,12 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>setZoom</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setZoom&#8203;(int&nbsp;zoom)</pre>
+<div class="block">Sets the camera zoom to the specified level.
+ Invokes the CAMERA_DO_ZOOM script on the client thread.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>zoom</code> - the target zoom level</dd>
+</dl>
 </li>
 </ul>
 <a id="getYaw()">
@@ -780,6 +984,11 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>getYaw</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getYaw()</pre>
+<div class="block">Gets the current camera yaw (compass facing direction).</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current yaw value (0-2047, where 0/2048=North, 512=West, 1024=South, 1536=East)</dd>
+</dl>
 </li>
 </ul>
 <a id="setYaw(int)">
@@ -789,6 +998,19 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <li class="blockList">
 <h4>setYaw</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setYaw&#8203;(int&nbsp;yaw)</pre>
+<div class="block">Sets the camera yaw (compass facing direction).
+ <p>
+ Yaw values:
+ <ul>
+ <li>North = 0, 2048</li>
+ <li>East = 1536</li>
+ <li>South = 1024</li>
+ <li>West = 512</li>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>yaw</code> - the target yaw value (must be between 0 and 2047)</dd>
+</dl>
 </li>
 </ul>
 <a id="resetPitch()">
@@ -831,7 +1053,7 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <dd><code>marginPercentage</code> - the size of the centered tolerance box, expressed as a percentage
                          of the viewport (e.g. 10.0 for 10%)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>true</code> if the tileâ€™s screen bounds lie entirely within the centered margin box;
+<dd><code>true</code> if the tile's screen bounds lie entirely within the centered margin box;
  <code>false</code> if the tile cannot be projected or lies outside that box</dd>
 </dl>
 </li>
@@ -849,7 +1071,7 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>tile</code> - the local tile coordinate to test (may not be null)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>true</code> if the tileâ€™s screen bounds lie entirely within the centered
+<dd><code>true</code> if the tile's screen bounds lie entirely within the centered
  10% margin box; <code>false</code> otherwise</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#isTileCenteredOnScreen(net.runelite.api.coords.LocalPoint,double)"><code>isTileCenteredOnScreen(LocalPoint, double)</code></a></dd>

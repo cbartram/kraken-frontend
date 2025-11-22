@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -271,21 +271,6 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <div class="block">Interacts with an item on the ground given a TileObject for the item using Packets</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(com.kraken.api.interaction.groundobject.GroundItem)">interactReflect</a></span>&#8203;(<a href="GroundItem.html" title="class in com.kraken.api.interaction.groundobject">GroundItem</a>&nbsp;item)</code></th>
-<td class="colLast">
-<div class="block">Performs the "Take" action on a ground item using reflection</div>
-</td>
-</tr>
-<tr id="i11" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(com.kraken.api.interaction.groundobject.GroundItem,java.lang.String)">interactReflect</a></span>&#8203;(<a href="GroundItem.html" title="class in com.kraken.api.interaction.groundobject">GroundItem</a>&nbsp;groundItem,
-               java.lang.String&nbsp;action)</code></th>
-<td class="colLast">
-<div class="block">Interacts with a ground item by performing a specified action using reflection</div>
-</td>
-</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -422,40 +407,6 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <dd><code>item</code> - The ground item to check</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>True if the ground item can be reached from the players position and false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(com.kraken.api.interaction.groundobject.GroundItem)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(<a href="GroundItem.html" title="class in com.kraken.api.interaction.groundobject">GroundItem</a>&nbsp;item)</pre>
-<div class="block">Performs the "Take" action on a ground item using reflection</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>item</code> - The ground item to interact with</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if the interaction was successful, false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(com.kraken.api.interaction.groundobject.GroundItem,java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(<a href="GroundItem.html" title="class in com.kraken.api.interaction.groundobject">GroundItem</a>&nbsp;groundItem,
-                               java.lang.String&nbsp;action)</pre>
-<div class="block">Interacts with a ground item by performing a specified action using reflection</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>groundItem</code> - The ground item to interact with.</dd>
-<dd><code>action</code> - The action to perform on the ground item. i.e "Take", "Examine", etc...</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if the interaction was successful, false otherwise.</dd>
 </dl>
 </li>
 </ul>

@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -338,50 +338,6 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 </td>
 </tr>
 <tr id="i17" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(int)">interactReflect</a></span>&#8203;(int&nbsp;id)</code></th>
-<td class="colLast">
-<div class="block">Interacts with the first game object found with the specified ID using the default action.</div>
-</td>
-</tr>
-<tr id="i18" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(net.runelite.api.coords.WorldPoint)">interactReflect</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint)</code></th>
-<td class="colLast">
-<div class="block">Interacts with a game object located at the specified world point using the default action.</div>
-</td>
-</tr>
-<tr id="i19" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(net.runelite.api.coords.WorldPoint,java.lang.String)">interactReflect</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint,
-               java.lang.String&nbsp;action)</code></th>
-<td class="colLast">
-<div class="block">Interacts with a game object located at the specified world point using the specified action.</div>
-</td>
-</tr>
-<tr id="i20" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(net.runelite.api.GameObject)">interactReflect</a></span>&#8203;(net.runelite.api.GameObject&nbsp;gameObject)</code></th>
-<td class="colLast">
-<div class="block">Interacts with the specified game object using the default action.</div>
-</td>
-</tr>
-<tr id="i21" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(net.runelite.api.TileObject)">interactReflect</a></span>&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</code></th>
-<td class="colLast">
-<div class="block">Interacts with the specified tile object using the default action.</div>
-</td>
-</tr>
-<tr id="i22" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(net.runelite.api.TileObject,java.lang.String)">interactReflect</a></span>&#8203;(net.runelite.api.TileObject&nbsp;object,
-               java.lang.String&nbsp;action)</code></th>
-<td class="colLast">
-<div class="block">Interacts with the first game object found with the specified ID using the specified action.</div>
-</td>
-</tr>
-<tr id="i23" class="rowColor">
 <td class="colFirst"><code>&lt;T extends net.runelite.api.TileObject&gt;<br>java.util.function.Predicate&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nameMatches(java.lang.String,boolean)">nameMatches</a></span>&#8203;(java.lang.String&nbsp;objectName,
            boolean&nbsp;exact)</code></th>
@@ -389,7 +345,7 @@ extends <a href="../../core/AbstractService.html" title="class in com.kraken.api
 <div class="block">Creates a predicate that matches TileObjects whose name matches the given name.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onGameTick(net.runelite.api.events.GameTick)">onGameTick</a></span>&#8203;(net.runelite.api.events.GameTick&nbsp;e)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -496,107 +452,6 @@ public&nbsp;void&nbsp;onGameTick&#8203;(net.runelite.api.events.GameTick&nbsp;e)
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - The name of the game object to interact with.</dd>
 <dd><code>action</code> - The action to perform on the game object.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the interaction was successful, false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(net.runelite.api.coords.WorldPoint)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint)</pre>
-<div class="block">Interacts with a game object located at the specified world point using the default action.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>worldPoint</code> - The world point of the game object to interact with.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the interaction was successful, false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(net.runelite.api.coords.WorldPoint,java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint,
-                               java.lang.String&nbsp;action)</pre>
-<div class="block">Interacts with a game object located at the specified world point using the specified action.
- If the action is an empty string.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>worldPoint</code> - The world point of the game object to interact with.</dd>
-<dd><code>action</code> - The action to perform on the game object.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the interaction was successful and false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(net.runelite.api.GameObject)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(net.runelite.api.GameObject&nbsp;gameObject)</pre>
-<div class="block">Interacts with the specified game object using the default action.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>gameObject</code> - The game object to interact with.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the interaction was successful, false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(net.runelite.api.TileObject)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</pre>
-<div class="block">Interacts with the specified tile object using the default action.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>tileObject</code> - The tile object to interact with.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the interaction was successful, false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(int&nbsp;id)</pre>
-<div class="block">Interacts with the first game object found with the specified ID using the default action.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>id</code> - The ID of the game object to interact with.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the interaction was successful, false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(net.runelite.api.TileObject,java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(net.runelite.api.TileObject&nbsp;object,
-                               java.lang.String&nbsp;action)</pre>
-<div class="block">Interacts with the first game object found with the specified ID using the specified action.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>object</code> - The tile object to interact with.</dd>
-<dd><code>action</code> - The action to perform on the game object. If empty, the default action "Walk" is used.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>True if the interaction was successful, false otherwise.</dd>
 </dl>

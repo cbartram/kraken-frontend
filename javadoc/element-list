@@ -21,7 +21,6 @@ com.kraken.api.interaction.movement
 com.kraken.api.interaction.npc
 com.kraken.api.interaction.player
 com.kraken.api.interaction.prayer
-com.kraken.api.interaction.reflect
 com.kraken.api.interaction.spells
 com.kraken.api.interaction.tile
 com.kraken.api.interaction.ui

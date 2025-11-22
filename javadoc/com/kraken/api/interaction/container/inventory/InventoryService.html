@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -506,43 +506,26 @@ extends <a href="../../../core/AbstractService.html" title="class in com.kraken.
 </tr>
 <tr id="i41" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(com.kraken.api.interaction.container.inventory.ContainerItem,java.lang.String)">interactReflect</a></span>&#8203;(<a href="ContainerItem.html" title="class in com.kraken.api.interaction.container.inventory">ContainerItem</a>&nbsp;item,
-               java.lang.String&nbsp;action)</code></th>
-<td class="colLast">
-<div class="block">Interacts with an item in the inventory using reflection.</div>
-</td>
-</tr>
-<tr id="i42" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactReflect(com.kraken.api.interaction.container.inventory.ContainerItem,java.lang.String,int)">interactReflect</a></span>&#8203;(<a href="ContainerItem.html" title="class in com.kraken.api.interaction.container.inventory">ContainerItem</a>&nbsp;item,
-               java.lang.String&nbsp;action,
-               int&nbsp;providedIdentifier)</code></th>
-<td class="colLast">
-<div class="block">Interacts with an item in the inventory using reflection.</div>
-</td>
-</tr>
-<tr id="i43" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isEmpty()">isEmpty</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns true if the inventory is empty and false otherwise.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isFull()">isFull</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns true if the inventory is full and false otherwise.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>java.awt.Rectangle</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#itemBounds(com.kraken.api.interaction.container.inventory.ContainerItem)">itemBounds</a></span>&#8203;(<a href="ContainerItem.html" title="class in com.kraken.api.interaction.container.inventory">ContainerItem</a>&nbsp;item)</code></th>
 <td class="colLast">
 <div class="block">Gets the bounding rectangle for the slot of the specified item in the inventory.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#itemHasAction(int,java.lang.String)">itemHasAction</a></span>&#8203;(int&nbsp;itemId,
              java.lang.String&nbsp;action)</code></th>
@@ -550,35 +533,40 @@ extends <a href="../../../core/AbstractService.html" title="class in com.kraken.
 <div class="block">Returns true if the item with the specified ID has the specified action.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onItemContainerChanged(net.runelite.api.events.ItemContainerChanged)">onItemContainerChanged</a></span>&#8203;(net.runelite.api.events.ItemContainerChanged&nbsp;event)</code></th>
 <td class="colLast">
 <div class="block">Refreshes the internal inventory list with new/removed items based on the RuneLite event.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i46" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onWidgetLoaded(net.runelite.api.events.WidgetLoaded)">onWidgetLoaded</a></span>&#8203;(net.runelite.api.events.WidgetLoaded&nbsp;event)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#open()">open</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Opens the inventory.</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#use(int)">use</a></span>&#8203;(int&nbsp;id)</code></th>
 <td class="colLast">
 <div class="block">Uses the item with the specified ID in the inventory.</div>
 </td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#use(com.kraken.api.interaction.container.inventory.ContainerItem)">use</a></span>&#8203;(<a href="ContainerItem.html" title="class in com.kraken.api.interaction.container.inventory">ContainerItem</a>&nbsp;item)</code></th>
 <td class="colLast">
 <div class="block">Uses the given item in the inventory.</div>
 </td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#use(java.lang.String)">use</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
 <td class="colLast">
@@ -628,6 +616,16 @@ extends <a href="../../../core/AbstractService.html" title="class in com.kraken.
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="onWidgetLoaded(net.runelite.api.events.WidgetLoaded)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>onWidgetLoaded</h4>
+<pre class="methodSignature">@Subscribe
+public&nbsp;void&nbsp;onWidgetLoaded&#8203;(net.runelite.api.events.WidgetLoaded&nbsp;event)</pre>
+</li>
+</ul>
 <a id="onItemContainerChanged(net.runelite.api.events.ItemContainerChanged)">
 <!--   -->
 </a>
@@ -913,44 +911,6 @@ public&nbsp;void&nbsp;onItemContainerChanged&#8203;(net.runelite.api.events.Item
 <dd><code>item</code> - The item to use.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>True if the item is successfully used, false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(com.kraken.api.interaction.container.inventory.ContainerItem,java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(<a href="ContainerItem.html" title="class in com.kraken.api.interaction.container.inventory">ContainerItem</a>&nbsp;item,
-                               java.lang.String&nbsp;action)</pre>
-<div class="block">Interacts with an item in the inventory using reflection. If the item has an invalid slot value, it will find the slot based on the item ID.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>item</code> - The item to interact with.</dd>
-<dd><code>action</code> - The action to perform on the item.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the interaction was successful, false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="interactReflect(com.kraken.api.interaction.container.inventory.ContainerItem,java.lang.String,int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>interactReflect</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;interactReflect&#8203;(<a href="ContainerItem.html" title="class in com.kraken.api.interaction.container.inventory">ContainerItem</a>&nbsp;item,
-                               java.lang.String&nbsp;action,
-                               int&nbsp;providedIdentifier)</pre>
-<div class="block">Interacts with an item in the inventory using reflection. If the item has an invalid slot value, it will find the slot based on the item ID.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>item</code> - The item to interact with.</dd>
-<dd><code>action</code> - The action to perform on the item.</dd>
-<dd><code>providedIdentifier</code> - An optional identifier to provide for the interaction. Defaults to -1</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the interaction was successful, false otherwise.</dd>
 </dl>
 </li>
 </ul>
