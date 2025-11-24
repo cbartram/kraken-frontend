@@ -27,14 +27,14 @@ You can launch RuneLite as you normally would through either the Jagex Launcher 
 
 ### Mac
 
-- Navigate to your RuneLite installation folder (Right click and Show Package Contents) `/Applications/RuneLite/Contents.app/resources`
-- Move the downloaded `Kraken-Launcher-2.7.6.jar` file to the installation folder
-- Delete `RuneLite.jar`
-- Rename `Kraken-Launcher-2.7.6.jar` to `RuneLite.jar`
+- Download the `KrakenSetup.jar` file from [the website](https://kraken-plugins.com/download)
+- Double click the JAR file to start the launcher installation process
+- Sometimes MacOS security may warn you about unidentified developer apps
+  - Open `System Preferences > Security & Privacy > General Tab`
+  - Click "Open Anyway" or "Allow Anyway"
+- Your Kraken launcher will be installed and you should see a popup message
 
 Launch RuneLite as normal through your Applications or the Jagex Launcher
-
-![macos-install](../images/macos-install.png)
 
 ## Next Steps
 

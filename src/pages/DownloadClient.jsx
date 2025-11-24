@@ -159,6 +159,7 @@ const DownloadPage = () => {
                                                             <li>
                                                                 Search for <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">"Kraken"</code> in your plugins and enable the "Kraken Plugins" plugin.
                                                             </li>
+                                                            <li>If you see the green Kraken in your sidebar then your plugins are loaded.</li>
                                                         </ol>
                                                         <img
                                                             alt="enable-plugin"
@@ -169,11 +170,10 @@ const DownloadPage = () => {
                                                     </TabsContent>
                                                     <TabsContent value="mac" className="p-4 bg-gray-100 dark:bg-gray-800 rounded-md mt-2">
                                                         <ol className="list-decimal pl-5 space-y-2">
-                                                            <li>Navigate to your RuneLite installation folder (Right click and Show Package Contents) <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">/Applications/RuneLite/Contents.app/resources</code></li>
-                                                            <li>Move the downloaded <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">Kraken-Launcher-2.7.6.jar</code> file to the installation folder</li>
-                                                            <li>Delete <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code></li>
-                                                            <li>Rename <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">Kraken-Launcher-2.7.6.jar</code> to <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">RuneLite.jar</code></li>
-                                                            <li>Launch RuneLite as normal through your Applications or the Jagex Launcher</li>
+                                                            <li>Double click the<code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">KrakenSetup.jar</code> file</li>
+                                                            <li>MacOS security <i>may</i> warn you about running unverified apps.</li>
+                                                            <li>Go to <code className="bg-gray-200 dark:bg-gray-700 p-1 rounded">System Preferences > Security & Privacy > General Tab</code> and click "Open Anyway"</li>
+                                                            <li>You should see an installation successful message.</li>
                                                         </ol>
                                                     </TabsContent>
                                                 </Tabs>
