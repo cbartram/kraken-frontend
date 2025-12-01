@@ -182,43 +182,43 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueTileItemAction(int,int,int,int,boolean)">queueTileItemAction</a></span>&#8203;(int&nbsp;actionFieldNo,
-                   int&nbsp;objectId,
-                   int&nbsp;worldPointX,
-                   int&nbsp;worldPointY,
-                   boolean&nbsp;ctrlDown)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueGroundItemAction(int,int,int,int,boolean)">queueGroundItemAction</a></span>&#8203;(int&nbsp;actionFieldNo,
+                     int&nbsp;objectId,
+                     int&nbsp;worldPointX,
+                     int&nbsp;worldPointY,
+                     boolean&nbsp;ctrlDown)</code></th>
 <td class="colLast">
 <div class="block">Queues the low-level packet to perform a generic action click on a ground item.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueTileItemAction(net.runelite.api.TileItem,net.runelite.api.coords.WorldPoint,boolean)">queueTileItemAction</a></span>&#8203;(net.runelite.api.TileItem&nbsp;item,
-                   net.runelite.api.coords.WorldPoint&nbsp;location,
-                   boolean&nbsp;ctrlDown)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueGroundItemAction(net.runelite.api.TileItem,net.runelite.api.coords.WorldPoint,boolean)">queueGroundItemAction</a></span>&#8203;(net.runelite.api.TileItem&nbsp;item,
+                     net.runelite.api.coords.WorldPoint&nbsp;location,
+                     boolean&nbsp;ctrlDown)</code></th>
 <td class="colLast">
 <div class="block">Queues the packet to perform the default "Take" action (Action 3) on a ground item.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueWidgetOnTileItem(int,int,int,int,int,int,boolean)">queueWidgetOnTileItem</a></span>&#8203;(int&nbsp;objectId,
-                     int&nbsp;worldPointX,
-                     int&nbsp;worldPointY,
-                     int&nbsp;sourceSlot,
-                     int&nbsp;sourceItemId,
-                     int&nbsp;sourceWidgetId,
-                     boolean&nbsp;ctrlDown)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueWidgetOnGroundItem(int,int,int,int,int,int,boolean)">queueWidgetOnGroundItem</a></span>&#8203;(int&nbsp;objectId,
+                       int&nbsp;worldPointX,
+                       int&nbsp;worldPointY,
+                       int&nbsp;sourceSlot,
+                       int&nbsp;sourceItemId,
+                       int&nbsp;sourceWidgetId,
+                       boolean&nbsp;ctrlDown)</code></th>
 <td class="colLast">
 <div class="block">Queues the raw packet for using a widget (typically an item) on a ground item.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueWidgetOnTileItem(net.runelite.api.TileItem,net.runelite.api.coords.WorldPoint,net.runelite.api.widgets.Widget,boolean)">queueWidgetOnTileItem</a></span>&#8203;(net.runelite.api.TileItem&nbsp;item,
-                     net.runelite.api.coords.WorldPoint&nbsp;location,
-                     net.runelite.api.widgets.Widget&nbsp;w,
-                     boolean&nbsp;ctrlDown)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueWidgetOnGroundItem(net.runelite.api.TileItem,net.runelite.api.coords.WorldPoint,net.runelite.api.widgets.Widget,boolean)">queueWidgetOnGroundItem</a></span>&#8203;(net.runelite.api.TileItem&nbsp;item,
+                       net.runelite.api.coords.WorldPoint&nbsp;location,
+                       net.runelite.api.widgets.Widget&nbsp;w,
+                       boolean&nbsp;ctrlDown)</code></th>
 <td class="colLast">
 <div class="block">Queues the packet for using a specific <code>Widget</code> (or item it represents) on a target <code>TileItem</code>.</div>
 </td>
@@ -266,17 +266,17 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="queueTileItemAction(int,int,int,int,boolean)">
+<a id="queueGroundItemAction(int,int,int,int,boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>queueTileItemAction</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;queueTileItemAction&#8203;(int&nbsp;actionFieldNo,
-                                int&nbsp;objectId,
-                                int&nbsp;worldPointX,
-                                int&nbsp;worldPointY,
-                                boolean&nbsp;ctrlDown)</pre>
+<h4>queueGroundItemAction</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;queueGroundItemAction&#8203;(int&nbsp;actionFieldNo,
+                                  int&nbsp;objectId,
+                                  int&nbsp;worldPointX,
+                                  int&nbsp;worldPointY,
+                                  boolean&nbsp;ctrlDown)</pre>
 <div class="block">Queues the low-level packet to perform a generic action click on a ground item.
  <p>
  This method sends one of the <code>OPOBJ</code> packets (e.g., <code>OPOBJ1</code> through <code>OPOBJ5</code>,
@@ -292,19 +292,19 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="queueWidgetOnTileItem(int,int,int,int,int,int,boolean)">
+<a id="queueWidgetOnGroundItem(int,int,int,int,int,int,boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>queueWidgetOnTileItem</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;queueWidgetOnTileItem&#8203;(int&nbsp;objectId,
-                                  int&nbsp;worldPointX,
-                                  int&nbsp;worldPointY,
-                                  int&nbsp;sourceSlot,
-                                  int&nbsp;sourceItemId,
-                                  int&nbsp;sourceWidgetId,
-                                  boolean&nbsp;ctrlDown)</pre>
+<h4>queueWidgetOnGroundItem</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;queueWidgetOnGroundItem&#8203;(int&nbsp;objectId,
+                                    int&nbsp;worldPointX,
+                                    int&nbsp;worldPointY,
+                                    int&nbsp;sourceSlot,
+                                    int&nbsp;sourceItemId,
+                                    int&nbsp;sourceWidgetId,
+                                    boolean&nbsp;ctrlDown)</pre>
 <div class="block">Queues the raw packet for using a widget (typically an item) on a ground item.
  <p>
  This method sends the <code>OPOBJT</code> (Use Widget on Object/Item) packet, which
@@ -321,15 +321,15 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="queueTileItemAction(net.runelite.api.TileItem,net.runelite.api.coords.WorldPoint,boolean)">
+<a id="queueGroundItemAction(net.runelite.api.TileItem,net.runelite.api.coords.WorldPoint,boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>queueTileItemAction</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;queueTileItemAction&#8203;(net.runelite.api.TileItem&nbsp;item,
-                                net.runelite.api.coords.WorldPoint&nbsp;location,
-                                boolean&nbsp;ctrlDown)</pre>
+<h4>queueGroundItemAction</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;queueGroundItemAction&#8203;(net.runelite.api.TileItem&nbsp;item,
+                                  net.runelite.api.coords.WorldPoint&nbsp;location,
+                                  boolean&nbsp;ctrlDown)</pre>
 <div class="block">Queues the packet to perform the default "Take" action (Action 3) on a ground item.
  <p>
  This is a convenience method for the most common interaction with a ground item.
@@ -342,16 +342,16 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="queueWidgetOnTileItem(net.runelite.api.TileItem,net.runelite.api.coords.WorldPoint,net.runelite.api.widgets.Widget,boolean)">
+<a id="queueWidgetOnGroundItem(net.runelite.api.TileItem,net.runelite.api.coords.WorldPoint,net.runelite.api.widgets.Widget,boolean)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>queueWidgetOnTileItem</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;queueWidgetOnTileItem&#8203;(net.runelite.api.TileItem&nbsp;item,
-                                  net.runelite.api.coords.WorldPoint&nbsp;location,
-                                  net.runelite.api.widgets.Widget&nbsp;w,
-                                  boolean&nbsp;ctrlDown)</pre>
+<h4>queueWidgetOnGroundItem</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;queueWidgetOnGroundItem&#8203;(net.runelite.api.TileItem&nbsp;item,
+                                    net.runelite.api.coords.WorldPoint&nbsp;location,
+                                    net.runelite.api.widgets.Widget&nbsp;w,
+                                    boolean&nbsp;ctrlDown)</pre>
 <div class="block">Queues the packet for using a specific <code>Widget</code> (or item it represents) on a target <code>TileItem</code>.
  <p>
  This is a convenience method that simplifies sending the <code>OPOBJT</code> packet
