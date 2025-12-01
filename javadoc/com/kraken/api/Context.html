@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -89,13 +89,13 @@ loadScripts(document, 'script');</script>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -139,34 +139,6 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- =========== FIELD SUMMARY =========== -->
-<section>
-<ul class="blockList">
-<li class="blockList"><a id="field.summary">
-<!--   -->
-</a>
-<h3>Field Summary</h3>
-<table class="memberSummary">
-<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colSecond" scope="col">Field</th>
-<th class="colLast" scope="col">Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected java.util.concurrent.ScheduledExecutorService</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scheduledExecutorService">scheduledExecutorService</a></span></code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>java.util.concurrent.Future&lt;?&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scheduledFuture">scheduledFuture</a></span></code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-</table>
-</li>
-</ul>
-</section>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <section>
 <ul class="blockList">
@@ -181,11 +153,15 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(net.runelite.api.Client,net.runelite.client.callback.ClientThread,com.kraken.api.input.VirtualMouse,net.runelite.client.eventbus.EventBus,com.google.inject.Injector)">Context</a></span>&#8203;(net.runelite.api.Client&nbsp;client,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(net.runelite.api.Client,net.runelite.client.callback.ClientThread,com.kraken.api.input.VirtualMouse,net.runelite.client.eventbus.EventBus,com.google.inject.Injector,com.kraken.api.query.InteractionManager,net.runelite.client.game.ItemManager,com.kraken.api.service.tile.TileService,com.kraken.api.service.bank.BankService)">Context</a></span>&#8203;(net.runelite.api.Client&nbsp;client,
        net.runelite.client.callback.ClientThread&nbsp;clientThread,
        <a href="input/VirtualMouse.html" title="class in com.kraken.api.input">VirtualMouse</a>&nbsp;mouse,
        net.runelite.client.eventbus.EventBus&nbsp;eventBus,
-       com.google.inject.Injector&nbsp;injector)</code></th>
+       com.google.inject.Injector&nbsp;injector,
+       <a href="query/InteractionManager.html" title="class in com.kraken.api.query">InteractionManager</a>&nbsp;interactionManager,
+       net.runelite.client.game.ItemManager&nbsp;itemManager,
+       <a href="service/tile/TileService.html" title="class in com.kraken.api.service.tile">TileService</a>&nbsp;tileService,
+       <a href="service/bank/BankService.html" title="class in com.kraken.api.service.bank">BankService</a>&nbsp;bankService)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -207,27 +183,69 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="query/container/bank/BankQuery.html" title="class in com.kraken.api.query.container.bank">BankQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#bank()">bank</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Creates a new query builder for the Bank interface.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="query/container/bank/BankInventoryQuery.html" title="class in com.kraken.api.query.container.bank">BankInventoryQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#bankInventory()">bankInventory</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Creates a new query builder for a Bank Inventory.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#destroy()">destroy</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Unregisters all Service classes that have methods annotated with @Subscribe from the EventBus.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="query/equipment/EquipmentQuery.html" title="class in com.kraken.api.query.equipment">EquipmentQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equipment()">equipment</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Creates a new query builder for the equipment interface.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="query/gameobject/GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#gameObjects()">gameObjects</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Creates a new query builder for game objects.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVarbitValue(int)">getVarbitValue</a></span>&#8203;(int&nbsp;varbit)</code></th>
 <td class="colLast">
 <div class="block">Returns a varbit value from the RuneLite client.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVarpValue(int)">getVarpValue</a></span>&#8203;(int&nbsp;varp)</code></th>
+<td class="colLast">
+<div class="block">Returns a var player value from the RuneLite client.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>net.runelite.api.widgets.Widget</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWidget(int)">getWidget</a></span>&#8203;(int&nbsp;widgetId)</code></th>
 <td class="colLast">
 <div class="block">Retrieves a Widget from the RuneLite client.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="query/groundobject/GroundObjectQuery.html" title="class in com.kraken.api.query.groundobject">GroundObjectQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#groundItems()">groundItems</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Creates a new query builder for Ground Items.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initializePackets()">initializePackets</a></span>()</code></th>
 <td class="colLast">
@@ -236,37 +254,60 @@ extends java.lang.Object</pre>
  to determine the packet sending method.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="query/container/inventory/InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#inventory()">inventory</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Creates a new query builder for the standard Backpack Inventory.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#npcs()">npcs</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Creates a new query builder for NPCs.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="query/player/PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#players()">players</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Creates a new query builder for Players.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#register()">register</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Registers all Service classes that have methods annotated with @Subscribe to the EventBus.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#runOnClientThread(java.lang.Runnable)">runOnClientThread</a></span>&#8203;(java.lang.Runnable&nbsp;method)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Runs a method on the client thread without returning a result.</div>
+</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#runOnClientThread(java.util.concurrent.Callable)">runOnClientThread</a></span>&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method)</code></th>
 <td class="colLast">
 <div class="block">Run a method on the client thread, returning the result directly.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;java.util.Optional&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#runOnClientThreadOptional(java.util.concurrent.Callable)">runOnClientThreadOptional</a></span>&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method)</code></th>
 <td class="colLast">
 <div class="block">Run a method on the client thread, returning an optional of the result.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#runOnSeperateThread(java.util.concurrent.Callable)">runOnSeperateThread</a></span>&#8203;(java.util.concurrent.Callable&lt;?&gt;&nbsp;method)</code></th>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code><a href="query/widget/WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#widgets()">widgets</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Run a method on the client thread, returning the result.</div>
+<div class="block">Creates a new query builder for Widgets.</div>
 </td>
 </tr>
 </table>
@@ -286,34 +327,6 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
-<!-- ============ FIELD DETAIL =========== -->
-<section>
-<ul class="blockList">
-<li class="blockList"><a id="field.detail">
-<!--   -->
-</a>
-<h3>Field Detail</h3>
-<a id="scheduledExecutorService">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>scheduledExecutorService</h4>
-<pre>protected&nbsp;java.util.concurrent.ScheduledExecutorService scheduledExecutorService</pre>
-</li>
-</ul>
-<a id="scheduledFuture">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>scheduledFuture</h4>
-<pre>public&nbsp;java.util.concurrent.Future&lt;?&gt; scheduledFuture</pre>
-</li>
-</ul>
-</li>
-</ul>
-</section>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <section>
 <ul class="blockList">
@@ -321,7 +334,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(net.runelite.api.Client,net.runelite.client.callback.ClientThread,com.kraken.api.input.VirtualMouse,net.runelite.client.eventbus.EventBus,com.google.inject.Injector)">
+<a id="&lt;init&gt;(net.runelite.api.Client,net.runelite.client.callback.ClientThread,com.kraken.api.input.VirtualMouse,net.runelite.client.eventbus.EventBus,com.google.inject.Injector,com.kraken.api.query.InteractionManager,net.runelite.client.game.ItemManager,com.kraken.api.service.tile.TileService,com.kraken.api.service.bank.BankService)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -332,7 +345,11 @@ public&nbsp;Context&#8203;(net.runelite.api.Client&nbsp;client,
                net.runelite.client.callback.ClientThread&nbsp;clientThread,
                <a href="input/VirtualMouse.html" title="class in com.kraken.api.input">VirtualMouse</a>&nbsp;mouse,
                net.runelite.client.eventbus.EventBus&nbsp;eventBus,
-               com.google.inject.Injector&nbsp;injector)</pre>
+               com.google.inject.Injector&nbsp;injector,
+               <a href="query/InteractionManager.html" title="class in com.kraken.api.query">InteractionManager</a>&nbsp;interactionManager,
+               net.runelite.client.game.ItemManager&nbsp;itemManager,
+               <a href="service/tile/TileService.html" title="class in com.kraken.api.service.tile">TileService</a>&nbsp;tileService,
+               <a href="service/bank/BankService.html" title="class in com.kraken.api.service.bank">BankService</a>&nbsp;bankService)</pre>
 </li>
 </ul>
 </li>
@@ -381,20 +398,6 @@ public&nbsp;Context&#8203;(net.runelite.api.Client&nbsp;client,
 <div class="block">Unregisters all Service classes that have methods annotated with @Subscribe from the EventBus.</div>
 </li>
 </ul>
-<a id="runOnSeperateThread(java.util.concurrent.Callable)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>runOnSeperateThread</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;runOnSeperateThread&#8203;(java.util.concurrent.Callable&lt;?&gt;&nbsp;method)</pre>
-<div class="block">Run a method on the client thread, returning the result.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>method</code> - The method to call</dd>
-</dl>
-</li>
-</ul>
 <a id="getVarbitValue(int)">
 <!--   -->
 </a>
@@ -409,6 +412,23 @@ public&nbsp;Context&#8203;(net.runelite.api.Client&nbsp;client,
 <dd><code>varbit</code> - The varbit value to retrieve.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The varbit value (either 0 for false/unset or 1 for true/set).</dd>
+</dl>
+</li>
+</ul>
+<a id="getVarpValue(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVarpValue</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getVarpValue&#8203;(int&nbsp;varp)</pre>
+<div class="block">Returns a var player value from the RuneLite client. This method is
+ thread safe and runs on the client thread to retrieve the value.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>varp</code> - The varp value to retrieve.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The varp value (either 0 for false/unset or 1 for true/set).</dd>
 </dl>
 </li>
 </ul>
@@ -454,12 +474,17 @@ public&nbsp;Context&#8203;(net.runelite.api.Client&nbsp;client,
 <li class="blockList">
 <h4>runOnClientThread</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;runOnClientThread&#8203;(java.lang.Runnable&nbsp;method)</pre>
+<div class="block">Runs a method on the client thread without returning a result.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>method</code> - Runnable method to execute</dd>
+</dl>
 </li>
 </ul>
 <a id="runOnClientThreadOptional(java.util.concurrent.Callable)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>runOnClientThreadOptional</h4>
 <pre class="methodSignature">public&nbsp;&lt;T&gt;&nbsp;java.util.Optional&lt;T&gt;&nbsp;runOnClientThreadOptional&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method)</pre>
@@ -471,6 +496,153 @@ public&nbsp;Context&#8203;(net.runelite.api.Client&nbsp;client,
 <dd><code>method</code> - The method to call</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The result from the called method</dd>
+</dl>
+</li>
+</ul>
+<a id="npcs()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>npcs</h4>
+<pre class="methodSignature">public&nbsp;<a href="query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;npcs()</pre>
+<div class="block">Creates a new query builder for NPCs.
+ Usage: ctx.npcs().withName("Goblin").first().interact("Attack");</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>NpcQuery object used to chain together predicates to select specific NPC's within the scene.</dd>
+</dl>
+</li>
+</ul>
+<a id="players()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>players</h4>
+<pre class="methodSignature">public&nbsp;<a href="query/player/PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a>&nbsp;players()</pre>
+<div class="block">Creates a new query builder for Players. This will also include the local player as well which can be
+ grabbed with <code>.local()</code>.
+ Usage: ctx.players().withName("Zezima").first().interact("Follow");
+ ctx.players().local().getName();</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>PlayerQuery object used to chain together predicates to select specific Players's within the scene.</dd>
+</dl>
+</li>
+</ul>
+<a id="inventory()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inventory</h4>
+<pre class="methodSignature">public&nbsp;<a href="query/container/inventory/InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a>&nbsp;inventory()</pre>
+<div class="block">Creates a new query builder for the standard Backpack Inventory. This is only for finding items in a players inventory and
+ should not be used when the Bank is open to deposit items. Instead, use <code>BankInventoryQuery</code> for depositing items.
+ Usage: ctx.inventory().withId(1234).count();</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>InventoryQuery object used to chain together predicates to select specific items or groups of items within
+ the players inventory.</dd>
+</dl>
+</li>
+</ul>
+<a id="bankInventory()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bankInventory</h4>
+<pre class="methodSignature">public&nbsp;<a href="query/container/bank/BankInventoryQuery.html" title="class in com.kraken.api.query.container.bank">BankInventoryQuery</a>&nbsp;bankInventory()</pre>
+<div class="block">Creates a new query builder for a Bank Inventory. This should only be used when the bank is open in order to
+ deposit items from the players inventory into the bank. A different parent widget is used for the players inventory
+ while the bank is open compared to the normal players inventory. For querying the players inventory to eat food,
+ interact with objects, or perform general actions without a bank use: <code>InventoryQuery</code>.
+ Usage: ctx.bankInventory().withId(1234).count();</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>BankInventoryQuery object used to chain together predicates to select specific items or groups of items within
+ the players inventory while the bank interface is open.</dd>
+</dl>
+</li>
+</ul>
+<a id="bank()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bank</h4>
+<pre class="methodSignature">public&nbsp;<a href="query/container/bank/BankQuery.html" title="class in com.kraken.api.query.container.bank">BankQuery</a>&nbsp;bank()</pre>
+<div class="block">Creates a new query builder for the Bank interface.
+ Usage: ctx.bank().withId(1234).interact("Withdraw-X");</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>BankQuery object used to chain together predicates to select specific items or groups of items within the players
+ bank.</dd>
+</dl>
+</li>
+</ul>
+<a id="equipment()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>equipment</h4>
+<pre class="methodSignature">public&nbsp;<a href="query/equipment/EquipmentQuery.html" title="class in com.kraken.api.query.equipment">EquipmentQuery</a>&nbsp;equipment()</pre>
+<div class="block">Creates a new query builder for the equipment interface.
+ Usage: ctx.equipment().inSlot(EquipmentInventorySlot.HEAD).interact("Remove");
+ ctx.equipment().withId(1234).interact("Wield");</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>EquipmentQuery object used to chain together predicates to select specific items or groups of items within the players
+ equipment or inventory interface. Only items with the action "wield" or "wear" will be interactable using this query from the inventory.</dd>
+</dl>
+</li>
+</ul>
+<a id="gameObjects()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>gameObjects</h4>
+<pre class="methodSignature">public&nbsp;<a href="query/gameobject/GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a>&nbsp;gameObjects()</pre>
+<div class="block">Creates a new query builder for game objects. Game objects are objects in the game world like: Trees, ore, or fishing
+ spots which exist on tiles, can be interacted with, but cannot be picked up by the player. Usage:
+ ctx.gameObjects().withName("Oak Tree").nearest().interact("Chop");</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>GameObjectQuery used to chain together predicates to select specific game objects within the scene.</dd>
+</dl>
+</li>
+</ul>
+<a id="groundItems()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>groundItems</h4>
+<pre class="methodSignature">public&nbsp;<a href="query/groundobject/GroundObjectQuery.html" title="class in com.kraken.api.query.groundobject">GroundObjectQuery</a>&nbsp;groundItems()</pre>
+<div class="block">Creates a new query builder for Ground Items. GroundItems are items that exist on a tile that the player can pick up
+ and store in their inventory. Examples include: bones dropped from an NPC or loot dropped by another player on a tile.
+ Usage: ctx.groundObjects().withName("Twisted Bow").nearest().interact("Take");</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>GroundObjectQuery used to chain together predicates to select specific ground items within the scene.</dd>
+</dl>
+</li>
+</ul>
+<a id="widgets()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>widgets</h4>
+<pre class="methodSignature">public&nbsp;<a href="query/widget/WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a>&nbsp;widgets()</pre>
+<div class="block">Creates a new query builder for Widgets. Usage: ctx.widgets().withText("Log Out").interact();</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>WidgetQuery used to chain together predicates to select specific widgets within the client.</dd>
 </dl>
 </li>
 </ul>
@@ -526,13 +698,13 @@ public&nbsp;Context&#8203;(net.runelite.api.Client&nbsp;client,
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
