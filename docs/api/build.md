@@ -163,5 +163,3 @@ Since Maven doesn't support inline credentials like Gradle does you will need to
 ## API Versioning
 
 Each release of the API will publish a new semantic version. You can check the latest versions of the [API here](https://github.com/cbartram/kraken-api/releases).
-
-> ⚠️ If you are using the MovementService in your plugin for character pathing you should also include the `shortest-path` dependency.
