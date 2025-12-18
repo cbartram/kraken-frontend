@@ -4,7 +4,6 @@ com.kraken.api.core.packet
 com.kraken.api.core.packet.entity
 com.kraken.api.core.packet.model
 com.kraken.api.core.script
-com.kraken.api.core.script.node
 com.kraken.api.input
 com.kraken.api.overlay
 com.kraken.api.query
@@ -17,7 +16,6 @@ com.kraken.api.query.groundobject
 com.kraken.api.query.npc
 com.kraken.api.query.player
 com.kraken.api.query.widget
-com.kraken.api.service
 com.kraken.api.service.bank
 com.kraken.api.service.camera
 com.kraken.api.service.movement
@@ -25,6 +23,7 @@ com.kraken.api.service.prayer
 com.kraken.api.service.spell
 com.kraken.api.service.tile
 com.kraken.api.service.ui
+com.kraken.api.service.util
 com.kraken.api.sim
 com.kraken.api.sim.engine
 com.kraken.api.sim.model

@@ -102,7 +102,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="com/kraken/api/core/packet/entity/package-tree.html">com.kraken.api.core.packet.entity</a>, </li>
 <li><a href="com/kraken/api/core/packet/model/package-tree.html">com.kraken.api.core.packet.model</a>, </li>
 <li><a href="com/kraken/api/core/script/package-tree.html">com.kraken.api.core.script</a>, </li>
-<li><a href="com/kraken/api/core/script/node/package-tree.html">com.kraken.api.core.script.node</a>, </li>
 <li><a href="com/kraken/api/input/package-tree.html">com.kraken.api.input</a>, </li>
 <li><a href="com/kraken/api/overlay/package-tree.html">com.kraken.api.overlay</a>, </li>
 <li><a href="com/kraken/api/query/package-tree.html">com.kraken.api.query</a>, </li>
@@ -115,7 +114,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="com/kraken/api/query/npc/package-tree.html">com.kraken.api.query.npc</a>, </li>
 <li><a href="com/kraken/api/query/player/package-tree.html">com.kraken.api.query.player</a>, </li>
 <li><a href="com/kraken/api/query/widget/package-tree.html">com.kraken.api.query.widget</a>, </li>
-<li><a href="com/kraken/api/service/package-tree.html">com.kraken.api.service</a>, </li>
 <li><a href="com/kraken/api/service/bank/package-tree.html">com.kraken.api.service.bank</a>, </li>
 <li><a href="com/kraken/api/service/camera/package-tree.html">com.kraken.api.service.camera</a>, </li>
 <li><a href="com/kraken/api/service/movement/package-tree.html">com.kraken.api.service.movement</a>, </li>
@@ -123,6 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="com/kraken/api/service/spell/package-tree.html">com.kraken.api.service.spell</a>, </li>
 <li><a href="com/kraken/api/service/tile/package-tree.html">com.kraken.api.service.tile</a>, </li>
 <li><a href="com/kraken/api/service/ui/package-tree.html">com.kraken.api.service.ui</a>, </li>
+<li><a href="com/kraken/api/service/util/package-tree.html">com.kraken.api.service.util</a>, </li>
 <li><a href="com/kraken/api/sim/package-tree.html">com.kraken.api.sim</a>, </li>
 <li><a href="com/kraken/api/sim/engine/package-tree.html">com.kraken.api.sim.engine</a>, </li>
 <li><a href="com/kraken/api/sim/model/package-tree.html">com.kraken.api.sim.model</a>, </li>
@@ -136,7 +135,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul>
 <li class="circle">java.lang.Object
 <ul>
-<li class="circle">com.kraken.api.core.<a href="com/kraken/api/core/AbstractEntity.html" title="class in com.kraken.api.core"><span class="typeNameLink">AbstractEntity</span></a>&lt;R&gt; (implements com.kraken.api.core.<a href="com/kraken/api/core/Interactable.html" title="interface in com.kraken.api.core">Interactable</a>&lt;T&gt;)
+<li class="circle">com.kraken.api.core.<a href="com/kraken/api/core/AbstractEntity.html" title="class in com.kraken.api.core"><span class="typeNameLink">AbstractEntity</span></a>&lt;T&gt; (implements com.kraken.api.core.<a href="com/kraken/api/core/Interactable.html" title="interface in com.kraken.api.core">Interactable</a>&lt;T&gt;)
 <ul>
 <li class="circle">com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankEntity.html" title="class in com.kraken.api.query.container.bank"><span class="typeNameLink">BankEntity</span></a></li>
 <li class="circle">com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankInventoryEntity.html" title="class in com.kraken.api.query.container.bank"><span class="typeNameLink">BankInventoryEntity</span></a></li>
@@ -168,7 +167,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </li>
 <li class="circle">com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank"><span class="typeNameLink">BankItemWidget</span></a> (implements net.runelite.api.widgets.Widget)</li>
 <li class="circle">com.kraken.api.service.bank.<a href="com/kraken/api/service/bank/BankService.html" title="class in com.kraken.api.service.bank"><span class="typeNameLink">BankService</span></a></li>
-<li class="circle">com.kraken.api.core.script.<a href="com/kraken/api/core/script/BehaviorTree.html" title="class in com.kraken.api.core.script"><span class="typeNameLink">BehaviorTree</span></a></li>
 <li class="circle">com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/BufferUtils.html" title="class in com.kraken.api.core.packet"><span class="typeNameLink">BufferUtils</span></a></li>
 <li class="circle">com.kraken.api.service.camera.<a href="com/kraken/api/service/camera/CameraService.html" title="class in com.kraken.api.service.camera"><span class="typeNameLink">CameraService</span></a></li>
 <li class="circle">com.kraken.api.sim.<a href="com/kraken/api/sim/CollisionDumper.html" title="class in com.kraken.api.sim"><span class="typeNameLink">CollisionDumper</span></a></li>
@@ -203,22 +201,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </li>
 </ul>
 </li>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/CompositeBehaviorNode.html" title="class in com.kraken.api.core.script.node"><span class="typeNameLink">CompositeBehaviorNode</span></a> (implements com.kraken.api.core.script.<a href="com/kraken/api/core/script/BehaviorNode.html" title="interface in com.kraken.api.core.script">BehaviorNode</a>)
-<ul>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/ParallelNode.html" title="class in com.kraken.api.core.script.node"><span class="typeNameLink">ParallelNode</span></a></li>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/SelectorNode.html" title="class in com.kraken.api.core.script.node"><span class="typeNameLink">SelectorNode</span></a></li>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/SequenceNode.html" title="class in com.kraken.api.core.script.node"><span class="typeNameLink">SequenceNode</span></a></li>
-</ul>
-</li>
 <li class="circle">com.kraken.api.query.container.<a href="com/kraken/api/query/container/ContainerItem.html" title="class in com.kraken.api.query.container"><span class="typeNameLink">ContainerItem</span></a></li>
 <li class="circle">com.kraken.api.<a href="com/kraken/api/Context.html" title="class in com.kraken.api"><span class="typeNameLink">Context</span></a></li>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/DecoratorNode.html" title="class in com.kraken.api.core.script.node"><span class="typeNameLink">DecoratorNode</span></a> (implements com.kraken.api.core.script.<a href="com/kraken/api/core/script/BehaviorNode.html" title="interface in com.kraken.api.core.script">BehaviorNode</a>)
-<ul>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/InverterNode.html" title="class in com.kraken.api.core.script.node"><span class="typeNameLink">InverterNode</span></a></li>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/RepeatNode.html" title="class in com.kraken.api.core.script.node"><span class="typeNameLink">RepeatNode</span></a></li>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/RetryNode.html" title="class in com.kraken.api.core.script.node"><span class="typeNameLink">RetryNode</span></a></li>
-</ul>
-</li>
 <li class="circle">com.kraken.api.core.packet.entity.<a href="com/kraken/api/core/packet/entity/GameObjectPackets.html" title="class in com.kraken.api.core.packet.entity"><span class="typeNameLink">GameObjectPackets</span></a></li>
 <li class="circle">com.kraken.api.sim.model.<a href="com/kraken/api/sim/model/GameState.html" title="class in com.kraken.api.sim.model"><span class="typeNameLink">GameState</span></a></li>
 <li class="circle">com.kraken.api.query.groundobject.<a href="com/kraken/api/query/groundobject/GroundItem.html" title="class in com.kraken.api.query.groundobject"><span class="typeNameLink">GroundItem</span></a></li>
@@ -246,18 +230,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">com.kraken.api.service.movement.<a href="com/kraken/api/service/movement/Pathfinder.html" title="class in com.kraken.api.service.movement"><span class="typeNameLink">Pathfinder</span></a></li>
 <li class="circle">com.kraken.api.core.packet.entity.<a href="com/kraken/api/core/packet/entity/PlayerPackets.html" title="class in com.kraken.api.core.packet.entity"><span class="typeNameLink">PlayerPackets</span></a></li>
 <li class="circle">com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer"><span class="typeNameLink">PrayerService</span></a></li>
-<li class="circle">com.kraken.api.service.<a href="com/kraken/api/service/RandomService.html" title="class in com.kraken.api.service"><span class="typeNameLink">RandomService</span></a></li>
+<li class="circle">com.kraken.api.service.util.<a href="com/kraken/api/service/util/RandomService.html" title="class in com.kraken.api.service.util"><span class="typeNameLink">RandomService</span></a></li>
 <li class="circle">com.kraken.api.util.<a href="com/kraken/api/util/RandomUtils.html" title="class in com.kraken.api.util"><span class="typeNameLink">RandomUtils</span></a></li>
-<li class="circle">com.kraken.api.core.script.<a href="com/kraken/api/core/script/Script.html" title="class in com.kraken.api.core.script"><span class="typeNameLink">Script</span></a> (implements com.kraken.api.core.script.<a href="com/kraken/api/core/script/Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a>)
-<ul>
-<li class="circle">com.kraken.api.core.script.<a href="com/kraken/api/core/script/BehaviorTreeScript.html" title="class in com.kraken.api.core.script"><span class="typeNameLink">BehaviorTreeScript</span></a></li>
-</ul>
-</li>
+<li class="circle">com.kraken.api.core.script.<a href="com/kraken/api/core/script/RunnableTask.html" title="class in com.kraken.api.core.script"><span class="typeNameLink">RunnableTask</span></a> (implements java.lang.Runnable)</li>
+<li class="circle">com.kraken.api.core.script.<a href="com/kraken/api/core/script/Script.html" title="class in com.kraken.api.core.script"><span class="typeNameLink">Script</span></a> (implements com.kraken.api.core.script.<a href="com/kraken/api/core/script/Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a>)</li>
 <li class="circle">com.kraken.api.sim.model.<a href="com/kraken/api/sim/model/SimNpc.html" title="class in com.kraken.api.sim.model"><span class="typeNameLink">SimNpc</span></a></li>
 <li class="circle">com.kraken.api.sim.model.<a href="com/kraken/api/sim/model/SimPlayer.html" title="class in com.kraken.api.sim.model"><span class="typeNameLink">SimPlayer</span></a></li>
 <li class="circle">com.kraken.api.sim.engine.<a href="com/kraken/api/sim/engine/SimulationEngine.html" title="class in com.kraken.api.sim.engine"><span class="typeNameLink">SimulationEngine</span></a></li>
 <li class="circle">com.kraken.api.sim.ui.<a href="com/kraken/api/sim/ui/SimulationUIState.html" title="class in com.kraken.api.sim.ui"><span class="typeNameLink">SimulationUIState</span></a></li>
-<li class="circle">com.kraken.api.service.<a href="com/kraken/api/service/SleepService.html" title="class in com.kraken.api.service"><span class="typeNameLink">SleepService</span></a></li>
+<li class="circle">com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util"><span class="typeNameLink">SleepService</span></a></li>
 <li class="circle">com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/SpellService.html" title="class in com.kraken.api.service.spell"><span class="typeNameLink">SpellService</span></a></li>
 <li class="circle">com.kraken.api.util.<a href="com/kraken/api/util/StringUtils.html" title="class in com.kraken.api.util"><span class="typeNameLink">StringUtils</span></a></li>
 <li class="circle">com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/TabService.html" title="class in com.kraken.api.service.ui"><span class="typeNameLink">TabService</span></a></li>
@@ -265,7 +246,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui"><span class="typeNameLink">UIService</span></a></li>
 <li class="circle">com.kraken.api.input.<a href="com/kraken/api/input/VirtualMouse.html" title="class in com.kraken.api.input"><span class="typeNameLink">VirtualMouse</span></a></li>
 <li class="circle">com.kraken.api.core.packet.entity.<a href="com/kraken/api/core/packet/entity/WidgetPackets.html" title="class in com.kraken.api.core.packet.entity"><span class="typeNameLink">WidgetPackets</span></a></li>
-<li class="circle">com.kraken.api.query.widget.<a href="com/kraken/api/query/widget/WidgetRecursiveStream.html" title="class in com.kraken.api.query.widget"><span class="typeNameLink">WidgetRecursiveStream</span></a></li>
 </ul>
 </li>
 </ul>
@@ -273,13 +253,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <section>
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
-<li class="circle">com.kraken.api.core.script.<a href="com/kraken/api/core/script/BehaviorNode.html" title="interface in com.kraken.api.core.script"><span class="typeNameLink">BehaviorNode</span></a>
-<ul>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/ActionNode.html" title="interface in com.kraken.api.core.script.node"><span class="typeNameLink">ActionNode</span></a></li>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/ConditionNode.html" title="interface in com.kraken.api.core.script.node"><span class="typeNameLink">ConditionNode</span></a></li>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/InverseConditionNode.html" title="interface in com.kraken.api.core.script.node"><span class="typeNameLink">InverseConditionNode</span></a></li>
-</ul>
-</li>
 <li class="circle">com.kraken.api.core.<a href="com/kraken/api/core/Interactable.html" title="interface in com.kraken.api.core"><span class="typeNameLink">Interactable</span></a>&lt;T&gt;</li>
 <li class="circle">com.kraken.api.core.script.<a href="com/kraken/api/core/script/Scriptable.html" title="interface in com.kraken.api.core.script"><span class="typeNameLink">Scriptable</span></a></li>
 <li class="circle">com.kraken.api.sim.<a href="com/kraken/api/sim/SimulationObserver.html" title="interface in com.kraken.api.sim"><span class="typeNameLink">SimulationObserver</span></a></li>
@@ -293,12 +266,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">java.lang.Enum&lt;E&gt; (implements java.lang.Comparable&lt;T&gt;, java.io.Serializable)
 <ul>
 <li class="circle">com.kraken.api.sim.model.<a href="com/kraken/api/sim/model/AttackStyle.html" title="enum in com.kraken.api.sim.model"><span class="typeNameLink">AttackStyle</span></a></li>
-<li class="circle">com.kraken.api.core.script.<a href="com/kraken/api/core/script/BehaviorResult.html" title="enum in com.kraken.api.core.script"><span class="typeNameLink">BehaviorResult</span></a></li>
+<li class="circle">com.kraken.api.query.container.<a href="com/kraken/api/query/container/ContainerItem.ItemOrigin.html" title="enum in com.kraken.api.query.container"><span class="typeNameLink">ContainerItem.ItemOrigin</span></a></li>
 <li class="circle">com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer"><span class="typeNameLink">InteractablePrayer</span></a></li>
 <li class="circle">com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui"><span class="typeNameLink">InterfaceTab</span></a></li>
 <li class="circle">com.kraken.api.sim.<a href="com/kraken/api/sim/MovementFlag.html" title="enum in com.kraken.api.sim"><span class="typeNameLink">MovementFlag</span></a></li>
 <li class="circle">com.kraken.api.core.packet.model.<a href="com/kraken/api/core/packet/model/PacketType.html" title="enum in com.kraken.api.core.packet.model"><span class="typeNameLink">PacketType</span></a></li>
-<li class="circle">com.kraken.api.core.script.node.<a href="com/kraken/api/core/script/node/ParallelNode.ParallelPolicy.html" title="enum in com.kraken.api.core.script.node"><span class="typeNameLink">ParallelNode.ParallelPolicy</span></a></li>
 <li class="circle">com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Runes.html" title="enum in com.kraken.api.service.spell"><span class="typeNameLink">Runes</span></a></li>
 <li class="circle">com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spellbook.html" title="enum in com.kraken.api.service.spell"><span class="typeNameLink">Spellbook</span></a></li>
 <li class="circle">com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell"><span class="typeNameLink">Spells</span></a></li>

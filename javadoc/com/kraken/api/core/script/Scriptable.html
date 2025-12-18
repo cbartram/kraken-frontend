@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6};
+var data = {"i0":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -124,10 +124,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="BehaviorTreeScript.html" title="class in com.kraken.api.core.script">BehaviorTreeScript</a></code>, <code><a href="Script.html" title="class in com.kraken.api.core.script">Script</a></code></dd>
+<dd><code><a href="Script.html" title="class in com.kraken.api.core.script">Script</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">Scriptable</span></pre>
+<div class="block">Interface representing a script that can be executed.
+ Implementations of this interface define the main loop of a script.</div>
 </li>
 </ul>
 </div>
@@ -149,19 +151,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loop()">loop</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onEnd()">onEnd</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onStart()">onStart</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stop(java.lang.Runnable)">stop</a></span>&#8203;(java.lang.Runnable&nbsp;callback)</code></th>
+<td class="colLast">
+<div class="block">Gracefully stops a running asynchronous loop().</div>
+</td>
 </tr>
 </table>
 </li>
@@ -180,31 +174,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="onStart()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onStart</h4>
-<pre class="methodSignature">void&nbsp;onStart()</pre>
-</li>
-</ul>
-<a id="onEnd()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onEnd</h4>
-<pre class="methodSignature">void&nbsp;onEnd()</pre>
-</li>
-</ul>
-<a id="loop()">
+<a id="stop(java.lang.Runnable)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>loop</h4>
-<pre class="methodSignature">long&nbsp;loop()</pre>
+<h4>stop</h4>
+<pre class="methodSignature">void&nbsp;stop&#8203;(java.lang.Runnable&nbsp;callback)</pre>
+<div class="block">Gracefully stops a running asynchronous loop().</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>callback</code> - Callback function to execute once the the loop() is stopped.</dd>
+</dl>
 </li>
 </ul>
 </li>
