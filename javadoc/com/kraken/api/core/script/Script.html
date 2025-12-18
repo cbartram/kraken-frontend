@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":6,"i2":6,"i3":6,"i4":10,"i5":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":10,"i1":10,"i2":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -134,12 +134,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></code></dd>
 </dl>
-<dl>
-<dt>Direct Known Subclasses:</dt>
-<dd><code><a href="BehaviorTreeScript.html" title="class in com.kraken.api.core.script">BehaviorTreeScript</a></code></dd>
-</dl>
 <hr>
-<pre>public abstract class <span class="typeNameLabel">Script</span>
+<pre>public class <span class="typeNameLabel">Script</span>
 extends java.lang.Object
 implements <a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></pre>
 </li>
@@ -162,7 +158,7 @@ implements <a href="Scriptable.html" title="interface in com.kraken.api.core.scr
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.kraken.api.Context)">Script</a></span>&#8203;(<a href="../../Context.html" title="class in com.kraken.api">Context</a>&nbsp;context)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">Script</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -177,49 +173,32 @@ implements <a href="Scriptable.html" title="interface in com.kraken.api.core.scr
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>java.lang.String</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRuntimeString()">getRuntimeString</a></span>()</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onGameTick(net.runelite.api.events.GameTick)">onGameTick</a></span>&#8203;(net.runelite.api.events.GameTick&nbsp;event)</code></th>
 <td class="colLast">
-<div class="block">Get the runtime formatted as HH:mm:ss</div>
+<div class="block">Subscriber to the game tick event to handle dealing with starting new futures for the loop() method.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>abstract long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loop()">loop</a></span>()</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stop()">stop</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Called on every scheduled iteration of the script loop.</div>
+<div class="block">Gracefully stops a running asynchronous loop.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>abstract void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onEnd()">onEnd</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Called once when the script is stopped (manually or by returning less than or equal to 0 from loop()).</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code>abstract void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onStart()">onStart</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Called once before the script starts running.</div>
-</td>
-</tr>
-<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start()">start</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stop()">stop</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stop(java.lang.Runnable)">stop</a></span>&#8203;(java.lang.Runnable&nbsp;callback)</code></th>
+<td class="colLast">
+<div class="block">Gracefully stops a running asynchronous loop.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -245,14 +224,13 @@ implements <a href="Scriptable.html" title="interface in com.kraken.api.core.scr
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(com.kraken.api.Context)">
+<a id="&lt;init&gt;()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Script</h4>
-<pre>@Inject
-public&nbsp;Script&#8203;(<a href="../../Context.html" title="class in com.kraken.api">Context</a>&nbsp;context)</pre>
+<pre>public&nbsp;Script()</pre>
 </li>
 </ul>
 </li>
@@ -265,84 +243,45 @@ public&nbsp;Script&#8203;(<a href="../../Context.html" title="class in com.krake
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="onStart()">
+<a id="onGameTick(net.runelite.api.events.GameTick)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>onStart</h4>
-<pre class="methodSignature">public abstract&nbsp;void&nbsp;onStart()</pre>
-<div class="block">Called once before the script starts running.
- Override this to initialize resources or set up services.</div>
+<h4>onGameTick</h4>
+<pre class="methodSignature">public final&nbsp;void&nbsp;onGameTick&#8203;(net.runelite.api.events.GameTick&nbsp;event)</pre>
+<div class="block">Subscriber to the game tick event to handle dealing with starting new futures for the loop() method. Game ticks
+ execute every 0.6 seconds.</div>
 <dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Scriptable.html#onStart()">onStart</a></code>&nbsp;in interface&nbsp;<code><a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>event</code> - the game tick event</dd>
 </dl>
 </li>
 </ul>
-<a id="loop()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>loop</h4>
-<pre class="methodSignature">public abstract&nbsp;long&nbsp;loop()</pre>
-<div class="block">Called on every scheduled iteration of the script loop.
- This is where the user's main logic goes.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Scriptable.html#loop()">loop</a></code>&nbsp;in interface&nbsp;<code><a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>Delay in milliseconds before the next loop iteration.
-         Return less than or equal to 0 to stop execution.</dd>
-</dl>
-</li>
-</ul>
-<a id="onEnd()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onEnd</h4>
-<pre class="methodSignature">public abstract&nbsp;void&nbsp;onEnd()</pre>
-<div class="block">Called once when the script is stopped (manually or by returning less than or equal to 0 from loop()).
- Override this to clean up resources or reset services.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Scriptable.html#onEnd()">onEnd</a></code>&nbsp;in interface&nbsp;<code><a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="start()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>start</h4>
-<pre class="methodSignature">public final&nbsp;void&nbsp;start()</pre>
-</li>
-</ul>
-<a id="stop()">
+<a id="stop(java.lang.Runnable)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>stop</h4>
-<pre class="methodSignature">public final&nbsp;void&nbsp;stop()</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;stop&#8203;(java.lang.Runnable&nbsp;callback)</pre>
+<div class="block">Gracefully stops a running asynchronous loop.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Scriptable.html#stop(java.lang.Runnable)">stop</a></code>&nbsp;in interface&nbsp;<code><a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>callback</code> - callback function to execute once the loop() is stopped</dd>
+</dl>
 </li>
 </ul>
-<a id="getRuntimeString()">
+<a id="stop()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getRuntimeString</h4>
-<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getRuntimeString()</pre>
-<div class="block">Get the runtime formatted as HH:mm:ss</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The runtime of the script formatted as a string</dd>
-</dl>
+<h4>stop</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;stop()</pre>
+<div class="block">Gracefully stops a running asynchronous loop.</div>
 </li>
 </ul>
 </li>
