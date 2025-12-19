@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -135,7 +135,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code><a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></code></dd>
 </dl>
 <hr>
-<pre>public class <span class="typeNameLabel">Script</span>
+<pre>public abstract class <span class="typeNameLabel">Script</span>
 extends java.lang.Object
 implements <a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></pre>
 </li>
@@ -173,31 +173,73 @@ implements <a href="Scriptable.html" title="interface in com.kraken.api.core.scr
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onGameTick(net.runelite.api.events.GameTick)">onGameTick</a></span>&#8203;(net.runelite.api.events.GameTick&nbsp;event)</code></th>
+<td class="colFirst"><code>abstract int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loop()">loop</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Subscriber to the game tick event to handle dealing with starting new futures for the loop() method.</div>
+<div class="block">Executes a specific loop logic and returns an integer result based on the implementation.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onGameTick(net.runelite.api.events.GameTick)">onGameTick</a></span>&#8203;(net.runelite.api.events.GameTick&nbsp;event)</code></th>
+<td class="colLast">
+<div class="block">Handles actions to be executed on each game tick event while the script is running.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onStart()">onStart</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Optional: Called when the script starts.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onStop()">onStop</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Optional: Called when the script stops.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#pause()">pause</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Pauses the execution of the script.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resume()">resume</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Resumes the execution of the script if it is currently paused.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start()">start</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Starts the script execution, initializing necessary components and marking the script as running.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stop()">stop</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gracefully stops a running asynchronous loop.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stop(java.lang.Runnable)">stop</a></span>&#8203;(java.lang.Runnable&nbsp;callback)</code></th>
 <td class="colLast">
-<div class="block">Gracefully stops a running asynchronous loop.</div>
+<div class="block">Stops the current execution loop and performs the necessary cleanup.</div>
 </td>
 </tr>
 </table>
@@ -243,18 +285,243 @@ implements <a href="Scriptable.html" title="interface in com.kraken.api.core.scr
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="loop()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>loop</h4>
+<pre class="methodSignature">public abstract&nbsp;int&nbsp;loop()</pre>
+<div class="block">Executes a specific loop logic and returns an integer result based on the implementation.
+ <p>
+ This abstract method needs to be implemented by subclasses to define the specific
+ behavior of the loop.
+ </p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an integer value representing the amount of time to sleep in milliseconds. Since this is called every game
+  tick, any value  &lt;= 600 will execute on the next game tick.
+
+ <p><strong>Example Usage:</strong></p>
+ <pre>{
+ public class CustomScript extends Script {
+     @Override
+     public int loop() {
+         // Do something to automate the game
+         return 100;
+     }
+ }
+ }</pre></dd>
+</dl>
+</li>
+</ul>
+<a id="onStart()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>onStart</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;onStart()</pre>
+<div class="block">Optional: Called when the script starts.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Scriptable.html#onStart()">onStart</a></code>&nbsp;in interface&nbsp;<code><a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="onStop()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>onStop</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;onStop()</pre>
+<div class="block">Optional: Called when the script stops.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Scriptable.html#onStop()">onStop</a></code>&nbsp;in interface&nbsp;<code><a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="start()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>start</h4>
+<pre class="methodSignature">public final&nbsp;void&nbsp;start()</pre>
+<div class="block">Starts the script execution, initializing necessary components and marking the script as running.
+ <p>
+ This method transitions the script into a "running" state by performing the following steps:
+ </p>
+ <ul>
+   <li>Verifies if the script is already running; if so, the method returns immediately.</li>
+   <li>Sets the internal <code>isRunning</code> flag to <code>true</code> to indicate that the script is running.</li>
+   <li>Registers the script instance to the <code>eventBus</code> for event handling.</li>
+   <li>Generates a log entry indicating that the script has started.</li>
+   <li>Invokes the <a href="#onStart()"><code>onStart()</code></a> method to allow subclasses to define custom startup logic.</li>
+ </ul>
+
+ <h3>Thread-Safety</h3>
+ <p>
+ This method ensures thread-safe initialization of the script's state. However, external synchronization may
+ be required if the method is invoked from multiple threads.
+ </p>
+
+ <h3>Behavior</h3>
+ <ul>
+   <li>If the script is already running, no further actions are performed.</li>
+   <li>Otherwise, the script is initialized, event handling is enabled, and startup logic is executed.</li>
+ </ul>
+
+ <h3>Example Usage</h3>
+ <p>Used during the initialization process of a script:</p>
+ <pre>
+ <code>
+ // Called during the plugin's start-up phase to launch the script
+ @Override
+ protected void startUp() {
+     context.register();
+     context.initializePackets();
+     exampleScript.start(); // Start the script
+
+     overlayManager.add(overlay);
+ }
+ </code>
+ </pre></div>
+</li>
+</ul>
+<a id="pause()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pause</h4>
+<pre class="methodSignature">public final&nbsp;void&nbsp;pause()</pre>
+<div class="block">Pauses the execution of the script.
+ <p>
+ This method halts the script's execution by setting the internal <code>isRunning</code> flag to <code>false</code>.
+ If the script is already paused, invoking this method will have no effect. A log entry is generated
+ to indicate the transition to the paused state.
+ </p>
+
+ <h3>Behavior</h3>
+ <ul>
+   <li>If the script is running (<code>isRunning == true</code>), the method sets <code>isRunning</code> to <code>false</code> and logs the pause action.</li>
+   <li>If the script is already paused or not running, the method performs no actions.</li>
+ </ul>
+
+ <h3>Thread-Safety</h3>
+ <p>
+ Ensure thread-safe access to the script's state when invoking this method to prevent race conditions.
+ </p>
+
+ <h3>Example Usage</h3>
+ <p>Used when a configuration change should trigger the script to pause:</p>
+ <pre>
+ <code>
+ @Subscribe
+ private void onConfigChanged(final ConfigChanged event) {
+     if (event.getGroup().equals("testapi") and event.getKey().equalsIgnoreCase("pauseScript")) {
+         if (config.pauseScript()) {
+             exampleScript.pause();
+         } else {
+             exampleScript.resume();
+         }
+     }
+ }
+ </code>
+ </pre></div>
+</li>
+</ul>
+<a id="resume()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resume</h4>
+<pre class="methodSignature">public final&nbsp;void&nbsp;resume()</pre>
+<div class="block">Resumes the execution of the script if it is currently paused.
+ <p>
+ This method transitions the script's state to running by setting the
+ internal <code>isRunning</code> flag to <code>true</code>. During this process,
+ a log entry is generated to indicate that the script has been resumed.
+ If the script is already running, this method does nothing.
+ </p>
+ <h3>Behavior</h3>
+ <ul>
+ <li>If the script is paused (<code>isRunning == false</code>), the method
+ sets <code>isRunning</code> to <code>true</code> and logs the resumption.</li>
+ <li>If the script is already running, the method performs no actions.</li>
+ </ul>
+ <h3>Thread-Safety</h3>
+ <p>Ensure thread-safe access to the script's state before calling this method.</p>
+
+ <h3>Example Usage:</h3>
+ <pre>
+ <code>
+ @Subscribe
+ private void onConfigChanged(final ConfigChanged event) {
+     if (event.getGroup().equals("testapi") and event.getKey().equalsIgnoreCase("pauseScript")) {
+         if (config.pauseScript()) {
+             exampleScript.pause();
+         } else {
+             exampleScript.resume();
+         }
+     }
+ }
+ </code>
+ </pre></div>
+</li>
+</ul>
 <a id="onGameTick(net.runelite.api.events.GameTick)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>onGameTick</h4>
-<pre class="methodSignature">public final&nbsp;void&nbsp;onGameTick&#8203;(net.runelite.api.events.GameTick&nbsp;event)</pre>
-<div class="block">Subscriber to the game tick event to handle dealing with starting new futures for the loop() method. Game ticks
- execute every 0.6 seconds.</div>
+<pre class="methodSignature">@Subscribe
+public final&nbsp;void&nbsp;onGameTick&#8203;(net.runelite.api.events.GameTick&nbsp;event)</pre>
+<div class="block">Handles actions to be executed on each game tick event while the script is running.
+ <p>
+ This method is triggered by the <code>GameTick</code> event, which occurs at consistent 0.6s intervals in the game.
+ It coordinates the execution of the script's main logic by invoking the <a href="#loop()"><code>loop()</code></a> method on a separate thread.
+ </p>
+
+ <h3>Key Behavior:</h3>
+ <ul>
+     <li>Ensures that the script is running before proceeding. If <code>isRunning</code> is <code>false</code>, the method returns immediately.</li>
+     <li>Skips execution if a previous <code>loop()</code> call is still in progress, indicated by the <code>future</code> object.</li>
+     <li>Submits the <code>loop()</code> logic to an <code>executor</code> service for asynchronous execution.</li>
+     <li>If a delay is set by the <code>loop()</code> method, the thread sleeps for the specified duration before proceeding.</li>
+     <li>Gracefully handles and logs exceptions thrown during the loop execution.</li>
+     <li>Cleans up thread-local resources by calling <a href="RunnableTask.html#dispose()"><code>RunnableTask.dispose()</code></a>.</li>
+ </ul>
+
+ <h3>Threading Model:</h3>
+ <p>
+ The main game logic defined in <a href="#loop()"><code>loop()</code></a> is executed asynchronously to avoid blocking the main game thread.
+ This separation allows for the use of thread sleeps and other blocking operations within the loop's logic.
+ </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>event</code> - the game tick event</dd>
+<dd><code>event</code> - an instance of <code>GameTick</code> representing a single tick of the game clock.
+             It triggers all logic tied to the game's periodic updates.
+
+ <h3>Example Usage:</h3>
+ <pre>
+ <code>
+ public class ExampleScript extends Script {
+
+     @Override
+     public int loop() {
+         log.info("Executing game logic...");
+         // Perform actions such as pathfinding or combat
+         return 1000; // Delay in milliseconds before the next execution
+     }
+ }
+ </code>
+ </pre></dd>
 </dl>
 </li>
 </ul>
@@ -265,12 +532,23 @@ implements <a href="Scriptable.html" title="interface in com.kraken.api.core.scr
 <li class="blockList">
 <h4>stop</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;stop&#8203;(java.lang.Runnable&nbsp;callback)</pre>
-<div class="block">Gracefully stops a running asynchronous loop.</div>
+<div class="block">Stops the current execution loop and performs the necessary cleanup.
+ This method safely shuts down the process, unregisters the instance
+ from the event bus, and triggers the provided callback after successful termination.
+
+ <p>Behavior:</p>
+ <ul>
+     <li>Sets the running status to <code>false</code> if the process is active.</li>
+     <li>Unregisters the instance from the event bus.</li>
+     <li>Cancels the associated <code>RunnableTask</code>.</li>
+     <li>Waits for the asynchronous <code>future</code> to complete before invoking the <code>callback</code>.</li>
+ </ul></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Scriptable.html#stop(java.lang.Runnable)">stop</a></code>&nbsp;in interface&nbsp;<code><a href="Scriptable.html" title="interface in com.kraken.api.core.script">Scriptable</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>callback</code> - callback function to execute once the loop() is stopped</dd>
+<dd><code>callback</code> - A <code>Runnable</code> that will execute after the stop operation is complete;
+                 can be <code>null</code> if no action is required after stopping.</dd>
 </dl>
 </li>
 </ul>

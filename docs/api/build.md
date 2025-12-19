@@ -1,7 +1,7 @@
 # Using the API
 
 The API is packaged as a JAR file and will be required to be on your classpath in order for your plugins to reference it within RuneLite. You
-generally have 2 options for this:
+generally have two options for this:
 
 - Include the API in your build process and bundle the API as a "fat jar" in with your plugin classes
 - Hijack the RuneLite bootstrap process as part of a launcher to pull in the API dependency when RuneLite starts
@@ -9,23 +9,54 @@ generally have 2 options for this:
 This document isn't intended to cover integrating the API into your plugin build and release process. The API will come packaged as a
 standard JAR file. How you choose to integrate and provide the API to your plugins is up to your build process.
 
-## Authentication
+## Gradle Example (Simple)
 
-Since the API packages are hosted on [Github Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages) you will
+Although we recommend using the [Github packages approach](#gradle-example-recommended) to access the API since it is more reliable, [Jitpack](https://jitpack.io/) can get you set up with
+the Kraken API without a personal access token.
+
+```groovy
+plugins {
+    id 'java'
+    id 'application'
+}
+
+// Replace with the package version of the API you need
+def krakenApiVersion = 'X.Y.Z'
+
+allprojects {
+    apply plugin: 'java'
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+
+dependencies {
+    compileOnly group: 'com.github.cbartram', name:'kraken-api', version: krakenApiVersion
+    // ... other dependencies
+}
+```
+
+## Gradle Example (Recommended)
+
+To use the API jar file in your plugin project you will need to either:
+- `export GITHUB_ACTOR=<YOUR_GITHUB_USERNAME>; export GITHUB_TOKEN=<GITHUB_PAT`
+- or add the following to your `gradle.properties` file: `gpr.user=your-github-username gpr.key=your-personal-access-token`
+
+More information on generating a GitHub Personal Access token can [be found below](#authentication).
+
+###  Authentication
+
+Since the API packages are hosted on [GitHub Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages) you will
 need to generate a [Personal Access Token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens?versionId=free-pro-team%40latest&productId=packages&restPage=learn-github-packages%2Cintroduction-to-github-packages) on GitHub
 to authenticate and pull down the API.
 
-You can generate a Github PAT by navigating to your [Github Settings](https://github.com/settings/personal-access-tokens)
-and clicking "Generate new Token". Give the token a unique name and optional description with read-only access to public repositories. Store the token
-in a safe place as it won't be viewable again. It can be used to authenticate to GitHub and pull Kraken API packages. Do **NOT** share this token with anyone.
+You can generate a GitHub PAT by navigating to your [GitHub Settings](https://github.com/settings/personal-access-tokens)
+and clicking "Generate new Token." Give the token a unique name and optional description with read-only access to public repositories. Store the token
+in a safe place as it won't be viewable again. It can be used to authenticate to GitHub and pull Kraken API packages.
 
-## Gradle Build Example
-
-Here is an example `build.gradle` for incorporating the API. To use the API jar file in your plugin project add the 
-package to your `build.gradle` file. You will need to either:
-- `export GITHUB_ACTOR=<YOUR_GITHUB_USERNAME>; export GITHUB_TOKEN=<GITHUB_PAT`
-- Add the following to your `gradle.properties` file: `gpr.user=your-github-username gpr.key=your-personal-access-token`
-
+> :warning: Do **NOT** share this token with anyone.
+> 
 ```groovy
 plugins {
     id 'java'
@@ -49,7 +80,7 @@ allprojects {
             }
         }
 
-        // Jitpack is a legacy provider for Kraken API artifacts < 1.0.77 as well as shortest-path artifacts <= 1.0.3
+        // Jitpack is an alternative means of accessing the API Jar file
         maven { url 'https://jitpack.io' }
     }
 }
