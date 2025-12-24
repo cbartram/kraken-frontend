@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -224,12 +224,20 @@ extends <a href="../../core/AbstractEntity.html" title="class in com.kraken.api.
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(java.lang.String,java.lang.String)">interact</a></span>&#8203;(java.lang.String&nbsp;menu,
+        java.lang.String&nbsp;action)</code></th>
+<td class="colLast">
+<div class="block">Interacts with a widget by invoking a specified menu and action.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isVisible()">isVisible</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Checks if the widget is currently visible.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#matches(java.lang.String,boolean)">matches</a></span>&#8203;(java.lang.String&nbsp;search,
        boolean&nbsp;exact)</code></th>
@@ -237,21 +245,21 @@ extends <a href="../../core/AbstractEntity.html" title="class in com.kraken.api.
 <div class="block">Checks if the widget text, name, or actions match the input.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#useOn(net.runelite.api.GameObject)">useOn</a></span>&#8203;(net.runelite.api.GameObject&nbsp;gameObject)</code></th>
 <td class="colLast">
 <div class="block">Uses a widget on a Game Object (i.e.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#useOn(net.runelite.api.NPC)">useOn</a></span>&#8203;(net.runelite.api.NPC&nbsp;npc)</code></th>
 <td class="colLast">
 <div class="block">Uses a widget on an NPC (i.e.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#useOn(net.runelite.api.widgets.Widget)">useOn</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;destinationWidget)</code></th>
 <td class="colLast">
@@ -372,6 +380,32 @@ extends <a href="../../core/AbstractEntity.html" title="class in com.kraken.api.
 <dd><code>action</code> - The menu action to trigger (e.g., "Attack", "Talk-to", "Take")</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the interaction packet was successfully queued/sent</dd>
+</dl>
+</li>
+</ul>
+<a id="interact(java.lang.String,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interact</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;interact&#8203;(java.lang.String&nbsp;menu,
+                        java.lang.String&nbsp;action)</pre>
+<div class="block">Interacts with a widget by invoking a specified menu and action.
+
+ <p>This method attempts to perform an interaction on a widget identified
+ by its underlying raw representation. If the raw widget is <code>null</code>,
+ the method will immediately return <code>false</code>. Otherwise, it delegates
+ the interaction process to the interaction manager.</p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>menu</code> - The menu option to be selected during the interaction.
+             For example, this could represent a contextual menu option like "Use" or "Examine".</dd>
+<dd><code>action</code> - The specific action to be invoked within the selected menu option.
+               This typically represents the intended effect of the interaction, such as "Wield".</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the interaction process was initiated successfully;
+         <code>false</code> if the underlying widget was <code>null</code> and no action was performed.</dd>
 </dl>
 </li>
 </ul>

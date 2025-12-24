@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -315,6 +315,11 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
 </td>
 </tr>
 <tr id="i15" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logout()">logout</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onVarbitChanged(net.runelite.api.events.VarbitChanged)">onVarbitChanged</a></span>&#8203;(net.runelite.api.events.VarbitChanged&nbsp;event)</code></th>
 <td class="colLast">
@@ -322,21 +327,21 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
  positive values representing the amount of poison or venom damage the player will be taking.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>net.runelite.api.Player</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#raw()">raw</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the wrapped (raw) RuneLite API object for this interactable game entity.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggleRun()">toggleRun</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Toggles the players run energy.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggleSpecialAttack(int)">toggleSpecialAttack</a></span>&#8203;(int&nbsp;energyRequired)</code></th>
 <td class="colLast">
@@ -344,12 +349,19 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
  attack energy</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggleSpecialAttack(int,int)">toggleSpecialAttack</a></span>&#8203;(int&nbsp;energyRequired,
                    int&nbsp;delay)</code></th>
 <td class="colLast">
 <div class="block">Sets the special attack state if the current special attack energy is greater than or equal to the required special attack energy using reflection instead of mouse events.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#totalSkillLevel()">totalSkillLevel</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Calculates the total skill level of the player by summing up the real levels of all their skills.</div>
 </td>
 </tr>
 </table>
@@ -358,7 +370,7 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.kraken.api.query.player.<a href="PlayerEntity.html" title="class in com.kraken.api.query.player">PlayerEntity</a></h3>
-<code><a href="PlayerEntity.html#getId()">getId</a>, <a href="PlayerEntity.html#getName()">getName</a>, <a href="PlayerEntity.html#interact(java.lang.String)">interact</a></code></li>
+<code><a href="PlayerEntity.html#getId()">getId</a>, <a href="PlayerEntity.html#getName()">getName</a>, <a href="PlayerEntity.html#interact(java.lang.String)">interact</a>, <a href="PlayerEntity.html#isSkulled()">isSkulled</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.com.kraken.api.core.AbstractEntity">
@@ -657,6 +669,33 @@ public&nbsp;void&nbsp;onVarbitChanged&#8203;(net.runelite.api.events.VarbitChang
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>int</dd>
+</dl>
+</li>
+</ul>
+<a id="logout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>logout</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;logout()</pre>
+</li>
+</ul>
+<a id="totalSkillLevel()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>totalSkillLevel</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;totalSkillLevel()</pre>
+<div class="block">Calculates the total skill level of the player by summing up the real levels of all their skills.
+ <p>
+ This method iterates over all available skills and retrieves their real levels from the game client.
+ It then calculates the total by summing up these levels.
+ </p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The total skill level of the player as an integer.</dd>
 </dl>
 </li>
 </ul>

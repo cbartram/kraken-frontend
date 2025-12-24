@@ -5,6 +5,14 @@ com.kraken.api.core.packet.entity
 com.kraken.api.core.packet.model
 com.kraken.api.core.script
 com.kraken.api.input
+com.kraken.api.input.mouse
+com.kraken.api.input.mouse.model
+com.kraken.api.input.mouse.strategy
+com.kraken.api.input.mouse.strategy.bezier
+com.kraken.api.input.mouse.strategy.instant
+com.kraken.api.input.mouse.strategy.linear
+com.kraken.api.input.mouse.strategy.none
+com.kraken.api.input.mouse.strategy.replay
 com.kraken.api.overlay
 com.kraken.api.query
 com.kraken.api.query.container
@@ -16,9 +24,12 @@ com.kraken.api.query.groundobject
 com.kraken.api.query.npc
 com.kraken.api.query.player
 com.kraken.api.query.widget
+com.kraken.api.query.world
 com.kraken.api.service.bank
 com.kraken.api.service.camera
+com.kraken.api.service.map
 com.kraken.api.service.movement
+com.kraken.api.service.pathfinding
 com.kraken.api.service.prayer
 com.kraken.api.service.spell
 com.kraken.api.service.tile

@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -272,6 +272,16 @@ extends java.lang.Object</pre>
  widget item (destination).</div>
 </td>
 </tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueWidgetSubAction(net.runelite.api.widgets.Widget,java.lang.String,java.lang.String)">queueWidgetSubAction</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;widget,
+                    java.lang.String&nbsp;menu,
+                    java.lang.String&nbsp;action)</code></th>
+<td class="colLast">
+<div class="block">Queues a widget sub-action packet by identifying the specific sub-action
+ and menu options associated with a given widget.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -359,6 +369,36 @@ extends java.lang.Object</pre>
 <dd><code>actionlist</code> - A varargs list of action strings to search for. The method will
  use the *first* match it finds. The search is case-insensitive
  and ignores color tags.</dd>
+</dl>
+</li>
+</ul>
+<a id="queueWidgetSubAction(net.runelite.api.widgets.Widget,java.lang.String,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>queueWidgetSubAction</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;queueWidgetSubAction&#8203;(net.runelite.api.widgets.Widget&nbsp;widget,
+                                 java.lang.String&nbsp;menu,
+                                 java.lang.String&nbsp;action)</pre>
+<div class="block">Queues a widget sub-action packet by identifying the specific sub-action
+ and menu options associated with a given widget.
+ <p>
+ This method identifies the indices of both a sub-action (from item definitions)
+ and a specific menu option (from the widget's actions). If matches for both
+ the sub-action and menu option are found, it sends a low-level packet to
+ perform the action.
+ <p>
+ Only executes if the widget and its associated item ID are valid, while the
+ sub-actions and menu options must contain the desired action and menu option.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>widget</code> - The <code>Widget</code> instance on which the action is to be performed.
+               This is the target widget for the queued action.</dd>
+<dd><code>menu</code> - A case-insensitive @&lt;String&gt; representing the menu action
+               text to search for (e.g., "Use", "Examine").</dd>
+<dd><code>action</code> - A case-insensitive @&lt;String&gt; representing the sub-action text
+               to search for (e.g., "Clean", "Equip").</dd>
 </dl>
 </li>
 </ul>

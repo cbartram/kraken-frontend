@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -273,6 +273,13 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <div class="block">Filters the stream of game objects for objects with a specific name</div>
 </td>
 </tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withPartialAction(java.lang.String)">withPartialAction</a></span>&#8203;(java.lang.String&nbsp;actionSubstring)</code></th>
+<td class="colLast">
+<div class="block">Filters the game objects to include only those with at least one action containing the specified substring.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.com.kraken.api.core.AbstractQuery">
@@ -402,6 +409,28 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <dd><code>action</code> - The action to check for i.e "Mine", "Chop", "Examine".</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>GameObjectQuery</dd>
+</dl>
+</li>
+</ul>
+<a id="withPartialAction(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withPartialAction</h4>
+<pre class="methodSignature">public&nbsp;<a href="GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a>&nbsp;withPartialAction&#8203;(java.lang.String&nbsp;actionSubstring)</pre>
+<div class="block">Filters the game objects to include only those with at least one action containing the specified substring.
+ <p>
+ This method is case-insensitive and matches the specified substring against all non-null action strings
+ associated with the game object.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>actionSubstring</code> - The substring to search for within the actions of the game objects.
+                        Must not be <code>null</code>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A <code>GameObjectQuery</code> with the applied filter to include only objects with actions matching
+         the specified substring.</dd>
 </dl>
 </li>
 </ul>
