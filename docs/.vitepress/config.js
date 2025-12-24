@@ -53,6 +53,7 @@ export default defineConfig({
                     { text: 'API Access', link: '/api/intro' },
                     { text: 'API Usage', link: '/api/using'},
                     { text: 'Scripting', link: '/api/scripting'},
+                    { text: 'Mouse', link: '/api/mouse'},
                     { text: 'Building', link: '/api/build' },
                     { text: 'API Javadocs', link: 'https://kraken-plugins.com/javadoc/index.html'}
                 ]

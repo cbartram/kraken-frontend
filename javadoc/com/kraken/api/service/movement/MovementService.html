@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -175,17 +175,34 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#moveTo(net.runelite.api.coords.LocalPoint)">moveTo</a></span>&#8203;(net.runelite.api.coords.LocalPoint&nbsp;point)</code></th>
+<td class="colFirst"><code>java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#applyVariableStride(java.util.List)">applyVariableStride</a></span>&#8203;(java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;densePath)</code></th>
 <td class="colLast">
-<div class="block">Moves the player to a given local point using packets.</div>
+<div class="block">Converts a dense path (every tile) into a strided path.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#moveTo(net.runelite.api.coords.LocalPoint)">moveTo</a></span>&#8203;(net.runelite.api.coords.LocalPoint&nbsp;point)</code></th>
+<td class="colLast">
+<div class="block">Moves the player to a specified LocalPoint.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#moveTo(net.runelite.api.coords.WorldPoint)">moveTo</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;point)</code></th>
 <td class="colLast">
-<div class="block">Moves the player to a specific world point.</div>
+<div class="block">Moves the player to the specified WorldPoint, handling instanced areas conversion when necessary.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#traversePath(net.runelite.api.Client,com.kraken.api.service.movement.MovementService,java.util.List)">traversePath</a></span>&#8203;(net.runelite.api.Client&nbsp;client,
+            <a href="MovementService.html" title="class in com.kraken.api.service.movement">MovementService</a>&nbsp;movement,
+            java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;path)</code></th>
+<td class="colLast">
+<div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
+ to each WorldPoint in the sequence.</div>
 </td>
 </tr>
 </table>
@@ -238,27 +255,96 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>moveTo</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;moveTo&#8203;(net.runelite.api.coords.WorldPoint&nbsp;point)</pre>
-<div class="block">Moves the player to a specific world point. This takes into account when it is called
- from within an instance and will convert the world point from an instance world point into a
- normal world point which is moveable.</div>
+<div class="block">Moves the player to the specified WorldPoint, handling instanced areas conversion when necessary.
+ This method ensures accurate movement by checking if the player is within an instance and applying the
+ respective LocalPoint to WorldPoint conversion.
+
+ <p>The operation involves:
+ <ul>
+   <li>Converting the given WorldPoint to handle instanced logic if the player is in an instance.</li>
+   <li>Obtaining a click position on the game canvas for the target point.</li>
+   <li>Sending interaction packets to queue both mouse clicks and movement commands.</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>point</code> - The world point to move towards</dd>
+<dd><code>point</code> - The WorldPoint representing the destination to move towards.</dd>
 </dl>
 </li>
 </ul>
 <a id="moveTo(net.runelite.api.coords.LocalPoint)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>moveTo</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;moveTo&#8203;(net.runelite.api.coords.LocalPoint&nbsp;point)</pre>
-<div class="block">Moves the player to a given local point using packets. This method assumes that if the local point passed
- is in an instance it</div>
+<div class="block">Moves the player to a specified LocalPoint. This method accounts for
+ whether the player is within an instance and converts the LocalPoint
+ to a WorldPoint to enable movement. If the current top-level world view
+ is an instance, additional conversion logic is applied to ensure accuracy.
+
+ <p>The method performs the following actions:
+ <ul>
+   <li>Converts the provided LocalPoint to a WorldPoint, handling instance logic if needed.</li>
+   <li>Determines the clickbox for the target WorldPoint to simulate a mouse click.</li>
+   <li>Queues packets to notify the game client of the movement and corresponding mouse interaction.</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>point</code> - The local point to move to</dd>
+<dd><code>point</code> - The LocalPoint representing the target destination to move towards.</dd>
+</dl>
+</li>
+</ul>
+<a id="applyVariableStride(java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>applyVariableStride</h4>
+<pre class="methodSignature">public&nbsp;java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;applyVariableStride&#8203;(java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;densePath)</pre>
+<div class="block">Converts a dense path (every tile) into a strided path.
+ Logic: Start with a stride of 5, increase by 1 every step, cap at 12.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>densePath</code> - The dense path with which to apply variable strides.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A list of WorldPoint representing the strided path.</dd>
+</dl>
+</li>
+</ul>
+<a id="traversePath(net.runelite.api.Client,com.kraken.api.service.movement.MovementService,java.util.List)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>traversePath</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;traversePath&#8203;(net.runelite.api.Client&nbsp;client,
+                            <a href="MovementService.html" title="class in com.kraken.api.service.movement">MovementService</a>&nbsp;movement,
+                            java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;path)
+                     throws java.lang.InterruptedException</pre>
+<div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
+ to each WorldPoint in the sequence. This method invokes movement commands and uses
+ retries if a waypoint fails to be reached. It aborts if a waypoint cannot be reached after
+ multiple attempts.
+
+ <p>The method performs the following tasks for each waypoint in the path:
+ <ul>
+   <li>Sends a movement command to the client to move towards the target waypoint.</li>
+   <li>Calculates a dynamic timeout based on distance and walking speed, with a buffer for path variance.</li>
+   <li>Waits for the player to reach the waypoint within the allowed timeout.</li>
+   <li>Retries the movement command up to two times if the waypoint is not reached within the timeout.</li>
+   <li>Aborts and returns failure if retries are exhausted for any waypoint.</li>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>client</code> - The client instance used to interact with the game world and retrieve the player's location.</dd>
+<dd><code>movement</code> - The MovementService instance responsible for managing player movement commands.</dd>
+<dd><code>path</code> - A list of WorldPoint objects representing the sequence of waypoints to traverse.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the path was successfully traversed to the end, <code>false</code> if any waypoint
+         could not be reached after retries.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.InterruptedException</code> - If the thread running the method is interrupted during execution.</dd>
 </dl>
 </li>
 </ul>
