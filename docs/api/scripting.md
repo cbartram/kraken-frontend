@@ -111,7 +111,7 @@ public class MyBotScript extends Script {
     @Override
     public void onStart() {
         log.info("MyBotScript started!");
-        // Initialize and add your tasks
+        // Initialize and add your tasks or inject in the constructor with Guice!
         tasks.add(new WalkToBankTask());
         tasks.add(new DepositItemsTask());
         tasks.add(new WithdrawItemsTask());
@@ -139,6 +139,11 @@ public class MyBotScript extends Script {
     }
 }
 ```
+## Continued Reading
+
+As you develop your skills as a scripter you will likely run into issues where tasks need to be executed in some priority order where
+certain tasks take precedence over other ones. The Kraken API ships with a `PriorityTask` abstraction to help you implement your task
+execution logic using a data structure like an ordered list or a priority queue.
 
 By using the Loop and Task system, you achieve:
 
