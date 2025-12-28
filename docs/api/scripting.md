@@ -20,6 +20,14 @@ Every `Script` implementation will typically override the following methods:
     -   Setting up event listeners.
     -   Displaying initial GUI elements.
 
+-   **`start()`**: This method should be called once when the plugin is first started. This calls `onStart()` under the hood.
+
+-   **`stop()`**: This method should be called once when the plugin is stopped. This calls `onStop()` under the hood.
+
+-   **`pause()`**: This method pauses the execution of the script's main loop. This will not pause methods that have been subscribed to within the RuneLite plugin.
+
+-   **`resume()`**: This method resumes the execution of the script's main loop.
+
 -   **`loop()`**: This is the core execution method of the script. It's called repeatedly in a continuous loop every game tick as long as the script is running. Within `loop()`, you'll typically:
     -   Check the current state of the game.
     -   Determine the next action to take.
@@ -71,6 +79,65 @@ The loop method returns an integer which can be used to sleep the script for the
 once every game tick (0.6 seconds) any value less than 600 will execute on the next game tick regardless. You can use the return value of the loop
 to sleep various durations depending on your scripts actions and requirements.
 
+
+## Using a `Script` inside a `Plugin`
+
+Kraken Scripts are designed to be used directly inside RuneLite plugins. The following example shows how to setup
+a script within the familiar RuneLite plugin API:
+
+```java
+@PluginDescriptor(name = "Example Plugin")
+public class FishingPlugin extends Plugin {
+
+    @Inject
+    private MyScript script;
+
+    @Inject
+    private Context ctx;
+    
+    @Inject
+    private MyPluginConfig config;
+
+    @Provides
+    MyPluginConfig provideConfig(final ConfigManager configManager) {
+        return configManager.getConfig(MyPluginConfig.class);
+    }
+
+    @Override
+    protected void startUp() {
+        ctx.initializePackets();
+        script.start(); // Calls Script.onStart()
+    }
+
+    @Override
+    protected void shutDown() {
+        script.stop(); // Calls Script.onStop()
+    }
+    
+    // TODO Add a panel for your plugin with stop, start, pause, resume buttons to your Scripts UI.
+    // control these UI elements with script.resume(), script.pause(), script.stop(), and script.start(), the skies the limit!
+
+    @Subscribe
+    private void onGameStateChanged(final GameStateChanged event) {
+        final GameState gameState = event.getGameState();
+        switch (gameState) {
+            case LOGGED_IN:
+                startUp();
+                break;
+            case HOPPING:
+            case LOGIN_SCREEN:
+                shutDown();
+            default:
+                break;
+        }
+    }
+
+    public String getStatus() {
+        return script.getStatus();
+    }
+}
+```
+
 ## Extending `Script` with the Loop and Task System
 
 While you can implement all your logic directly within `loop()`, for more complex scripts, this can quickly lead to 
@@ -120,7 +187,7 @@ public class MyBotScript extends Script {
     }
 
     @Override
-    public void onLoop() {
+    public void loop() {
         for (Task task : tasks) {
             if (task.validate()) {
                 log.debug("Executing task: " + task.getClass().getSimpleName());
