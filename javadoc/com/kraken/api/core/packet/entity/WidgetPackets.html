@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -216,15 +216,23 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueResumePause(int)">queueResumePause</a></span>&#8203;(int&nbsp;packed)</code></th>
+<td class="colLast">
+<div class="block">Queues the RESUME_PAUSEBUTTON packet, usually sent when interacting with
+ non-interactable dialogs (e.g., "Click here to continue").</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueResumePause(int,int)">queueResumePause</a></span>&#8203;(int&nbsp;widgetId,
                 int&nbsp;childId)</code></th>
 <td class="colLast">
 <div class="block">Queues the RESUME_PAUSEBUTTON packet, typically sent when the player
  clicks a "Click here to continue" or "Close" button on a standard,
- non-interactable dialog, such as a completion message or a pause screen.</div>
+ non-interactable dialog, such as a dialogue with an NPC.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueResumeString(java.lang.String)">queueResumeString</a></span>&#8203;(java.lang.String&nbsp;string)</code></th>
 <td class="colLast">
@@ -232,7 +240,7 @@ extends java.lang.Object</pre>
  asking the player to enter a generic string (e.g., a search query).</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueWidgetAction(net.runelite.api.widgets.Widget,java.lang.String...)">queueWidgetAction</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;widget,
                  java.lang.String...&nbsp;actionlist)</code></th>
@@ -240,7 +248,7 @@ extends java.lang.Object</pre>
 <div class="block">Queues a widget action by searching for a specific action string (e.g., "Withdraw-1", "Bank").</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueWidgetActionPacket(int,int,int,int)">queueWidgetActionPacket</a></span>&#8203;(int&nbsp;widgetId,
                        int&nbsp;childId,
@@ -250,7 +258,7 @@ extends java.lang.Object</pre>
 <div class="block">Queues a low-level widget action packet (IF_BUTTONX).</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueWidgetOnWidget(int,int,int,int,int,int)">queueWidgetOnWidget</a></span>&#8203;(int&nbsp;sourceWidgetId,
                    int&nbsp;sourceSlot,
@@ -263,7 +271,7 @@ extends java.lang.Object</pre>
  source widget on an item/slot of a destination widget.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueWidgetOnWidget(net.runelite.api.widgets.Widget,net.runelite.api.widgets.Widget)">queueWidgetOnWidget</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;srcWidget,
                    net.runelite.api.widgets.Widget&nbsp;destWidget)</code></th>
@@ -272,7 +280,7 @@ extends java.lang.Object</pre>
  widget item (destination).</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queueWidgetSubAction(net.runelite.api.widgets.Widget,java.lang.String,java.lang.String)">queueWidgetSubAction</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;widget,
                     java.lang.String&nbsp;menu,
@@ -457,11 +465,29 @@ extends java.lang.Object</pre>
                              int&nbsp;childId)</pre>
 <div class="block">Queues the RESUME_PAUSEBUTTON packet, typically sent when the player
  clicks a "Click here to continue" or "Close" button on a standard,
- non-interactable dialog, such as a completion message or a pause screen.</div>
+ non-interactable dialog, such as a dialogue with an NPC. The widget id should be
+ a packed integer (containing both the group and child ids).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>widgetId</code> - The ID of the top-level widget.</dd>
+<dd><code>widgetId</code> - The ID of the top-level widget (packed to include group and child ids).</dd>
 <dd><code>childId</code> - The ID of the child component that was clicked.</dd>
+</dl>
+</li>
+</ul>
+<a id="queueResumePause(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>queueResumePause</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;queueResumePause&#8203;(int&nbsp;packed)</pre>
+<div class="block">Queues the RESUME_PAUSEBUTTON packet, usually sent when interacting with
+ non-interactable dialogs (e.g., "Click here to continue").
+
+ <p>This method sends a packet using the provided packed widget ID.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>packed</code> - The packed widget ID, which includes both group and child IDs.</dd>
 </dl>
 </li>
 </ul>

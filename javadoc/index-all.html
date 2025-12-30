@@ -113,7 +113,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/script/AbstractTask.html#%3Cinit%3E()">AbstractTask()</a></span> - Constructor for class com.kraken.api.core.script.<a href="com/kraken/api/core/script/AbstractTask.html" title="class in com.kraken.api.core.script">AbstractTask</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#ACC_MAN">ACC_MAN</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#ACC_MAN">ACC_MAN</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#activatePrayer(net.runelite.api.Prayer)">activatePrayer(Prayer)</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
 <dd>
@@ -161,7 +161,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#alive()">alive()</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
-<div class="block">Filters for NPCs that are alive (health greater than 0).</div>
+<div class="block">Filters the query to include only NPCs that are currently alive.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/equipment/EquipmentQuery.html#all()">all()</a></span> - Method in class com.kraken.api.query.equipment.<a href="com/kraken/api/query/equipment/EquipmentQuery.html" title="class in com.kraken.api.query.equipment">EquipmentQuery</a></dt>
 <dd>
@@ -204,6 +204,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#ARDOUGNE_TELEPORT">ARDOUGNE_TELEPORT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/kraken/api/service/tile/AreaService.html" title="class in com.kraken.api.service.tile"><span class="typeNameLink">AreaService</span></a> - Class in <a href="com/kraken/api/service/tile/package-summary.html">com.kraken.api.service.tile</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/AreaService.html#%3Cinit%3E()">AreaService()</a></span> - Constructor for class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/AreaService.html" title="class in com.kraken.api.service.tile">AreaService</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/CollisionMap.html#arrayToWorld(int,int)">arrayToWorld(int, int)</a></span> - Method in class com.kraken.api.sim.<a href="com/kraken/api/sim/CollisionMap.html" title="class in com.kraken.api.sim">CollisionMap</a></dt>
 <dd>
 <div class="block">Converts array coordinates to world coordinates.</div>
@@ -220,7 +224,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#at(net.runelite.api.coords.WorldPoint)">at(WorldPoint)</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
-<div class="block">Returns a stream of NPC's at a given world point.</div>
+<div class="block">Filters and returns an <code>NpcQuery</code> containing NPCs located at the specified world point.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/PlayerQuery.html#at(net.runelite.api.coords.WorldPoint)">at(WorldPoint)</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></dt>
 <dd>
@@ -254,13 +258,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/ContainerItem.ItemOrigin.html#BANK_INVENTORY">BANK_INVENTORY</a></span> - com.kraken.api.query.container.<a href="com/kraken/api/query/container/ContainerItem.ItemOrigin.html" title="enum in com.kraken.api.query.container">ContainerItem.ItemOrigin</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#BANK_SCROLLBAR_POSITION_400_ITEMS_MAX">BANK_SCROLLBAR_POSITION_400_ITEMS_MAX</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#BANK_SCROLLBAR_POSITION_400_ITEMS_MAX">BANK_SCROLLBAR_POSITION_400_ITEMS_MAX</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#BANK_SCROLLBAR_POSITION_MIN">BANK_SCROLLBAR_POSITION_MIN</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#BANK_SCROLLBAR_POSITION_MIN">BANK_SCROLLBAR_POSITION_MIN</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#BANK_WORN_ITEMS_HIDDEN">BANK_WORN_ITEMS_HIDDEN</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#BANK_WORN_ITEMS_HIDDEN">BANK_WORN_ITEMS_HIDDEN</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#BANK_WORN_ITEMS_SHOWN">BANK_WORN_ITEMS_SHOWN</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#BANK_WORN_ITEMS_SHOWN">BANK_WORN_ITEMS_SHOWN</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/query/container/bank/BankEntity.html" title="class in com.kraken.api.query.container.bank"><span class="typeNameLink">BankEntity</span></a> - Class in <a href="com/kraken/api/query/container/bank/package-summary.html">com.kraken.api.query.container.bank</a></dt>
 <dd>&nbsp;</dd>
@@ -344,6 +348,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#BOOST_POTION_SHARE">BOOST_POTION_SHARE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryOrder.html#BOTTOM_RIGHT_TOP_LEFT">BOTTOM_RIGHT_TOP_LEFT</a></span> - com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory">InventoryOrder</a></dt>
+<dd>
+<div class="block">Reverse reading order:
+ Last Item -&gt; First Item.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/ObfuscatedNames.html#bufferArrayField">bufferArrayField</a></span> - Static variable in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/ObfuscatedNames.html" title="class in com.kraken.api.core.packet">ObfuscatedNames</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/ObfuscatedNames.html#bufferOffsetField">bufferOffsetField</a></span> - Static variable in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/ObfuscatedNames.html" title="class in com.kraken.api.core.packet">ObfuscatedNames</a></dt>
@@ -421,11 +430,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#CHARGE_WATER_ORB">CHARGE_WATER_ORB</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#CHAT">CHAT</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#CHAT">CHAT</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#CHATBOX_SCROLLBAR_POSITION_MAX">CHATBOX_SCROLLBAR_POSITION_MAX</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#CHATBOX_SCROLLBAR_POSITION_MAX">CHATBOX_SCROLLBAR_POSITION_MAX</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#CHATBOX_SCROLLBAR_POSITION_MIN">CHATBOX_SCROLLBAR_POSITION_MIN</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#CHATBOX_SCROLLBAR_POSITION_MIN">CHATBOX_SCROLLBAR_POSITION_MIN</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#CHIVALRY">CHIVALRY</a></span> - com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
 <dd>&nbsp;</dd>
@@ -441,6 +450,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Clears the cache for the packet definition factory forcing the factory
  to re-create the objects again.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#click()">click()</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
+<dd>
+<div class="block">Clicks the mouse at the current position.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/ObfuscatedNames.html#clientMillisField">clientMillisField</a></span> - Static variable in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/ObfuscatedNames.html" title="class in com.kraken.api.core.packet">ObfuscatedNames</a></dt>
 <dd>&nbsp;</dd>
@@ -552,6 +565,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/service/ui/package-summary.html">com.kraken.api.service.ui</a> - package com.kraken.api.service.ui</dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/kraken/api/service/ui/dialogue/package-summary.html">com.kraken.api.service.ui.dialogue</a> - package com.kraken.api.service.ui.dialogue</dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/kraken/api/service/ui/processing/package-summary.html">com.kraken.api.service.ui.processing</a> - package com.kraken.api.service.ui.processing</dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/kraken/api/service/ui/tab/package-summary.html">com.kraken.api.service.ui.tab</a> - package com.kraken.api.service.ui.tab</dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/service/util/package-summary.html">com.kraken.api.service.util</a> - package com.kraken.api.service.util</dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/sim/package-summary.html">com.kraken.api.sim</a> - package com.kraken.api.sim</dt>
@@ -564,7 +583,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/util/package-summary.html">com.kraken.api.util</a> - package com.kraken.api.util</dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#COMBAT">COMBAT</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#COMBAT">COMBAT</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/PlayerQuery.html#combatLevelGreaterThan(int)">combatLevelGreaterThan(int)</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></dt>
 <dd>
@@ -584,29 +603,63 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/query/container/ContainerItem.ItemOrigin.html" title="enum in com.kraken.api.query.container"><span class="typeNameLink">ContainerItem.ItemOrigin</span></a> - Enum in <a href="com/kraken/api/query/container/package-summary.html">com.kraken.api.query.container</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/GameArea.html#contains(net.runelite.api.coords.WorldPoint)">contains(WorldPoint)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/GameArea.html" title="class in com.kraken.api.service.tile">GameArea</a></dt>
+<dd>
+<div class="block">Checks if the given world point is inside this area.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#contains(net.runelite.api.Point)">contains(Point)</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/Context.html" title="class in com.kraken.api"><span class="typeNameLink">Context</span></a> - Class in <a href="com/kraken/api/package-summary.html">com.kraken.api</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/Context.html#%3Cinit%3E(net.runelite.api.Client,net.runelite.client.callback.ClientThread,com.kraken.api.input.mouse.VirtualMouse,net.runelite.client.eventbus.EventBus,com.google.inject.Injector,com.kraken.api.query.InteractionManager,com.kraken.api.service.tile.TileService,com.kraken.api.service.bank.BankService,net.runelite.client.game.ItemManager)">Context(Client, ClientThread, VirtualMouse, EventBus, Injector, InteractionManager, TileService, BankService, ItemManager)</a></span> - Constructor for class com.kraken.api.<a href="com/kraken/api/Context.html" title="class in com.kraken.api">Context</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#continueDialogue()">continueDialogue()</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Attempts to continue an active dialogue in the game by interacting with various dialogue widgets.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#continueNumericDialogue(int)">continueNumericDialogue(int)</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Resumes a numeric dialogue in the game by interacting with the appropriate widgets and invoking
+ client-side scripts to continue the process.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#continueObjectDialogue(int)">continueObjectDialogue(int)</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Resumes an object-based dialogue in the game by interacting with relevant widgets
+ and invoking a client-side script to continue the process.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Runes.html#COSMIC">COSMIC</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Runes.html" title="enum in com.kraken.api.service.spell">Runes</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/AbstractQuery.html#count()">count()</a></span> - Method in class com.kraken.api.core.<a href="com/kraken/api/core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></dt>
 <dd>
 <div class="block">Returns a count of objects in the stream</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryQuery.html#count()">count()</a></span> - Method in class com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/AreaService.html#createAreaFromRadius(net.runelite.api.coords.WorldPoint,int)">createAreaFromRadius(WorldPoint, int)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/AreaService.html" title="class in com.kraken.api.service.tile">AreaService</a></dt>
 <dd>
-<div class="block">Returns the count of items in the inventory</div>
+<div class="block">Creates a square area around a center point.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#createChild(int)">createChild(int)</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#createChild(int,int)">createChild(int, int)</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/AreaService.html#createFromPoints(java.util.Collection)">createFromPoints(Collection&lt;WorldPoint&gt;)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/AreaService.html" title="class in com.kraken.api.service.tile">AreaService</a></dt>
+<dd>
+<div class="block">Creates an area from a raw collection of points.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/ui/SimulationVisualizer.html#createNpcFromCurrentSettings(java.awt.Point)">createNpcFromCurrentSettings(Point)</a></span> - Method in class com.kraken.api.sim.ui.<a href="com/kraken/api/sim/ui/SimulationVisualizer.html" title="class in com.kraken.api.sim.ui">SimulationVisualizer</a></dt>
 <dd>
 <div class="block">Creates a new NPC with current property settings</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/AreaService.html#createPolygonArea(java.util.List)">createPolygonArea(List&lt;WorldPoint&gt;)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/AreaService.html" title="class in com.kraken.api.service.tile">AreaService</a></dt>
+<dd>
+<div class="block">Creates a complex shape from a list of vertices.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/AreaService.html#createPolygonArea(net.runelite.api.coords.WorldPoint...)">createPolygonArea(WorldPoint...)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/AreaService.html" title="class in com.kraken.api.service.tile">AreaService</a></dt>
+<dd>
+<div class="block">Creates a complex shape (e.g., L-shape) from vertices.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/AreaService.html#createReachableArea(net.runelite.api.coords.WorldPoint,int,boolean)">createReachableArea(WorldPoint, int, boolean)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/AreaService.html" title="class in com.kraken.api.service.tile">AreaService</a></dt>
+<dd>
+<div class="block">Creates an area based on movement reachability (BFS).</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/AbstractEntity.html#ctx">ctx</a></span> - Variable in class com.kraken.api.core.<a href="com/kraken/api/core/AbstractEntity.html" title="class in com.kraken.api.core">AbstractEntity</a></dt>
 <dd>&nbsp;</dd>
@@ -710,10 +763,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Deposits ten of the given items from the players inventory into the bank.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/Context.html#destroy()">destroy()</a></span> - Method in class com.kraken.api.<a href="com/kraken/api/Context.html" title="class in com.kraken.api">Context</a></dt>
+<dt><a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue"><span class="typeNameLink">DialogueService</span></a> - Class in <a href="com/kraken/api/service/ui/dialogue/package-summary.html">com.kraken.api.service.ui.dialogue</a></dt>
 <dd>
-<div class="block">Unregisters all Service classes that have methods annotated with @Subscribe from the EventBus.</div>
+<div class="block">A service class intended for managing and interacting with various types of dialogues in the game client.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#%3Cinit%3E()">DialogueService()</a></span> - Constructor for class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/util/RandomService.html#diceFractional(double)">diceFractional(double)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/RandomService.html" title="class in com.kraken.api.service.util">RandomService</a></dt>
 <dd>
 <div class="block">Simulates a dice roll using a fractional probability (e.g., 0.1 for 10%).</div>
@@ -764,7 +819,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Runes.html#EARTH">EARTH</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Runes.html" title="enum in com.kraken.api.service.spell">Runes</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#EMOTES">EMOTES</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#EMOTES">EMOTES</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#ENCHANT_DIAMOND_JEWELLERY">ENCHANT_DIAMOND_JEWELLERY</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
@@ -804,7 +859,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/ContainerItem.ItemOrigin.html#EQUIPMENT">EQUIPMENT</a></span> - com.kraken.api.query.container.<a href="com/kraken/api/query/container/ContainerItem.ItemOrigin.html" title="enum in com.kraken.api.query.container">ContainerItem.ItemOrigin</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#EQUIPMENT">EQUIPMENT</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#EQUIPMENT">EQUIPMENT</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/query/equipment/EquipmentEntity.html" title="class in com.kraken.api.query.equipment"><span class="typeNameLink">EquipmentEntity</span></a> - Class in <a href="com/kraken/api/query/equipment/package-summary.html">com.kraken.api.query.equipment</a></dt>
 <dd>&nbsp;</dd>
@@ -912,7 +967,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Filters the current query to include only free-to-play worlds.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#FRIENDS">FRIENDS</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#FRIENDS">FRIENDS</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/TileService.html#fromInstance(net.runelite.api.coords.WorldPoint)">fromInstance(WorldPoint)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/TileService.html" title="class in com.kraken.api.service.tile">TileService</a></dt>
 <dd>
@@ -937,6 +992,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">G</h2>
 <dl>
+<dt><a href="com/kraken/api/service/tile/GameArea.html" title="class in com.kraken.api.service.tile"><span class="typeNameLink">GameArea</span></a> - Class in <a href="com/kraken/api/service/tile/package-summary.html">com.kraken.api.service.tile</a></dt>
+<dd>
+<div class="block">Encapsulates a set of tiles representing an area.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/GameArea.html#%3Cinit%3E()">GameArea()</a></span> - Constructor for class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/GameArea.html" title="class in com.kraken.api.service.tile">GameArea</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/query/gameobject/GameObjectEntity.html" title="class in com.kraken.api.query.gameobject"><span class="typeNameLink">GameObjectEntity</span></a> - Class in <a href="com/kraken/api/query/gameobject/package-summary.html">com.kraken.api.query.gameobject</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/gameobject/GameObjectEntity.html#%3Cinit%3E(com.kraken.api.Context,net.runelite.api.GameObject)">GameObjectEntity(Context, GameObject)</a></span> - Constructor for class com.kraken.api.query.gameobject.<a href="com/kraken/api/query/gameobject/GameObjectEntity.html" title="class in com.kraken.api.query.gameobject">GameObjectEntity</a></dt>
@@ -976,15 +1037,23 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Retrieves a <a href="com/kraken/api/query/widget/WidgetEntity.html" title="class in com.kraken.api.query.widget"><code>WidgetEntity</code></a> based on the specified group ID and child ID.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/widget/WidgetQuery.html#get(net.runelite.api.widgets.WidgetInfo)">get(WidgetInfo)</a></span> - Method in class com.kraken.api.query.widget.<a href="com/kraken/api/query/widget/WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></dt>
+<dd>
+<div class="block">Retrieves the first <a href="com/kraken/api/query/widget/WidgetEntity.html" title="class in com.kraken.api.query.widget"><code>WidgetEntity</code></a> that matches the specified <code>WidgetInfo</code>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getActions()">getActions()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getActorClickbox(net.runelite.api.Actor)">getActorClickbox(Actor)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getActorClickbox(net.runelite.api.Actor)">getActorClickbox(Actor)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for an Actor (NPC or Player).</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/groundobject/GroundItem.html#getAlchemyPrice()">getAlchemyPrice()</a></span> - Method in class com.kraken.api.query.groundobject.<a href="com/kraken/api/query/groundobject/GroundItem.html" title="class in com.kraken.api.query.groundobject">GroundItem</a></dt>
 <dd>
 <div class="block">Returns the High Alchemy price of the item multiplied by the quantity on the ground.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/processing/ProcessingService.html#getAmount()">getAmount()</a></span> - Method in class com.kraken.api.service.ui.processing.<a href="com/kraken/api/service/ui/processing/ProcessingService.html" title="class in com.kraken.api.service.ui.processing">ProcessingService</a></dt>
+<dd>
+<div class="block">Retrieves the current value of the skill multi-quantity variable.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/camera/CameraService.html#getAngle()">getAngle()</a></span> - Method in class com.kraken.api.service.camera.<a href="com/kraken/api/service/camera/CameraService.html" title="class in com.kraken.api.service.camera">CameraService</a></dt>
 <dd>
@@ -1001,6 +1070,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/BufferUtils.html#getArray(java.lang.Object)">getArray(Object)</a></span> - Static method in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/BufferUtils.html" title="class in com.kraken.api.core.packet">BufferUtils</a></dt>
 <dd>
 <div class="block">Reflectively gets the underlying 'array' (the byte[]) from a buffer instance.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#getBoostedLevel(net.runelite.api.Skill)">getBoostedLevel(Skill)</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
+<dd>
+<div class="block">Retrieves the boosted level of a specified skill.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getBorderType()">getBorderType()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
@@ -1032,67 +1105,67 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getChildren()">getChildren()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(com.kraken.api.query.container.ContainerItem)">getClickbox(ContainerItem)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(com.kraken.api.query.container.ContainerItem)">getClickbox(ContainerItem)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for an inventory item.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(com.kraken.api.query.container.ContainerItem,boolean)">getClickbox(ContainerItem, boolean)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(com.kraken.api.query.container.ContainerItem,boolean)">getClickbox(ContainerItem, boolean)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for an inventory item with optional randomization</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.Actor)">getClickbox(Actor)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.Actor)">getClickbox(Actor)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for an Actor with randomization enabled by default.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.Actor,boolean)">getClickbox(Actor, boolean)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.Actor,boolean)">getClickbox(Actor, boolean)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for an Actor with optional randomization.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.LocalPoint)">getClickbox(LocalPoint)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.LocalPoint)">getClickbox(LocalPoint)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a LocalPoint with randomization enabled by default.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.LocalPoint,boolean)">getClickbox(LocalPoint, boolean)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.LocalPoint,boolean)">getClickbox(LocalPoint, boolean)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a LocalPoint with optional randomization.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.LocalPoint,int)">getClickbox(LocalPoint, int)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.LocalPoint,int)">getClickbox(LocalPoint, int)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a LocalPoint at a specific plane with randomization enabled by default.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.LocalPoint,int,boolean)">getClickbox(LocalPoint, int, boolean)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.LocalPoint,int,boolean)">getClickbox(LocalPoint, int, boolean)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a LocalPoint at a specific plane with optional randomization.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.WorldPoint)">getClickbox(WorldPoint)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.WorldPoint)">getClickbox(WorldPoint)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a WorldPoint with randomization enabled by default.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.WorldPoint,boolean)">getClickbox(WorldPoint, boolean)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.coords.WorldPoint,boolean)">getClickbox(WorldPoint, boolean)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a WorldPoint with optional randomization.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.Tile)">getClickbox(Tile)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.Tile)">getClickbox(Tile)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a Tile with randomization enabled by default.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.TileObject)">getClickbox(TileObject)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.TileObject)">getClickbox(TileObject)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a TileObject with randomization enabled by default.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.TileObject,boolean)">getClickbox(TileObject, boolean)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.TileObject,boolean)">getClickbox(TileObject, boolean)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a TileObject with optional randomization.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.Tile,boolean)">getClickbox(Tile, boolean)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.Tile,boolean)">getClickbox(Tile, boolean)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a Tile with optional randomization.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.widgets.Widget)">getClickbox(Widget)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.widgets.Widget)">getClickbox(Widget)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a Widget with randomization enabled by default.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.widgets.Widget,boolean)">getClickbox(Widget, boolean)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getClickbox(net.runelite.api.widgets.Widget,boolean)">getClickbox(Widget, boolean)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a Widget with optional randomization.</div>
 </dd>
@@ -1118,15 +1191,27 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get the current active spellbook</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/TabService.html#getCurrentTab()">getCurrentTab()</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/TabService.html" title="class in com.kraken.api.service.ui">TabService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/TabService.html#getCurrentTab()">getCurrentTab()</a></span> - Method in class com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/TabService.html" title="class in com.kraken.api.service.ui.tab">TabService</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getDefaultRectangle()">getDefaultRectangle()</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getDefaultRectangle()">getDefaultRectangle()</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Returns a default rectangle representing the entire game canvas with a slight random offset.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#getDialogueHeader()">getDialogueHeader()</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Retrieves the dialogue header text currently displayed in the widget interface.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#getDialogueOptions()">getDialogueOptions()</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Retrieves a list of dialogue options currently available in the dialogue interface.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#getDialogueText()">getDialogueText()</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Retrieves the text from the currently active dialogue widget if available.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcEntity.html#getDistanceFromPlayer()">getDistanceFromPlayer()</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcEntity.html" title="class in com.kraken.api.query.npc">NpcEntity</a></dt>
 <dd>
-<div class="block">Gets the distance from this NPC to the player.</div>
+<div class="block">Calculates the distance between the NPC and the local player within the game world.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getDragDeadTime()">getDragDeadTime()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
@@ -1146,6 +1231,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/model/PacketDefFactory.html#getEventMouseClick()">getEventMouseClick()</a></span> - Method in class com.kraken.api.core.packet.model.<a href="com/kraken/api/core/packet/model/PacketDefFactory.html" title="class in com.kraken.api.core.packet.model">PacketDefFactory</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#getExperience(net.runelite.api.Skill)">getExperience(Skill)</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
+<dd>
+<div class="block">Retrieves the total experience of the specified skill for the current client.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getFont()">getFont()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getFontId()">getFontId()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
@@ -1164,7 +1253,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcEntity.html#getHeadIcon()">getHeadIcon()</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcEntity.html" title="class in com.kraken.api.query.npc">NpcEntity</a></dt>
 <dd>
-<div class="block">Returns the head icon for an NPC if it exists.</div>
+<div class="block">Retrieves the head icon associated with the NPC, if it exists.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcEntity.html#getHealthPercentage()">getHealthPercentage()</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcEntity.html" title="class in com.kraken.api.query.npc">NpcEntity</a></dt>
 <dd>
@@ -1236,15 +1325,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getItemQuantityMode()">getItemQuantityMode()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/MoveableMouse.html#getLastPoint()">getLastPoint()</a></span> - Method in interface com.kraken.api.input.mouse.strategy.<a href="com/kraken/api/input/mouse/strategy/MoveableMouse.html" title="interface in com.kraken.api.input.mouse.strategy">MoveableMouse</a></dt>
-<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#getLevel(net.runelite.api.Skill)">getLevel(Skill)</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
+<dd>
+<div class="block">Retrieves the base level of the specified skill.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getLineHeight()">getLineHeight()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getLocalPointClickbox(net.runelite.api.coords.LocalPoint)">getLocalPointClickbox(LocalPoint)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getLocalPointClickbox(net.runelite.api.coords.LocalPoint)">getLocalPointClickbox(LocalPoint)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a LocalPoint by converting it to screen coordinates.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getLocalPointClickbox(net.runelite.api.coords.LocalPoint,int)">getLocalPointClickbox(LocalPoint, int)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getLocalPointClickbox(net.runelite.api.coords.LocalPoint,int)">getLocalPointClickbox(LocalPoint, int)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a LocalPoint at a specific plane by converting it to screen coordinates.</div>
 </dd>
@@ -1302,7 +1393,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Gets the camera angle needed to face the specified tile object.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getObjectClickbox(net.runelite.api.TileObject)">getObjectClickbox(TileObject)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getObjectClickbox(net.runelite.api.TileObject)">getObjectClickbox(TileObject)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a TileObject (GameObject, WallObject, GroundObject, or DecorativeObject).</div>
 </dd>
@@ -1424,6 +1515,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Gets the current camera pitch value.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/core/script/PriorityTask.html#getPriority()">getPriority()</a></span> - Method in class com.kraken.api.core.script.<a href="com/kraken/api/core/script/PriorityTask.html" title="class in com.kraken.api.core.script">PriorityTask</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/GameArea.html#getRandomTile()">getRandomTile()</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/GameArea.html" title="class in com.kraken.api.service.tile">GameArea</a></dt>
+<dd>
+<div class="block">Returns a random tile from the area.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/TileService.html#getReachableTilesFromTile(net.runelite.api.coords.WorldPoint,int,boolean)">getReachableTilesFromTile(WorldPoint, int, boolean)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/TileService.html" title="class in com.kraken.api.service.tile">TileService</a></dt>
 <dd>
 <div class="block">This method calculates the distances to a specified tile in the game world
@@ -1506,9 +1603,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Calculates the camera angle needed to face the specified tile object.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getTileClickbox(net.runelite.api.Tile)">getTileClickbox(Tile)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getTileClickbox(net.runelite.api.Tile)">getTileClickbox(Tile)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a Tile.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#getTotalExperience()">getTotalExperience()</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
+<dd>
+<div class="block">Calculates the total experience across all skills for the current client.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getType()">getType()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
@@ -1526,7 +1627,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Retrieves a Widget from the RuneLite client.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getWidgetClickbox(net.runelite.api.widgets.Widget)">getWidgetClickbox(Widget)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getWidgetClickbox(net.runelite.api.widgets.Widget)">getWidgetClickbox(Widget)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a Widget.</div>
 </dd>
@@ -1536,7 +1637,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getWidthMode()">getWidthMode()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getWorldPointClickbox(net.runelite.api.coords.WorldPoint)">getWorldPointClickbox(WorldPoint)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getWorldPointClickbox(net.runelite.api.coords.WorldPoint)">getWorldPointClickbox(WorldPoint)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a WorldPoint by converting it to screen coordinates.</div>
 </dd>
@@ -1623,6 +1724,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns true ONLY if the inventory contains ALL of the specified item names.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryQuery.html#hasItems(java.util.List)">hasItems(List&lt;Integer&gt;)</a></span> - Method in class com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></dt>
+<dd>
+<div class="block">Determines whether the inventory contains all items specified by the given list of IDs.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#hasListener()">hasListener()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/SpellService.html#hasRequiredRunes(com.kraken.api.service.spell.Spells)">hasRequiredRunes(Spells)</a></span> - Method in class com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/SpellService.html" title="class in com.kraken.api.service.spell">SpellService</a></dt>
@@ -1641,21 +1746,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Filters for ground items where the high alchemy price is above a specific threshold.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_ALL">HIGHLIGHTED_CHAT_TAB_ALL</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_ALL">HIGHLIGHTED_CHAT_TAB_ALL</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_CHANNEL">HIGHLIGHTED_CHAT_TAB_CHANNEL</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_CHANNEL">HIGHLIGHTED_CHAT_TAB_CHANNEL</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_CLAN">HIGHLIGHTED_CHAT_TAB_CLAN</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_CLAN">HIGHLIGHTED_CHAT_TAB_CLAN</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_GAME">HIGHLIGHTED_CHAT_TAB_GAME</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_GAME">HIGHLIGHTED_CHAT_TAB_GAME</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_NONE">HIGHLIGHTED_CHAT_TAB_NONE</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_NONE">HIGHLIGHTED_CHAT_TAB_NONE</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_PRIVATE">HIGHLIGHTED_CHAT_TAB_PRIVATE</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_PRIVATE">HIGHLIGHTED_CHAT_TAB_PRIVATE</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_PUBLIC">HIGHLIGHTED_CHAT_TAB_PUBLIC</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_PUBLIC">HIGHLIGHTED_CHAT_TAB_PUBLIC</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_TRADE">HIGHLIGHTED_CHAT_TAB_TRADE</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#HIGHLIGHTED_CHAT_TAB_TRADE">HIGHLIGHTED_CHAT_TAB_TRADE</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/KeyboardService.html#holdShift()">holdShift()</a></span> - Method in class com.kraken.api.input.<a href="com/kraken/api/input/KeyboardService.html" title="class in com.kraken.api.input">KeyboardService</a></dt>
 <dd>
@@ -1896,11 +2001,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#interacting()">interacting()</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
-<div class="block">Filters for NPCs that are interacting with other players (not the local player).</div>
+<div class="block">Filters the query to include only NPCs that are currently interacting with any entity other than the local player.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#interactingWith(net.runelite.api.Actor)">interactingWith(Actor)</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
-<div class="block">Filters the stream for NPCs which are interacting with a specified <code>Actor</code></div>
+<div class="block">Filters the query to include only NPCs that are currently interacting with the specified <code>actor</code>.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/PlayerQuery.html#interactingWith(net.runelite.api.Actor)">interactingWith(Actor)</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></dt>
 <dd>
@@ -1908,7 +2013,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#interactingWithPlayer()">interactingWithPlayer()</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
-<div class="block">Filters for NPCs that are interacting with the local player (e.g., attacking me).</div>
+<div class="block">Filters the query to include only NPCs that are currently interacting with the local player.</div>
 </dd>
 <dt><a href="com/kraken/api/query/InteractionManager.html" title="class in com.kraken.api.query"><span class="typeNameLink">InteractionManager</span></a> - Class in <a href="com/kraken/api/query/package-summary.html">com.kraken.api.query</a></dt>
 <dd>
@@ -1916,7 +2021,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/InteractionManager.html#%3Cinit%3E()">InteractionManager()</a></span> - Constructor for class com.kraken.api.query.<a href="com/kraken/api/query/InteractionManager.html" title="class in com.kraken.api.query">InteractionManager</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui"><span class="typeNameLink">InterfaceTab</span></a> - Enum in <a href="com/kraken/api/service/ui/package-summary.html">com.kraken.api.service.ui</a></dt>
+<dt><a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab"><span class="typeNameLink">InterfaceTab</span></a> - Enum in <a href="com/kraken/api/service/ui/tab/package-summary.html">com.kraken.api.service.ui.tab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/Context.html#inventory()">inventory()</a></span> - Method in class com.kraken.api.<a href="com/kraken/api/Context.html" title="class in com.kraken.api">Context</a></dt>
 <dd>
@@ -1924,11 +2029,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/ContainerItem.ItemOrigin.html#INVENTORY">INVENTORY</a></span> - com.kraken.api.query.container.<a href="com/kraken/api/query/container/ContainerItem.ItemOrigin.html" title="enum in com.kraken.api.query.container">ContainerItem.ItemOrigin</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#INVENTORY">INVENTORY</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#INVENTORY">INVENTORY</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/query/container/inventory/InventoryEntity.html" title="class in com.kraken.api.query.container.inventory"><span class="typeNameLink">InventoryEntity</span></a> - Class in <a href="com/kraken/api/query/container/inventory/package-summary.html">com.kraken.api.query.container.inventory</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryEntity.html#%3Cinit%3E(com.kraken.api.Context,com.kraken.api.query.container.ContainerItem)">InventoryEntity(Context, ContainerItem)</a></span> - Constructor for class com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryEntity.html" title="class in com.kraken.api.query.container.inventory">InventoryEntity</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/kraken/api/query/container/inventory/InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory"><span class="typeNameLink">InventoryOrder</span></a> - Enum in <a href="com/kraken/api/query/container/inventory/package-summary.html">com.kraken.api.query.container.inventory</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/query/container/inventory/InventoryQuery.html" title="class in com.kraken.api.query.container.inventory"><span class="typeNameLink">InventoryQuery</span></a> - Class in <a href="com/kraken/api/query/container/inventory/package-summary.html">com.kraken.api.query.container.inventory</a></dt>
 <dd>&nbsp;</dd>
@@ -1946,8 +2053,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Runes.html#isComboRune()">isComboRune()</a></span> - Method in enum com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Runes.html" title="enum in com.kraken.api.service.spell">Runes</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/TabService.html#isCurrentTab(com.kraken.api.service.ui.InterfaceTab)">isCurrentTab(InterfaceTab)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/TabService.html" title="class in com.kraken.api.service.ui">TabService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/TabService.html#isCurrentTab(com.kraken.api.service.ui.tab.InterfaceTab)">isCurrentTab(InterfaceTab)</a></span> - Method in class com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/TabService.html" title="class in com.kraken.api.service.ui.tab">TabService</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#isDialoguePresent()">isDialoguePresent()</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Checks if any type of dialogue is currently present in the game client.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryQuery.html#isEmpty()">isEmpty()</a></span> - Method in class com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></dt>
 <dd>
 <div class="block">Returns true if the inventory is empty and false otherwise.</div>
@@ -1976,6 +2087,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#isIf3()">isIf3()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/gameobject/GameObjectEntity.html#isInArea(com.kraken.api.service.tile.GameArea)">isInArea(GameArea)</a></span> - Method in class com.kraken.api.query.gameobject.<a href="com/kraken/api/query/gameobject/GameObjectEntity.html" title="class in com.kraken.api.query.gameobject">GameObjectEntity</a></dt>
+<dd>
+<div class="block">Checks if the game object is within the game area.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/groundobject/GroundObjectEntity.html#isInArea(com.kraken.api.service.tile.GameArea)">isInArea(GameArea)</a></span> - Method in class com.kraken.api.query.groundobject.<a href="com/kraken/api/query/groundobject/GroundObjectEntity.html" title="class in com.kraken.api.query.groundobject">GroundObjectEntity</a></dt>
+<dd>
+<div class="block">Checks if the ground object is within the game area.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcEntity.html#isInArea(com.kraken.api.service.tile.GameArea)">isInArea(GameArea)</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcEntity.html" title="class in com.kraken.api.query.npc">NpcEntity</a></dt>
+<dd>
+<div class="block">Checks if the NPC's current location is within the game area.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#isInArea(com.kraken.api.service.tile.GameArea)">isInArea(GameArea)</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
+<dd>
+<div class="block">Checks if the player is within the game area.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#isInArea(net.runelite.api.coords.WorldPoint)">isInArea(WorldPoint)</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
 <dd>
 <div class="block">Checks if the player is within 5 tiles of a given <code>WorldPoint</code>.</div>
@@ -2010,9 +2137,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Checks if a GameObject is reachable.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankQuery.html#isOpen()">isOpen()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankQuery.html" title="class in com.kraken.api.query.container.bank">BankQuery</a></dt>
+<dd>
+<div class="block">Determines whether the bank interface is currently open.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/bank/BankService.html#isOpen()">isOpen()</a></span> - Method in class com.kraken.api.service.bank.<a href="com/kraken/api/service/bank/BankService.html" title="class in com.kraken.api.service.bank">BankService</a></dt>
 <dd>
 <div class="block">Checks whether the bank interface is open.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/processing/ProcessingService.html#isOpen()">isOpen()</a></span> - Method in class com.kraken.api.service.ui.processing.<a href="com/kraken/api/service/ui/processing/ProcessingService.html" title="class in com.kraken.api.service.ui.processing">ProcessingService</a></dt>
+<dd>
+<div class="block">Determines whether the widget corresponding to the specified interface ID is currently open and visible.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#isOptionPresent(java.lang.String)">isOptionPresent(String)</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Checks if a specific dialogue option is present in the list of available options.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#isOutOfPrayer()">isOutOfPrayer()</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
 <dd>
@@ -2189,7 +2328,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player"><span class="typeNameLink">LocalPlayerEntity</span></a> - Class in <a href="com/kraken/api/query/player/package-summary.html">com.kraken.api.query.player</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#%3Cinit%3E(com.kraken.api.Context,java.util.concurrent.ScheduledExecutorService)">LocalPlayerEntity(Context, ScheduledExecutorService)</a></span> - Constructor for class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#%3Cinit%3E(com.kraken.api.Context)">LocalPlayerEntity(Context)</a></span> - Constructor for class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/TileService.html#localToWorldDistance(int)">localToWorldDistance(int)</a></span> - Static method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/TileService.html" title="class in com.kraken.api.service.tile">TileService</a></dt>
 <dd>
@@ -2197,7 +2336,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#logout()">logout()</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#LOGOUT">LOGOUT</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#LOGOUT">LOGOUT</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/script/Script.html#loop()">loop()</a></span> - Method in class com.kraken.api.core.script.<a href="com/kraken/api/core/script/Script.html" title="class in com.kraken.api.core.script">Script</a></dt>
 <dd>
@@ -2219,10 +2358,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/model/AttackStyle.html#MAGE">MAGE</a></span> - com.kraken.api.sim.model.<a href="com/kraken/api/sim/model/AttackStyle.html" title="enum in com.kraken.api.sim.model">AttackStyle</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#MAGIC">MAGIC</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#MAGIC">MAGIC</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#MAGIC_IMBUE">MAGIC_IMBUE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#makeX(int)">makeX(int)</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Executes the "Make X" operation for a specified quantity.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/AbstractQuery.html#map()">map()</a></span> - Method in class com.kraken.api.core.<a href="com/kraken/api/core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></dt>
 <dd>
 <div class="block">Collects the stream of entities into a map keyed by the id of the element in the map.</div>
@@ -2285,11 +2428,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/MouseRecorder.html#mouseClicked(java.awt.event.MouseEvent)">mouseClicked(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/MouseRecorder.html" title="class in com.kraken.api.input.mouse">MouseRecorder</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#mouseClicked(java.awt.event.MouseEvent)">mouseClicked(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/MouseRecorder.html#mouseDragged(java.awt.event.MouseEvent)">mouseDragged(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/MouseRecorder.html" title="class in com.kraken.api.input.mouse">MouseRecorder</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#mouseDragged(java.awt.event.MouseEvent)">mouseDragged(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/MouseRecorder.html#mouseEntered(java.awt.event.MouseEvent)">mouseEntered(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/MouseRecorder.html" title="class in com.kraken.api.input.mouse">MouseRecorder</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#mouseEntered(java.awt.event.MouseEvent)">mouseEntered(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/MouseRecorder.html#mouseExited(java.awt.event.MouseEvent)">mouseExited(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/MouseRecorder.html" title="class in com.kraken.api.input.mouse">MouseRecorder</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#mouseExited(java.awt.event.MouseEvent)">mouseExited(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/input/mouse/model/MouseGesture.html" title="class in com.kraken.api.input.mouse.model"><span class="typeNameLink">MouseGesture</span></a> - Class in <a href="com/kraken/api/input/mouse/model/package-summary.html">com.kraken.api.input.mouse.model</a></dt>
 <dd>&nbsp;</dd>
@@ -2303,6 +2454,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/MouseRecorder.html#mouseMoved(java.awt.event.MouseEvent)">mouseMoved(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/MouseRecorder.html" title="class in com.kraken.api.input.mouse">MouseRecorder</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#mouseMoved(java.awt.event.MouseEvent)">mouseMoved(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/input/mouse/strategy/MouseMovementStrategy.html" title="enum in com.kraken.api.input.mouse.strategy"><span class="typeNameLink">MouseMovementStrategy</span></a> - Enum in <a href="com/kraken/api/input/mouse/strategy/package-summary.html">com.kraken.api.input.mouse.strategy</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/overlay/MouseOverlay.html" title="class in com.kraken.api.overlay"><span class="typeNameLink">MouseOverlay</span></a> - Class in <a href="com/kraken/api/overlay/package-summary.html">com.kraken.api.overlay</a></dt>
@@ -2315,6 +2468,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/MouseRecorder.html#mousePressed(java.awt.event.MouseEvent)">mousePressed(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/MouseRecorder.html" title="class in com.kraken.api.input.mouse">MouseRecorder</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#mousePressed(java.awt.event.MouseEvent)">mousePressed(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/input/mouse/MouseRecorder.html" title="class in com.kraken.api.input.mouse"><span class="typeNameLink">MouseRecorder</span></a> - Class in <a href="com/kraken/api/input/mouse/package-summary.html">com.kraken.api.input.mouse</a></dt>
 <dd>
 <div class="block">The <code>MouseRecorder</code> class is responsible for recording mouse gestures
@@ -2323,6 +2478,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/MouseRecorder.html#%3Cinit%3E(net.runelite.client.input.MouseManager)">MouseRecorder(MouseManager)</a></span> - Constructor for class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/MouseRecorder.html" title="class in com.kraken.api.input.mouse">MouseRecorder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/MouseRecorder.html#mouseReleased(java.awt.event.MouseEvent)">mouseReleased(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/MouseRecorder.html" title="class in com.kraken.api.input.mouse">MouseRecorder</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#mouseReleased(java.awt.event.MouseEvent)">mouseReleased(MouseEvent)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#move(com.kraken.api.query.container.ContainerItem)">move(ContainerItem)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
 <dd>
@@ -2372,20 +2529,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Moves the mouse to the specified WorldPoint using the provided movement strategy.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/bezier/BezierStrategy.html#move(net.runelite.api.Point)">move(Point)</a></span> - Method in class com.kraken.api.input.mouse.strategy.bezier.<a href="com/kraken/api/input/mouse/strategy/bezier/BezierStrategy.html" title="class in com.kraken.api.input.mouse.strategy.bezier">BezierStrategy</a></dt>
-<dd>
-<div class="block">Moves the mouse cursor along a cubic Bezier curve path to the specified target point.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/instant/InstantStrategy.html#move(net.runelite.api.Point)">move(Point)</a></span> - Method in class com.kraken.api.input.mouse.strategy.instant.<a href="com/kraken/api/input/mouse/strategy/instant/InstantStrategy.html" title="class in com.kraken.api.input.mouse.strategy.instant">InstantStrategy</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/linear/LinearStrategy.html#move(net.runelite.api.Point)">move(Point)</a></span> - Method in class com.kraken.api.input.mouse.strategy.linear.<a href="com/kraken/api/input/mouse/strategy/linear/LinearStrategy.html" title="class in com.kraken.api.input.mouse.strategy.linear">LinearStrategy</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/MoveableMouse.html#move(net.runelite.api.Point)">move(Point)</a></span> - Method in interface com.kraken.api.input.mouse.strategy.<a href="com/kraken/api/input/mouse/strategy/MoveableMouse.html" title="interface in com.kraken.api.input.mouse.strategy">MoveableMouse</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/none/NoMovement.html#move(net.runelite.api.Point)">move(Point)</a></span> - Method in class com.kraken.api.input.mouse.strategy.none.<a href="com/kraken/api/input/mouse/strategy/none/NoMovement.html" title="class in com.kraken.api.input.mouse.strategy.none">NoMovement</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/replay/ReplayStrategy.html#move(net.runelite.api.Point)">move(Point)</a></span> - Method in class com.kraken.api.input.mouse.strategy.replay.<a href="com/kraken/api/input/mouse/strategy/replay/ReplayStrategy.html" title="class in com.kraken.api.input.mouse.strategy.replay">ReplayStrategy</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#move(net.runelite.api.Point)">move(Point)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
 <dd>
 <div class="block">Moves the mouse to the specified target position using the default mouse movement strategy.</div>
@@ -2394,6 +2537,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Moves the mouse to the specified target position using the provided movement strategy.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/bezier/BezierStrategy.html#move(net.runelite.api.Point,net.runelite.api.Point)">move(Point, Point)</a></span> - Method in class com.kraken.api.input.mouse.strategy.bezier.<a href="com/kraken/api/input/mouse/strategy/bezier/BezierStrategy.html" title="class in com.kraken.api.input.mouse.strategy.bezier">BezierStrategy</a></dt>
+<dd>
+<div class="block">Moves the mouse cursor along a cubic Bezier curve path to the specified target point.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/instant/InstantStrategy.html#move(net.runelite.api.Point,net.runelite.api.Point)">move(Point, Point)</a></span> - Method in class com.kraken.api.input.mouse.strategy.instant.<a href="com/kraken/api/input/mouse/strategy/instant/InstantStrategy.html" title="class in com.kraken.api.input.mouse.strategy.instant">InstantStrategy</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/linear/LinearStrategy.html#move(net.runelite.api.Point,net.runelite.api.Point)">move(Point, Point)</a></span> - Method in class com.kraken.api.input.mouse.strategy.linear.<a href="com/kraken/api/input/mouse/strategy/linear/LinearStrategy.html" title="class in com.kraken.api.input.mouse.strategy.linear">LinearStrategy</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/MoveableMouse.html#move(net.runelite.api.Point,net.runelite.api.Point)">move(Point, Point)</a></span> - Method in interface com.kraken.api.input.mouse.strategy.<a href="com/kraken/api/input/mouse/strategy/MoveableMouse.html" title="interface in com.kraken.api.input.mouse.strategy">MoveableMouse</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/none/NoMovement.html#move(net.runelite.api.Point,net.runelite.api.Point)">move(Point, Point)</a></span> - Method in class com.kraken.api.input.mouse.strategy.none.<a href="com/kraken/api/input/mouse/strategy/none/NoMovement.html" title="class in com.kraken.api.input.mouse.strategy.none">NoMovement</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/replay/ReplayStrategy.html#move(net.runelite.api.Point,net.runelite.api.Point)">move(Point, Point)</a></span> - Method in class com.kraken.api.input.mouse.strategy.replay.<a href="com/kraken/api/input/mouse/strategy/replay/ReplayStrategy.html" title="class in com.kraken.api.input.mouse.strategy.replay">ReplayStrategy</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#move(net.runelite.api.Tile)">move(Tile)</a></span> - Method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
 <dd>
 <div class="block">Moves the mouse to the specified Tile.</div>
@@ -2465,7 +2622,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Runes.html#MUD">MUD</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Runes.html" title="enum in com.kraken.api.service.spell">Runes</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#MUSIC">MUSIC</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#MUSIC">MUSIC</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#MYSTIC_LORE">MYSTIC_LORE</a></span> - com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
 <dd>&nbsp;</dd>
@@ -2501,7 +2658,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#nearest()">nearest()</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
-<div class="block">Sorts the results by distance to the local player.</div>
+<div class="block">Retrieves the nearest NPC entity to the local player's current position.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/PlayerQuery.html#nearest()">nearest()</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></dt>
 <dd>
@@ -2509,7 +2666,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#nearestTo(net.runelite.api.coords.WorldPoint)">nearestTo(WorldPoint)</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
-<div class="block">Sorts the results by distance to the specified point.</div>
+<div class="block">Sorts the current query results by determining the distance of each NPC's <code>WorldPoint</code> to a specified
+ <code>WorldPoint</code> location and arranging them in ascending order of proximity.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/world/WorldQuery.html#next()">next()</a></span> - Method in class com.kraken.api.query.world.<a href="com/kraken/api/query/world/WorldQuery.html" title="class in com.kraken.api.query.world">WorldQuery</a></dt>
 <dd>
@@ -2530,7 +2688,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/none/NoMovement.html#%3Cinit%3E()">NoMovement()</a></span> - Constructor for class com.kraken.api.input.mouse.strategy.none.<a href="com/kraken/api/input/mouse/strategy/none/NoMovement.html" title="class in com.kraken.api.input.mouse.strategy.none">NoMovement</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#NONE">NONE</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#NONE">NONE</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/world/WorldQuery.html#nonPvp()">nonPvp()</a></span> - Method in class com.kraken.api.query.world.<a href="com/kraken/api/query/world/WorldQuery.html" title="class in com.kraken.api.query.world">WorldQuery</a></dt>
 <dd>
@@ -2560,7 +2718,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Filters for items that are noted (cert).</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#NOTHING_SELECTED">NOTHING_SELECTED</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#NOTHING_SELECTED">NOTHING_SELECTED</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#NPC_CONTACT">NPC_CONTACT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
@@ -3168,6 +3326,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/ObfuscatedNames.html#OPPLAYERT_WRITES">OPPLAYERT_WRITES</a></span> - Static variable in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/ObfuscatedNames.html" title="class in com.kraken.api.core.packet">ObfuscatedNames</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryQuery.html#orderBy(com.kraken.api.query.container.inventory.InventoryOrder)">orderBy(InventoryOrder)</a></span> - Method in class com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></dt>
+<dd>
+<div class="block">Sorts the inventory query results based on the specified <code>InventoryOrder</code>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#OURANIA_TELEPORT">OURANIA_TELEPORT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -3176,6 +3338,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">P</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#pack(int,int)">pack(int, int)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dd>
+<div class="block">Combines a group ID and a child ID into a single packed integer.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/map/WorldPointService.html#pack(int,int,int)">pack(int, int, int)</a></span> - Static method in class com.kraken.api.service.map.<a href="com/kraken/api/service/map/WorldPointService.html" title="class in com.kraken.api.service.map">WorldPointService</a></dt>
 <dd>
 <div class="block">Compresses x, y, z coordinates into a single integer.</div>
@@ -3294,7 +3460,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Creates a new query builder for Players.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#PRAYER">PRAYER</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#PRAYER">PRAYER</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer"><span class="typeNameLink">PrayerService</span></a> - Class in <a href="com/kraken/api/service/prayer/package-summary.html">com.kraken.api.service.prayer</a></dt>
 <dd>&nbsp;</dd>
@@ -3311,7 +3477,38 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Re-winds the game state by 1 tick.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#PRIVATE_MESSAGE">PRIVATE_MESSAGE</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><a href="com/kraken/api/core/script/PriorityTask.html" title="class in com.kraken.api.core.script"><span class="typeNameLink">PriorityTask</span></a> - Class in <a href="com/kraken/api/core/script/package-summary.html">com.kraken.api.core.script</a></dt>
+<dd>
+<div class="block">Represents a task that includes a priority level, allowing tasks to be prioritized
+ during selection or execution in workflows or script logic.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/core/script/PriorityTask.html#%3Cinit%3E()">PriorityTask()</a></span> - Constructor for class com.kraken.api.core.script.<a href="com/kraken/api/core/script/PriorityTask.html" title="class in com.kraken.api.core.script">PriorityTask</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#PRIVATE_MESSAGE">PRIVATE_MESSAGE</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/processing/ProcessingService.html#process(int...)">process(int...)</a></span> - Method in class com.kraken.api.service.ui.processing.<a href="com/kraken/api/service/ui/processing/ProcessingService.html" title="class in com.kraken.api.service.ui.processing">ProcessingService</a></dt>
+<dd>
+<div class="block">Confirms the selection of one of the specified item IDs by resuming the appropriate widget
+ interaction based on the current multi-quantity value.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/processing/ProcessingService.html#process(com.kraken.api.query.container.ContainerItem)">process(ContainerItem)</a></span> - Method in class com.kraken.api.service.ui.processing.<a href="com/kraken/api/service/ui/processing/ProcessingService.html" title="class in com.kraken.api.service.ui.processing">ProcessingService</a></dt>
+<dd>
+<div class="block">Confirms the selection of one of the specified container items by resuming the appropriate widget
+ interaction based on the current multi-quantity value.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/processing/ProcessingService.html#process(java.lang.String...)">process(String...)</a></span> - Method in class com.kraken.api.service.ui.processing.<a href="com/kraken/api/service/ui/processing/ProcessingService.html" title="class in com.kraken.api.service.ui.processing">ProcessingService</a></dt>
+<dd>
+<div class="block">Confirms the selection of one of the specified item names by resuming the appropriate widget
+ interaction based on the current multi-quantity value.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/processing/ProcessingService.html#processByIndex(int)">processByIndex(int)</a></span> - Method in class com.kraken.api.service.ui.processing.<a href="com/kraken/api/service/ui/processing/ProcessingService.html" title="class in com.kraken.api.service.ui.processing">ProcessingService</a></dt>
+<dd>
+<div class="block">Confirms the selected index by resuming the specific widget and child interface
+ associated with the provided index and the current multi-quantity value.</div>
+</dd>
+<dt><a href="com/kraken/api/service/ui/processing/ProcessingService.html" title="class in com.kraken.api.service.ui.processing"><span class="typeNameLink">ProcessingService</span></a> - Class in <a href="com/kraken/api/service/ui/processing/package-summary.html">com.kraken.api.service.ui.processing</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/processing/ProcessingService.html#%3Cinit%3E()">ProcessingService()</a></span> - Constructor for class com.kraken.api.service.ui.processing.<a href="com/kraken/api/service/ui/processing/ProcessingService.html" title="class in com.kraken.api.service.ui.processing">ProcessingService</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#PROTECT_ITEM">PROTECT_ITEM</a></span> - com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
 <dd>&nbsp;</dd>
@@ -3333,7 +3530,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Filters by item quantity.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#QUESTS">QUESTS</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#QUESTS">QUESTS</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/entity/MousePackets.html#queueClickPacket(int,int)">queueClickPacket(int, int)</a></span> - Method in class com.kraken.api.core.packet.entity.<a href="com/kraken/api/core/packet/entity/MousePackets.html" title="class in com.kraken.api.core.packet.entity">MousePackets</a></dt>
 <dd>
@@ -3405,11 +3602,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  packet after selecting an option in a multi-choice dialog, where the
  value represents an item ID or object ID relevant to the dialog option.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/entity/WidgetPackets.html#queueResumePause(int)">queueResumePause(int)</a></span> - Method in class com.kraken.api.core.packet.entity.<a href="com/kraken/api/core/packet/entity/WidgetPackets.html" title="class in com.kraken.api.core.packet.entity">WidgetPackets</a></dt>
+<dd>
+<div class="block">Queues the RESUME_PAUSEBUTTON packet, usually sent when interacting with
+ non-interactable dialogs (e.g., "Click here to continue").</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/entity/WidgetPackets.html#queueResumePause(int,int)">queueResumePause(int, int)</a></span> - Method in class com.kraken.api.core.packet.entity.<a href="com/kraken/api/core/packet/entity/WidgetPackets.html" title="class in com.kraken.api.core.packet.entity">WidgetPackets</a></dt>
 <dd>
 <div class="block">Queues the RESUME_PAUSEBUTTON packet, typically sent when the player
  clicks a "Click here to continue" or "Close" button on a standard,
- non-interactable dialog, such as a completion message or a pause screen.</div>
+ non-interactable dialog, such as a dialogue with an NPC.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/entity/WidgetPackets.html#queueResumeString(java.lang.String)">queueResumeString(String)</a></span> - Method in class com.kraken.api.core.packet.entity.<a href="com/kraken/api/core/packet/entity/WidgetPackets.html" title="class in com.kraken.api.core.packet.entity">WidgetPackets</a></dt>
 <dd>
@@ -3539,7 +3741,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#reachable()">reachable()</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
-<div class="block">Filters for only NPC's which are reachable from the players current tile.</div>
+<div class="block">Filters the NPCs to include only those that are reachable based on their world location.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#RECHARGE_DRAGONSTONE">RECHARGE_DRAGONSTONE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
@@ -3557,10 +3759,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/engine/SimulationEngine.html#refresh(com.kraken.api.sim.CollisionMap,java.awt.Point,int,int,java.util.List)">refresh(CollisionMap, Point, int, int, List&lt;Point&gt;)</a></span> - Method in class com.kraken.api.sim.engine.<a href="com/kraken/api/sim/engine/SimulationEngine.html" title="class in com.kraken.api.sim.engine">SimulationEngine</a></dt>
 <dd>
 <div class="block">Refresh will re-load the simulation with collision, npc, and player data gathered directly from the game.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/Context.html#register()">register()</a></span> - Method in class com.kraken.api.<a href="com/kraken/api/Context.html" title="class in com.kraken.api">Context</a></dt>
-<dd>
-<div class="block">Registers all Service classes that have methods annotated with @Subscribe to the EventBus.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/KeyboardService.html#releaseShift()">releaseShift()</a></span> - Method in class com.kraken.api.input.<a href="com/kraken/api/input/KeyboardService.html" title="class in com.kraken.api.input">KeyboardService</a></dt>
 <dd>
@@ -3588,6 +3786,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/overlay/MouseOverlay.html#render(java.awt.Graphics2D)">render(Graphics2D)</a></span> - Method in class com.kraken.api.overlay.<a href="com/kraken/api/overlay/MouseOverlay.html" title="class in com.kraken.api.overlay">MouseOverlay</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/GameArea.html#render(net.runelite.api.Client,java.awt.Graphics2D,java.awt.Color,boolean)">render(Client, Graphics2D, Color, boolean)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/GameArea.html" title="class in com.kraken.api.service.tile">GameArea</a></dt>
+<dd>
+<div class="block">Visualizes the area on the game screen.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/GameArea.html#renderMinimap(net.runelite.api.Client,java.awt.Graphics2D,java.awt.Color)">renderMinimap(Client, Graphics2D, Color)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/GameArea.html" title="class in com.kraken.api.service.tile">GameArea</a></dt>
+<dd>
+<div class="block">Renders the area on the minimap.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/pathfinding/LocalPathfinder.html#renderMinimapPath(java.util.List,java.awt.Graphics2D,java.awt.Color)">renderMinimapPath(List&lt;WorldPoint&gt;, Graphics2D, Color)</a></span> - Method in class com.kraken.api.service.pathfinding.<a href="com/kraken/api/service/pathfinding/LocalPathfinder.html" title="class in com.kraken.api.service.pathfinding">LocalPathfinder</a></dt>
 <dd>
 <div class="block">Renders a path on the minimap.</div>
@@ -3602,13 +3808,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/replay/ReplayStrategy.html#%3Cinit%3E()">ReplayStrategy()</a></span> - Constructor for class com.kraken.api.input.mouse.strategy.replay.<a href="com/kraken/api/input/mouse/strategy/replay/ReplayStrategy.html" title="class in com.kraken.api.input.mouse.strategy.replay">ReplayStrategy</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#REPORT_IGNORE_PLAYER_CHECKED">REPORT_IGNORE_PLAYER_CHECKED</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#REPORT_IGNORE_PLAYER_CHECKED">REPORT_IGNORE_PLAYER_CHECKED</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#REPORT_IGNORE_PLAYER_UNCHECKED">REPORT_IGNORE_PLAYER_UNCHECKED</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#REPORT_IGNORE_PLAYER_UNCHECKED">REPORT_IGNORE_PLAYER_UNCHECKED</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#REPORT_WINDOW_CLOSED">REPORT_WINDOW_CLOSED</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#REPORT_WINDOW_CLOSED">REPORT_WINDOW_CLOSED</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#REPORT_WINDOW_OPENED">REPORT_WINDOW_OPENED</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#REPORT_WINDOW_OPENED">REPORT_WINDOW_OPENED</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/engine/SimulationEngine.html#reset()">reset()</a></span> - Method in class com.kraken.api.sim.engine.<a href="com/kraken/api/sim/engine/SimulationEngine.html" title="class in com.kraken.api.sim.engine">SimulationEngine</a></dt>
 <dd>
@@ -3732,6 +3938,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#revalidateScroll()">revalidateScroll()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/core/AbstractQuery.html#reverse()">reverse()</a></span> - Method in class com.kraken.api.core.<a href="com/kraken/api/core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></dt>
+<dd>
+<div class="block">Reverses the order of elements in the stream and returns a new stream with the reversed order.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#RIGOUR">RIGOUR</a></span> - com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#ROCK_SKIN">ROCK_SKIN</a></span> - com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
@@ -3743,9 +3953,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Adds a task to the chain that executes the specified @Runnable action 
  on the client thread and immediately proceeds to the next task in the chain.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#RUNELITE">RUNELITE</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#RUNELITE">RUNELITE</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#RUNELITE_CHATBOX_PANEL">RUNELITE_CHATBOX_PANEL</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#RUNELITE_CHATBOX_PANEL">RUNELITE_CHATBOX_PANEL</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#runelitePrayerFor(com.kraken.api.service.prayer.InteractablePrayer)">runelitePrayerFor(InteractablePrayer)</a></span> - Static method in enum com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
 <dd>&nbsp;</dd>
@@ -3787,27 +3997,35 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Interface representing a script that can be executed.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#SEARCH">SEARCH</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SEARCH">SEARCH</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#SELECTED_CHAT_TAB_ALL">SELECTED_CHAT_TAB_ALL</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SELECTED_CHAT_TAB_ALL">SELECTED_CHAT_TAB_ALL</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#SELECTED_CHAT_TAB_CHANNEL">SELECTED_CHAT_TAB_CHANNEL</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SELECTED_CHAT_TAB_CHANNEL">SELECTED_CHAT_TAB_CHANNEL</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#SELECTED_CHAT_TAB_CLAN">SELECTED_CHAT_TAB_CLAN</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SELECTED_CHAT_TAB_CLAN">SELECTED_CHAT_TAB_CLAN</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#SELECTED_CHAT_TAB_FRAME_CLOSED">SELECTED_CHAT_TAB_FRAME_CLOSED</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SELECTED_CHAT_TAB_FRAME_CLOSED">SELECTED_CHAT_TAB_FRAME_CLOSED</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#SELECTED_CHAT_TAB_GAME">SELECTED_CHAT_TAB_GAME</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SELECTED_CHAT_TAB_GAME">SELECTED_CHAT_TAB_GAME</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#SELECTED_CHAT_TAB_PRIVATE">SELECTED_CHAT_TAB_PRIVATE</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SELECTED_CHAT_TAB_PRIVATE">SELECTED_CHAT_TAB_PRIVATE</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#SELECTED_CHAT_TAB_PUBLIC">SELECTED_CHAT_TAB_PUBLIC</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SELECTED_CHAT_TAB_PUBLIC">SELECTED_CHAT_TAB_PUBLIC</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#SELECTED_CHAT_TAB_TRADE">SELECTED_CHAT_TAB_TRADE</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SELECTED_CHAT_TAB_TRADE">SELECTED_CHAT_TAB_TRADE</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/ui/SimulationVisualizer.html#selectNpcInList(com.kraken.api.sim.model.SimNpc)">selectNpcInList(SimNpc)</a></span> - Method in class com.kraken.api.sim.ui.<a href="com/kraken/api/sim/ui/SimulationVisualizer.html" title="class in com.kraken.api.sim.ui">SimulationVisualizer</a></dt>
 <dd>
 <div class="block">Selects an NPC in the UI list</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#selectOption(int)">selectOption(int)</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Selects a specific option in a dialog option group.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/dialogue/DialogueService.html#selectOption(java.lang.String)">selectOption(String)</a></span> - Method in class com.kraken.api.service.ui.dialogue.<a href="com/kraken/api/service/ui/dialogue/DialogueService.html" title="class in com.kraken.api.service.ui.dialogue">DialogueService</a></dt>
+<dd>
+<div class="block">Attempts to select an option from a dialog interface based on the provided option text.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/PacketClient.html#sendPacket(com.kraken.api.core.packet.model.PacketDefinition,java.lang.Object...)">sendPacket(PacketDefinition, Object...)</a></span> - Method in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/PacketClient.html" title="class in com.kraken.api.core.packet">PacketClient</a></dt>
 <dd>
@@ -3825,6 +4043,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#setAction(int,java.lang.String)">setAction(int, String)</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/processing/ProcessingService.html#setAmount(int)">setAmount(int)</a></span> - Method in class com.kraken.api.service.ui.processing.<a href="com/kraken/api/service/ui/processing/ProcessingService.html" title="class in com.kraken.api.service.ui.processing">ProcessingService</a></dt>
+<dd>
+<div class="block">Sets the skill multi-quantity value to the specified amount.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/camera/CameraService.html#setAngle(int,int)">setAngle(int, int)</a></span> - Method in class com.kraken.api.service.camera.<a href="com/kraken/api/service/camera/CameraService.html" title="class in com.kraken.api.service.camera">CameraService</a></dt>
 <dd>
 <div class="block">Sets the angle of the camera to the target degrees limited by the max angle.</div>
@@ -3988,7 +4210,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#setTextShadowed(boolean)">setTextShadowed(boolean)</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#SETTINGS">SETTINGS</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#SETTINGS">SETTINGS</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#setType(int)">setType(int)</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
@@ -4022,6 +4244,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#SHARP_EYE">SHARP_EYE</a></span> - com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/core/AbstractQuery.html#shuffle()">shuffle()</a></span> - Method in class com.kraken.api.core.<a href="com/kraken/api/core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></dt>
+<dd>
+<div class="block">Randomizes the order of elements in the stream and returns a new stream with the shuffled elements.</div>
+</dd>
 <dt><a href="com/kraken/api/sim/model/SimNpc.html" title="class in com.kraken.api.sim.model"><span class="typeNameLink">SimNpc</span></a> - Class in <a href="com/kraken/api/sim/model/package-summary.html">com.kraken.api.sim.model</a></dt>
 <dd>
 <div class="block">NPC entity class used within the simulation.</div>
@@ -4064,17 +4290,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Generates a random long value skewed towards the specified mode within a specified range.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#SKILLS">SKILLS</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#SKILLS">SKILLS</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/ObfuscatedNames.html#skullIconField">skullIconField</a></span> - Static variable in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/ObfuscatedNames.html" title="class in com.kraken.api.core.packet">ObfuscatedNames</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/ObfuscatedNames.html#skullIconMultiplier">skullIconMultiplier</a></span> - Static variable in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/ObfuscatedNames.html" title="class in com.kraken.api.core.packet">ObfuscatedNames</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleep(int)">sleep(int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleep(int)">sleep(int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Sleeps for a specified amount of time in milliseconds.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleep(int,int)">sleep(int, int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleep(int,int)">sleep(int, int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Sleeps for a random duration between start and end milliseconds.</div>
 </dd>
@@ -4086,7 +4312,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sleeps for a random duration between start and end milliseconds.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepGaussian(int,int)">sleepGaussian(int, int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepFor(int)">sleepFor(int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dd>
+<div class="block">Sleeps the current thread by the specified number of game ticks</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepGaussian(int,int)">sleepGaussian(int, int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Sleeps for a duration based on a Gaussian distribution.</div>
 </dd>
@@ -4094,51 +4324,51 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#%3Cinit%3E()">SleepService()</a></span> - Constructor for class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntil(java.util.function.BooleanSupplier)">sleepUntil(BooleanSupplier)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntil(java.util.function.BooleanSupplier)">sleepUntil(BooleanSupplier)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Waits until the specified condition is true, with a default timeout of 5000ms.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntil(java.util.function.BooleanSupplier,int)">sleepUntil(BooleanSupplier, int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntil(java.util.function.BooleanSupplier,int)">sleepUntil(BooleanSupplier, int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Waits until the specified condition is true, or a timeout is reached.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntil(java.util.function.Supplier)">sleepUntil(Supplier&lt;Boolean&gt;)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntil(java.util.function.Supplier)">sleepUntil(Supplier&lt;Boolean&gt;)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Waits until the specified condition is true.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntil(java.util.function.Supplier,int)">sleepUntil(Supplier&lt;Boolean&gt;, int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntil(java.util.function.Supplier,int)">sleepUntil(Supplier&lt;Boolean&gt;, int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">sleeps until the specified condition is true or the timeout is reached.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntil(java.util.function.Supplier,long)">sleepUntil(Supplier&lt;Boolean&gt;, long)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntil(java.util.function.Supplier,long)">sleepUntil(Supplier&lt;Boolean&gt;, long)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">sleeps until the specified condition is true or the timeout is reached.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilIdle()">sleepUntilIdle()</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilIdle()">sleepUntilIdle()</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Sleeps until the local player's animation is idle.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilNotNull(java.util.concurrent.Callable,int)">sleepUntilNotNull(Callable&lt;T&gt;, int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilNotNull(java.util.concurrent.Callable,int)">sleepUntilNotNull(Callable&lt;T&gt;, int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Repeatedly calls a method until it returns a non-null value, or a timeout is reached.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilNotNull(java.util.concurrent.Callable,int,int)">sleepUntilNotNull(Callable&lt;T&gt;, int, int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilNotNull(java.util.concurrent.Callable,int,int)">sleepUntilNotNull(Callable&lt;T&gt;, int, int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Repeatedly calls a method until it returns a non-null value, or a timeout is reached.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilTick(int)">sleepUntilTick(int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
-<dd>
-<div class="block">Sleeps for a specified number of game ticks.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilTile(int,int)">sleepUntilTile(int, int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilTile(int,int)">sleepUntilTile(int, int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Sleeps until the local player reaches the specified world tile.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilTrue(java.util.function.BooleanSupplier,int,int)">sleepUntilTrue(BooleanSupplier, int, int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilTrue(java.util.function.BooleanSupplier,int)">sleepUntilTrue(BooleanSupplier, int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dd>
+<div class="block">Waits until the specified condition is true, checking every 100ms, until a timeout is reached.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepUntilTrue(java.util.function.BooleanSupplier,int,int)">sleepUntilTrue(BooleanSupplier, int, int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Waits until the specified condition is true, checking at a given interval, until a timeout is reached.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepWhile(java.util.function.BooleanSupplier,int)">sleepWhile(BooleanSupplier, int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#sleepWhile(java.util.function.BooleanSupplier,int)">sleepWhile(BooleanSupplier, int)</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Sleeps while the specified condition is true or until the timeout is reached.</div>
 </dd>
@@ -4148,6 +4378,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#SNARE">SNARE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/gameobject/GameObjectQuery.html#sortByDistance()">sortByDistance()</a></span> - Method in class com.kraken.api.query.gameobject.<a href="com/kraken/api/query/gameobject/GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></dt>
+<dd>
+<div class="block">Sorts the game object stream by distance from the local players current location.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/groundobject/GroundObjectQuery.html#sortByDistance()">sortByDistance()</a></span> - Method in class com.kraken.api.query.groundobject.<a href="com/kraken/api/query/groundobject/GroundObjectQuery.html" title="class in com.kraken.api.query.groundobject">GroundObjectQuery</a></dt>
+<dd>
+<div class="block">Sorts the ground object stream by distance from the local players' current location.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#sortByDistance()">sortByDistance()</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
+<dd>
+<div class="block">Sorts the NPC stream by distance from the local players' current location.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/PlayerQuery.html#sortByDistance()">sortByDistance()</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></dt>
+<dd>
+<div class="block">Sorts the player stream by distance from the local players current location.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/world/WorldQuery.html#sortByWorldNumberAsc()">sortByWorldNumberAsc()</a></span> - Method in class com.kraken.api.query.world.<a href="com/kraken/api/query/world/WorldQuery.html" title="class in com.kraken.api.query.world">WorldQuery</a></dt>
 <dd>
 <div class="block">Sorts the query results in ascending order based on the world number (ID).</div>
@@ -4280,6 +4526,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#STUN">STUN</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/GameArea.html#subtract(com.kraken.api.service.tile.GameArea)">subtract(GameArea)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/GameArea.html" title="class in com.kraken.api.service.tile">GameArea</a></dt>
+<dd>
+<div class="block">Removes the tiles of another area from this one (Difference).</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Runes.html#SUNFIRE">SUNFIRE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Runes.html" title="enum in com.kraken.api.service.spell">Runes</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#SUPERGLASS_MAKE">SUPERGLASS_MAKE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
@@ -4290,7 +4540,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#SUPERIOR_DEMONBANE">SUPERIOR_DEMONBANE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/TabService.html#switchTo(com.kraken.api.service.ui.InterfaceTab)">switchTo(InterfaceTab)</a></span> - Method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/TabService.html" title="class in com.kraken.api.service.ui">TabService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/TabService.html#switchTo(com.kraken.api.service.ui.tab.InterfaceTab)">switchTo(InterfaceTab)</a></span> - Method in class com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/TabService.html" title="class in com.kraken.api.service.ui.tab">TabService</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:T">
@@ -4298,43 +4548,47 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">T</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_ACC_MANAGEMENT">TAB_ACC_MANAGEMENT</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_ACC_MANAGEMENT">TAB_ACC_MANAGEMENT</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_CHAT_CHANNEL">TAB_CHAT_CHANNEL</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_CHAT_CHANNEL">TAB_CHAT_CHANNEL</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_COMBAT_OPTIONS">TAB_COMBAT_OPTIONS</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_COMBAT_OPTIONS">TAB_COMBAT_OPTIONS</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_EMOTES">TAB_EMOTES</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_EMOTES">TAB_EMOTES</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_FRIEND_LIST">TAB_FRIEND_LIST</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_FRIEND_LIST">TAB_FRIEND_LIST</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_INVENTORY">TAB_INVENTORY</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_INVENTORY">TAB_INVENTORY</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_LOGOUT">TAB_LOGOUT</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_LOGOUT">TAB_LOGOUT</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_MUSIC">TAB_MUSIC</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_MUSIC">TAB_MUSIC</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_NOT_SELECTED">TAB_NOT_SELECTED</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_NOT_SELECTED">TAB_NOT_SELECTED</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_PRAYER">TAB_PRAYER</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_PRAYER">TAB_PRAYER</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_QUEST_LIST">TAB_QUEST_LIST</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_QUEST_LIST">TAB_QUEST_LIST</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_SETTINGS">TAB_SETTINGS</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_SETTINGS">TAB_SETTINGS</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_SKILLS">TAB_SKILLS</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_SKILLS">TAB_SKILLS</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_SPELLBOOK">TAB_SPELLBOOK</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_SPELLBOOK">TAB_SPELLBOOK</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TAB_WORN_EQUIPMENT">TAB_WORN_EQUIPMENT</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TAB_WORN_EQUIPMENT">TAB_WORN_EQUIPMENT</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/kraken/api/service/ui/TabService.html" title="class in com.kraken.api.service.ui"><span class="typeNameLink">TabService</span></a> - Class in <a href="com/kraken/api/service/ui/package-summary.html">com.kraken.api.service.ui</a></dt>
+<dt><a href="com/kraken/api/service/ui/tab/TabService.html" title="class in com.kraken.api.service.ui.tab"><span class="typeNameLink">TabService</span></a> - Class in <a href="com/kraken/api/service/ui/tab/package-summary.html">com.kraken.api.service.ui.tab</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/TabService.html#%3Cinit%3E()">TabService()</a></span> - Constructor for class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/TabService.html" title="class in com.kraken.api.service.ui">TabService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/TabService.html#%3Cinit%3E()">TabService()</a></span> - Constructor for class com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/TabService.html" title="class in com.kraken.api.service.ui.tab">TabService</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/groundobject/GroundObjectEntity.html#take()">take()</a></span> - Method in class com.kraken.api.query.groundobject.<a href="com/kraken/api/query/groundobject/GroundObjectEntity.html" title="class in com.kraken.api.query.groundobject">GroundObjectEntity</a></dt>
 <dd>
 <div class="block">Takes an item from the ground to be placed in the players inventory.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/core/AbstractQuery.html#take(int)">take(int)</a></span> - Method in class com.kraken.api.core.<a href="com/kraken/api/core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></dt>
+<dd>
+<div class="block">Takes the first N elements from the stream and returns them as a list.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#TAN_LEATHER">TAN_LEATHER</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
@@ -4370,16 +4624,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">The tick number when this state was captured</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#tick()">tick()</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#tick()">tick()</a></span> - Static method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
 <dd>
 <div class="block">Sleeps the current thread for one game tick</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/engine/SimulationEngine.html#tick()">tick()</a></span> - Method in class com.kraken.api.sim.engine.<a href="com/kraken/api/sim/engine/SimulationEngine.html" title="class in com.kraken.api.sim.engine">SimulationEngine</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/util/SleepService.html#tick(int)">tick(int)</a></span> - Method in class com.kraken.api.service.util.<a href="com/kraken/api/service/util/SleepService.html" title="class in com.kraken.api.service.util">SleepService</a></dt>
-<dd>
-<div class="block">Sleeps the current thread by the specified number of game ticks</div>
-</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/ui/SimulationVisualizer.html#TILE_SIZE">TILE_SIZE</a></span> - Static variable in class com.kraken.api.sim.ui.<a href="com/kraken/api/sim/ui/SimulationVisualizer.html" title="class in com.kraken.api.sim.ui">SimulationVisualizer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/sim/ui/TilePanel.html" title="class in com.kraken.api.sim.ui"><span class="typeNameLink">TilePanel</span></a> - Class in <a href="com/kraken/api/sim/ui/package-summary.html">com.kraken.api.sim.ui</a></dt>
@@ -4396,6 +4646,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/replay/MotionFactory.TimedPoint.html#%3Cinit%3E()">TimedPoint()</a></span> - Constructor for class com.kraken.api.input.mouse.strategy.replay.<a href="com/kraken/api/input/mouse/strategy/replay/MotionFactory.TimedPoint.html" title="class in com.kraken.api.input.mouse.strategy.replay">MotionFactory.TimedPoint</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#toChildId(int)">toChildId(int)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dd>
+<div class="block">Converts a given integer ID to a child ID by masking higher-order bits.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#toggle(net.runelite.api.Prayer)">toggle(Prayer)</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
 <dd>
 <div class="block">Toggles a prayer on or off.</div>
@@ -4417,14 +4671,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the special attack state if the current special attack energy is greater than or equal to the required special attack energy using reflection instead of mouse events.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#toGroupId(int)">toGroupId(int)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dd>
+<div class="block">Converts the given packed widget integer ID to a group ID by performing a bitwise right shift.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/TileService.html#toInstance(net.runelite.api.coords.WorldPoint)">toInstance(WorldPoint)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/TileService.html" title="class in com.kraken.api.service.tile">TileService</a></dt>
 <dd>
 <div class="block">Converts a world point into a list of instanced world points</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TOOLTIP_HIDDEN">TOOLTIP_HIDDEN</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TOOLTIP_HIDDEN">TOOLTIP_HIDDEN</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#TOOLTIP_SHOWN">TOOLTIP_SHOWN</a></span> - com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#TOOLTIP_SHOWN">TOOLTIP_SHOWN</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryOrder.html#TOP_DOWN_LEFT_RIGHT">TOP_DOWN_LEFT_RIGHT</a></span> - com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory">InventoryOrder</a></dt>
+<dd>
+<div class="block">Vertical columns:
+ Col 1 (Top-&gt;Bottom), Col 2 (Top-&gt;Bottom)...</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryOrder.html#TOP_LEFT_BOTTOM_RIGHT">TOP_LEFT_BOTTOM_RIGHT</a></span> - com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory">InventoryOrder</a></dt>
+<dd>
+<div class="block">Standard reading order:
+ Row 1 (Left-&gt;Right), Row 2 (Left-&gt;Right)...</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/AbstractQuery.html#toRuneLite()">toRuneLite()</a></span> - Method in class com.kraken.api.core.<a href="com/kraken/api/core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></dt>
 <dd>
 <div class="block">Returns the underlying RuneLite entities that have been wrapped by the API.</div>
@@ -4483,6 +4751,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Rotates the camera to face the specified tile object with a custom maximum angle.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryOrder.html#TWO_ROW_LEFT_RIGHT">TWO_ROW_LEFT_RIGHT</a></span> - com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory">InventoryOrder</a></dt>
+<dd>
+<div class="block">Drops two rows at a time starting from left to right.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/KeyboardService.html#typeString(java.lang.String)">typeString(String)</a></span> - Method in class com.kraken.api.input.<a href="com/kraken/api/input/KeyboardService.html" title="class in com.kraken.api.input">KeyboardService</a></dt>
 <dd>
 <div class="block">Types out a string character-by-character using KEY_TYPED events.</div>
@@ -4503,6 +4775,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#UNDEAD_GRASP">UNDEAD_GRASP</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/GameArea.html#union(com.kraken.api.service.tile.GameArea)">union(GameArea)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/GameArea.html" title="class in com.kraken.api.service.tile">GameArea</a></dt>
+<dd>
+<div class="block">Combines this area with another (Union).</div>
+</dd>
 <dt><a href="com/kraken/api/input/mouse/model/UnitPoint.html" title="class in com.kraken.api.input.mouse.model"><span class="typeNameLink">UnitPoint</span></a> - Class in <a href="com/kraken/api/input/mouse/model/package-summary.html">com.kraken.api.input.mouse.model</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/model/UnitPoint.html#%3Cinit%3E()">UnitPoint()</a></span> - Constructor for class com.kraken.api.input.mouse.model.<a href="com/kraken/api/input/mouse/model/UnitPoint.html" title="class in com.kraken.api.input.mouse.model">UnitPoint</a></dt>
@@ -4561,7 +4837,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Filters for ground items where the Grand Exchange price is above a specific threshold.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#valueOf(int)">valueOf(int)</a></span> - Static method in enum com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#valueOf(int)">valueOf(int)</a></span> - Static method in enum com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
@@ -4574,6 +4850,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/ContainerItem.ItemOrigin.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum com.kraken.api.query.container.<a href="com/kraken/api/query/container/ContainerItem.ItemOrigin.html" title="enum in com.kraken.api.query.container">ContainerItem.ItemOrigin</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryOrder.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory">InventoryOrder</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
@@ -4593,11 +4873,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
@@ -4624,6 +4904,11 @@ the order they are declared.</div>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryOrder.html#values()">values()</a></span> - Static method in enum com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory">InventoryOrder</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#values()">values()</a></span> - Static method in enum com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum type, in
@@ -4644,12 +4929,12 @@ the order they are declared.</div>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/InterfaceTab.html#values()">values()</a></span> - Static method in enum com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/InterfaceTab.html" title="enum in com.kraken.api.service.ui">InterfaceTab</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#values()">values()</a></span> - Static method in enum com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/VarcIntValues.html#values()">values()</a></span> - Static method in enum com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui">VarcIntValues</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#values()">values()</a></span> - Static method in enum com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
@@ -4664,7 +4949,7 @@ the order they are declared.</div>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
 </dd>
-<dt><a href="com/kraken/api/service/ui/VarcIntValues.html" title="enum in com.kraken.api.service.ui"><span class="typeNameLink">VarcIntValues</span></a> - Enum in <a href="com/kraken/api/service/ui/package-summary.html">com.kraken.api.service.ui</a></dt>
+<dt><a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab"><span class="typeNameLink">VarcIntValues</span></a> - Enum in <a href="com/kraken/api/service/ui/tab/package-summary.html">com.kraken.api.service.ui.tab</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#VARROCK_TELEPORT">VARROCK_TELEPORT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
@@ -4676,7 +4961,7 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse"><span class="typeNameLink">VirtualMouse</span></a> - Class in <a href="com/kraken/api/input/mouse/package-summary.html">com.kraken.api.input.mouse</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#%3Cinit%3E()">VirtualMouse()</a></span> - Constructor for class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#%3Cinit%3E(net.runelite.client.input.MouseManager,net.runelite.api.Client)">VirtualMouse(MouseManager, Client)</a></span> - Constructor for class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/widget/WidgetQuery.html#visible()">visible()</a></span> - Method in class com.kraken.api.query.widget.<a href="com/kraken/api/query/widget/WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></dt>
 <dd>
@@ -4771,6 +5056,10 @@ the order they are declared.</div>
 <dd>
 <div class="block">Filters for objects that have a specific action available.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#withAction(java.lang.String)">withAction(String)</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
+<dd>
+<div class="block">Filters the query for NPCs that have a specific menu option available.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/widget/WidgetQuery.html#withAction(java.lang.String)">withAction(String)</a></span> - Method in class com.kraken.api.query.widget.<a href="com/kraken/api/query/widget/WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></dt>
 <dd>
 <div class="block">Filters for widgets with a specific action.</div>
@@ -4841,7 +5130,7 @@ the order they are declared.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#within(int)">within(int)</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
-<div class="block">Filters for NPCs within a specific distance.</div>
+<div class="block">Filters the NPCs in the query to include only those within a specified distance from the local player's position.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/gameobject/GameObjectQuery.html#within(net.runelite.api.coords.LocalPoint,int)">within(LocalPoint, int)</a></span> - Method in class com.kraken.api.query.gameobject.<a href="com/kraken/api/query/gameobject/GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></dt>
 <dd>
@@ -4857,7 +5146,7 @@ the order they are declared.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#withinArea(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldPoint)">withinArea(WorldPoint, WorldPoint)</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
-<div class="block">Filters for NPC's within a specified area.</div>
+<div class="block">Filters the query to include only NPCs that are located within a specified rectangular area.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/PlayerQuery.html#withinArea(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldPoint)">withinArea(WorldPoint, WorldPoint)</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></dt>
 <dd>
@@ -5002,6 +5291,15 @@ the order they are declared.</div>
 </a>
 <h2 class="title">Z</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryOrder.html#ZIG_ZAG">ZIG_ZAG</a></span> - com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory">InventoryOrder</a></dt>
+<dd>
+<div class="block">Snake/Zig-Zag pattern:
+ Row 1 (Left-&gt;Right), Row 2 (Right-&gt;Left), Row 3 (Left-&gt;Right)...</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryOrder.html#ZIG_ZAG_REVERSE">ZIG_ZAG_REVERSE</a></span> - com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory">InventoryOrder</a></dt>
+<dd>
+<div class="block">Reverse Snake/Zig-Zag pattern starting from the bottom right.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/ui/TilePanel.html#zoomIn()">zoomIn()</a></span> - Method in class com.kraken.api.sim.ui.<a href="com/kraken/api/sim/ui/TilePanel.html" title="class in com.kraken.api.sim.ui">TilePanel</a></dt>
 <dd>
 <div class="block">Zooms the map in</div>

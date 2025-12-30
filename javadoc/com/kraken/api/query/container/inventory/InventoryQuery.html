@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -197,59 +197,59 @@ extends <a href="../../../core/AbstractQuery.html" title="class in com.kraken.ap
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#count()">count</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Returns the count of items in the inventory</div>
-</td>
-</tr>
-<tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#food()">food</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a list of Inventory Items which can be consumed for health.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#freeSpace()">freeSpace</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the free space in a users inventory.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasFood()">hasFood</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns true when the player has edible hard food in their inventory and false otherwise.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasItem(int)">hasItem</a></span>&#8203;(int&nbsp;id)</code></th>
 <td class="colLast">
 <div class="block">Returns true when the inventory contains a specific item, found by its item id.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasItem(java.lang.String)">hasItem</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Returns true when the inventory contains a specific item, found by its name.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasItems(int...)">hasItems</a></span>&#8203;(int...&nbsp;ids)</code></th>
 <td class="colLast">
 <div class="block">Returns true ONLY if the inventory contains ALL of the specified item IDs.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasItems(java.lang.String...)">hasItems</a></span>&#8203;(java.lang.String...&nbsp;names)</code></th>
 <td class="colLast">
 <div class="block">Returns true ONLY if the inventory contains ALL of the specified item names.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasItems(java.util.List)">hasItems</a></span>&#8203;(java.util.List&lt;java.lang.Integer&gt;&nbsp;ids)</code></th>
+<td class="colLast">
+<div class="block">Determines whether the inventory contains all items specified by the given list of IDs.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -275,31 +275,38 @@ extends <a href="../../../core/AbstractQuery.html" title="class in com.kraken.ap
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#orderBy(com.kraken.api.query.container.inventory.InventoryOrder)">orderBy</a></span>&#8203;(<a href="InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory">InventoryOrder</a>&nbsp;order)</code></th>
+<td class="colLast">
+<div class="block">Sorts the inventory query results based on the specified <code>InventoryOrder</code>.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#quantityGreaterThan(int)">quantityGreaterThan</a></span>&#8203;(int&nbsp;amount)</code></th>
 <td class="colLast">
 <div class="block">Filters by item quantity.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>protected java.util.function.Supplier&lt;java.util.stream.Stream&lt;<a href="InventoryEntity.html" title="class in com.kraken.api.query.container.inventory">InventoryEntity</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#source()">source</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stackable()">stackable</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Filters for items that stack (runes, arrows, noted items).</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unnoted()">unnoted</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Filters for un-noted items.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withAction(java.lang.String)">withAction</a></span>&#8203;(java.lang.String&nbsp;action)</code></th>
 <td class="colLast">
@@ -312,7 +319,7 @@ extends <a href="../../../core/AbstractQuery.html" title="class in com.kraken.ap
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.kraken.api.core.<a href="../../../core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></h3>
-<code><a href="../../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../../core/AbstractQuery.html#first()">first</a>, <a href="../../../core/AbstractQuery.html#list()">list</a>, <a href="../../../core/AbstractQuery.html#map()">map</a>, <a href="../../../core/AbstractQuery.html#nameContains(java.lang.String)">nameContains</a>, <a href="../../../core/AbstractQuery.html#random()">random</a>, <a href="../../../core/AbstractQuery.html#result()">result</a>, <a href="../../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../../core/AbstractQuery.html#withId(int)">withId</a>, <a href="../../../core/AbstractQuery.html#withName(java.lang.String)">withName</a></code></li>
+<code><a href="../../../core/AbstractQuery.html#count()">count</a>, <a href="../../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../../core/AbstractQuery.html#first()">first</a>, <a href="../../../core/AbstractQuery.html#list()">list</a>, <a href="../../../core/AbstractQuery.html#map()">map</a>, <a href="../../../core/AbstractQuery.html#nameContains(java.lang.String)">nameContains</a>, <a href="../../../core/AbstractQuery.html#random()">random</a>, <a href="../../../core/AbstractQuery.html#result()">result</a>, <a href="../../../core/AbstractQuery.html#reverse()">reverse</a>, <a href="../../../core/AbstractQuery.html#shuffle()">shuffle</a>, <a href="../../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../../core/AbstractQuery.html#take(int)">take</a>, <a href="../../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../../core/AbstractQuery.html#withId(int)">withId</a>, <a href="../../../core/AbstractQuery.html#withName(java.lang.String)">withName</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -418,6 +425,32 @@ extends <a href="../../../core/AbstractQuery.html" title="class in com.kraken.ap
 </dl>
 </li>
 </ul>
+<a id="hasItems(java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasItems</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;hasItems&#8203;(java.util.List&lt;java.lang.Integer&gt;&nbsp;ids)</pre>
+<div class="block">Determines whether the inventory contains all items specified by the given list of IDs.
+ <p>
+ If the provided list of IDs is <code>null</code> or empty, the method returns <code>true</code>.
+ Otherwise, it internally converts the list to an array and delegates the check to the
+ <code>hasItems(int... ids)</code> method.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ids</code> - A <code>List</code> of <code>Integer</code> IDs representing the items to search for.
+            Each ID corresponds to a specific inventory item.
+            <ul>
+                <li>If the list is <code>null</code> or empty, the method will return <code>true</code>.</li>
+                <li>All IDs in the list must exist in the inventory for the method to return <code>true</code>.</li>
+            </ul></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the inventory contains all items specified in the list, or if the list is <code>null</code> or empty.
+         Otherwise, <code>false</code> is returned.</dd>
+</dl>
+</li>
+</ul>
 <a id="hasItems(java.lang.String...)">
 <!--   -->
 </a>
@@ -432,6 +465,37 @@ extends <a href="../../../core/AbstractQuery.html" title="class in com.kraken.ap
 <dd><code>names</code> - Variable argument of item names to search for.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>True if every single name in the arguments exists in the inventory.</dd>
+</dl>
+</li>
+</ul>
+<a id="orderBy(com.kraken.api.query.container.inventory.InventoryOrder)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>orderBy</h4>
+<pre class="methodSignature">public&nbsp;<a href="InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a>&nbsp;orderBy&#8203;(<a href="InventoryOrder.html" title="enum in com.kraken.api.query.container.inventory">InventoryOrder</a>&nbsp;order)</pre>
+<div class="block">Sorts the inventory query results based on the specified <code>InventoryOrder</code>.
+ <p>
+ This method applies the given <code>InventoryOrder</code>'s comparator to
+ sort inventory items based on the desired order or pattern.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>order</code> - The <code>InventoryOrder</code> specifying the sorting strategy.
+              <ul>
+                  <li>@TOP_LEFT_BOTTOM_RIGHT - Standard reading order: Row 1 (Left-&gt;Right),
+                      Row 2 (Left-&gt;Right), etc.</li>
+                  <li>@BOTTOM_RIGHT_TOP_LEFT - Reverse reading order: Last Item -&gt; First Item.</li>
+                  <li>@ZIG_ZAG - Snake/Zig-Zag pattern: Row 1 (Left-&gt;Right),
+                      Row 2 (Right-&gt;Left), Row 3 (Left-&gt;Right), etc.</li>
+                  <li>@ZIG_ZAG_REVERSE - Reverse Snake/Zig-Zag pattern starting from the bottom right.</li>
+                  <li>@TOP_DOWN_LEFT_RIGHT - Vertical columns:
+                      Column 1 (Top-&gt;Bottom), Column 2 (Top-&gt;Bottom), etc.</li>
+              </ul></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>An <code>InventoryQuery</code> object containing the inventory items
+         sorted based on the given order.</dd>
 </dl>
 </li>
 </ul>
@@ -476,22 +540,6 @@ extends <a href="../../../core/AbstractQuery.html" title="class in com.kraken.ap
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>True if the inventory is full and false otherwise.</dd>
-</dl>
-</li>
-</ul>
-<a id="count()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>count</h4>
-<pre class="methodSignature">public&nbsp;long&nbsp;count()</pre>
-<div class="block">Returns the count of items in the inventory</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../core/AbstractQuery.html#count()">count</a></code>&nbsp;in class&nbsp;<code><a href="../../../core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a>&lt;<a href="InventoryEntity.html" title="class in com.kraken.api.query.container.inventory">InventoryEntity</a>,&#8203;<a href="InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a>,&#8203;<a href="../ContainerItem.html" title="class in com.kraken.api.query.container">ContainerItem</a>&gt;</code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The count of items in the players inventory</dd>
 </dl>
 </li>
 </ul>
