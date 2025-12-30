@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10};
+var data = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -197,11 +197,18 @@ extends <a href="../../../core/AbstractQuery.html" title="class in com.kraken.ap
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isOpen()">isOpen</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Determines whether the bank interface is currently open.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected java.util.function.Supplier&lt;java.util.stream.Stream&lt;<a href="BankEntity.html" title="class in com.kraken.api.query.container.bank">BankEntity</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#source()">source</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="BankQuery.html" title="class in com.kraken.api.query.container.bank">BankQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withId(int)">withId</a></span>&#8203;(int&nbsp;id)</code></th>
 <td class="colLast">
@@ -214,7 +221,7 @@ extends <a href="../../../core/AbstractQuery.html" title="class in com.kraken.ap
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.kraken.api.core.<a href="../../../core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></h3>
-<code><a href="../../../core/AbstractQuery.html#count()">count</a>, <a href="../../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../../core/AbstractQuery.html#first()">first</a>, <a href="../../../core/AbstractQuery.html#list()">list</a>, <a href="../../../core/AbstractQuery.html#map()">map</a>, <a href="../../../core/AbstractQuery.html#nameContains(java.lang.String)">nameContains</a>, <a href="../../../core/AbstractQuery.html#random()">random</a>, <a href="../../../core/AbstractQuery.html#result()">result</a>, <a href="../../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../../core/AbstractQuery.html#withName(java.lang.String)">withName</a></code></li>
+<code><a href="../../../core/AbstractQuery.html#count()">count</a>, <a href="../../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../../core/AbstractQuery.html#first()">first</a>, <a href="../../../core/AbstractQuery.html#list()">list</a>, <a href="../../../core/AbstractQuery.html#map()">map</a>, <a href="../../../core/AbstractQuery.html#nameContains(java.lang.String)">nameContains</a>, <a href="../../../core/AbstractQuery.html#random()">random</a>, <a href="../../../core/AbstractQuery.html#result()">result</a>, <a href="../../../core/AbstractQuery.html#reverse()">reverse</a>, <a href="../../../core/AbstractQuery.html#shuffle()">shuffle</a>, <a href="../../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../../core/AbstractQuery.html#take(int)">take</a>, <a href="../../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../../core/AbstractQuery.html#withName(java.lang.String)">withName</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -274,7 +281,7 @@ extends <a href="../../../core/AbstractQuery.html" title="class in com.kraken.ap
 <a id="withId(int)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>withId</h4>
 <pre class="methodSignature">public&nbsp;<a href="BankQuery.html" title="class in com.kraken.api.query.container.bank">BankQuery</a>&nbsp;withId&#8203;(int&nbsp;id)</pre>
@@ -286,6 +293,23 @@ extends <a href="../../../core/AbstractQuery.html" title="class in com.kraken.ap
 <dd><code>id</code> - The item id to filter for</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>BankQuery</dd>
+</dl>
+</li>
+</ul>
+<a id="isOpen()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isOpen</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isOpen()</pre>
+<div class="block">Determines whether the bank interface is currently open.
+
+ <p>This method interacts with the <code>BankService</code> to check the status of the bank interface.
+ The bank is considered open if the corresponding interface is visible and active in the client.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the bank interface is open, <code>false</code> otherwise.</dd>
 </dl>
 </li>
 </ul>

@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":6,"i12":10,"i13":10,"i14":10,"i15":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":6,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -280,18 +280,32 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i10" class="altColor">
+<td class="colFirst"><code>java.util.stream.Stream&lt;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">T</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reverse()">reverse</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Reverses the order of elements in the stream and returns a new stream with the reversed order.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>java.util.stream.Stream&lt;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">T</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shuffle()">shuffle</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Randomizes the order of elements in the stream and returns a new stream with the shuffled elements.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="AbstractQuery.html" title="type parameter in AbstractQuery">Q</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sorted(java.util.Comparator)">sorted</a></span>&#8203;(java.util.Comparator&lt;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">T</a>&gt;&nbsp;comparator)</code></th>
 <td class="colLast">
 <div class="block">Applies a comparator to the stream for sorting elements within the stream.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>protected abstract java.util.function.Supplier&lt;java.util.stream.Stream&lt;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">T</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#source()">source</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>java.util.stream.Stream&lt;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">T</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stream()">stream</a></span>()</code></th>
 <td class="colLast">
@@ -299,21 +313,28 @@ extends java.lang.Object</pre>
  manually applied.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">T</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#take(int)">take</a></span>&#8203;(int&nbsp;n)</code></th>
+<td class="colLast">
+<div class="block">Takes the first N elements from the stream and returns them as a list.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>java.util.stream.Stream&lt;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">R</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toRuneLite()">toRuneLite</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the underlying RuneLite entities that have been wrapped by the API.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="AbstractQuery.html" title="type parameter in AbstractQuery">Q</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withId(int)">withId</a></span>&#8203;(int&nbsp;id)</code></th>
 <td class="colLast">
 <div class="block">Filters the stream of game entities for ones where the ID matches a provided id</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="AbstractQuery.html" title="type parameter in AbstractQuery">Q</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withName(java.lang.String)">withName</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
 <td class="colLast">
@@ -452,6 +473,54 @@ extends java.lang.Object</pre>
 <dd><code>name</code> - The name to match against</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Entities whose name contains the prefix</dd>
+</dl>
+</li>
+</ul>
+<a id="shuffle()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shuffle</h4>
+<pre class="methodSignature">public&nbsp;java.util.stream.Stream&lt;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">T</a>&gt;&nbsp;shuffle()</pre>
+<div class="block">Randomizes the order of elements in the stream and returns a new stream with the shuffled elements.
+ <p>
+ This method collects all elements in the stream into a list, shuffles the list using
+ <code>Collections.shuffle(List)</code>, and then converts the shuffled list back into a stream for further use.
+ </p>
+
+ <p>
+ Note: This operation consumes the original stream, making it unsuitable for re-use after calling this method.
+ Additionally, the shuffling process may impact performance for very large datasets due to memory usage
+ (as it fully materializes the stream into a list) and the shuffling algorithm.
+ </p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new <code>Stream&lt;T&gt;</code> containing the same elements as the original stream, but in a randomized order.</dd>
+</dl>
+</li>
+</ul>
+<a id="reverse()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reverse</h4>
+<pre class="methodSignature">public&nbsp;java.util.stream.Stream&lt;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">T</a>&gt;&nbsp;reverse()</pre>
+<div class="block">Reverses the order of elements in the stream and returns a new stream with the reversed order.
+ <p>
+ This method collects all elements in the stream into a list, reverses the list using
+ <code>Collections.reverse(List)</code>, and then converts the reversed list back into a stream for further use.
+ </p>
+
+ <p>
+ Note: This operation consumes the original stream, making it unsuitable for re-use
+ after calling this method. Additionally, the reversal process may impact performance
+ for very large datasets due to memory usage (as it fully materializes the stream into a list).
+ </p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new <code>Stream&lt;T&gt;</code> containing the same elements as the original stream, but in reversed order.</dd>
 </dl>
 </li>
 </ul>
@@ -614,7 +683,7 @@ extends java.lang.Object</pre>
 <a id="first()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>first</h4>
 <pre class="methodSignature">public&nbsp;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">T</a>&nbsp;first()</pre>
@@ -623,6 +692,22 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>T The type of object being queried (e.g., NpcEntity, WidgetEntity)</dd>
+</dl>
+</li>
+</ul>
+<a id="take(int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>take</h4>
+<pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="AbstractQuery.html" title="type parameter in AbstractQuery">T</a>&gt;&nbsp;take&#8203;(int&nbsp;n)</pre>
+<div class="block">Takes the first N elements from the stream and returns them as a list.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>n</code> - The number of elements to take from the stream.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>List of entities</dd>
 </dl>
 </li>
 </ul>

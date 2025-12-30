@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -169,21 +169,21 @@ extends java.lang.Object</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleep(int)">sleep</a></span>&#8203;(int&nbsp;duration)</code></th>
 <td class="colLast">
 <div class="block">Sleeps for a specified amount of time in milliseconds.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleep(int,int)">sleep</a></span>&#8203;(int&nbsp;start,
      int&nbsp;end)</code></th>
 <td class="colLast">
@@ -206,68 +206,75 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepFor(int)">sleepFor</a></span>&#8203;(int&nbsp;ticks)</code></th>
+<td class="colLast">
+<div class="block">Sleeps the current thread by the specified number of game ticks</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepGaussian(int,int)">sleepGaussian</a></span>&#8203;(int&nbsp;mean,
              int&nbsp;stddev)</code></th>
 <td class="colLast">
 <div class="block">Sleeps for a duration based on a Gaussian distribution.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntil(java.util.function.BooleanSupplier)">sleepUntil</a></span>&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition)</code></th>
 <td class="colLast">
 <div class="block">Waits until the specified condition is true, with a default timeout of 5000ms.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntil(java.util.function.BooleanSupplier,int)">sleepUntil</a></span>&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition,
           int&nbsp;time)</code></th>
 <td class="colLast">
 <div class="block">Waits until the specified condition is true, or a timeout is reached.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntil(java.util.function.Supplier)">sleepUntil</a></span>&#8203;(java.util.function.Supplier&lt;java.lang.Boolean&gt;&nbsp;condition)</code></th>
 <td class="colLast">
 <div class="block">Waits until the specified condition is true.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntil(java.util.function.Supplier,int)">sleepUntil</a></span>&#8203;(java.util.function.Supplier&lt;java.lang.Boolean&gt;&nbsp;condition,
           int&nbsp;ticks)</code></th>
 <td class="colLast">
 <div class="block">sleeps until the specified condition is true or the timeout is reached.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntil(java.util.function.Supplier,long)">sleepUntil</a></span>&#8203;(java.util.function.Supplier&lt;java.lang.Boolean&gt;&nbsp;condition,
           long&nbsp;timeoutMS)</code></th>
 <td class="colLast">
 <div class="block">sleeps until the specified condition is true or the timeout is reached.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntilIdle()">sleepUntilIdle</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Sleeps until the local player's animation is idle.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntilNotNull(java.util.concurrent.Callable,int)">sleepUntilNotNull</a></span>&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method,
                  int&nbsp;timeoutMillis)</code></th>
 <td class="colLast">
 <div class="block">Repeatedly calls a method until it returns a non-null value, or a timeout is reached.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntilNotNull(java.util.concurrent.Callable,int,int)">sleepUntilNotNull</a></span>&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method,
                  int&nbsp;timeoutMillis,
                  int&nbsp;sleepMillis)</code></th>
@@ -275,15 +282,8 @@ extends java.lang.Object</pre>
 <div class="block">Repeatedly calls a method until it returns a non-null value, or a timeout is reached.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntilTick(int)">sleepUntilTick</a></span>&#8203;(int&nbsp;ticksToWait)</code></th>
-<td class="colLast">
-<div class="block">Sleeps for a specified number of game ticks.</div>
-</td>
-</tr>
 <tr id="i14" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntilTile(int,int)">sleepUntilTile</a></span>&#8203;(int&nbsp;worldX,
               int&nbsp;worldY)</code></th>
 <td class="colLast">
@@ -291,7 +291,15 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntilTrue(java.util.function.BooleanSupplier,int)">sleepUntilTrue</a></span>&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition,
+              int&nbsp;timeout)</code></th>
+<td class="colLast">
+<div class="block">Waits until the specified condition is true, checking every 100ms, until a timeout is reached.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepUntilTrue(java.util.function.BooleanSupplier,int,int)">sleepUntilTrue</a></span>&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition,
               int&nbsp;time,
               int&nbsp;timeout)</code></th>
@@ -299,26 +307,19 @@ extends java.lang.Object</pre>
 <div class="block">Waits until the specified condition is true, checking at a given interval, until a timeout is reached.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sleepWhile(java.util.function.BooleanSupplier,int)">sleepWhile</a></span>&#8203;(java.util.function.BooleanSupplier&nbsp;condition,
           int&nbsp;timeout)</code></th>
 <td class="colLast">
 <div class="block">Sleeps while the specified condition is true or until the timeout is reached.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tick()">tick</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Sleeps the current thread for one game tick</div>
-</td>
-</tr>
-<tr id="i18" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tick(int)">tick</a></span>&#8203;(int&nbsp;ticks)</code></th>
-<td class="colLast">
-<div class="block">Sleeps the current thread by the specified number of game ticks</div>
 </td>
 </tr>
 </table>
@@ -370,7 +371,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepUntil</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sleepUntil&#8203;(java.util.function.Supplier&lt;java.lang.Boolean&gt;&nbsp;condition)</pre>
+<pre class="methodSignature">public static&nbsp;void&nbsp;sleepUntil&#8203;(java.util.function.Supplier&lt;java.lang.Boolean&gt;&nbsp;condition)</pre>
 <div class="block">Waits until the specified condition is true.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -384,8 +385,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepUntil</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;sleepUntil&#8203;(java.util.function.Supplier&lt;java.lang.Boolean&gt;&nbsp;condition,
-                          long&nbsp;timeoutMS)</pre>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;sleepUntil&#8203;(java.util.function.Supplier&lt;java.lang.Boolean&gt;&nbsp;condition,
+                                 long&nbsp;timeoutMS)</pre>
 <div class="block">sleeps until the specified condition is true or the timeout is reached.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -402,8 +403,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepUntil</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;sleepUntil&#8203;(java.util.function.Supplier&lt;java.lang.Boolean&gt;&nbsp;condition,
-                          int&nbsp;ticks)</pre>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;sleepUntil&#8203;(java.util.function.Supplier&lt;java.lang.Boolean&gt;&nbsp;condition,
+                                 int&nbsp;ticks)</pre>
 <div class="block">sleeps until the specified condition is true or the timeout is reached.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -420,7 +421,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepUntilIdle</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sleepUntilIdle()</pre>
+<pre class="methodSignature">public static&nbsp;void&nbsp;sleepUntilIdle()</pre>
 <div class="block">Sleeps until the local player's animation is idle.</div>
 </li>
 </ul>
@@ -430,8 +431,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepUntilTile</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sleepUntilTile&#8203;(int&nbsp;worldX,
-                           int&nbsp;worldY)</pre>
+<pre class="methodSignature">public static&nbsp;void&nbsp;sleepUntilTile&#8203;(int&nbsp;worldX,
+                                  int&nbsp;worldY)</pre>
 <div class="block">Sleeps until the local player reaches the specified world tile.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -446,7 +447,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleep</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sleep&#8203;(int&nbsp;duration)</pre>
+<pre class="methodSignature">public static&nbsp;void&nbsp;sleep&#8203;(int&nbsp;duration)</pre>
 <div class="block">Sleeps for a specified amount of time in milliseconds. This sleep is interruptible by script cancellation.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -490,8 +491,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleep</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sleep&#8203;(int&nbsp;start,
-                  int&nbsp;end)</pre>
+<pre class="methodSignature">public static&nbsp;void&nbsp;sleep&#8203;(int&nbsp;start,
+                         int&nbsp;end)</pre>
 <div class="block">Sleeps for a random duration between start and end milliseconds.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -506,8 +507,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepGaussian</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;sleepGaussian&#8203;(int&nbsp;mean,
-                          int&nbsp;stddev)</pre>
+<pre class="methodSignature">public static&nbsp;void&nbsp;sleepGaussian&#8203;(int&nbsp;mean,
+                                 int&nbsp;stddev)</pre>
 <div class="block">Sleeps for a duration based on a Gaussian distribution.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -522,9 +523,9 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepUntilNotNull</h4>
-<pre class="methodSignature">public&nbsp;&lt;T&gt;&nbsp;T&nbsp;sleepUntilNotNull&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method,
-                               int&nbsp;timeoutMillis,
-                               int&nbsp;sleepMillis)</pre>
+<pre class="methodSignature">public static&nbsp;&lt;T&gt;&nbsp;T&nbsp;sleepUntilNotNull&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method,
+                                      int&nbsp;timeoutMillis,
+                                      int&nbsp;sleepMillis)</pre>
 <div class="block">Repeatedly calls a method until it returns a non-null value, or a timeout is reached.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -544,8 +545,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepUntilNotNull</h4>
-<pre class="methodSignature">public&nbsp;&lt;T&gt;&nbsp;T&nbsp;sleepUntilNotNull&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method,
-                               int&nbsp;timeoutMillis)</pre>
+<pre class="methodSignature">public static&nbsp;&lt;T&gt;&nbsp;T&nbsp;sleepUntilNotNull&#8203;(java.util.concurrent.Callable&lt;T&gt;&nbsp;method,
+                                      int&nbsp;timeoutMillis)</pre>
 <div class="block">Repeatedly calls a method until it returns a non-null value, or a timeout is reached.
  Sleeps 100ms between calls.</div>
 <dl>
@@ -565,7 +566,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepUntil</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;sleepUntil&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition)</pre>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;sleepUntil&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition)</pre>
 <div class="block">Waits until the specified condition is true, with a default timeout of 5000ms.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -581,8 +582,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepUntil</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;sleepUntil&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition,
-                          int&nbsp;time)</pre>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;sleepUntil&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition,
+                                 int&nbsp;time)</pre>
 <div class="block">Waits until the specified condition is true, or a timeout is reached.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -599,17 +600,17 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>tick</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;tick()</pre>
+<pre class="methodSignature">public static&nbsp;void&nbsp;tick()</pre>
 <div class="block">Sleeps the current thread for one game tick</div>
 </li>
 </ul>
-<a id="tick(int)">
+<a id="sleepFor(int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>tick</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;tick&#8203;(int&nbsp;ticks)</pre>
+<h4>sleepFor</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;sleepFor&#8203;(int&nbsp;ticks)</pre>
 <div class="block">Sleeps the current thread by the specified number of game ticks</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -623,9 +624,9 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sleepUntilTrue</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;sleepUntilTrue&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition,
-                              int&nbsp;time,
-                              int&nbsp;timeout)</pre>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;sleepUntilTrue&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition,
+                                     int&nbsp;time,
+                                     int&nbsp;timeout)</pre>
 <div class="block">Waits until the specified condition is true, checking at a given interval, until a timeout is reached.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -637,14 +638,32 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="sleepWhile(java.util.function.BooleanSupplier,int)">
+<a id="sleepUntilTrue(java.util.function.BooleanSupplier,int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
+<h4>sleepUntilTrue</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;sleepUntilTrue&#8203;(java.util.function.BooleanSupplier&nbsp;awaitedCondition,
+                                     int&nbsp;timeout)</pre>
+<div class="block">Waits until the specified condition is true, checking every 100ms, until a timeout is reached.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>awaitedCondition</code> - the condition to be met</dd>
+<dd><code>timeout</code> - the maximum time to wait in milliseconds</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the condition was met, false if the timeout was reached</dd>
+</dl>
+</li>
+</ul>
+<a id="sleepWhile(java.util.function.BooleanSupplier,int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
 <h4>sleepWhile</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;sleepWhile&#8203;(java.util.function.BooleanSupplier&nbsp;condition,
-                          int&nbsp;timeout)</pre>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;sleepWhile&#8203;(java.util.function.BooleanSupplier&nbsp;condition,
+                                 int&nbsp;timeout)</pre>
 <div class="block">Sleeps while the specified condition is true or until the timeout is reached.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -652,22 +671,6 @@ extends java.lang.Object</pre>
 <dd><code>timeout</code> - the maximum time to sleep in milliseconds</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the condition became false, false if the timeout was reached</dd>
-</dl>
-</li>
-</ul>
-<a id="sleepUntilTick(int)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>sleepUntilTick</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;sleepUntilTick&#8203;(int&nbsp;ticksToWait)</pre>
-<div class="block">Sleeps for a specified number of game ticks.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>ticksToWait</code> - the number of ticks to wait</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if the sleep completed, false if it was interrupted or timed out</dd>
 </dl>
 </li>
 </ul>

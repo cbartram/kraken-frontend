@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -225,32 +225,39 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 </td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="GroundObjectQuery.html" title="class in com.kraken.api.query.groundobject">GroundObjectQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sortByDistance()">sortByDistance</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Sorts the ground object stream by distance from the local players' current location.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>protected java.util.function.Supplier&lt;java.util.stream.Stream&lt;<a href="GroundObjectEntity.html" title="class in com.kraken.api.query.groundobject">GroundObjectEntity</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#source()">source</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="GroundObjectQuery.html" title="class in com.kraken.api.query.groundobject">GroundObjectQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stackValueAbove(int)">stackValueAbove</a></span>&#8203;(int&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Filters for ground items where the Grand Exchange price is above a specific threshold.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="GroundObjectQuery.html" title="class in com.kraken.api.query.groundobject">GroundObjectQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#valueAbove(int)">valueAbove</a></span>&#8203;(int&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Filters for ground items where the Grand Exchange price is above a specific threshold.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="GroundObjectQuery.html" title="class in com.kraken.api.query.groundobject">GroundObjectQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#within(int)">within</a></span>&#8203;(int&nbsp;distance)</code></th>
 <td class="colLast">
 <div class="block">Filters for only objects whose location is within the specified distance from the players current local point.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="GroundObjectQuery.html" title="class in com.kraken.api.query.groundobject">GroundObjectQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#within(net.runelite.api.coords.WorldPoint,int)">within</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;anchor,
       int&nbsp;distance)</code></th>
@@ -264,7 +271,7 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.kraken.api.core.<a href="../../core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></h3>
-<code><a href="../../core/AbstractQuery.html#count()">count</a>, <a href="../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../core/AbstractQuery.html#first()">first</a>, <a href="../../core/AbstractQuery.html#list()">list</a>, <a href="../../core/AbstractQuery.html#map()">map</a>, <a href="../../core/AbstractQuery.html#nameContains(java.lang.String)">nameContains</a>, <a href="../../core/AbstractQuery.html#random()">random</a>, <a href="../../core/AbstractQuery.html#result()">result</a>, <a href="../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../core/AbstractQuery.html#withId(int)">withId</a>, <a href="../../core/AbstractQuery.html#withName(java.lang.String)">withName</a></code></li>
+<code><a href="../../core/AbstractQuery.html#count()">count</a>, <a href="../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../core/AbstractQuery.html#first()">first</a>, <a href="../../core/AbstractQuery.html#list()">list</a>, <a href="../../core/AbstractQuery.html#map()">map</a>, <a href="../../core/AbstractQuery.html#nameContains(java.lang.String)">nameContains</a>, <a href="../../core/AbstractQuery.html#random()">random</a>, <a href="../../core/AbstractQuery.html#result()">result</a>, <a href="../../core/AbstractQuery.html#reverse()">reverse</a>, <a href="../../core/AbstractQuery.html#shuffle()">shuffle</a>, <a href="../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../core/AbstractQuery.html#take(int)">take</a>, <a href="../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../core/AbstractQuery.html#withId(int)">withId</a>, <a href="../../core/AbstractQuery.html#withName(java.lang.String)">withName</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -397,6 +404,20 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <h4>nearest</h4>
 <pre class="methodSignature">public&nbsp;<a href="GroundObjectEntity.html" title="class in com.kraken.api.query.groundobject">GroundObjectEntity</a>&nbsp;nearest()</pre>
 <div class="block">Sorts the stream of ground objects to order them by manhattan distance to the local player.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>GroundObjectQuery</dd>
+</dl>
+</li>
+</ul>
+<a id="sortByDistance()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sortByDistance</h4>
+<pre class="methodSignature">public&nbsp;<a href="GroundObjectQuery.html" title="class in com.kraken.api.query.groundobject">GroundObjectQuery</a>&nbsp;sortByDistance()</pre>
+<div class="block">Sorts the ground object stream by distance from the local players' current location.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>GroundObjectQuery</dd>

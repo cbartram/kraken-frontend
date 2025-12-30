@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -200,14 +200,14 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#alive()">alive</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Filters for NPCs that are alive (health greater than 0).</div>
+<div class="block">Filters the query to include only NPCs that are currently alive.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#at(net.runelite.api.coords.WorldPoint)">at</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;location)</code></th>
 <td class="colLast">
-<div class="block">Returns a stream of NPC's at a given world point.</div>
+<div class="block">Filters and returns an <code>NpcQuery</code> containing NPCs located at the specified world point.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -228,62 +228,77 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interacting()">interacting</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Filters for NPCs that are interacting with other players (not the local player).</div>
+<div class="block">Filters the query to include only NPCs that are currently interacting with any entity other than the local player.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactingWith(net.runelite.api.Actor)">interactingWith</a></span>&#8203;(net.runelite.api.Actor&nbsp;actor)</code></th>
 <td class="colLast">
-<div class="block">Filters the stream for NPCs which are interacting with a specified <code>Actor</code></div>
+<div class="block">Filters the query to include only NPCs that are currently interacting with the specified <code>actor</code>.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interactingWithPlayer()">interactingWithPlayer</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Filters for NPCs that are interacting with the local player (e.g., attacking me).</div>
+<div class="block">Filters the query to include only NPCs that are currently interacting with the local player.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="NpcEntity.html" title="class in com.kraken.api.query.npc">NpcEntity</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nearest()">nearest</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Sorts the results by distance to the local player.</div>
+<div class="block">Retrieves the nearest NPC entity to the local player's current position.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nearestTo(net.runelite.api.coords.WorldPoint)">nearestTo</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;location)</code></th>
 <td class="colLast">
-<div class="block">Sorts the results by distance to the specified point.</div>
+<div class="block">Sorts the current query results by determining the distance of each NPC's <code>WorldPoint</code> to a specified
+ <code>WorldPoint</code> location and arranging them in ascending order of proximity.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reachable()">reachable</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Filters for only NPC's which are reachable from the players current tile.</div>
+<div class="block">Filters the NPCs to include only those that are reachable based on their world location.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sortByDistance()">sortByDistance</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Sorts the NPC stream by distance from the local players' current location.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>protected java.util.function.Supplier&lt;java.util.stream.Stream&lt;<a href="NpcEntity.html" title="class in com.kraken.api.query.npc">NpcEntity</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#source()">source</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withAction(java.lang.String)">withAction</a></span>&#8203;(java.lang.String&nbsp;action)</code></th>
+<td class="colLast">
+<div class="block">Filters the query for NPCs that have a specific menu option available.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#within(int)">within</a></span>&#8203;(int&nbsp;distance)</code></th>
 <td class="colLast">
-<div class="block">Filters for NPCs within a specific distance.</div>
+<div class="block">Filters the NPCs in the query to include only those within a specified distance from the local player's position.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withinArea(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldPoint)">withinArea</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;min,
           net.runelite.api.coords.WorldPoint&nbsp;max)</code></th>
 <td class="colLast">
-<div class="block">Filters for NPC's within a specified area.</div>
+<div class="block">Filters the query to include only NPCs that are located within a specified rectangular area.</div>
 </td>
 </tr>
 </table>
@@ -292,7 +307,7 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.kraken.api.core.<a href="../../core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></h3>
-<code><a href="../../core/AbstractQuery.html#count()">count</a>, <a href="../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../core/AbstractQuery.html#first()">first</a>, <a href="../../core/AbstractQuery.html#list()">list</a>, <a href="../../core/AbstractQuery.html#map()">map</a>, <a href="../../core/AbstractQuery.html#nameContains(java.lang.String)">nameContains</a>, <a href="../../core/AbstractQuery.html#random()">random</a>, <a href="../../core/AbstractQuery.html#result()">result</a>, <a href="../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../core/AbstractQuery.html#withId(int)">withId</a>, <a href="../../core/AbstractQuery.html#withName(java.lang.String)">withName</a></code></li>
+<code><a href="../../core/AbstractQuery.html#count()">count</a>, <a href="../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../core/AbstractQuery.html#first()">first</a>, <a href="../../core/AbstractQuery.html#list()">list</a>, <a href="../../core/AbstractQuery.html#map()">map</a>, <a href="../../core/AbstractQuery.html#nameContains(java.lang.String)">nameContains</a>, <a href="../../core/AbstractQuery.html#random()">random</a>, <a href="../../core/AbstractQuery.html#result()">result</a>, <a href="../../core/AbstractQuery.html#reverse()">reverse</a>, <a href="../../core/AbstractQuery.html#shuffle()">shuffle</a>, <a href="../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../core/AbstractQuery.html#take(int)">take</a>, <a href="../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../core/AbstractQuery.html#withId(int)">withId</a>, <a href="../../core/AbstractQuery.html#withName(java.lang.String)">withName</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -356,12 +371,14 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <li class="blockList">
 <h4>at</h4>
 <pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;at&#8203;(net.runelite.api.coords.WorldPoint&nbsp;location)</pre>
-<div class="block">Returns a stream of NPC's at a given world point.</div>
+<div class="block">Filters and returns an <code>NpcQuery</code> containing NPCs located at the specified world point.
+ <p>
+ This method applies a filter to include only NPCs whose world location matches the given <code>location</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>location</code> - The world point to check</dd>
+<dd><code>location</code> - the <code>WorldPoint</code> representing the target location to filter NPCs by.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>NpcQuery</dd>
+<dd>an <code>NpcQuery</code> containing NPCs at the specified <code>location</code>.</dd>
 </dl>
 </li>
 </ul>
@@ -392,11 +409,14 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <li class="blockList">
 <h4>reachable</h4>
 <pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;reachable()</pre>
-<div class="block">Filters for only NPC's which are reachable from the players current tile. The player must be able to
- reach the NPC's true southwest tile in order for this to include the NPC in the resulting stream.</div>
+<div class="block">Filters the NPCs to include only those that are reachable based on their world location.
+ <p>
+ This method applies a filter to the NPC query, ensuring that each NPC's raw data existence
+ is validated and their world location is checked for reachability using the tile service.
+ </p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>NpcQuery</dd>
+<dd>A @NpcQuery containing only the NPCs that are reachable.</dd>
 </dl>
 </li>
 </ul>
@@ -422,11 +442,25 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <li class="blockList">
 <h4>nearest</h4>
 <pre class="methodSignature">public&nbsp;<a href="NpcEntity.html" title="class in com.kraken.api.query.npc">NpcEntity</a>&nbsp;nearest()</pre>
-<div class="block">Sorts the results by distance to the local player.
- Usage: ctx.npcs().withName("Goblin").nearest().first();</div>
+<div class="block">Retrieves the nearest NPC entity to the local player's current position.
+
+ <p>
+ This method determines the NPC closest to the local player by comparing
+ the distances between each NPC's local location and the local player's local location.
+ The comparison is performed by sorting the NPCs based on their proximity,
+ and the first (closest) NPC is selected.
+ </p>
+
+ <p>
+ The result is typically used to quickly identify and interact with the most
+ immediate NPC relative to the player's current position, which can assist
+ in various gameplay interactions.
+ </p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>NpcQuery</dd>
+<dd>The <code>NpcEntity</code> nearest to the local player's current position,
+         as determined based on the shortest distance in the local coordinate system.
+         If no NPCs are available, the return value may be <code>null</code>.</dd>
 </dl>
 </li>
 </ul>
@@ -437,11 +471,31 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <li class="blockList">
 <h4>nearestTo</h4>
 <pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;nearestTo&#8203;(net.runelite.api.coords.WorldPoint&nbsp;location)</pre>
-<div class="block">Sorts the results by distance to the specified point.
- Usage: ctx.npcs().withName("Goblin").nearestTo(new WorldPoint(2056, 8143, 0)).first();</div>
+<div class="block">Sorts the current query results by determining the distance of each NPC's <code>WorldPoint</code> to a specified
+ <code>WorldPoint</code> location and arranging them in ascending order of proximity.
+
+ <p>
+ This method calculates the distance between the provided <code>location</code> and each NPC's world location.
+ The resulting query will contain NPCs sorted such that those closest to the specified location appear first.
+ </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>location</code> - The World point to use as a distance anchor.</dd>
+<dd><code>location</code> - The <code>WorldPoint</code> to which NPCs' distances will be calculated.
+                 This parameter defines the point of reference for sorting NPCs by proximity.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A <code>NpcQuery</code> containing NPCs sorted by their proximity to the specified <code>location</code>.</dd>
+</dl>
+</li>
+</ul>
+<a id="sortByDistance()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sortByDistance</h4>
+<pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;sortByDistance()</pre>
+<div class="block">Sorts the NPC stream by distance from the local players' current location.</div>
+<dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>NpcQuery</dd>
 </dl>
@@ -454,12 +508,39 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <li class="blockList">
 <h4>within</h4>
 <pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;within&#8203;(int&nbsp;distance)</pre>
-<div class="block">Filters for NPCs within a specific distance.</div>
+<div class="block">Filters the NPCs in the query to include only those within a specified distance from the local player's position.
+ <p>
+ This method calculates the distance between each NPC's world location and the local player's current world
+ location, including only those NPCs with a distance less than or equal to the specified value.
+ </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>distance</code> - The distance within which to search for NPC's.</dd>
+<dd><code>distance</code> - The maximum distance (in tiles) from the local player within which NPCs should be included.
+                 This value must be greater than or equal to 0.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>NpcQuery</dd>
+<dd>A filtered <code>NpcQuery</code> containing only the NPCs within the specified distance from the local player.</dd>
+</dl>
+</li>
+</ul>
+<a id="withAction(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withAction</h4>
+<pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;withAction&#8203;(java.lang.String&nbsp;action)</pre>
+<div class="block">Filters the query for NPCs that have a specific menu option available.
+ <p>
+ This method checks the list of actions associated with each NPC's composition.
+ If the specified <code>option</code> matches any of the available actions (case-insensitive),
+ the NPC will be included in the resulting query.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>action</code> - The menu option to check for, e.g., @Attack, @Talk-to, @Use, etc...
+               The input is case-insensitive.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A filtered <code>NpcQuery</code> containing only the NPCs that match the specified menu option.</dd>
 </dl>
 </li>
 </ul>
@@ -471,14 +552,23 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <h4>withinArea</h4>
 <pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;withinArea&#8203;(net.runelite.api.coords.WorldPoint&nbsp;min,
                            net.runelite.api.coords.WorldPoint&nbsp;max)</pre>
-<div class="block">Filters for NPC's within a specified area. The min WorldPoint should be the southwest tile of the area
- and the max WorldPoint should be the northeast tile of the area.</div>
+<div class="block">Filters the query to include only NPCs that are located within a specified rectangular area.
+ The area is defined by two corner points, <code>min</code> (lower-left) and <code>max</code> (upper-right),
+ in the world map grid.
+
+ <p>
+ NPCs are included in the resulting query if their world point lies within the bounds created
+ by the two corner points. The bounds are inclusive of the edges. This allows querying
+ NPCs that exist within a specific area of interest.
+ </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>min</code> - The southwest minimum world point of the area to check</dd>
-<dd><code>max</code> - The northeast maximum world point of the area to check</dd>
+<dd><code>min</code> - The <code>WorldPoint</code> representing the lower-left corner of the area.
+            This defines one bound of the rectangular query range.</dd>
+<dd><code>max</code> - The <code>WorldPoint</code> representing the upper-right corner of the area.
+            This defines the opposite bound of the rectangular query range.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>NpcQuery</dd>
+<dd>A filtered <code>NpcQuery</code> containing only the NPCs located within the specified area.</dd>
 </dl>
 </li>
 </ul>
@@ -489,10 +579,19 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <li class="blockList">
 <h4>interactingWithPlayer</h4>
 <pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;interactingWithPlayer()</pre>
-<div class="block">Filters for NPCs that are interacting with the local player (e.g., attacking me).</div>
+<div class="block">Filters the query to include only NPCs that are currently interacting with the local player.
+ <p>
+ An NPC is considered to be interacting with the local player if the NPC's <code>interacting</code>
+ target is non-<code>null</code> and matches the clientâ€™s local player.
+ </p>
+
+ <ul>
+   <li>This method allows narrowing down the query to find NPCs that are actively engaged with
+       the local player, whether by combat, dialogue, or other forms of interaction.</li>
+ </ul></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>NpcQuery</dd>
+<dd>A filtered <code>NpcQuery</code> containing only the NPCs that are interacting with the local player.</dd>
 </dl>
 </li>
 </ul>
@@ -503,10 +602,21 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <li class="blockList">
 <h4>interacting</h4>
 <pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;interacting()</pre>
-<div class="block">Filters for NPCs that are interacting with other players (not the local player).</div>
+<div class="block">Filters the query to include only NPCs that are currently interacting with any entity other than the local player.
+ <p>
+ An NPC is considered to be interacting if its <code>interacting</code> target is non-<code>null</code> and does not match
+ the local player. This includes NPCs that are engaged with other players, NPCs, or other entities in any form
+ of interaction (e.g., combat, dialogue, etc.).
+ </p>
+
+ <ul>
+   <li>This method helps identify NPCs that are actively engaged in an interaction within the game world,
+   excluding those interacting directly with the local player.</li>
+ </ul></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>NpcQuery</dd>
+<dd>A filtered <code>NpcQuery</code> containing only the NPCs that are interacting with entities other than
+ the local player.</dd>
 </dl>
 </li>
 </ul>
@@ -517,12 +627,21 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <li class="blockList">
 <h4>interactingWith</h4>
 <pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;interactingWith&#8203;(net.runelite.api.Actor&nbsp;actor)</pre>
-<div class="block">Filters the stream for NPCs which are interacting with a specified <code>Actor</code></div>
+<div class="block">Filters the query to include only NPCs that are currently interacting with the specified <code>actor</code>.
+ <p>
+ An NPC is considered to be interacting with the given actor if the NPC's <code>interacting</code> target
+ is non-<code>null</code> and matches the provided <code>actor</code>.
+ </p>
+ <ul>
+   <li>This method is useful for identifying NPCs actively engaging with a specific actor, such as
+   another player, NPC, or inanimate entity.</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>actor</code> - The actor to check NPC interactions against</dd>
+<dd><code>actor</code> - The <code>Actor</code> that the NPCs being searched for should be interacting with.
+              Passing <code>null</code> as the parameter is not allowed.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>NpcQuery</dd>
+<dd>A filtered <code>NpcQuery</code> containing only the NPCs that are interacting with the specified actor.</dd>
 </dl>
 </li>
 </ul>
@@ -533,10 +652,20 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <li class="blockList">
 <h4>alive</h4>
 <pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;alive()</pre>
-<div class="block">Filters for NPCs that are alive (health greater than 0).</div>
+<div class="block">Filters the query to include only NPCs that are currently alive.
+ <p>
+ An NPC is considered to be alive if its internal state indicates it is not dead.
+ This method applies a filter to exclude NPCs marked as dead from the result set.
+ </p>
+
+ <ul>
+   <li>NPCs included in the resulting query are capable of interaction or action
+       within the game environment.</li>
+   <li>This filter helps narrow the query to focus only on viable, active NPCs.</li>
+ </ul></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>NpcQuery</dd>
+<dd>A filtered <code>NpcQuery</code> containing only the NPCs that are alive.</dd>
 </dl>
 </li>
 </ul>

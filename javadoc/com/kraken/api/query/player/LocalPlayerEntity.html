@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -184,8 +184,7 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.kraken.api.Context,java.util.concurrent.ScheduledExecutorService)">LocalPlayerEntity</a></span>&#8203;(<a href="../../Context.html" title="class in com.kraken.api">Context</a>&nbsp;ctx,
-                 java.util.concurrent.ScheduledExecutorService&nbsp;executor)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.kraken.api.Context)">LocalPlayerEntity</a></span>&#8203;(<a href="../../Context.html" title="class in com.kraken.api">Context</a>&nbsp;ctx)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -228,48 +227,83 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
 </td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBoostedLevel(net.runelite.api.Skill)">getBoostedLevel</a></span>&#8203;(net.runelite.api.Skill&nbsp;skill)</code></th>
+<td class="colLast">
+<div class="block">Retrieves the boosted level of a specified skill.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getExperience(net.runelite.api.Skill)">getExperience</a></span>&#8203;(net.runelite.api.Skill&nbsp;skill)</code></th>
+<td class="colLast">
+<div class="block">Retrieves the total experience of the specified skill for the current client.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHealthPercentage()">getHealthPercentage</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Calculates the player's current health as a percentage of their real (base) health.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHealthRemaining()">getHealthRemaining</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the players current health remaining as an integer.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLevel(net.runelite.api.Skill)">getLevel</a></span>&#8203;(net.runelite.api.Skill&nbsp;skill)</code></th>
+<td class="colLast">
+<div class="block">Retrieves the base level of the specified skill.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMaxHealth()">getMaxHealth</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the players maximum health as an integer.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSpecialAttackEnergy()">getSpecialAttackEnergy</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the amount of special attack energy remaining as a percent (0-100).</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTotalExperience()">getTotalExperience</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Calculates the total experience across all skills for the current client.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIdle()">isIdle</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Checks if the player is currently idle based on their pose animation.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInArea(com.kraken.api.service.tile.GameArea)">isInArea</a></span>&#8203;(<a href="../../service/tile/GameArea.html" title="class in com.kraken.api.service.tile">GameArea</a>&nbsp;area)</code></th>
+<td class="colLast">
+<div class="block">Checks if the player is within the game area.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInArea(net.runelite.api.coords.WorldPoint)">isInArea</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint)</code></th>
 <td class="colLast">
 <div class="block">Checks if the player is within 5 tiles of a given <code>WorldPoint</code>.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInArea(net.runelite.api.coords.WorldPoint,int)">isInArea</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint,
         int&nbsp;radius)</code></th>
@@ -277,7 +311,7 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
 <div class="block">Checks if the player is within a specified distance of a given <code>WorldPoint</code>.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInArea(net.runelite.api.coords.WorldPoint,int,int)">isInArea</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;worldPoint,
         int&nbsp;xRadius,
@@ -286,40 +320,40 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
 <div class="block">Checks if the player is within a specified area around a given <code>WorldPoint</code>.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isMoving()">isMoving</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Checks if the player is currently moving based on their pose animation.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRunEnabled()">isRunEnabled</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns true when a players run is enabled and false otherwise.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSpecDisabled()">isSpecDisabled</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns true when the spec is disabled and false otherwise</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSpecEnabled()">isSpecEnabled</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns true when the spec is enabled and false otherwise</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logout()">logout</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onVarbitChanged(net.runelite.api.events.VarbitChanged)">onVarbitChanged</a></span>&#8203;(net.runelite.api.events.VarbitChanged&nbsp;event)</code></th>
 <td class="colLast">
@@ -327,21 +361,21 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
  positive values representing the amount of poison or venom damage the player will be taking.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>net.runelite.api.Player</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#raw()">raw</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the wrapped (raw) RuneLite API object for this interactable game entity.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggleRun()">toggleRun</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Toggles the players run energy.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggleSpecialAttack(int)">toggleSpecialAttack</a></span>&#8203;(int&nbsp;energyRequired)</code></th>
 <td class="colLast">
@@ -349,7 +383,7 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
  attack energy</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggleSpecialAttack(int,int)">toggleSpecialAttack</a></span>&#8203;(int&nbsp;energyRequired,
                    int&nbsp;delay)</code></th>
@@ -357,7 +391,7 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
 <div class="block">Sets the special attack state if the current special attack energy is greater than or equal to the required special attack energy using reflection instead of mouse events.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#totalSkillLevel()">totalSkillLevel</a></span>()</code></th>
 <td class="colLast">
@@ -402,14 +436,13 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(com.kraken.api.Context,java.util.concurrent.ScheduledExecutorService)">
+<a id="&lt;init&gt;(com.kraken.api.Context)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LocalPlayerEntity</h4>
-<pre>public&nbsp;LocalPlayerEntity&#8203;(<a href="../../Context.html" title="class in com.kraken.api">Context</a>&nbsp;ctx,
-                         java.util.concurrent.ScheduledExecutorService&nbsp;executor)</pre>
+<pre>public&nbsp;LocalPlayerEntity&#8203;(<a href="../../Context.html" title="class in com.kraken.api">Context</a>&nbsp;ctx)</pre>
 </li>
 </ul>
 </li>
@@ -699,6 +732,88 @@ public&nbsp;void&nbsp;onVarbitChanged&#8203;(net.runelite.api.events.VarbitChang
 </dl>
 </li>
 </ul>
+<a id="getLevel(net.runelite.api.Skill)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLevel</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getLevel&#8203;(net.runelite.api.Skill&nbsp;skill)</pre>
+<div class="block">Retrieves the base level of the specified skill.
+ <p>
+ This method executes a client-side operation to obtain the real (unboosted) level
+ of the given skill. The skill must be a valid <code>Skill</code> object.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>skill</code> - The <code>Skill</code> for which the base level is being queried.
+              Represents one of the player's in-game skills.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The base level of the specified skill as an integer. If the skill is
+         invalid or cannot be retrieved, the method may return 0 or throw
+         an exception depending on the implementation details.</dd>
+</dl>
+</li>
+</ul>
+<a id="getBoostedLevel(net.runelite.api.Skill)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBoostedLevel</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getBoostedLevel&#8203;(net.runelite.api.Skill&nbsp;skill)</pre>
+<div class="block">Retrieves the boosted level of a specified skill.
+ <p>
+ This method executes on the client thread to safely fetch the current boosted level
+ of the provided skill from the client.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>skill</code> - The @Skill object representing the skill for which the boosted level is needed.
+              Must not be null.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The boosted level of the specified skill as an integer.</dd>
+</dl>
+</li>
+</ul>
+<a id="getExperience(net.runelite.api.Skill)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getExperience</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getExperience&#8203;(net.runelite.api.Skill&nbsp;skill)</pre>
+<div class="block">Retrieves the total experience of the specified skill for the current client.
+
+ <p>
+ This method executes a thread-safe operation to fetch the experience points
+ associated with the given <code>Skill</code> object by running on the client thread.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>skill</code> - the skill whose experience is to be retrieved.
+              This parameter must not be null.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the total experience points of the specified skill.</dd>
+</dl>
+</li>
+</ul>
+<a id="getTotalExperience()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTotalExperience</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getTotalExperience()</pre>
+<div class="block">Calculates the total experience across all skills for the current client.
+
+ <p>This method iterates through all the skill categories, retrieves their individual
+ experience values, and then sums them up to return the total accumulated experience.</p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the total experience points of all skills combined for the client.</dd>
+</dl>
+</li>
+</ul>
 <a id="isInArea(net.runelite.api.coords.WorldPoint)">
 <!--   -->
 </a>
@@ -712,6 +827,22 @@ public&nbsp;void&nbsp;onVarbitChanged&#8203;(net.runelite.api.events.VarbitChang
 <dd><code>worldPoint</code> - The <code>WorldPoint</code> to check proximity to.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the player is within the specified distance, <code>false</code> otherwise.</dd>
+</dl>
+</li>
+</ul>
+<a id="isInArea(com.kraken.api.service.tile.GameArea)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isInArea</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isInArea&#8203;(<a href="../../service/tile/GameArea.html" title="class in com.kraken.api.service.tile">GameArea</a>&nbsp;area)</pre>
+<div class="block">Checks if the player is within the game area.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>area</code> - The <a href="../../service/tile/GameArea.html" title="class in com.kraken.api.service.tile"><code>GameArea</code></a> to check.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>True if the player is within the game area and false otherwise.</dd>
 </dl>
 </li>
 </ul>

@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -232,25 +232,32 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 </td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sortByDistance()">sortByDistance</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Sorts the game object stream by distance from the local players current location.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>protected java.util.function.Supplier&lt;java.util.stream.Stream&lt;<a href="GameObjectEntity.html" title="class in com.kraken.api.query.gameobject">GameObjectEntity</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#source()">source</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withAction(java.lang.String)">withAction</a></span>&#8203;(java.lang.String&nbsp;action)</code></th>
 <td class="colLast">
 <div class="block">Filters for objects that have a specific action available.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#within(int)">within</a></span>&#8203;(int&nbsp;distance)</code></th>
 <td class="colLast">
 <div class="block">Filters for only objects whose location is within the specified distance from the players current local point.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#within(net.runelite.api.coords.LocalPoint,int)">within</a></span>&#8203;(net.runelite.api.coords.LocalPoint&nbsp;anchor,
       int&nbsp;distance)</code></th>
@@ -258,7 +265,7 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <div class="block">Filters for only objects whose location is within the specified distance from the anchor point.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withinArea(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldPoint)">withinArea</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;min,
           net.runelite.api.coords.WorldPoint&nbsp;max)</code></th>
@@ -266,14 +273,14 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <div class="block">Finds game objects within a specified area.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withName(java.lang.String)">withName</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Filters the stream of game objects for objects with a specific name</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withPartialAction(java.lang.String)">withPartialAction</a></span>&#8203;(java.lang.String&nbsp;actionSubstring)</code></th>
 <td class="colLast">
@@ -286,7 +293,7 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.kraken.api.core.<a href="../../core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></h3>
-<code><a href="../../core/AbstractQuery.html#count()">count</a>, <a href="../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../core/AbstractQuery.html#first()">first</a>, <a href="../../core/AbstractQuery.html#list()">list</a>, <a href="../../core/AbstractQuery.html#map()">map</a>, <a href="../../core/AbstractQuery.html#random()">random</a>, <a href="../../core/AbstractQuery.html#result()">result</a>, <a href="../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../core/AbstractQuery.html#withId(int)">withId</a></code></li>
+<code><a href="../../core/AbstractQuery.html#count()">count</a>, <a href="../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../core/AbstractQuery.html#first()">first</a>, <a href="../../core/AbstractQuery.html#list()">list</a>, <a href="../../core/AbstractQuery.html#map()">map</a>, <a href="../../core/AbstractQuery.html#random()">random</a>, <a href="../../core/AbstractQuery.html#result()">result</a>, <a href="../../core/AbstractQuery.html#reverse()">reverse</a>, <a href="../../core/AbstractQuery.html#shuffle()">shuffle</a>, <a href="../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../core/AbstractQuery.html#take(int)">take</a>, <a href="../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../core/AbstractQuery.html#withId(int)">withId</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -475,6 +482,20 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <h4>nearest</h4>
 <pre class="methodSignature">public&nbsp;<a href="GameObjectEntity.html" title="class in com.kraken.api.query.gameobject">GameObjectEntity</a>&nbsp;nearest()</pre>
 <div class="block">Sorts the stream of game objects to order them by manhattan distance to the local player.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>GameObjectQuery</dd>
+</dl>
+</li>
+</ul>
+<a id="sortByDistance()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sortByDistance</h4>
+<pre class="methodSignature">public&nbsp;<a href="GameObjectQuery.html" title="class in com.kraken.api.query.gameobject">GameObjectQuery</a>&nbsp;sortByDistance()</pre>
+<div class="block">Sorts the game object stream by distance from the local players current location.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>GameObjectQuery</dd>
