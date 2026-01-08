@@ -351,7 +351,9 @@ extends <a href="PlayerEntity.html" title="class in com.kraken.api.query.player"
 <tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logout()">logout</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Logs the current player out of the client.</div>
+</td>
 </tr>
 <tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -712,6 +714,12 @@ public&nbsp;void&nbsp;onVarbitChanged&#8203;(net.runelite.api.events.VarbitChang
 <li class="blockList">
 <h4>logout</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;logout()</pre>
+<div class="block">Logs the current player out of the client. If the player is in a place where they cannot be logged out
+ this method will NOT re-attempt to log the player out (i.e. the player was recently in combat).</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>True if the logout was successful and false otherwise.</dd>
+</dl>
 </li>
 </ul>
 <a id="totalSkillLevel()">

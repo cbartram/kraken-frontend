@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -217,12 +217,22 @@ extends <a href="../../core/AbstractEntity.html" title="class in com.kraken.api.
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(int,int,int,int)">interact</a></span>&#8203;(int&nbsp;action,
+        int&nbsp;packedId,
+        int&nbsp;childId,
+        int&nbsp;itemId)</code></th>
+<td class="colLast">
+<div class="block">Interacts with a widget using the specified action index.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(java.lang.String)">interact</a></span>&#8203;(java.lang.String&nbsp;action)</code></th>
 <td class="colLast">
 <div class="block">Interacts with the entity using the given action verb.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(java.lang.String,java.lang.String)">interact</a></span>&#8203;(java.lang.String&nbsp;menu,
         java.lang.String&nbsp;action)</code></th>
@@ -230,14 +240,14 @@ extends <a href="../../core/AbstractEntity.html" title="class in com.kraken.api.
 <div class="block">Interacts with a widget by invoking a specified menu and action.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isVisible()">isVisible</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Checks if the widget is currently visible.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#matches(java.lang.String,boolean)">matches</a></span>&#8203;(java.lang.String&nbsp;search,
        boolean&nbsp;exact)</code></th>
@@ -245,21 +255,21 @@ extends <a href="../../core/AbstractEntity.html" title="class in com.kraken.api.
 <div class="block">Checks if the widget text, name, or actions match the input.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#useOn(net.runelite.api.GameObject)">useOn</a></span>&#8203;(net.runelite.api.GameObject&nbsp;gameObject)</code></th>
 <td class="colLast">
 <div class="block">Uses a widget on a Game Object (i.e.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#useOn(net.runelite.api.NPC)">useOn</a></span>&#8203;(net.runelite.api.NPC&nbsp;npc)</code></th>
 <td class="colLast">
 <div class="block">Uses a widget on an NPC (i.e.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#useOn(net.runelite.api.widgets.Widget)">useOn</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;destinationWidget)</code></th>
 <td class="colLast">
@@ -406,6 +416,28 @@ extends <a href="../../core/AbstractEntity.html" title="class in com.kraken.api.
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the interaction process was initiated successfully;
          <code>false</code> if the underlying widget was <code>null</code> and no action was performed.</dd>
+</dl>
+</li>
+</ul>
+<a id="interact(int,int,int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interact</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;interact&#8203;(int&nbsp;action,
+                        int&nbsp;packedId,
+                        int&nbsp;childId,
+                        int&nbsp;itemId)</pre>
+<div class="block">Interacts with a widget using the specified action index.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>action</code> - The action index to take.</dd>
+<dd><code>packedId</code> - The packed widget id</dd>
+<dd><code>childId</code> - The child id of the widget</dd>
+<dd><code>itemId</code> - The item id of the widget.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>True if the interaction was successful and false otherwise</dd>
 </dl>
 </li>
 </ul>

@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":9,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":9};
+var data = {"i0":10,"i1":9,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -344,19 +344,27 @@ implements net.runelite.client.input.MouseListener</pre>
 </tr>
 <tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#move(net.runelite.api.Point,com.kraken.api.input.mouse.strategy.wind.WindMouseConfig)">move</a></span>&#8203;(net.runelite.api.Point&nbsp;target,
+    <a href="strategy/wind/WindMouseConfig.html" title="class in com.kraken.api.input.mouse.strategy.wind">WindMouseConfig</a>&nbsp;config)</code></th>
+<td class="colLast">
+<div class="block">Moves the mouse using the wind mouse movement strategy using a custom set of wind mouse configuration.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code><a href="VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#move(net.runelite.api.Tile)">move</a></span>&#8203;(net.runelite.api.Tile&nbsp;tile)</code></th>
 <td class="colLast">
 <div class="block">Moves the mouse to the specified Tile.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#move(net.runelite.api.TileObject)">move</a></span>&#8203;(net.runelite.api.TileObject&nbsp;tileObject)</code></th>
 <td class="colLast">
 <div class="block">Moves the mouse to the specified TileObject.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code><a href="VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#move(net.runelite.api.TileObject,com.kraken.api.input.mouse.strategy.MouseMovementStrategy)">move</a></span>&#8203;(net.runelite.api.TileObject&nbsp;tileObject,
     <a href="strategy/MouseMovementStrategy.html" title="enum in com.kraken.api.input.mouse.strategy">MouseMovementStrategy</a>&nbsp;mouseMovementStrategy)</code></th>
@@ -364,7 +372,7 @@ implements net.runelite.client.input.MouseListener</pre>
 <div class="block">Moves the mouse to the specified TileObject using the provided movement strategy.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#move(net.runelite.api.Tile,com.kraken.api.input.mouse.strategy.MouseMovementStrategy)">move</a></span>&#8203;(net.runelite.api.Tile&nbsp;tile,
     <a href="strategy/MouseMovementStrategy.html" title="enum in com.kraken.api.input.mouse.strategy">MouseMovementStrategy</a>&nbsp;mouseMovementStrategy)</code></th>
@@ -372,14 +380,14 @@ implements net.runelite.client.input.MouseListener</pre>
 <div class="block">Moves the mouse to the specified Tile using the provided movement strategy.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code><a href="VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#move(net.runelite.api.widgets.Widget)">move</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;widget)</code></th>
 <td class="colLast">
 <div class="block">Moves the mouse to the specified Widget.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#move(net.runelite.api.widgets.Widget,com.kraken.api.input.mouse.strategy.MouseMovementStrategy)">move</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;widget,
     <a href="strategy/MouseMovementStrategy.html" title="enum in com.kraken.api.input.mouse.strategy">MouseMovementStrategy</a>&nbsp;mouseMovementStrategy)</code></th>
@@ -387,7 +395,7 @@ implements net.runelite.client.input.MouseListener</pre>
 <div class="block">Moves the mouse to the specified Widget using the provided movement strategy.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMouseMovementStrategy(com.kraken.api.input.mouse.strategy.MouseMovementStrategy)">setMouseMovementStrategy</a></span>&#8203;(<a href="strategy/MouseMovementStrategy.html" title="enum in com.kraken.api.input.mouse.strategy">MouseMovementStrategy</a>&nbsp;strategy)</code></th>
 <td class="colLast">
@@ -611,6 +619,24 @@ public&nbsp;VirtualMouse&#8203;(net.runelite.client.input.MouseManager&nbsp;mous
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>target</code> - The target position represented as a <code>Point</code> to which the mouse will be moved.</dd>
 <dd><code>strategy</code> - The <a href="strategy/MouseMovementStrategy.html" title="enum in com.kraken.api.input.mouse.strategy"><code>MouseMovementStrategy</code></a> defining how the mouse moves to the target point.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The <a href="VirtualMouse.html" title="class in com.kraken.api.input.mouse"><code>VirtualMouse</code></a> instance for method chaining.</dd>
+</dl>
+</li>
+</ul>
+<a id="move(net.runelite.api.Point,com.kraken.api.input.mouse.strategy.wind.WindMouseConfig)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>move</h4>
+<pre class="methodSignature">public&nbsp;<a href="VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a>&nbsp;move&#8203;(net.runelite.api.Point&nbsp;target,
+                         <a href="strategy/wind/WindMouseConfig.html" title="class in com.kraken.api.input.mouse.strategy.wind">WindMouseConfig</a>&nbsp;config)</pre>
+<div class="block">Moves the mouse using the wind mouse movement strategy using a custom set of wind mouse configuration.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>target</code> - The target point for the mouse</dd>
+<dd><code>config</code> - Custom wind mouse configuration object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The <a href="VirtualMouse.html" title="class in com.kraken.api.input.mouse"><code>VirtualMouse</code></a> instance for method chaining.</dd>
 </dl>
