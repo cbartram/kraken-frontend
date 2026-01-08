@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -202,12 +202,31 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enterPin(int%5B%5D)">enterPin</a></span>&#8203;(int[]&nbsp;pin)</code></th>
+<td class="colLast">
+<div class="block">Enters the bank pin using the provided 4 digits.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isOpen()">isOpen</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Checks whether the bank interface is open.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPinOpen()">isPinOpen</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns true when the bank PIN interface is open and false otherwise.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onScriptCallbackEvent(net.runelite.api.events.ScriptCallbackEvent)">onScriptCallbackEvent</a></span>&#8203;(net.runelite.api.events.ScriptCallbackEvent&nbsp;event)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setWithdrawMode(boolean)">setWithdrawMode</a></span>&#8203;(boolean&nbsp;noted)</code></th>
 <td class="colLast">
@@ -268,6 +287,47 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the bank interface is open, <code>false</code> otherwise.</dd>
+</dl>
+</li>
+</ul>
+<a id="isPinOpen()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isPinOpen</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isPinOpen()</pre>
+<div class="block">Returns true when the bank PIN interface is open and false otherwise.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>True for an open bank pin interface</dd>
+</dl>
+</li>
+</ul>
+<a id="onScriptCallbackEvent(net.runelite.api.events.ScriptCallbackEvent)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>onScriptCallbackEvent</h4>
+<pre class="methodSignature">@Subscribe
+public&nbsp;void&nbsp;onScriptCallbackEvent&#8203;(net.runelite.api.events.ScriptCallbackEvent&nbsp;event)</pre>
+</li>
+</ul>
+<a id="enterPin(int[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>enterPin</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;enterPin&#8203;(int[]&nbsp;pin)</pre>
+<div class="block">Enters the bank pin using the provided 4 digits.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pin</code> - An integer array of size 4 which contains the bank pin to enter.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>boolean true if the pin was entered and false otherwise. This will return true if the pin was entered
+ at all. This doesn't necessarily mean the pin was correct.</dd>
 </dl>
 </li>
 </ul>

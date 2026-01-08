@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -177,13 +177,23 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(int,int,int,int)">interact</a></span>&#8203;(int&nbsp;action,
+        int&nbsp;packedWidgetId,
+        int&nbsp;childId,
+        int&nbsp;itemId)</code></th>
+<td class="colLast">
+<div class="block">Interacts with a widget using the specific action index</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(com.kraken.api.query.container.bank.BankItemWidget,java.lang.String)">interact</a></span>&#8203;(<a href="container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a>&nbsp;item,
         java.lang.String&nbsp;action)</code></th>
 <td class="colLast">
 <div class="block">Interacts with a widget in the players bank using the specific action.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(com.kraken.api.query.container.ContainerItem,java.lang.String)">interact</a></span>&#8203;(<a href="container/ContainerItem.html" title="class in com.kraken.api.query.container">ContainerItem</a>&nbsp;item,
         java.lang.String&nbsp;action)</code></th>
@@ -192,14 +202,14 @@ extends java.lang.Object</pre>
  using the specified action.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(com.kraken.api.query.groundobject.GroundItem)">interact</a></span>&#8203;(<a href="groundobject/GroundItem.html" title="class in com.kraken.api.query.groundobject">GroundItem</a>&nbsp;item)</code></th>
 <td class="colLast">
 <div class="block">Interacts with a ground item (<code>GroundItem</code>) using the specified action i.e.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(net.runelite.api.NPC,java.lang.String)">interact</a></span>&#8203;(net.runelite.api.NPC&nbsp;npc,
         java.lang.String&nbsp;action)</code></th>
@@ -207,7 +217,7 @@ extends java.lang.Object</pre>
 <div class="block">Interacts with an NPC using the specified action i.e.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(net.runelite.api.Player,java.lang.String)">interact</a></span>&#8203;(net.runelite.api.Player&nbsp;player,
         java.lang.String&nbsp;action)</code></th>
@@ -215,7 +225,7 @@ extends java.lang.Object</pre>
 <div class="block">Interacts with a Player using the specified action i.e.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(net.runelite.api.TileObject,java.lang.String)">interact</a></span>&#8203;(net.runelite.api.TileObject&nbsp;object,
         java.lang.String&nbsp;action)</code></th>
@@ -223,7 +233,7 @@ extends java.lang.Object</pre>
 <div class="block">Interacts with a GameObject (<code>TileObject</code>) using the specified action i.e.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(net.runelite.api.widgets.Widget,java.lang.String)">interact</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;item,
         java.lang.String&nbsp;action)</code></th>
@@ -231,7 +241,7 @@ extends java.lang.Object</pre>
 <div class="block">Interacts with a widget using the specific action.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(net.runelite.api.widgets.Widget,java.lang.String,java.lang.String)">interact</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;item,
         java.lang.String&nbsp;menu,
@@ -240,7 +250,7 @@ extends java.lang.Object</pre>
 <div class="block">Interacts with a widget using the specific sub action.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(net.runelite.api.widgets.Widget,net.runelite.api.GameObject)">interact</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;src,
         net.runelite.api.GameObject&nbsp;gameObject)</code></th>
@@ -248,7 +258,7 @@ extends java.lang.Object</pre>
 <div class="block">Uses a source widget on a destination Game Object (i.e.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(net.runelite.api.widgets.Widget,net.runelite.api.NPC)">interact</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;src,
         net.runelite.api.NPC&nbsp;npc)</code></th>
@@ -256,7 +266,7 @@ extends java.lang.Object</pre>
 <div class="block">Uses a source widget on a destination NPC (i.e.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(net.runelite.api.widgets.Widget,net.runelite.api.widgets.Widget)">interact</a></span>&#8203;(net.runelite.api.widgets.Widget&nbsp;src,
         net.runelite.api.widgets.Widget&nbsp;dest)</code></th>
@@ -421,6 +431,26 @@ extends java.lang.Object</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>src</code> - The source widget to use on the destination widget</dd>
 <dd><code>dest</code> - The destination widget</dd>
+</dl>
+</li>
+</ul>
+<a id="interact(int,int,int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interact</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;interact&#8203;(int&nbsp;action,
+                     int&nbsp;packedWidgetId,
+                     int&nbsp;childId,
+                     int&nbsp;itemId)</pre>
+<div class="block">Interacts with a widget using the specific action index</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>action</code> - The action index to take</dd>
+<dd><code>packedWidgetId</code> - The packed widget id</dd>
+<dd><code>childId</code> - The child id of the widget to interact with</dd>
+<dd><code>itemId</code> - The item id of the widget to interact with</dd>
 </dl>
 </li>
 </ul>

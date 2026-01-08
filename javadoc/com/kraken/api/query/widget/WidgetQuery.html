@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -198,12 +198,27 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="WidgetEntity.html" title="class in com.kraken.api.query.widget">WidgetEntity</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fromClient(int)">fromClient</a></span>&#8203;(int&nbsp;packedId)</code></th>
+<td class="colLast">
+<div class="block">Returns a widget directly from the client.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="WidgetEntity.html" title="class in com.kraken.api.query.widget">WidgetEntity</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fromClient(int,int)">fromClient</a></span>&#8203;(int&nbsp;groupId,
+          int&nbsp;childId)</code></th>
+<td class="colLast">
+<div class="block">Returns a widget directly from the client.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="WidgetEntity.html" title="class in com.kraken.api.query.widget">WidgetEntity</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(int)">get</a></span>&#8203;(int&nbsp;packedId)</code></th>
 <td class="colLast">
 <div class="block">Retrieves the first <a href="WidgetEntity.html" title="class in com.kraken.api.query.widget"><code>WidgetEntity</code></a> matching the specified packed ID.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="WidgetEntity.html" title="class in com.kraken.api.query.widget">WidgetEntity</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(int,int)">get</a></span>&#8203;(int&nbsp;groupId,
    int&nbsp;childId)</code></th>
@@ -211,47 +226,47 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <div class="block">Retrieves a <a href="WidgetEntity.html" title="class in com.kraken.api.query.widget"><code>WidgetEntity</code></a> based on the specified group ID and child ID.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="WidgetEntity.html" title="class in com.kraken.api.query.widget">WidgetEntity</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(net.runelite.api.widgets.WidgetInfo)">get</a></span>&#8203;(net.runelite.api.widgets.WidgetInfo&nbsp;widgetInfo)</code></th>
 <td class="colLast">
 <div class="block">Retrieves the first <a href="WidgetEntity.html" title="class in com.kraken.api.query.widget"><code>WidgetEntity</code></a> that matches the specified <code>WidgetInfo</code>.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#inGroup(int)">inGroup</a></span>&#8203;(int&nbsp;groupId)</code></th>
 <td class="colLast">
 <div class="block">Filters for widgets belonging to a specific Interface Group.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>protected java.util.function.Supplier&lt;java.util.stream.Stream&lt;<a href="WidgetEntity.html" title="class in com.kraken.api.query.widget">WidgetEntity</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#source()">source</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#visible()">visible</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Filters for widgets which are currently visible on the canvas.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withAction(java.lang.String)">withAction</a></span>&#8203;(java.lang.String&nbsp;action)</code></th>
 <td class="colLast">
 <div class="block">Filters for widgets with a specific action.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withChildId(int)">withChildId</a></span>&#8203;(int&nbsp;childId)</code></th>
 <td class="colLast">
 <div class="block">Filters for a specific child component ID within a group.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withGroupChild(int,int)">withGroupChild</a></span>&#8203;(int&nbsp;group,
               int&nbsp;child)</code></th>
@@ -259,42 +274,42 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <div class="block">Filters for a widget with a specific group ID and child ID.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withId(int)">withId</a></span>&#8203;(int&nbsp;packedId)</code></th>
 <td class="colLast">
 <div class="block">Filters for a widget with the exact packed ID.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withIndex(int)">withIndex</a></span>&#8203;(int&nbsp;index)</code></th>
 <td class="colLast">
 <div class="block">Filters by the widget's index in its parent's array.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withListener()">withListener</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Finds widgets that have a specific listener (e.g., "Continue" buttons).</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withSprite(int)">withSprite</a></span>&#8203;(int&nbsp;spriteId)</code></th>
 <td class="colLast">
 <div class="block">Finds widgets by their Sprite ID (images).</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withText(java.lang.String)">withText</a></span>&#8203;(java.lang.String&nbsp;text)</code></th>
 <td class="colLast">
 <div class="block">Filters for widgets containing the specified text in name, text, or actions.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withText(java.lang.String,boolean)">withText</a></span>&#8203;(java.lang.String&nbsp;text,
         boolean&nbsp;exact)</code></th>
@@ -362,6 +377,46 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../core/AbstractQuery.html#source()">source</a></code>&nbsp;in class&nbsp;<code><a href="../../core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a>&lt;<a href="WidgetEntity.html" title="class in com.kraken.api.query.widget">WidgetEntity</a>,&#8203;<a href="WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a>,&#8203;net.runelite.api.widgets.Widget&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a id="fromClient(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fromClient</h4>
+<pre class="methodSignature">public&nbsp;<a href="WidgetEntity.html" title="class in com.kraken.api.query.widget">WidgetEntity</a>&nbsp;fromClient&#8203;(int&nbsp;packedId)</pre>
+<div class="block">Returns a widget directly from the client. This can return widgets which may not be visible but
+ are known to the client. i.e. a logout button widget without being on the logout tab.
+ <p>
+ This method wraps the widget in a <a href="WidgetEntity.html" title="class in com.kraken.api.query.widget"><code>WidgetEntity</code></a> class allowing the widget to be interacted with.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>packedId</code> - The packed widget component id to find.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>WidgetEntity or null if no widget is found.</dd>
+</dl>
+</li>
+</ul>
+<a id="fromClient(int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fromClient</h4>
+<pre class="methodSignature">public&nbsp;<a href="WidgetEntity.html" title="class in com.kraken.api.query.widget">WidgetEntity</a>&nbsp;fromClient&#8203;(int&nbsp;groupId,
+                               int&nbsp;childId)</pre>
+<div class="block">Returns a widget directly from the client. This can return widgets which may not be visible but
+ are known to the client. i.e. a logout button widget without being on the logout tab.
+ <p>
+ This method wraps the widget in a <a href="WidgetEntity.html" title="class in com.kraken.api.query.widget"><code>WidgetEntity</code></a> class allowing the widget to be interacted with.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>groupId</code> - The widgets group id</dd>
+<dd><code>childId</code> - The widgets child id</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>WidgetEntity or null if no widget is found.</dd>
 </dl>
 </li>
 </ul>

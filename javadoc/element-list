@@ -4,6 +4,7 @@ com.kraken.api.core.packet
 com.kraken.api.core.packet.entity
 com.kraken.api.core.packet.model
 com.kraken.api.core.script
+com.kraken.api.core.script.breakhandler
 com.kraken.api.input
 com.kraken.api.input.mouse
 com.kraken.api.input.mouse.model
@@ -13,6 +14,7 @@ com.kraken.api.input.mouse.strategy.instant
 com.kraken.api.input.mouse.strategy.linear
 com.kraken.api.input.mouse.strategy.none
 com.kraken.api.input.mouse.strategy.replay
+com.kraken.api.input.mouse.strategy.wind
 com.kraken.api.overlay
 com.kraken.api.query
 com.kraken.api.query.container
@@ -35,9 +37,14 @@ com.kraken.api.service.spell
 com.kraken.api.service.tile
 com.kraken.api.service.ui
 com.kraken.api.service.ui.dialogue
+com.kraken.api.service.ui.login
 com.kraken.api.service.ui.processing
 com.kraken.api.service.ui.tab
 com.kraken.api.service.util
+com.kraken.api.service.util.reflect
+com.kraken.api.service.util.reflect.hooks
+com.kraken.api.service.util.reflect.hooks.loader
+com.kraken.api.service.util.reflect.hooks.model
 com.kraken.api.sim
 com.kraken.api.sim.engine
 com.kraken.api.sim.model

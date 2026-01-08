@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -288,12 +288,19 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withIds(java.util.List)">withIds</a></span>&#8203;(java.util.List&lt;java.lang.Integer&gt;&nbsp;ids)</code></th>
+<td class="colLast">
+<div class="block">Filters for NPCs whose ids are present in the provided list of ids.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#within(int)">within</a></span>&#8203;(int&nbsp;distance)</code></th>
 <td class="colLast">
 <div class="block">Filters the NPCs in the query to include only those within a specified distance from the local player's position.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withinArea(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldPoint)">withinArea</a></span>&#8203;(net.runelite.api.coords.WorldPoint&nbsp;min,
           net.runelite.api.coords.WorldPoint&nbsp;max)</code></th>
@@ -361,6 +368,22 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../core/AbstractQuery.html#source()">source</a></code>&nbsp;in class&nbsp;<code><a href="../../core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a>&lt;<a href="NpcEntity.html" title="class in com.kraken.api.query.npc">NpcEntity</a>,&#8203;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>,&#8203;net.runelite.api.NPC&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a id="withIds(java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withIds</h4>
+<pre class="methodSignature">public&nbsp;<a href="NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a>&nbsp;withIds&#8203;(java.util.List&lt;java.lang.Integer&gt;&nbsp;ids)</pre>
+<div class="block">Filters for NPCs whose ids are present in the provided list of ids.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ids</code> - List of ids to check for</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>NpcQuery</dd>
 </dl>
 </li>
 </ul>
