@@ -76,7 +76,7 @@ The Kraken Client's external plugin system loads both manifests and plugins over
 are specified in the `Authorization` HTTP header. Token values will be sent to your server prefixed with `Bearer` and a space as is standard
 for the HTTP/HTTPS protocol. For example:
 
-```json![img.png](img.png)
+```json
 {
   "Authorization": "Bearer <your token>"
 }
