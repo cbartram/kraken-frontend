@@ -45,6 +45,7 @@ export default defineConfig({
                     { text: 'Available Plugins', link: '/plugins/plugins' },
                     { text: 'License Keys', link: '/plugins/license' },
                     { text: 'Sideloaded & Third Party Plugins', link: '/plugins/sideloaded' },
+                    { text: 'External Plugins', link: '/plugins/external' },
                 ]
             },
               {
