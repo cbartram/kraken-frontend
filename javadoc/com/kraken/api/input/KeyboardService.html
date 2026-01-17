@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -225,9 +225,25 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#typeChar(char)">typeChar</a></span>&#8203;(char&nbsp;c)</code></th>
+<td class="colLast">
+<div class="block">Types a single character.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#typeString(java.lang.String)">typeString</a></span>&#8203;(java.lang.String&nbsp;word)</code></th>
 <td class="colLast">
 <div class="block">Types out a string character-by-character using KEY_TYPED events.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#typeString(java.lang.String,int,int)">typeString</a></span>&#8203;(java.lang.String&nbsp;text,
+          int&nbsp;minSleep,
+          int&nbsp;maxSleep)</code></th>
+<td class="colLast">
+<div class="block">Types a string with a customizable sleep between characters.</div>
 </td>
 </tr>
 </table>
@@ -273,6 +289,39 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="typeChar(char)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>typeChar</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;typeChar&#8203;(char&nbsp;c)</pre>
+<div class="block">Types a single character.
+ Useful for things like Bank Pins where you want control over the timing between digits.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c</code> - the character to type</dd>
+</dl>
+</li>
+</ul>
+<a id="typeString(java.lang.String,int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>typeString</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;typeString&#8203;(java.lang.String&nbsp;text,
+                       int&nbsp;minSleep,
+                       int&nbsp;maxSleep)</pre>
+<div class="block">Types a string with a customizable sleep between characters.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>text</code> - the string to type</dd>
+<dd><code>minSleep</code> - The minimum the thread should be slept between key strokes</dd>
+<dd><code>maxSleep</code> - The max the thread should be slept between key strokes</dd>
+</dl>
+</li>
+</ul>
 <a id="typeString(java.lang.String)">
 <!--   -->
 </a>
