@@ -70,6 +70,23 @@ When the Kraken client loads an external repository from a manifest file, **ALL 
 Because of this, we recommend having a 1:1 relationship between manifest files and plugin users. This ensures that users who purchase your plugins
 each get their own unique manifest file containing only the plugins they have purchased (rather than your whole suite of plugins).
 
+### Manifest Updates
+
+After a user adds your repository, your manifest will be fetched at client runtime. Your manifest file is never persisted to disk however, the details to fetch
+your manifest (i.e. URL and Auth token) are encrypted on the users' local machine. Users can refresh their manifest from your server (making another `GET`
+request) **at will** so it's recommended to implement some form of rate limiting on your server. 
+
+Manifests are refreshed **automatically** on each client load. This means that if you need to add, update, or remove plugins for a user, all you need to do 
+is update your manifest file for the user on your server. The next time the user manually refreshes the manifest or restarts their client, they will get
+your updates.
+
+### Manifest Error Handling
+
+If your server returns an invalid (non 200 status code) response or fails to respond within the timeout (3 seconds) users will be given a dialogue popup offering
+them a choice to remove your repository. None of the repository plugins will load, nor will your repositories card show up in the UI. 
+
+If a user selects "Yes" to remove your repository, then they will need to re-add it in the future with the `Add Repository` button.
+
 ## Authentication
 
 The Kraken Client's external plugin system loads both manifests and plugins over HTTP and supports token-based authentication mechanisms which
