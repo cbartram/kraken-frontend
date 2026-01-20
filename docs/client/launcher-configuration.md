@@ -11,6 +11,10 @@ The following documentation details Kraken Launcher options available to you whi
 
 ![kraken-launcher](../images/kraken-launcher-ui.png)
 
+> :warning: Note, if you choose to Skip the launcher when launching the client you will need to edit the json file in the `C:\Users\%username%\.runelite\kraken\krakenprefs.json` file
+> See the screenshot below
+> ![json-image](../images/json-image.png)
+
 # Launcher Configuration Options
 
 This document covers the various RuneLite Launcher configuration options which are present and what each option does. You
