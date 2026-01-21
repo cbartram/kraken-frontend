@@ -159,6 +159,9 @@ export default function Landing() {
                             <a href="/download" className="hover:text-green-500 transition-colors">Download Client</a>
                         </motion.li>
                         <motion.li whileHover={{scale: 1.1}}>
+                            <a href="https://kraken-plugins.com/docs/" className="hover:text-green-500 transition-colors">Docs</a>
+                        </motion.li>
+                        <motion.li whileHover={{scale: 1.1}}>
                             <a href="#features" className="hover:text-green-500 transition-colors">Features</a>
                         </motion.li>
                         <motion.li whileHover={{scale: 1.1}}>
