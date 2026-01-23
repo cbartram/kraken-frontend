@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -197,9 +197,29 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#traversePath(net.runelite.api.Client,com.kraken.api.service.movement.MovementService,java.util.List)">traversePath</a></span>&#8203;(net.runelite.api.Client&nbsp;client,
-            <a href="MovementService.html" title="class in com.kraken.api.service.movement">MovementService</a>&nbsp;movement,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#traversePath(net.runelite.api.Client,java.util.List)">traversePath</a></span>&#8203;(net.runelite.api.Client&nbsp;client,
             java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;path)</code></th>
+<td class="colLast">
+<div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
+ to each WorldPoint in the sequence.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#traversePath(net.runelite.api.Client,java.util.List,java.util.function.Consumer)">traversePath</a></span>&#8203;(net.runelite.api.Client&nbsp;client,
+            java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;path,
+            java.util.function.Consumer&lt;java.lang.String&gt;&nbsp;onWaypointReached)</code></th>
+<td class="colLast">
+<div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
+ to each WorldPoint in the sequence.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#traversePath(net.runelite.api.Client,java.util.List,java.util.function.Consumer,java.util.function.Consumer)">traversePath</a></span>&#8203;(net.runelite.api.Client&nbsp;client,
+            java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;path,
+            java.util.function.Consumer&lt;java.lang.String&gt;&nbsp;onWaypointReached,
+            java.util.function.Consumer&lt;java.lang.String&gt;&nbsp;onDestinationReached)</code></th>
 <td class="colLast">
 <div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
  to each WorldPoint in the sequence.</div>
@@ -312,16 +332,62 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="traversePath(net.runelite.api.Client,com.kraken.api.service.movement.MovementService,java.util.List)">
+<a id="traversePath(net.runelite.api.Client,java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>traversePath</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;traversePath&#8203;(net.runelite.api.Client&nbsp;client,
+                            java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;path)</pre>
+<div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
+ to each WorldPoint in the sequence. This method moves the player towards the target
+ waypoints and handles retries for unreachable points. The traversal stops if any waypoint
+ cannot be reached after multiple attempts.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>client</code> - The client instance used to interact with the game world and manage player movement.</dd>
+<dd><code>path</code> - A list of WorldPoint objects representing the waypoints to traverse in sequence.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the path was successfully traversed to the end, or <code>false</code> if any waypoint
+         could not be reached after retries.</dd>
+</dl>
+</li>
+</ul>
+<a id="traversePath(net.runelite.api.Client,java.util.List,java.util.function.Consumer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>traversePath</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;traversePath&#8203;(net.runelite.api.Client&nbsp;client,
+                            java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;path,
+                            java.util.function.Consumer&lt;java.lang.String&gt;&nbsp;onWaypointReached)</pre>
+<div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
+ to each WorldPoint in the sequence. This method moves the player towards the target
+ waypoints and handles retries for unreachable points. The traversal stops if any waypoint
+ cannot be reached after multiple attempts.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>client</code> - The client instance used to interact with the game world and manage player movement.</dd>
+<dd><code>path</code> - A list of WorldPoint objects representing the waypoints to traverse in sequence.</dd>
+<dd><code>onWaypointReached</code> - A functional interface invoked when a waypoint in the path is reached</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the path was successfully traversed to the end, or <code>false</code> if any waypoint
+         could not be reached after retries.</dd>
+</dl>
+</li>
+</ul>
+<a id="traversePath(net.runelite.api.Client,java.util.List,java.util.function.Consumer,java.util.function.Consumer)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>traversePath</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;traversePath&#8203;(net.runelite.api.Client&nbsp;client,
-                            <a href="MovementService.html" title="class in com.kraken.api.service.movement">MovementService</a>&nbsp;movement,
-                            java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;path)
-                     throws java.lang.InterruptedException</pre>
+                            java.util.List&lt;net.runelite.api.coords.WorldPoint&gt;&nbsp;path,
+                            java.util.function.Consumer&lt;java.lang.String&gt;&nbsp;onWaypointReached,
+                            java.util.function.Consumer&lt;java.lang.String&gt;&nbsp;onDestinationReached)</pre>
 <div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
  to each WorldPoint in the sequence. This method invokes movement commands and uses
  retries if a waypoint fails to be reached. It aborts if a waypoint cannot be reached after
@@ -338,13 +404,12 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>client</code> - The client instance used to interact with the game world and retrieve the player's location.</dd>
-<dd><code>movement</code> - The MovementService instance responsible for managing player movement commands.</dd>
 <dd><code>path</code> - A list of WorldPoint objects representing the sequence of waypoints to traverse.</dd>
+<dd><code>onWaypointReached</code> - A functional interface invoked when a waypoint is reached</dd>
+<dd><code>onDestinationReached</code> - A functional interface invoked when the paths final destination is reached</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the path was successfully traversed to the end, <code>false</code> if any waypoint
          could not be reached after retries.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.InterruptedException</code> - If the thread running the method is interrupted during execution.</dd>
 </dl>
 </li>
 </ul>

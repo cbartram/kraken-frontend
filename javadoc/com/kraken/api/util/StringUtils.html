@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -177,9 +177,27 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addColTags(java.lang.String)">addColTags</a></span>&#8203;(java.lang.String&nbsp;text)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Wraps the provided text in a standard color tag <code>&lt;col=ff9040&gt;</code>.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#decrypt(java.lang.String,java.lang.String)">decrypt</a></span>&#8203;(java.lang.String&nbsp;base64IvAndCiphertext,
+       java.lang.String&nbsp;key)</code></th>
+<td class="colLast">
+<div class="block">Decrypts a Base64 encoded string containing an IV and ciphertext.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#encrypt(java.lang.String,java.lang.String)">encrypt</a></span>&#8203;(java.lang.String&nbsp;plaintext,
+       java.lang.String&nbsp;key)</code></th>
+<td class="colLast">
+<div class="block">Encrypts the given plaintext using AES/CBC/PKCS5Padding.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIndex(java.lang.String%5B%5D,java.lang.String)">getIndex</a></span>&#8203;(java.lang.String[]&nbsp;terms,
         java.lang.String&nbsp;term)</code></th>
@@ -187,12 +205,14 @@ extends java.lang.Object</pre>
 <div class="block">Finds the index of a term in an array of terms, ignoring case.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stripColTags(java.lang.String)">stripColTags</a></span>&#8203;(java.lang.String&nbsp;source)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Strips <code>&lt;col=...&gt;</code> tags from a single string.</div>
+</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static java.lang.String[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stripColTags(java.lang.String%5B%5D)">stripColTags</a></span>&#8203;(java.lang.String[]&nbsp;sourceList)</code></th>
 <td class="colLast">
@@ -283,15 +303,77 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>stripColTags</h4>
 <pre class="methodSignature">public static&nbsp;java.lang.String&nbsp;stripColTags&#8203;(java.lang.String&nbsp;source)</pre>
+<div class="block">Strips <code>&lt;col=...&gt;</code> tags from a single string.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the string to process</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the string with all color tags removed</dd>
+</dl>
 </li>
 </ul>
 <a id="addColTags(java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>addColTags</h4>
 <pre class="methodSignature">public static&nbsp;java.lang.String&nbsp;addColTags&#8203;(java.lang.String&nbsp;text)</pre>
+<div class="block">Wraps the provided text in a standard color tag <code>&lt;col=ff9040&gt;</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>text</code> - the text to wrap</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the text wrapped in color tags, or the original text if null or empty</dd>
+</dl>
+</li>
+</ul>
+<a id="encrypt(java.lang.String,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>encrypt</h4>
+<pre class="methodSignature">public static&nbsp;java.lang.String&nbsp;encrypt&#8203;(java.lang.String&nbsp;plaintext,
+                                       java.lang.String&nbsp;key)</pre>
+<div class="block">Encrypts the given plaintext using AES/CBC/PKCS5Padding.
+ <p>
+ This method generates a random 16-byte IV, performs the encryption,
+ combines the IV and the ciphertext, and returns the result as a Base64 encoded string.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>plaintext</code> - the text to encrypt</dd>
+<dd><code>key</code> - A 32 byte base64 encoded key used to encrypt the string</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a Base64 encoded string containing the IV followed by the encrypted bytes</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.RuntimeException</code> - if the encryption process fails</dd>
+</dl>
+</li>
+</ul>
+<a id="decrypt(java.lang.String,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>decrypt</h4>
+<pre class="methodSignature">public static&nbsp;java.lang.String&nbsp;decrypt&#8203;(java.lang.String&nbsp;base64IvAndCiphertext,
+                                       java.lang.String&nbsp;key)</pre>
+<div class="block">Decrypts a Base64 encoded string containing an IV and ciphertext.
+ <p>
+ This method expects the input string to be the result of the <a href="#encrypt(java.lang.String,java.lang.String)"><code>encrypt(String, String)</code></a> method.
+ It extracts the IV from the first 16 bytes and decrypts the remaining bytes.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>base64IvAndCiphertext</code> - the Base64 encoded string containing the IV and encrypted data</dd>
+<dd><code>key</code> - a 32 byte base64 encoded key for decrypting the string.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the decrypted plaintext string</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.RuntimeException</code> - if the decryption process fails</dd>
+</dl>
 </li>
 </ul>
 </li>

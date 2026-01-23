@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -216,6 +216,13 @@ extends java.lang.Object</pre>
 <div class="block">Breaks when items in the bank run out (e.g., materials).</div>
 </td>
 </tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static <a href="BreakCondition.html" title="interface in com.kraken.api.core.script.breakhandler">BreakCondition</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#runOnce(com.kraken.api.core.script.breakhandler.BreakCondition)">runOnce</a></span>&#8203;(<a href="BreakCondition.html" title="interface in com.kraken.api.core.script.breakhandler">BreakCondition</a>&nbsp;condition)</code></th>
+<td class="colLast">
+<div class="block">Wraps a condition to ensure it only triggers once per session.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -268,10 +275,7 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;<a href="BreakCondition.html" title="interface in com.kraken.api.core.script.breakhandler">BreakCondition</a>&nbsp;onLevelReached&#8203;(net.runelite.api.Client&nbsp;client,
                                             net.runelite.api.Skill&nbsp;skill,
                                             int&nbsp;targetLevel)</pre>
-<div class="block">Breaks when a specific skill reaches a target level.
- TODO Will continually break every time the user logs in after reaching this level since their current level is &gt;= targetLevel.
- Perhaps you can configure this as a one off, i.e. this custom break condition should execute but only one time, once executed remove it from the profile for
- the duration of the session</div>
+<div class="block">Breaks when a specific skill reaches a target level.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>client</code> - RuneLite Client</dd>
@@ -320,6 +324,23 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a id="runOnce(com.kraken.api.core.script.breakhandler.BreakCondition)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>runOnce</h4>
+<pre class="methodSignature">public static&nbsp;<a href="BreakCondition.html" title="interface in com.kraken.api.core.script.breakhandler">BreakCondition</a>&nbsp;runOnce&#8203;(<a href="BreakCondition.html" title="interface in com.kraken.api.core.script.breakhandler">BreakCondition</a>&nbsp;condition)</pre>
+<div class="block">Wraps a condition to ensure it only triggers once per session.
+ Useful for conditions like Level Reached or Material Depleted to prevent break loops.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>condition</code> - The condition to wrap</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new BreakCondition that only returns true once.</dd>
+</dl>
+</li>
+</ul>
 <a id="onMaterialDepleted(com.kraken.api.Context,int)">
 <!--   -->
 </a>
@@ -328,8 +349,7 @@ extends java.lang.Object</pre>
 <h4>onMaterialDepleted</h4>
 <pre class="methodSignature">public static&nbsp;<a href="BreakCondition.html" title="interface in com.kraken.api.core.script.breakhandler">BreakCondition</a>&nbsp;onMaterialDepleted&#8203;(<a href="../../../Context.html" title="class in com.kraken.api">Context</a>&nbsp;ctx,
                                                 int&nbsp;itemId)</pre>
-<div class="block">Breaks when items in the bank run out (e.g., materials).
- TODO Should possibly be an end script condition instead. After breaking if the user opens their bank this will just send them on a break.</div>
+<div class="block">Breaks when items in the bank run out (e.g., materials).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ctx</code> - The API game context</dd>

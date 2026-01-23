@@ -130,7 +130,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Adds all tasks from the specified @TaskChain to the current task chain.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/util/StringUtils.html#addColTags(java.lang.String)">addColTags(String)</a></span> - Static method in class com.kraken.api.util.<a href="com/kraken/api/util/StringUtils.html" title="class in com.kraken.api.util">StringUtils</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Wraps the provided text in a standard color tag <code>&lt;col=ff9040&gt;</code>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/ObfuscatedNames.html#addNodeGarbageValue">addNodeGarbageValue</a></span> - Static variable in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/ObfuscatedNames.html" title="class in com.kraken.api.core.packet">ObfuscatedNames</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/ObfuscatedNames.html#addNodeMethodName">addNodeMethodName</a></span> - Static variable in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/ObfuscatedNames.html" title="class in com.kraken.api.core.packet">ObfuscatedNames</a></dt>
@@ -428,6 +430,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/script/RunnableTask.html#cancel()">cancel()</a></span> - Static method in class com.kraken.api.core.script.<a href="com/kraken/api/core/script/RunnableTask.html" title="class in com.kraken.api.core.script">RunnableTask</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#cancelOffer(com.kraken.api.service.ui.grandexchange.GrandExchangeSlot)">cancelOffer(GrandExchangeSlot)</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Cancels an active Grand Exchange offer in the specified slot.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#CARRALLANGER_TELEPORT">CARRALLANGER_TELEPORT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/SpellService.html#cast(com.kraken.api.service.spell.Spells)">cast(Spells)</a></span> - Method in class com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/SpellService.html" title="class in com.kraken.api.service.spell">SpellService</a></dt>
@@ -497,6 +503,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Closes the bank interface if it is open.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#closeNumberDialogue()">closeNumberDialogue()</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
+<dd>
+<div class="block">Runs a client script to close the numeric input dialogue if it is open.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/CollisionDumper.html#collect()">collect()</a></span> - Method in class com.kraken.api.sim.<a href="com/kraken/api/sim/CollisionDumper.html" title="class in com.kraken.api.sim">CollisionDumper</a></dt>
 <dd>
 <div class="block">Collects collision data from the game within default distance (104 tiles).</div>
@@ -504,6 +514,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/CollisionDumper.html#collect(int)">collect(int)</a></span> - Method in class com.kraken.api.sim.<a href="com/kraken/api/sim/CollisionDumper.html" title="class in com.kraken.api.sim">CollisionDumper</a></dt>
 <dd>
 <div class="block">Collects collision data from the game within specified distance.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#collect(com.kraken.api.service.ui.grandexchange.GrandExchangeSlot,boolean)">collect(GrandExchangeSlot, boolean)</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Collects items from a canceled or completed Grand Exchange offer in the specified slot.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#collectAll()">collectAll()</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Collects all completed offers in the Grand Exchange.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/CollisionDumper.html#collectAndSave(java.lang.String)">collectAndSave(String)</a></span> - Method in class com.kraken.api.sim.<a href="com/kraken/api/sim/CollisionDumper.html" title="class in com.kraken.api.sim">CollisionDumper</a></dt>
 <dd>
@@ -603,6 +621,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/service/ui/dialogue/package-summary.html">com.kraken.api.service.ui.dialogue</a> - package com.kraken.api.service.ui.dialogue</dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/kraken/api/service/ui/grandexchange/package-summary.html">com.kraken.api.service.ui.grandexchange</a> - package com.kraken.api.service.ui.grandexchange</dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/service/ui/login/package-summary.html">com.kraken.api.service.ui.login</a> - package com.kraken.api.service.ui.login</dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/service/ui/processing/package-summary.html">com.kraken.api.service.ui.processing</a> - package com.kraken.api.service.ui.processing</dt>
@@ -683,6 +703,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns the count of this item in the bank.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankInventoryEntity.html#count()">count()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankInventoryEntity.html" title="class in com.kraken.api.query.container.bank">BankInventoryEntity</a></dt>
+<dd>
+<div class="block">Returns the quantity of the item in your inventory when the bank interface is open.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/script/breakhandler/BreakProfile.html#createAggressive()">createAggressive()</a></span> - Static method in class com.kraken.api.core.script.breakhandler.<a href="com/kraken/api/core/script/breakhandler/BreakProfile.html" title="class in com.kraken.api.core.script.breakhandler">BreakProfile</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/tile/AreaService.html#createAreaFromRadius(net.runelite.api.coords.WorldPoint,int)">createAreaFromRadius(WorldPoint, int)</a></span> - Method in class com.kraken.api.service.tile.<a href="com/kraken/api/service/tile/AreaService.html" title="class in com.kraken.api.service.tile">AreaService</a></dt>
@@ -756,17 +780,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/replay/PathLibrary.html#DATA_DIR">DATA_DIR</a></span> - Static variable in class com.kraken.api.input.mouse.strategy.replay.<a href="com/kraken/api/input/mouse/strategy/replay/PathLibrary.html" title="class in com.kraken.api.input.mouse.strategy.replay">PathLibrary</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#deactivateAll()">deactivateAll()</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Deactivates all prayers (including preserve)</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#deactivateAll(boolean)">deactivateAll(boolean)</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Deactivates all prayers.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#deactivateAll(boolean,boolean,int)">deactivateAll(boolean, boolean, int)</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Deactivates prayers based on the provided parameters.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#deactivatePrayer(net.runelite.api.Prayer)">deactivatePrayer(Prayer)</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
 <dd>
 <div class="block">Wrapper method which turns a prayer off.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#deactivateProtectionPrayers()">deactivateProtectionPrayers()</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Deactivates all protection prayers (protect from range, melee, and magic) but will keep other prayers
+ like preserve and protect item active.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#deactivateRun()">deactivateRun()</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
 <dd>
 <div class="block">Deactivates run if it is enabled.</div>
@@ -775,6 +808,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#DEATH_CHARGE">DEATH_CHARGE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/util/StringUtils.html#decrypt(java.lang.String,java.lang.String)">decrypt(String, String)</a></span> - Static method in class com.kraken.api.util.<a href="com/kraken/api/util/StringUtils.html" title="class in com.kraken.api.util">StringUtils</a></dt>
+<dd>
+<div class="block">Decrypts a Base64 encoded string containing an IV and ciphertext.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/ui/SimulationVisualizer.html#DEFAULT_MAP_HEIGHT">DEFAULT_MAP_HEIGHT</a></span> - Static variable in class com.kraken.api.sim.ui.<a href="com/kraken/api/sim/ui/SimulationVisualizer.html" title="class in com.kraken.api.sim.ui">SimulationVisualizer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/sim/ui/SimulationVisualizer.html#DEFAULT_MAP_WIDTH">DEFAULT_MAP_WIDTH</a></span> - Static variable in class com.kraken.api.sim.ui.<a href="com/kraken/api/sim/ui/SimulationVisualizer.html" title="class in com.kraken.api.sim.ui">SimulationVisualizer</a></dt>
@@ -843,6 +880,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Simulates a dice roll using a whole number percentage (e.g., 10 for 10%).</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#disableQuickPrayers()">disableQuickPrayers()</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
+<dd>
+<div class="block">Turns off the set quick prayers</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/script/RunnableTask.html#dispose()">dispose()</a></span> - Static method in class com.kraken.api.core.script.<a href="com/kraken/api/core/script/RunnableTask.html" title="class in com.kraken.api.core.script">RunnableTask</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/AbstractQuery.html#distinct(java.util.function.Function)">distinct(Function&lt;T, Object&gt;)</a></span> - Method in class com.kraken.api.core.<a href="com/kraken/api/core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></dt>
@@ -887,6 +928,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#EMOTES">EMOTES</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/core/AbstractQuery.html#empty()">empty()</a></span> - Method in class com.kraken.api.core.<a href="com/kraken/api/core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></dt>
+<dd>
+<div class="block">Returns an empty stream.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#enableQuickPrayers()">enableQuickPrayers()</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
+<dd>
+<div class="block">Turns on the set quick prayers</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#ENCHANT_DIAMOND_JEWELLERY">ENCHANT_DIAMOND_JEWELLERY</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#ENCHANT_DRAGONSTONE_JEWELLERY">ENCHANT_DRAGONSTONE_JEWELLERY</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
@@ -904,6 +953,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/BufferUtils.html#encodeStringCp1252(java.lang.CharSequence,int,int,byte%5B%5D,int)">encodeStringCp1252(CharSequence, int, int, byte[], int)</a></span> - Static method in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/BufferUtils.html" title="class in com.kraken.api.core.packet">BufferUtils</a></dt>
 <dd>
 <div class="block">Encodes a Java String (CharSequence) into a byte array using the CP1252 character set.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/util/StringUtils.html#encrypt(java.lang.String,java.lang.String)">encrypt(String, String)</a></span> - Static method in class com.kraken.api.util.<a href="com/kraken/api/util/StringUtils.html" title="class in com.kraken.api.util">StringUtils</a></dt>
+<dd>
+<div class="block">Encrypts the given plaintext using AES/CBC/PKCS5Padding.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#ENERGY_TRANSFER">ENERGY_TRANSFER</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
@@ -998,16 +1051,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/pathfinding/LocalPathfinder.html#findApproximatePath(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldArea)">findApproximatePath(WorldPoint, WorldArea)</a></span> - Method in class com.kraken.api.service.pathfinding.<a href="com/kraken/api/service/pathfinding/LocalPathfinder.html" title="class in com.kraken.api.service.pathfinding">LocalPathfinder</a></dt>
 <dd>
-<div class="block">Computes an approximate path from a starting point to a destination within a specified area.</div>
+<div class="block">Finds an approximate path to a random reachable tile within a specified WorldArea.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/pathfinding/LocalPathfinder.html#findApproximatePath(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldPoint)">findApproximatePath(WorldPoint, WorldPoint)</a></span> - Method in class com.kraken.api.service.pathfinding.<a href="com/kraken/api/service/pathfinding/LocalPathfinder.html" title="class in com.kraken.api.service.pathfinding">LocalPathfinder</a></dt>
 <dd>
-<div class="block">Finds an approximate path from a starting point to a target point within a given radius.</div>
+<div class="block">Finds an approximate path to a random reachable tile within a default radius of 5 tiles
+ around the target location.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/pathfinding/LocalPathfinder.html#findApproximatePath(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldPoint,int)">findApproximatePath(WorldPoint, WorldPoint, int)</a></span> - Method in class com.kraken.api.service.pathfinding.<a href="com/kraken/api/service/pathfinding/LocalPathfinder.html" title="class in com.kraken.api.service.pathfinding">LocalPathfinder</a></dt>
 <dd>
-<div class="block">Finds an approximate path from a starting point to a target point within a given radius.</div>
+<div class="block">Finds an approximate path to a random reachable tile within a specified radius
+ around the target location.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/pathfinding/LocalPathfinder.html#findEdgeOfScene(net.runelite.api.coords.WorldPoint)">findEdgeOfScene(WorldPoint)</a></span> - Method in class com.kraken.api.service.pathfinding.<a href="com/kraken/api/service/pathfinding/LocalPathfinder.html" title="class in com.kraken.api.service.pathfinding">LocalPathfinder</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/VirtualMouse.html#findLibraries()">findLibraries()</a></span> - Static method in class com.kraken.api.input.mouse.<a href="com/kraken/api/input/mouse/VirtualMouse.html" title="class in com.kraken.api.input.mouse">VirtualMouse</a></dt>
 <dd>
 <div class="block">Scans a specified directory for JSON files and returns a list of library names derived from the filenames.</div>
@@ -1016,10 +1073,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Calculates and returns a path from a starting point to a target point within the game world.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/pathfinding/LocalPathfinder.html#findPathWithBackoff(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldPoint)">findPathWithBackoff(WorldPoint, WorldPoint)</a></span> - Method in class com.kraken.api.service.pathfinding.<a href="com/kraken/api/service/pathfinding/LocalPathfinder.html" title="class in com.kraken.api.service.pathfinding">LocalPathfinder</a></dt>
+<dd>
+<div class="block">Attempts to find a path to the target.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/pathfinding/LocalPathfinder.html#findSparsePath(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldPoint)">findSparsePath(WorldPoint, WorldPoint)</a></span> - Method in class com.kraken.api.service.pathfinding.<a href="com/kraken/api/service/pathfinding/LocalPathfinder.html" title="class in com.kraken.api.service.pathfinding">LocalPathfinder</a></dt>
 <dd>
 <div class="block">Finds a sparse path between a starting point and a target point by filtering
  out unnecessary intermediate points from a previously computed dense path.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/pathfinding/LocalPathfinder.html#findWaypointsTo(net.runelite.api.Tile,net.runelite.api.Tile)">findWaypointsTo(Tile, Tile)</a></span> - Method in class com.kraken.api.service.pathfinding.<a href="com/kraken/api/service/pathfinding/LocalPathfinder.html" title="class in com.kraken.api.service.pathfinding">LocalPathfinder</a></dt>
+<dd>
+<div class="block">Finds the waypoints needed to navigate from the starting <code>Tile</code> to the destination <code>Tile</code>.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Runes.html#FIRE">FIRE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Runes.html" title="enum in com.kraken.api.service.spell">Runes</a></dt>
 <dd>&nbsp;</dd>
@@ -1029,6 +1094,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#FISHING_GUILD_TELEPORT">FISHING_GUILD_TELEPORT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#flickQuickPrayers()">flickQuickPrayers()</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
+<dd>
+<div class="block">Performs a quick flick of the player's quick prayers.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryQuery.html#food()">food()</a></span> - Method in class com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></dt>
 <dd>
 <div class="block">Returns a list of Inventory Items which can be consumed for health.</div>
@@ -1125,6 +1194,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getActions()">getActions()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#getActiveOverhead()">getActiveOverhead()</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
+<dd>
+<div class="block">Retrieves the currently active overhead <a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer"><code>InteractablePrayer</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#getActivePrayers()">getActivePrayers()</a></span> - Static method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
+<dd>
+<div class="block">Retrieves a list of all currently active prayers.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getActorClickbox(net.runelite.api.Actor)">getActorClickbox(Actor)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for an Actor (NPC or Player).</div>
@@ -1164,6 +1241,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/ContainerItem.html#getBounds(com.kraken.api.Context,net.runelite.api.Client)">getBounds(Context, Client)</a></span> - Method in class com.kraken.api.query.container.<a href="com/kraken/api/query/container/ContainerItem.html" title="class in com.kraken.api.query.container">ContainerItem</a></dt>
 <dd>
 <div class="block">Returns the rectangle bounds of an inventory item</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#getBySlot(int)">getBySlot(int)</a></span> - Static method in enum com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>
+<div class="block">Given an integer for the slot number, returns the grand exchange slot object for that slot.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/bezier/BezierStrategy.html#getCanvas()">getCanvas()</a></span> - Method in class com.kraken.api.input.mouse.strategy.bezier.<a href="com/kraken/api/input/mouse/strategy/bezier/BezierStrategy.html" title="class in com.kraken.api.input.mouse.strategy.bezier">BezierStrategy</a></dt>
 <dd>&nbsp;</dd>
@@ -1313,6 +1394,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns only the elemental runes (Air, Water, Earth, Fire) required for this spell.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/Context.html#getEnum(int)">getEnum(int)</a></span> - Method in class com.kraken.api.<a href="com/kraken/api/Context.html" title="class in com.kraken.api">Context</a></dt>
+<dd>
+<div class="block">Retrieves an enum composition from the RuneLite client thread.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/ContainerItem.html#getEquipmentActions()">getEquipmentActions()</a></span> - Method in class com.kraken.api.query.container.<a href="com/kraken/api/query/container/ContainerItem.html" title="class in com.kraken.api.query.container">ContainerItem</a></dt>
 <dd>
 <div class="block">Gets the equipment actions, loading composition if needed.</div>
@@ -1326,6 +1411,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/util/reflect/ReflectionService.html#getFieldValue(com.kraken.api.service.util.reflect.hooks.model.FieldHook,java.lang.Object)">getFieldValue(FieldHook, Object)</a></span> - Method in class com.kraken.api.service.util.reflect.<a href="com/kraken/api/service/util/reflect/ReflectionService.html" title="class in com.kraken.api.service.util.reflect">ReflectionService</a></dt>
 <dd>
 <div class="block">Retrieves the value of a field specified by the given hook.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#getFirstFreeSlot()">getFirstFreeSlot()</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Attempts to find the first free GE Offer slot.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getFont()">getFont()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
@@ -1413,6 +1502,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getItemId()">getItemId()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#getItemId()">getItemId()</a></span> - Method in enum com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>
+<div class="block">Returns the item id for the item in the grand exchange offer slot.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getItemQuantity()">getItemQuantity()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getItemQuantityMode()">getItemQuantityMode()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
@@ -1737,6 +1830,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#getWidthMode()">getWidthMode()</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#getWildernessInfo()">getWildernessInfo()</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
+<dd>
+<div class="block">Retrieves information about the current wilderness state for the player, including the wilderness level
+ and the player's combat level, based on data from the game client.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/UIService.html#getWorldPointClickbox(net.runelite.api.coords.WorldPoint)">getWorldPointClickbox(WorldPoint)</a></span> - Static method in class com.kraken.api.service.ui.<a href="com/kraken/api/service/ui/UIService.html" title="class in com.kraken.api.service.ui">UIService</a></dt>
 <dd>
 <div class="block">Gets the clickbox for a WorldPoint by converting it to screen coordinates.</div>
@@ -1760,6 +1858,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#GHORROCK_TELEPORT">GHORROCK_TELEPORT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#GHOSTLY_GRASP">GHOSTLY_GRASP</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#GRAND_EXCHANGE_TELEPORT">GRAND_EXCHANGE_TELEPORT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange"><span class="typeNameLink">GrandExchangeService</span></a> - Class in <a href="com/kraken/api/service/ui/grandexchange/package-summary.html">com.kraken.api.service.ui.grandexchange</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#%3Cinit%3E()">GrandExchangeService()</a></span> - Constructor for class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange"><span class="typeNameLink">GrandExchangeSlot</span></a> - Enum in <a href="com/kraken/api/service/ui/grandexchange/package-summary.html">com.kraken.api.service.ui.grandexchange</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#GREATER_CORRUPTION">GREATER_CORRUPTION</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
@@ -2179,6 +2285,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Checks if the handler is currently managing a script.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#isActive()">isActive()</a></span> - Method in enum com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
+<dd>
+<div class="block">Checks whether the current @InteractablePrayer is active.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#isActive(net.runelite.api.Prayer)">isActive(Prayer)</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
 <dd>
 <div class="block">Returns true if the prayer is active and false otherwise.</div>
@@ -2210,6 +2320,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/ContainerItem.html#isFood()">isFood()</a></span> - Method in class com.kraken.api.query.container.<a href="com/kraken/api/query/container/ContainerItem.html" title="class in com.kraken.api.query.container">ContainerItem</a></dt>
 <dd>
 <div class="block">True if the item is food.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#isFulfilled()">isFulfilled()</a></span> - Method in enum com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>
+<div class="block">Returns true when a grand exchange slot has been fulfilled (the item has been bought or sold).</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/inventory/InventoryQuery.html#isFull()">isFull()</a></span> - Method in class com.kraken.api.query.container.inventory.<a href="com/kraken/api/query/container/inventory/InventoryQuery.html" title="class in com.kraken.api.query.container.inventory">InventoryQuery</a></dt>
 <dd>
@@ -2251,10 +2365,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Checks if the player is within a specified area around a given <code>WorldPoint</code>.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/pathfinding/LocalPathfinder.html#isInScene(net.runelite.api.coords.WorldPoint)">isInScene(WorldPoint)</a></span> - Method in class com.kraken.api.service.pathfinding.<a href="com/kraken/api/service/pathfinding/LocalPathfinder.html" title="class in com.kraken.api.service.pathfinding">LocalPathfinder</a></dt>
-<dd>
-<div class="block">Returns true if the provided WorldPoint is in the currently loaded scene data.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#isMoving()">isMoving()</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
 <dd>
 <div class="block">Checks if the player is currently moving based on their pose animation.</div>
@@ -2273,6 +2383,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Checks if a GameObject is reachable.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#isOfferDetailsOpen(int)">isOfferDetailsOpen(int)</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Returns true when an offer details interface is open for a specific item</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/script/breakhandler/BreakManager.html#isOnBreak()">isOnBreak()</a></span> - Method in class com.kraken.api.core.script.breakhandler.<a href="com/kraken/api/core/script/breakhandler/BreakManager.html" title="class in com.kraken.api.core.script.breakhandler">BreakManager</a></dt>
 <dd>
 <div class="block">Checks if currently on break.</div>
@@ -2284,6 +2398,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/bank/BankService.html#isOpen()">isOpen()</a></span> - Method in class com.kraken.api.service.bank.<a href="com/kraken/api/service/bank/BankService.html" title="class in com.kraken.api.service.bank">BankService</a></dt>
 <dd>
 <div class="block">Checks whether the bank interface is open.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#isOpen()">isOpen()</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Checks if the Grand Exchange interface is currently open.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/processing/ProcessingService.html#isOpen()">isOpen()</a></span> - Method in class com.kraken.api.service.ui.processing.<a href="com/kraken/api/service/ui/processing/ProcessingService.html" title="class in com.kraken.api.service.ui.processing">ProcessingService</a></dt>
 <dd>
@@ -2297,6 +2415,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Checks if the player is out of prayer.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#isOverhead(com.kraken.api.service.prayer.InteractablePrayer)">isOverhead(InteractablePrayer)</a></span> - Static method in enum com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
+<dd>
+<div class="block">Determines whether the specified @InteractablePrayer is classified
+ as an overhead prayer.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/groundobject/GroundItem.html#isOwnedByLocalPlayer()">isOwnedByLocalPlayer()</a></span> - Method in class com.kraken.api.query.groundobject.<a href="com/kraken/api/query/groundobject/GroundItem.html" title="class in com.kraken.api.query.groundobject">GroundItem</a></dt>
 <dd>
 <div class="block">True if the ground item belongs to the local player and false otherwise.</div>
@@ -2304,6 +2427,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/bank/BankService.html#isPinOpen()">isPinOpen()</a></span> - Method in class com.kraken.api.service.bank.<a href="com/kraken/api/service/bank/BankService.html" title="class in com.kraken.api.service.bank">BankService</a></dt>
 <dd>
 <div class="block">Returns true when the bank PIN interface is open and false otherwise.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#isQuickPrayerEnabled()">isQuickPrayerEnabled()</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
+<dd>
+<div class="block">Determines if quick prayers are currently enabled for the player.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#isQuickPrayerSet(com.kraken.api.service.prayer.InteractablePrayer)">isQuickPrayerSet(InteractablePrayer)</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
 <dd>
@@ -2614,10 +2741,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Runes.html#MIST">MIST</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Runes.html" title="enum in com.kraken.api.service.spell">Runes</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spellbook.html#MODERN">MODERN</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spellbook.html" title="enum in com.kraken.api.service.spell">Spellbook</a></dt>
-<dd>
-<div class="block">Standard/Modern Spellbook - Default spellbook available to all players</div>
-</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/util/MathUtils.html#modInverse(long)">modInverse(long)</a></span> - Static method in class com.kraken.api.util.<a href="com/kraken/api/util/MathUtils.html" title="class in com.kraken.api.util">MathUtils</a></dt>
 <dd>
 <div class="block">Computes the inverse mod given a value and bits to shift left by</div>
@@ -2994,7 +3117,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/ObfuscatedNames.html#offsetMultiplier">offsetMultiplier</a></span> - Static variable in class com.kraken.api.core.packet.<a href="com/kraken/api/core/packet/ObfuscatedNames.html" title="class in com.kraken.api.core.packet">ObfuscatedNames</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#oneTickFlick(boolean,net.runelite.api.Prayer...)">oneTickFlick(boolean, Prayer...)</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Performs a one-tick prayer flick, enabling and disabling specified prayers within the same game tick.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/script/breakhandler/BreakConditions.html#onExperienceGained(net.runelite.api.Client,net.runelite.api.Skill,int)">onExperienceGained(Client, Skill, int)</a></span> - Static method in class com.kraken.api.core.script.breakhandler.<a href="com/kraken/api/core/script/breakhandler/BreakConditions.html" title="class in com.kraken.api.core.script.breakhandler">BreakConditions</a></dt>
 <dd>
 <div class="block">Breaks when experience gained exceeds a threshold.</div>
@@ -3574,6 +3699,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#OURANIA_TELEPORT">OURANIA_TELEPORT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#OVERHEAD_PRAYERS">OVERHEAD_PRAYERS</a></span> - Static variable in enum com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a id="I:P">
 <!--   -->
@@ -3778,6 +3905,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/InterfaceTab.html#QUESTS">QUESTS</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/InterfaceTab.html" title="enum in com.kraken.api.service.ui.tab">InterfaceTab</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#queueBuyOrder(int,int,int)">queueBuyOrder(int, int, int)</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Queues a buy offer in the grand exchange for a given item, the amount of the item to purchase, and a specific
+ price point.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#queueBuyOrder(com.kraken.api.query.container.inventory.InventoryEntity,int,int)">queueBuyOrder(InventoryEntity, int, int)</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Queues a buy offer for all of a specific item in the first free Grand Exchange slot.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/entity/MousePackets.html#queueClickPacket(int,int)">queueClickPacket(int, int)</a></span> - Method in class com.kraken.api.core.packet.entity.<a href="com/kraken/api/core/packet/entity/MousePackets.html" title="class in com.kraken.api.core.packet.entity">MousePackets</a></dt>
 <dd>
 <div class="block">Queues a click packet to send to the game server.</div>
@@ -3863,6 +3999,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Queues the RESUME_STRINGDIALOG packet, sent in response to a chat dialog
  asking the player to enter a generic string (e.g., a search query).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#queueSellOrder(int,int)">queueSellOrder(int, int)</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Queues a sell offer for all of a specific item in the first free Grand Exchange slot.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#queueSellOrder(int,int,int)">queueSellOrder(int, int, int)</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Queues a sell offer in the first free Grand Exchange slot.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html#queueSellOrder(com.kraken.api.query.container.inventory.InventoryEntity,int,int)">queueSellOrder(InventoryEntity, int, int)</a></span> - Method in class com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeService.html" title="class in com.kraken.api.service.ui.grandexchange">GrandExchangeService</a></dt>
+<dd>
+<div class="block">Queues a sell offer in the first free Grand Exchange slot.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/packet/entity/WidgetPackets.html#queueWidgetAction(net.runelite.api.widgets.Widget,java.lang.String...)">queueWidgetAction(Widget, String...)</a></span> - Method in class com.kraken.api.core.packet.entity.<a href="com/kraken/api/core/packet/entity/WidgetPackets.html" title="class in com.kraken.api.core.packet.entity">WidgetPackets</a></dt>
 <dd>
@@ -3988,6 +4136,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/npc/NpcQuery.html#reachable()">reachable()</a></span> - Method in class com.kraken.api.query.npc.<a href="com/kraken/api/query/npc/NpcQuery.html" title="class in com.kraken.api.query.npc">NpcQuery</a></dt>
 <dd>
 <div class="block">Filters the NPCs to include only those that are reachable based on their world location.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/pathfinding/LocalPathfinder.html#reachableTiles(net.runelite.api.coords.WorldPoint)">reachableTiles(WorldPoint)</a></span> - Method in class com.kraken.api.service.pathfinding.<a href="com/kraken/api/service/pathfinding/LocalPathfinder.html" title="class in com.kraken.api.service.pathfinding">LocalPathfinder</a></dt>
+<dd>
+<div class="block">Returns a list of all reachable tiles from the origins position using a breadth-first search algorithm.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#RECHARGE_DRAGONSTONE">RECHARGE_DRAGONSTONE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
@@ -4214,13 +4366,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#RUNELITE_CHATBOX_PANEL">RUNELITE_CHATBOX_PANEL</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#runelitePrayerFor(com.kraken.api.service.prayer.InteractablePrayer)">runelitePrayerFor(InteractablePrayer)</a></span> - Static method in enum com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Maps an @InteractablePrayer to its corresponding @Prayer from the RuneLite API.</div>
+</dd>
 <dt><a href="com/kraken/api/service/spell/Runes.html" title="enum in com.kraken.api.service.spell"><span class="typeNameLink">Runes</span></a> - Enum in <a href="com/kraken/api/service/spell/package-summary.html">com.kraken.api.service.spell</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/core/script/RunnableTask.html" title="class in com.kraken.api.core.script"><span class="typeNameLink">RunnableTask</span></a> - Class in <a href="com/kraken/api/core/script/package-summary.html">com.kraken.api.core.script</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/script/RunnableTask.html#%3Cinit%3E(java.lang.Runnable)">RunnableTask(Runnable)</a></span> - Constructor for class com.kraken.api.core.script.<a href="com/kraken/api/core/script/RunnableTask.html" title="class in com.kraken.api.core.script">RunnableTask</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/core/script/breakhandler/BreakConditions.html#runOnce(com.kraken.api.core.script.breakhandler.BreakCondition)">runOnce(BreakCondition)</a></span> - Static method in class com.kraken.api.core.script.breakhandler.<a href="com/kraken/api/core/script/breakhandler/BreakConditions.html" title="class in com.kraken.api.core.script.breakhandler">BreakConditions</a></dt>
+<dd>
+<div class="block">Wraps a condition to ensure it only triggers once per session.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/Context.html#runOnClientThread(java.lang.Runnable)">runOnClientThread(Runnable)</a></span> - Method in class com.kraken.api.<a href="com/kraken/api/Context.html" title="class in com.kraken.api">Context</a></dt>
 <dd>
 <div class="block">Runs a method on the client thread without returning a result.</div>
@@ -4254,6 +4412,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Interface representing a script that can be executed.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SEARCH">SEARCH</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#SEERS_TELEPORT">SEERS_TELEPORT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/tab/VarcIntValues.html#SELECTED_CHAT_TAB_ALL">SELECTED_CHAT_TAB_ALL</a></span> - com.kraken.api.service.ui.tab.<a href="com/kraken/api/service/ui/tab/VarcIntValues.html" title="enum in com.kraken.api.service.ui.tab">VarcIntValues</a></dt>
 <dd>&nbsp;</dd>
@@ -4440,6 +4600,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#setPos(int,int,int,int)">setPos(int, int, int, int)</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#setQuickPrayers(com.kraken.api.service.prayer.InteractablePrayer...)">setQuickPrayers(InteractablePrayer...)</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
+<dd>
+<div class="block">Sets the quick prayers for the player by sending the appropriate widget action packets.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#setRelativeX(int)">setRelativeX(int)</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/container/bank/BankItemWidget.html#setRelativeY(int)">setRelativeY(int)</a></span> - Method in class com.kraken.api.query.container.bank.<a href="com/kraken/api/query/container/bank/BankItemWidget.html" title="class in com.kraken.api.query.container.bank">BankItemWidget</a></dt>
@@ -4650,6 +4814,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sleeps while the specified condition is true or until the timeout is reached.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#SLOT_1">SLOT_1</a></span> - com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#SLOT_2">SLOT_2</a></span> - com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#SLOT_3">SLOT_3</a></span> - com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#SLOT_4">SLOT_4</a></span> - com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#SLOT_5">SLOT_5</a></span> - com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#SLOT_6">SLOT_6</a></span> - com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#SLOT_7">SLOT_7</a></span> - com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#SLOT_8">SLOT_8</a></span> - com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/InteractablePrayer.html#SMITE">SMITE</a></span> - com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Runes.html#SMOKE">SMOKE</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Runes.html" title="enum in com.kraken.api.service.spell">Runes</a></dt>
@@ -4737,6 +4917,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Configures and returns a <code>WorldQuery</code> object that excludes specific world types
  which are not part of the "standard" main game world category.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spellbook.html#STANDARD">STANDARD</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spellbook.html" title="enum in com.kraken.api.service.spell">Spellbook</a></dt>
+<dd>
+<div class="block">Standard/Modern Spellbook - Default spellbook available to all players</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/core/script/Script.html#start()">start()</a></span> - Method in class com.kraken.api.core.script.<a href="com/kraken/api/core/script/Script.html" title="class in com.kraken.api.core.script">Script</a></dt>
 <dd>
 <div class="block">Starts the script execution, initializing the necessary parts and marking the script as running.</div>
@@ -4797,7 +4981,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/kraken/api/util/StringUtils.html#%3Cinit%3E()">StringUtils()</a></span> - Constructor for class com.kraken.api.util.<a href="com/kraken/api/util/StringUtils.html" title="class in com.kraken.api.util">StringUtils</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/util/StringUtils.html#stripColTags(java.lang.String)">stripColTags(String)</a></span> - Static method in class com.kraken.api.util.<a href="com/kraken/api/util/StringUtils.html" title="class in com.kraken.api.util">StringUtils</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Strips <code>&lt;col=...&gt;</code> tags from a single string.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/util/StringUtils.html#stripColTags(java.lang.String%5B%5D)">stripColTags(String[])</a></span> - Static method in class com.kraken.api.util.<a href="com/kraken/api/util/StringUtils.html" title="class in com.kraken.api.util">StringUtils</a></dt>
 <dd>
 <div class="block">Strips <code>&lt;col=...&gt;</code> tags from each string in the provided array.</div>
@@ -4936,6 +5122,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Toggles a prayer on or off.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/prayer/PrayerService.html#toggleQuickPrayers()">toggleQuickPrayers()</a></span> - Method in class com.kraken.api.service.prayer.<a href="com/kraken/api/service/prayer/PrayerService.html" title="class in com.kraken.api.service.prayer">PrayerService</a></dt>
+<dd>
+<div class="block">Toggles the set quick prayers.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/LocalPlayerEntity.html#toggleRun()">toggleRun()</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/LocalPlayerEntity.html" title="class in com.kraken.api.query.player">LocalPlayerEntity</a></dt>
 <dd>
 <div class="block">Toggles the players run energy.</div>
@@ -4990,7 +5180,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Transforms a normalized path into a real-world path by scaling, rotating, translating,
  and timing its points based on the given start and end coordinates and the duration of the motion.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/kraken/api/service/movement/MovementService.html#traversePath(net.runelite.api.Client,com.kraken.api.service.movement.MovementService,java.util.List)">traversePath(Client, MovementService, List&lt;WorldPoint&gt;)</a></span> - Method in class com.kraken.api.service.movement.<a href="com/kraken/api/service/movement/MovementService.html" title="class in com.kraken.api.service.movement">MovementService</a></dt>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/movement/MovementService.html#traversePath(net.runelite.api.Client,java.util.List)">traversePath(Client, List&lt;WorldPoint&gt;)</a></span> - Method in class com.kraken.api.service.movement.<a href="com/kraken/api/service/movement/MovementService.html" title="class in com.kraken.api.service.movement">MovementService</a></dt>
+<dd>
+<div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
+ to each WorldPoint in the sequence.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/movement/MovementService.html#traversePath(net.runelite.api.Client,java.util.List,java.util.function.Consumer)">traversePath(Client, List&lt;WorldPoint&gt;, Consumer&lt;String&gt;)</a></span> - Method in class com.kraken.api.service.movement.<a href="com/kraken/api/service/movement/MovementService.html" title="class in com.kraken.api.service.movement">MovementService</a></dt>
+<dd>
+<div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
+ to each WorldPoint in the sequence.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/movement/MovementService.html#traversePath(net.runelite.api.Client,java.util.List,java.util.function.Consumer,java.util.function.Consumer)">traversePath(Client, List&lt;WorldPoint&gt;, Consumer&lt;String&gt;, Consumer&lt;String&gt;)</a></span> - Method in class com.kraken.api.service.movement.<a href="com/kraken/api/service/movement/MovementService.html" title="class in com.kraken.api.service.movement">MovementService</a></dt>
 <dd>
 <div class="block">Traverses a given path made up of waypoints, attempting to successfully move the player
  to each WorldPoint in the sequence.</div>
@@ -5163,6 +5363,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/login/AccountType.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum com.kraken.api.service.ui.login.<a href="com/kraken/api/service/ui/login/AccountType.html" title="enum in com.kraken.api.service.ui.login">AccountType</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
@@ -5219,6 +5423,11 @@ the order they are declared.</div>
 the order they are declared.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#values()">values()</a></span> - Static method in enum com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html#values()">values()</a></span> - Static method in enum com.kraken.api.service.ui.grandexchange.<a href="com/kraken/api/service/ui/grandexchange/GrandExchangeSlot.html" title="enum in com.kraken.api.service.ui.grandexchange">GrandExchangeSlot</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
@@ -5347,6 +5556,10 @@ the order they are declared.</div>
 <dd>
 <div class="block">Wields a weapon.</div>
 </dd>
+<dt><a href="com/kraken/api/query/player/WildernessInfo.html" title="class in com.kraken.api.query.player"><span class="typeNameLink">WildernessInfo</span></a> - Class in <a href="com/kraken/api/query/player/package-summary.html">com.kraken.api.query.player</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/WildernessInfo.html#%3Cinit%3E(int,int)">WildernessInfo(int, int)</a></span> - Constructor for class com.kraken.api.query.player.<a href="com/kraken/api/query/player/WildernessInfo.html" title="class in com.kraken.api.query.player">WildernessInfo</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/MouseMovementStrategy.html#WIND">WIND</a></span> - com.kraken.api.input.mouse.strategy.<a href="com/kraken/api/input/mouse/strategy/MouseMovementStrategy.html" title="enum in com.kraken.api.input.mouse.strategy">MouseMovementStrategy</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/kraken/api/input/mouse/strategy/wind/WindMouseConfig.html" title="class in com.kraken.api.input.mouse.strategy.wind"><span class="typeNameLink">WindMouseConfig</span></a> - Class in <a href="com/kraken/api/input/mouse/strategy/wind/package-summary.html">com.kraken.api.input.mouse.strategy.wind</a></dt>
@@ -5464,6 +5677,10 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/player/PlayerQuery.html#withinArea(net.runelite.api.coords.WorldPoint,net.runelite.api.coords.WorldPoint)">withinArea(WorldPoint, WorldPoint)</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></dt>
 <dd>
 <div class="block">Filters for players within a specified area.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/query/player/PlayerQuery.html#withinAttackableWildernessLevel()">withinAttackableWildernessLevel()</a></span> - Method in class com.kraken.api.query.player.<a href="com/kraken/api/query/player/PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></dt>
+<dd>
+<div class="block">Filters the stream for players who can attack you within the wilderness.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/kraken/api/query/widget/WidgetQuery.html#withIndex(int)">withIndex(int)</a></span> - Method in class com.kraken.api.query.widget.<a href="com/kraken/api/query/widget/WidgetQuery.html" title="class in com.kraken.api.query.widget">WidgetQuery</a></dt>
 <dd>
@@ -5597,6 +5814,8 @@ the order they are declared.</div>
 <h2 class="title">Y</h2>
 <dl>
 <dt><span class="memberNameLink"><a href="com/kraken/api/input/mouse/strategy/replay/MotionFactory.TimedPoint.html#y">y</a></span> - Variable in class com.kraken.api.input.mouse.strategy.replay.<a href="com/kraken/api/input/mouse/strategy/replay/MotionFactory.TimedPoint.html" title="class in com.kraken.api.input.mouse.strategy.replay">MotionFactory.TimedPoint</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/kraken/api/service/spell/Spells.html#YANILLE_TELEPORT">YANILLE_TELEPORT</a></span> - com.kraken.api.service.spell.<a href="com/kraken/api/service/spell/Spells.html" title="enum in com.kraken.api.service.spell">Spells</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:Z">

@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -202,55 +202,62 @@ extends <a href="../../../core/AbstractEntity.html" title="class in com.kraken.a
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#count()">count</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the quantity of the item in your inventory when the bank interface is open.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deposit(int)">deposit</a></span>&#8203;(int&nbsp;amount)</code></th>
 <td class="colLast">
 <div class="block">Deposits a set amount of the given item from the players inventory to the bank.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#depositAll()">depositAll</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Deposits all of the given item from the players inventory into the bank.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#depositFive()">depositFive</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Deposits five of the given items from the players inventory into the bank.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#depositOne()">depositOne</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Deposits one of the given item from the players inventory into the bank.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#depositTen()">depositTen</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Deposits ten of the given items from the players inventory into the bank.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getId()">getId</a></span>()</code></th>
 <td class="colLast">
 <div class="block">The item ID for the wrapped game entity</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getName()">getName</a></span>()</code></th>
 <td class="colLast">
 <div class="block">The game entities name.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(java.lang.String)">interact</a></span>&#8203;(java.lang.String&nbsp;action)</code></th>
 <td class="colLast">
@@ -353,6 +360,21 @@ extends <a href="../../../core/AbstractEntity.html" title="class in com.kraken.a
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>int Item id</dd>
+</dl>
+</li>
+</ul>
+<a id="count()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>count</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;count()</pre>
+<div class="block">Returns the quantity of the item in your inventory when the bank interface is open.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Int the quantity of the bank inventory entity (this will be the stack size of the item if its noted) or
+ the value of the item if it's coins.</dd>
 </dl>
 </li>
 </ul>

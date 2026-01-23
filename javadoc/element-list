@@ -37,6 +37,7 @@ com.kraken.api.service.spell
 com.kraken.api.service.tile
 com.kraken.api.service.ui
 com.kraken.api.service.ui.dialogue
+com.kraken.api.service.ui.grandexchange
 com.kraken.api.service.ui.login
 com.kraken.api.service.ui.processing
 com.kraken.api.service.ui.tab

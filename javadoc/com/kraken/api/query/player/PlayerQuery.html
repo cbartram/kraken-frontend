@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -253,12 +253,19 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withinAttackableWildernessLevel()">withinAttackableWildernessLevel</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Filters the stream for players who can attack you within the wilderness.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withinDistance(int)">withinDistance</a></span>&#8203;(int&nbsp;distance)</code></th>
 <td class="colLast">
 <div class="block">Filters the stream for players within a specified distance from the local player.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withinLevel(int,int)">withinLevel</a></span>&#8203;(int&nbsp;low,
            int&nbsp;high)</code></th>
@@ -272,7 +279,7 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.kraken.api.core.<a href="../../core/AbstractQuery.html" title="class in com.kraken.api.core">AbstractQuery</a></h3>
-<code><a href="../../core/AbstractQuery.html#count()">count</a>, <a href="../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../core/AbstractQuery.html#first()">first</a>, <a href="../../core/AbstractQuery.html#list()">list</a>, <a href="../../core/AbstractQuery.html#map()">map</a>, <a href="../../core/AbstractQuery.html#nameContains(java.lang.String)">nameContains</a>, <a href="../../core/AbstractQuery.html#random()">random</a>, <a href="../../core/AbstractQuery.html#result()">result</a>, <a href="../../core/AbstractQuery.html#reverse()">reverse</a>, <a href="../../core/AbstractQuery.html#shuffle()">shuffle</a>, <a href="../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../core/AbstractQuery.html#take(int)">take</a>, <a href="../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../core/AbstractQuery.html#withId(int)">withId</a>, <a href="../../core/AbstractQuery.html#withName(java.lang.String)">withName</a></code></li>
+<code><a href="../../core/AbstractQuery.html#count()">count</a>, <a href="../../core/AbstractQuery.html#distinct(java.util.function.Function)">distinct</a>, <a href="../../core/AbstractQuery.html#empty()">empty</a>, <a href="../../core/AbstractQuery.html#except(java.util.function.Predicate)">except</a>, <a href="../../core/AbstractQuery.html#filter(java.util.function.Predicate)">filter</a>, <a href="../../core/AbstractQuery.html#first()">first</a>, <a href="../../core/AbstractQuery.html#list()">list</a>, <a href="../../core/AbstractQuery.html#map()">map</a>, <a href="../../core/AbstractQuery.html#nameContains(java.lang.String)">nameContains</a>, <a href="../../core/AbstractQuery.html#random()">random</a>, <a href="../../core/AbstractQuery.html#result()">result</a>, <a href="../../core/AbstractQuery.html#reverse()">reverse</a>, <a href="../../core/AbstractQuery.html#shuffle()">shuffle</a>, <a href="../../core/AbstractQuery.html#sorted(java.util.Comparator)">sorted</a>, <a href="../../core/AbstractQuery.html#stream()">stream</a>, <a href="../../core/AbstractQuery.html#take(int)">take</a>, <a href="../../core/AbstractQuery.html#toRuneLite()">toRuneLite</a>, <a href="../../core/AbstractQuery.html#withId(int)">withId</a>, <a href="../../core/AbstractQuery.html#withName(java.lang.String)">withName</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -409,6 +416,21 @@ extends <a href="../../core/AbstractQuery.html" title="class in com.kraken.api.c
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>low</code> - The minimum combat level bound</dd>
 <dd><code>high</code> - The maximum combat level bound</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>PlayerQuery</dd>
+</dl>
+</li>
+</ul>
+<a id="withinAttackableWildernessLevel()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withinAttackableWildernessLevel</h4>
+<pre class="methodSignature">public&nbsp;<a href="PlayerQuery.html" title="class in com.kraken.api.query.player">PlayerQuery</a>&nbsp;withinAttackableWildernessLevel()</pre>
+<div class="block">Filters the stream for players who can attack you within the wilderness. If this is called outside
+ the wilderness, the stream will contain no players, be warned.</div>
+<dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>PlayerQuery</dd>
 </dl>

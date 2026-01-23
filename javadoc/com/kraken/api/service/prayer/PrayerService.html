@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":9,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -168,7 +168,7 @@ extends java.lang.Object</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -184,19 +184,25 @@ extends java.lang.Object</pre>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deactivateAll()">deactivateAll</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Deactivates all prayers (including preserve)</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deactivateAll(boolean)">deactivateAll</a></span>&#8203;(boolean&nbsp;keepPreserve)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Deactivates all prayers.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deactivateAll(boolean,boolean,int)">deactivateAll</a></span>&#8203;(boolean&nbsp;keepPreserveOn,
              boolean&nbsp;onlyProtectionPrayers,
              int&nbsp;maxActions)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Deactivates prayers based on the provided parameters.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -208,48 +214,109 @@ extends java.lang.Object</pre>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deactivateProtectionPrayers()">deactivateProtectionPrayers</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Deactivates all protection prayers (protect from range, melee, and magic) but will keep other prayers
+ like preserve and protect item active.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disableQuickPrayers()">disableQuickPrayers</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Turns off the set quick prayers</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enableQuickPrayers()">enableQuickPrayers</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Turns on the set quick prayers</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#flickQuickPrayers()">flickQuickPrayers</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Performs a quick flick of the player's quick prayers.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getActiveOverhead()">getActiveOverhead</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Retrieves the currently active overhead <a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer"><code>InteractablePrayer</code></a>.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>static java.util.List&lt;<a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getActivePrayers()">getActivePrayers</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Retrieves a list of all currently active prayers.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isActive(net.runelite.api.Prayer)">isActive</a></span>&#8203;(net.runelite.api.Prayer&nbsp;prayer)</code></th>
 <td class="colLast">
 <div class="block">Returns true if the prayer is active and false otherwise.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isOutOfPrayer()">isOutOfPrayer</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Checks if the player is out of prayer.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isQuickPrayerEnabled()">isQuickPrayerEnabled</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Determines if quick prayers are currently enabled for the player.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isQuickPrayerSet(com.kraken.api.service.prayer.InteractablePrayer)">isQuickPrayerSet</a></span>&#8203;(<a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a>&nbsp;prayer)</code></th>
 <td class="colLast">
 <div class="block">Checks if a given quick prayer is set</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#oneTickFlick(boolean,net.runelite.api.Prayer...)">oneTickFlick</a></span>&#8203;(boolean&nbsp;disableAll,
             net.runelite.api.Prayer...&nbsp;prayers)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Performs a one-tick prayer flick, enabling and disabling specified prayers within the same game tick.</div>
+</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setQuickPrayers(com.kraken.api.service.prayer.InteractablePrayer...)">setQuickPrayers</a></span>&#8203;(<a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a>...&nbsp;prayers)</code></th>
+<td class="colLast">
+<div class="block">Sets the quick prayers for the player by sending the appropriate widget action packets.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggle(net.runelite.api.Prayer)">toggle</a></span>&#8203;(net.runelite.api.Prayer&nbsp;prayer)</code></th>
 <td class="colLast">
 <div class="block">Toggles a prayer on or off.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggle(net.runelite.api.Prayer,boolean)">toggle</a></span>&#8203;(net.runelite.api.Prayer&nbsp;prayer,
       boolean&nbsp;activate)</code></th>
 <td class="colLast">
 <div class="block">Toggles a prayer on or off.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toggleQuickPrayers()">toggleQuickPrayers</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Toggles the set quick prayers.</div>
 </td>
 </tr>
 </table>
@@ -384,6 +451,27 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;deactivateAll&#8203;(boolean&nbsp;keepPreserveOn,
                              boolean&nbsp;onlyProtectionPrayers,
                              int&nbsp;maxActions)</pre>
+<div class="block">Deactivates prayers based on the provided parameters. This method can limit
+ the deactivation to specific types of prayers and ensure certain prayers are preserved.
+
+ <p>This method iterates through all available <code>Prayer</code> values, selectively
+ deactivating prayers according to the following conditions:
+ <ul>
+   <li>It skips prayers with names containing "RP_" (Ruinous Prayers).</li>
+   <li>If <code>keepPreserveOn</code> is <code>true</code>, the <code>PRESERVE</code> prayer will not be deactivated.</li>
+   <li>If <code>onlyProtectionPrayers</code> is <code>true</code>, only prayers categorized as protection prayers
+       will be deactivated.</li>
+   <li>Deactivation will stop once the number of actions taken reaches <code>maxActions</code>.</li>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>keepPreserveOn</code> - a boolean indicating whether the <code>PRESERVE</code> prayer should remain active.</dd>
+<dd><code>onlyProtectionPrayers</code> - a boolean indicating whether only protection prayers should be deactivated.</dd>
+<dd><code>maxActions</code> - the maximum number of deactivation actions to perform.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if all applicable prayers were successfully processed within the <code>maxActions</code> limit;
+         <code>false</code> if the method aborted early due to reaching the <code>maxActions</code> limit.</dd>
+</dl>
 </li>
 </ul>
 <a id="deactivateAll(boolean)">
@@ -393,6 +481,16 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>deactivateAll</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;deactivateAll&#8203;(boolean&nbsp;keepPreserve)</pre>
+<div class="block">Deactivates all prayers.
+ This method allows specifying whether to keep the preserve prayer on when deactivating other prayers</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>keepPreserve</code> - true to retain specified preserved states during deactivation,
+                     false to deactivate entirely without preservation.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the deactivation process completes successfully,
+         false otherwise.</dd>
+</dl>
 </li>
 </ul>
 <a id="deactivateAll()">
@@ -402,6 +500,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>deactivateAll</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;deactivateAll()</pre>
+<div class="block">Deactivates all prayers (including preserve)</div>
 </li>
 </ul>
 <a id="deactivateProtectionPrayers()">
@@ -411,6 +510,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>deactivateProtectionPrayers</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;deactivateProtectionPrayers()</pre>
+<div class="block">Deactivates all protection prayers (protect from range, melee, and magic) but will keep other prayers
+ like preserve and protect item active.</div>
 </li>
 </ul>
 <a id="oneTickFlick(boolean,net.runelite.api.Prayer...)">
@@ -421,6 +522,63 @@ extends java.lang.Object</pre>
 <h4>oneTickFlick</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;oneTickFlick&#8203;(boolean&nbsp;disableAll,
                          net.runelite.api.Prayer...&nbsp;prayers)</pre>
+<div class="block">Performs a one-tick prayer flick, enabling and disabling specified prayers within the same game tick.
+ This ensures minimal prayer drain while maintaining the effects of the selected prayers.
+
+ <p>The method first identifies any currently active prayers and deactivates them if needed.
+ Then, the specified prayers in the @&lt;varargs&gt; parameter are activated.
+ If <code>disableAll</code> is set to <code>true</code>, all active prayers are deactivated before
+ activating the specified ones; otherwise, only the prayers included in the list are toggled.</p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>disableAll</code> - A <code>boolean</code> value indicating if all currently active prayers should be
+                   disabled before activating the specified prayers. If <code>true</code>, all existing
+                   prayers (except Ruinous Prayers) are deactivated.</dd>
+<dd><code>prayers</code> - A varargs list of <code>Prayer</code> objects that should be activated during the
+                   one-tick flick process. These prayers are toggled on after any necessary
+                   deactivations are completed. If no prayers are provided, no activation takes place.</dd>
+</dl>
+</li>
+</ul>
+<a id="getActivePrayers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getActivePrayers</h4>
+<pre class="methodSignature">public static&nbsp;java.util.List&lt;<a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a>&gt;&nbsp;getActivePrayers()</pre>
+<div class="block">Retrieves a list of all currently active prayers.
+
+ <p>This method iterates through all available <a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer"><code>InteractablePrayer</code></a> instances
+ and checks if they are active by invoking <code>isActive()</code> on each. Any prayers
+ identified as active are added to the returned list.</p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A <code>List</code> of <a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer"><code>InteractablePrayer</code></a> objects that are currently active.</dd>
+</dl>
+</li>
+</ul>
+<a id="getActiveOverhead()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getActiveOverhead</h4>
+<pre class="methodSignature">public&nbsp;<a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a>&nbsp;getActiveOverhead()</pre>
+<div class="block">Retrieves the currently active overhead <a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer"><code>InteractablePrayer</code></a>.
+
+ <p>This method iterates through all available <a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer"><code>InteractablePrayer</code></a> values
+ and checks each one for the following conditions:
+ <ul>
+   <li>The prayer is currently active, as determined by its state.</li>
+   <li>The prayer is classified as an overhead prayer based on additional logic.</li>
+ </ul>
+ If a prayer meets both conditions, it is returned immediately. If no active overhead
+ prayer is found, the method returns <code>null</code>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The active overhead <a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer"><code>InteractablePrayer</code></a>, or <code>null</code> if no overhead prayer is active.</dd>
+</dl>
 </li>
 </ul>
 <a id="isQuickPrayerSet(com.kraken.api.service.prayer.InteractablePrayer)">
@@ -439,10 +597,45 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a id="isQuickPrayerEnabled()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isQuickPrayerEnabled</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isQuickPrayerEnabled()</pre>
+<div class="block">Determines if quick prayers are currently enabled for the player.
+
+ <p>The method checks the value of the @VarbitID.QUICKPRAYER_ACTIVE
+ game state variable to assess whether quick prayers are active. A return value
+ of <code>true</code> indicates that quick prayers are enabled, while <code>false</code>
+ signifies that they are disabled.</p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if quick prayers are enabled, <code>false</code> otherwise.</dd>
+</dl>
+</li>
+</ul>
+<a id="setQuickPrayers(com.kraken.api.service.prayer.InteractablePrayer...)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setQuickPrayers</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setQuickPrayers&#8203;(<a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer">InteractablePrayer</a>...&nbsp;prayers)</pre>
+<div class="block">Sets the quick prayers for the player by sending the appropriate widget action packets.
+ If a specified prayer is already set as a quick prayer, it will be skipped.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>prayers</code> - The @varargs array of <a href="InteractablePrayer.html" title="enum in com.kraken.api.service.prayer"><code>InteractablePrayer</code></a> objects to be set as quick prayers.
+                Null values and prayers that are already set will be ignored.</dd>
+</dl>
+</li>
+</ul>
 <a id="isOutOfPrayer()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>isOutOfPrayer</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isOutOfPrayer()</pre>
@@ -451,6 +644,62 @@ extends java.lang.Object</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Returns true if the player is out of prayer and false if they still have prayer.</dd>
 </dl>
+</li>
+</ul>
+<a id="toggleQuickPrayers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toggleQuickPrayers</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;toggleQuickPrayers()</pre>
+<div class="block">Toggles the set quick prayers. If the quick prayers are on, they will be turned off.
+ If they are off, they will be turned on.</div>
+</li>
+</ul>
+<a id="enableQuickPrayers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>enableQuickPrayers</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;enableQuickPrayers()</pre>
+<div class="block">Turns on the set quick prayers</div>
+</li>
+</ul>
+<a id="disableQuickPrayers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>disableQuickPrayers</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;disableQuickPrayers()</pre>
+<div class="block">Turns off the set quick prayers</div>
+</li>
+</ul>
+<a id="flickQuickPrayers()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>flickQuickPrayers</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;flickQuickPrayers()</pre>
+<div class="block">Performs a quick flick of the player's quick prayers.
+
+ <p>This method is designed to activate and deactivate the player's quick prayers
+ in a single operation. If quick prayers are currently disabled, they will be
+ turned on by invoking <code>enableQuickPrayers()</code>. If quick prayers are already
+ enabled, the method performs a rapid sequence of toggles by calling
+ <code>toggleQuickPrayers()</code> twice.</p>
+
+ <p>The behavior of this method ensures that quick prayers are briefly flicked
+ and restored, which may be used in scenarios such as prayer management or minimizing
+ prayer drain during certain game activities.</p>
+
+ <ul>
+   <li>If quick prayers are not enabled, they are activated, and no toggle operation is performed.</li>
+   <li>If quick prayers are enabled, they are toggled off and back on in quick succession.</li>
+ </ul></div>
 </li>
 </ul>
 </li>
